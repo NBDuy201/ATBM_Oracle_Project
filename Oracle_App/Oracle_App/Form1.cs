@@ -51,7 +51,7 @@ namespace Oracle_App
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            this.updateDataGrid();
+            //this.updateDataGrid();
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,50 +61,50 @@ namespace Oracle_App
 
         private void IAD(String sql_stm, int state) // insert + update + delete
         {
-            String msg = "";
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = sql_stm;
-            cmd.CommandType = CommandType.Text;
+            //String msg = "";
+            //OracleCommand cmd = con.CreateCommand();
+            //cmd.CommandText = sql_stm;
+            //cmd.CommandType = CommandType.Text;
 
-            switch (state)
-            {
-                case 0:
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
-                    cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
-                    cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
-                    //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Text;
-                    cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
-                    msg = "Inserted Successfully";
-                    break;
-                case 1:
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-                    cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
-                    cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
-                    cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
-                    cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
-                    msg = "Updated Successfully";
-                    break;
-                case 2:
-                    cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-                    msg = "Deleted Successfully";
-                    break;
-            }
+            //switch (state)
+            //{
+            //    case 0:
+            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
+            //        cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
+            //        cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
+            //        cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
+            //        //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Text;
+            //        cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
+            //        msg = "Inserted Successfully";
+            //        break;
+            //    case 1:
+            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
+            //        cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
+            //        cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
+            //        cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
+            //        cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
+            //        msg = "Updated Successfully";
+            //        break;
+            //    case 2:
+            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
+            //        msg = "Deleted Successfully";
+            //        break;
+            //}
 
-            try
-            {
-                int n = cmd.ExecuteNonQuery();
-                if (n > 0)
-                {
-                    MessageBox.Show(msg);
-                    this.updateDataGrid();
-                }
-            }
-            catch (Exception exp)
-            {
+            //try
+            //{
+            //    int n = cmd.ExecuteNonQuery();
+            //    if (n > 0)
+            //    {
+            //        MessageBox.Show(msg);
+            //        this.updateDataGrid();
+            //    }
+            //}
+            //catch (Exception exp)
+            //{
 
-                throw;
-            }
+            //    throw;
+            //}
         }
 
         private void Add_button_Click(object sender, EventArgs e)
@@ -161,11 +161,11 @@ namespace Oracle_App
 
         private void Reset_button_Click(object sender, EventArgs e)
         {
-            ClearTextBoxes();
-            Hire_Date_picker.Text = null;
-            Add_button.Enabled = true;
-            Update_button.Enabled = false;
-            Delete_button.Enabled = false;
+            //ClearTextBoxes();
+            //Hire_Date_picker.Text = null;
+            //Add_button.Enabled = true;
+            //Update_button.Enabled = false;
+            //Delete_button.Enabled = false;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -173,27 +173,41 @@ namespace Oracle_App
             int index = e.RowIndex;
             if (index != -1) // Nhan vao header khong tinh
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                Employee_ID_textbox.Text = selectedRow.Cells[0].Value.ToString();
-                Last_Name_textbox.Text = selectedRow.Cells[1].Value.ToString();
-                Email_textbox.Text = selectedRow.Cells[2].Value.ToString();
-                Job_ID_textbox.Text = selectedRow.Cells[3].Value.ToString();
-                Hire_Date_picker.Text = selectedRow.Cells[4].Value.ToString();
-                //Hire_Date_picker.Value = DateTime.Parse(selectedRow.Cells[4].Value.ToString());
+                //DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                //Employee_ID_textbox.Text = selectedRow.Cells[0].Value.ToString();
+                //Last_Name_textbox.Text = selectedRow.Cells[1].Value.ToString();
+                //Email_textbox.Text = selectedRow.Cells[2].Value.ToString();
+                //Job_ID_textbox.Text = selectedRow.Cells[3].Value.ToString();
+                //Hire_Date_picker.Text = selectedRow.Cells[4].Value.ToString();
+                ////Hire_Date_picker.Value = DateTime.Parse(selectedRow.Cells[4].Value.ToString());
 
-                Add_button.Enabled = false;
-                Update_button.Enabled = true;
-                Delete_button.Enabled = true;
+                //Add_button.Enabled = false;
+                //Update_button.Enabled = true;
+                //Delete_button.Enabled = true;
             }
         }
 
         private void Form1_Click(object sender, EventArgs e)
         {
-            ClearTextBoxes();
-            Hire_Date_picker.Text = null;
-            Add_button.Enabled = true;
-            Update_button.Enabled = false;
-            Delete_button.Enabled = false;
+            //ClearTextBoxes();
+            //Hire_Date_picker.Text = null;
+            //Add_button.Enabled = true;
+            //Update_button.Enabled = false;
+            //Delete_button.Enabled = false;
+        }
+
+        private void View_user_button_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_users"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("T_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            dataGridView1.DataSource = dt.DefaultView;
         }
     }
 }
