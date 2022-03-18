@@ -35,22 +35,25 @@ namespace Oracle_App
             this.Delete_button = new System.Windows.Forms.Button();
             this.Reset_button = new System.Windows.Forms.Button();
             this.View_user_button = new System.Windows.Forms.Button();
+            this.View_privilege_button = new System.Windows.Forms.Button();
+            this.User_textbox = new System.Windows.Forms.TextBox();
+            this.User_label = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(331, 30);
+            this.dataGridView1.Location = new System.Drawing.Point(253, 30);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(457, 392);
+            this.dataGridView1.Size = new System.Drawing.Size(535, 392);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Add_button
             // 
             this.Add_button.Enabled = false;
-            this.Add_button.Location = new System.Drawing.Point(12, 176);
+            this.Add_button.Location = new System.Drawing.Point(12, 310);
             this.Add_button.Name = "Add_button";
             this.Add_button.Size = new System.Drawing.Size(75, 23);
             this.Add_button.TabIndex = 7;
@@ -61,7 +64,7 @@ namespace Oracle_App
             // Update_button
             // 
             this.Update_button.Enabled = false;
-            this.Update_button.Location = new System.Drawing.Point(12, 234);
+            this.Update_button.Location = new System.Drawing.Point(12, 368);
             this.Update_button.Name = "Update_button";
             this.Update_button.Size = new System.Drawing.Size(75, 23);
             this.Update_button.TabIndex = 8;
@@ -72,7 +75,7 @@ namespace Oracle_App
             // Delete_button
             // 
             this.Delete_button.Enabled = false;
-            this.Delete_button.Location = new System.Drawing.Point(12, 205);
+            this.Delete_button.Location = new System.Drawing.Point(12, 339);
             this.Delete_button.Name = "Delete_button";
             this.Delete_button.Size = new System.Drawing.Size(75, 23);
             this.Delete_button.TabIndex = 9;
@@ -82,10 +85,10 @@ namespace Oracle_App
             // 
             // Reset_button
             // 
-            this.Reset_button.Enabled = false;
-            this.Reset_button.Location = new System.Drawing.Point(12, 263);
+            this.Reset_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_button.Location = new System.Drawing.Point(16, 115);
             this.Reset_button.Name = "Reset_button";
-            this.Reset_button.Size = new System.Drawing.Size(75, 23);
+            this.Reset_button.Size = new System.Drawing.Size(91, 33);
             this.Reset_button.TabIndex = 10;
             this.Reset_button.Text = "Reset";
             this.Reset_button.UseVisualStyleBackColor = true;
@@ -93,19 +96,52 @@ namespace Oracle_App
             // 
             // View_user_button
             // 
-            this.View_user_button.Location = new System.Drawing.Point(12, 30);
+            this.View_user_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_user_button.Location = new System.Drawing.Point(16, 72);
             this.View_user_button.Name = "View_user_button";
-            this.View_user_button.Size = new System.Drawing.Size(75, 23);
+            this.View_user_button.Size = new System.Drawing.Size(91, 37);
             this.View_user_button.TabIndex = 11;
             this.View_user_button.Text = "View user";
             this.View_user_button.UseVisualStyleBackColor = true;
             this.View_user_button.Click += new System.EventHandler(this.View_user_button_Click);
+            // 
+            // View_privilege_button
+            // 
+            this.View_privilege_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_privilege_button.Location = new System.Drawing.Point(122, 72);
+            this.View_privilege_button.Name = "View_privilege_button";
+            this.View_privilege_button.Size = new System.Drawing.Size(125, 37);
+            this.View_privilege_button.TabIndex = 12;
+            this.View_privilege_button.Text = "View privileges";
+            this.View_privilege_button.UseVisualStyleBackColor = true;
+            this.View_privilege_button.Click += new System.EventHandler(this.View_privilege_button_Click);
+            // 
+            // User_textbox
+            // 
+            this.User_textbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_textbox.Location = new System.Drawing.Point(61, 30);
+            this.User_textbox.Name = "User_textbox";
+            this.User_textbox.Size = new System.Drawing.Size(186, 26);
+            this.User_textbox.TabIndex = 13;
+            // 
+            // User_label
+            // 
+            this.User_label.AutoSize = true;
+            this.User_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_label.Location = new System.Drawing.Point(12, 33);
+            this.User_label.Name = "User_label";
+            this.User_label.Size = new System.Drawing.Size(43, 20);
+            this.User_label.TabIndex = 14;
+            this.User_label.Text = "User";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.User_label);
+            this.Controls.Add(this.User_textbox);
+            this.Controls.Add(this.View_privilege_button);
             this.Controls.Add(this.View_user_button);
             this.Controls.Add(this.Reset_button);
             this.Controls.Add(this.Delete_button);
@@ -116,9 +152,9 @@ namespace Oracle_App
             this.Text = "Form1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
-            this.Click += new System.EventHandler(this.Form1_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -130,6 +166,9 @@ namespace Oracle_App
         private System.Windows.Forms.Button Delete_button;
         private System.Windows.Forms.Button Reset_button;
         private System.Windows.Forms.Button View_user_button;
+        private System.Windows.Forms.Button View_privilege_button;
+        private System.Windows.Forms.TextBox User_textbox;
+        private System.Windows.Forms.Label User_label;
     }
 }
 

@@ -39,14 +39,14 @@ namespace Oracle_App
 
         private void updateDataGrid()
         {
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select Employee_ID, Last_Name, Email, Job_ID, Hire_Date from employees"; // Sql statement
-            cmd.CommandType = CommandType.Text; // Type of Sql statement
-            OracleDataReader dr = cmd.ExecuteReader(); // Execute sql statement
-            DataTable dt = new DataTable(); // Data table object
-            dt.Load(dr); // Save executed sql statement
-            dataGridView1.DataSource = dt.DefaultView;
-            dr.Close();
+            //OracleCommand cmd = con.CreateCommand();
+            //cmd.CommandText = "Select Employee_ID, Last_Name, Email, Job_ID, Hire_Date from employees"; // Sql statement
+            //cmd.CommandType = CommandType.Text; // Type of Sql statement
+            //OracleDataReader dr = cmd.ExecuteReader(); // Execute sql statement
+            //DataTable dt = new DataTable(); // Data table object
+            //dt.Load(dr); // Save executed sql statement
+            //dataGridView1.DataSource = dt.DefaultView;
+            //dr.Close();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace Oracle_App
 
         private void Reset_button_Click(object sender, EventArgs e)
         {
-            //ClearTextBoxes();
+            ClearTextBoxes();
             //Hire_Date_picker.Text = null;
             //Add_button.Enabled = true;
             //Update_button.Enabled = false;
@@ -173,27 +173,13 @@ namespace Oracle_App
             int index = e.RowIndex;
             if (index != -1) // Nhan vao header khong tinh
             {
-                //DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                //Employee_ID_textbox.Text = selectedRow.Cells[0].Value.ToString();
-                //Last_Name_textbox.Text = selectedRow.Cells[1].Value.ToString();
-                //Email_textbox.Text = selectedRow.Cells[2].Value.ToString();
-                //Job_ID_textbox.Text = selectedRow.Cells[3].Value.ToString();
-                //Hire_Date_picker.Text = selectedRow.Cells[4].Value.ToString();
-                ////Hire_Date_picker.Value = DateTime.Parse(selectedRow.Cells[4].Value.ToString());
+                DataGridViewRow selectedRow = dataGridView1.Rows[index];
+                User_textbox.Text = selectedRow.Cells[0].Value.ToString();
 
                 //Add_button.Enabled = false;
                 //Update_button.Enabled = true;
                 //Delete_button.Enabled = true;
             }
-        }
-
-        private void Form1_Click(object sender, EventArgs e)
-        {
-            //ClearTextBoxes();
-            //Hire_Date_picker.Text = null;
-            //Add_button.Enabled = true;
-            //Update_button.Enabled = false;
-            //Delete_button.Enabled = false;
         }
 
         private void View_user_button_Click(object sender, EventArgs e)
@@ -202,6 +188,21 @@ namespace Oracle_App
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "view_users"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_usersList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            dataGridView1.DataSource = dt.DefaultView;
+        }
+
+        private void View_privilege_button_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_privi"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("in_user", OracleDbType.Varchar2, 30).Value = User_textbox.Text;
             cmd.Parameters.Add("T_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
             da.SelectCommand = cmd;
