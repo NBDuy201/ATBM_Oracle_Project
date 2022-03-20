@@ -182,7 +182,7 @@ namespace Oracle_App
             }
         }
 
-        private void View_user_button_Click(object sender, EventArgs e)
+        private void View_user_button_Click1(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
@@ -194,6 +194,20 @@ namespace Oracle_App
             DataTable dt = new DataTable(); // Data table object
             da.Fill(dt);
             dataGridView1.DataSource = dt.DefaultView;
+        }
+
+        private void View_user_button_Click2(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_users"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_usersList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            dataGridView2.DataSource = dt.DefaultView;
         }
 
         private void View_privilege_button_Click(object sender, EventArgs e)
