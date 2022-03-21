@@ -45,19 +45,6 @@ CREATE TABLE "NHÂNVIÊN"
       REFERENCES "CSYT"("MÃCSYT")
 );
 
-CREATE TABLE "HSBA_DV" 
-(
-  "MÃHSBA" varchar2(30),
-  "MÃDV" varchar2(30),
-  "NGÀY" date,
-  "MÃKTV" varchar2(30),
-  "KẾTQUẢ" nvarchar2(250),
-  PRIMARY KEY ("MÃHSBA", "MÃDV", "NGÀY"),
-  CONSTRAINT "FK_HSBA_DV.MÃKTV"
-    FOREIGN KEY ("MÃKTV")
-      REFERENCES "NHÂNVIÊN"("MÃNV")
-);
-
 CREATE TABLE "HSBA" 
 (
   "MÃHSBA" varchar2(30),
@@ -69,9 +56,6 @@ CREATE TABLE "HSBA"
   "MÃCSYT" varchar2(30),
   "KẾTLUẬN" nvarchar2(250),
   PRIMARY KEY ("MÃHSBA"),
-  CONSTRAINT "FK_HSBA.MÃHSBA"
-    FOREIGN KEY ("MÃHSBA")
-      REFERENCES "HSBA_DV"("MÃHSBA"),
   CONSTRAINT "FK_HSBA.MÃBN"
     FOREIGN KEY ("MÃBN")
       REFERENCES "BỆNHNHÂN"("MÃBN"),
@@ -80,3 +64,18 @@ CREATE TABLE "HSBA"
       REFERENCES "CSYT"("MÃCSYT")
 );
 
+CREATE TABLE "HSBA_DV" 
+(
+  "MÃHSBA" varchar2(30),
+  "MÃDV" varchar2(30),
+  "NGÀY" date,
+  "MÃKTV" varchar2(30),
+  "KẾTQUẢ" nvarchar2(250),
+  PRIMARY KEY ("MÃHSBA", "MÃDV", "NGÀY"),
+  CONSTRAINT "FK_HSBA_DV.MÃKTV"
+    FOREIGN KEY ("MÃKTV")
+      REFERENCES "NHÂNVIÊN"("MÃNV"),
+  CONSTRAINT "FK_HSBA_DV.MÃHSBA"
+    FOREIGN KEY ("MÃHSBA")
+      REFERENCES "HSBA"("MÃHSBA")
+);
