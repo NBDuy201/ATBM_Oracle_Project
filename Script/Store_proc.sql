@@ -49,7 +49,7 @@ Begin
 End;
 /
 
-exec Grant_NewUser ('PHUC123','123');
+exec Grant_NewUser ('Tuan123','123');
 
 --Cau 3 Delete User
 create or replace procedure Drop_User (User_Name in varchar2)
@@ -67,7 +67,7 @@ else
 End;
 /
 
-exec Drop_User('PHUC123');
+exec Drop_User('Tuan123');
 
 --Cau 3 Create role
 create or replace procedure Create_Role (Role_Name in varchar2,Pass_Word in varchar2)
@@ -86,7 +86,7 @@ Begin
 End;
 /
 
-exec Create_Role('PHUC123','123');
+exec Create_Role('Tuanrole','123');
 
 --delete role
 CREATE OR REPLACE PROCEDURE Delete_Role (p_role IN VARCHAR2)
@@ -98,6 +98,39 @@ BEGIN
 END ;
 /
 
-exec Delete_Role ('PHUC123');
+exec Delete_Role ('Tuanrole');
 
---drop PROCEDURE  Delete_Role;
+--Cau 3 Doi password user:
+create or replace procedure Alter_User(User_name in varchar2,Pass_Word in varchar2)
+authid current_user
+is
+    Tmp_count int;
+    Tmp_query varchar2(100);
+begin
+    select count(*) into Tmp_count from all_users where username=User_name;
+    if(Tmp_count!=0)then
+    Tmp_query :='ALTER USER '|| User_name||' IDENTIFIED BY '||Pass_Word;
+    execute immediate(Tmp_query);
+    else
+    RAISE_APPLICATION_ERROR(-20000, 'User da ton tai');
+    end if;
+end;
+/
+
+exec Alter_User('Tuan1234', '123');
+
+-- Cau 3 Hieu chinh role
+create or replace procedure Alter_Role (Role_name in varchar2, Pass_Word in varchar2)
+authid current_user
+is
+    Tmp_count int;
+    Tmp_query varchar2(100);
+begin
+    if(Pass_Word=' ') then
+    Tmp_query := 'ALTER ROLE '|| Role_Name|| ' Not IDENTIFIED';
+    execute immediate(Tmp_query);
+    elsif(pass_word!=' ') then
+    Tmp_query := 'ALTER ROLE '|| Role_Name|| ' IDENTIFIED BY'|| Pass_Word;
+    end if;
+end;
+/
