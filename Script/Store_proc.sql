@@ -1,4 +1,4 @@
--- Cau 1
+-- Cau 1 --
 CREATE OR REPLACE PROCEDURE view_users
 (
     out_usersList out SYS_REFCURSOR
@@ -7,10 +7,12 @@ AS
 BEGIN
     Open out_usersList for
         select *
-        from all_users;
-END;
+        from all_users
+        where COMMON != 'YES';
+END view_users;
+/
 
--- Cau 2
+-- Cau 2 --
 CREATE OR REPLACE PROCEDURE view_privi
 (
 	in_user in VARCHAR2,
@@ -29,9 +31,10 @@ BEGIN
     Open out_priviList for sql_str;
     End;
 END view_privi;
+/
 
--- cho phép tạo mới user --
---Cau3 create User
+-- Cau 3 --
+-- create User
 create or replace procedure Grant_NewUser(User_name in varchar2,Pass_Word in varchar2)
 authid current_user 
 is
@@ -49,9 +52,7 @@ Begin
 End;
 /
 
-exec Grant_NewUser ('PHUC123','123');
-
---Cau 3 Delete User
+-- Delete User
 create or replace procedure Drop_User (User_Name in varchar2)
 authid current_user is
     Tmp_query varchar(100);
@@ -67,9 +68,20 @@ else
 End;
 /
 
-exec Drop_User('PHUC123');
+CREATE OR REPLACE PROCEDURE view_roles
+(
+    out_rolesList out SYS_REFCURSOR
+)
+AUTHID CURRENT_USER
+AS
+    sql_str varchar(500);
+BEGIN
+    sql_str := 'select * from DBA_ROLES where COMMON != ''YES''';
+    Open out_rolesList for sql_str;
+END view_roles;
+/
 
---Cau 3 Create role
+-- Create role
 create or replace procedure Create_Role (Role_Name in varchar2,Pass_Word in varchar2)
 authid current_user is
     Tmp_query varchar(100);
@@ -86,9 +98,7 @@ Begin
 End;
 /
 
-exec Create_Role('PHUC123','123');
-
---delete role
+-- Delete role
 CREATE OR REPLACE PROCEDURE Delete_Role (p_role IN VARCHAR2)
 IS
     temp_query varchar(300);
@@ -97,7 +107,3 @@ BEGIN
     EXECUTE IMMEDIATE (temp_query);
 END ;
 /
-
-exec Delete_Role ('PHUC123');
-
---drop PROCEDURE  Delete_Role;
