@@ -182,31 +182,43 @@ namespace Oracle_App
             }
         }
 
-        private void View_user_button_Click1(object sender, EventArgs e)
+        private DataTable LoadUser()
         {
-            OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "view_users"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
             cmd.Parameters.Add("out_usersList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
+            OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
             DataTable dt = new DataTable(); // Data table object
             da.Fill(dt);
+            return dt;
+        }
+
+        private DataTable LoadRole()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_roles"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_rolesList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
+        private void View_user_button_Click1(object sender, EventArgs e)
+        {
+            DataTable dt = LoadUser(); // Data table object
             dataGridView1.DataSource = dt.DefaultView;
         }
 
         private void View_user_button_Click2(object sender, EventArgs e)
         {
-            OracleDataAdapter da = new OracleDataAdapter();
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "view_users"; // Sql statement
-            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("out_usersList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
-
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable(); // Data table object
-            da.Fill(dt);
+            DataTable dt = LoadUser(); // Data table object
             dataGridView2.DataSource = dt.DefaultView;
         }
 
@@ -223,6 +235,91 @@ namespace Oracle_App
             DataTable dt = new DataTable(); // Data table object
             da.Fill(dt);
             dataGridView1.DataSource = dt.DefaultView;
+        }
+
+        private void Create_user_button2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Grant_NewUser"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox1_tab2.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                //MessageBox.Show(n.ToString());
+                if (n != 0)
+                {
+                    MessageBox.Show("User Created");
+                    DataTable dt = LoadUser(); // Data table object
+                    dataGridView2.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
+        }
+
+        private void Delete_user_button2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Drop_User"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                //MessageBox.Show(n.ToString());
+                if (n != 0)
+                {
+                    MessageBox.Show("User dropped");
+                    DataTable dt = LoadUser(); // Data table object
+                    dataGridView2.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
+        }
+
+        private void View_role_button2_Click(object sender, EventArgs e)
+        {
+            DataTable dt = LoadRole(); // Data table object
+            dataGridView3.DataSource = dt.DefaultView;
+        }
+
+        private void Create_role_button2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Create_Role"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("Role_Name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+
+            da.SelectCommand = cmd;
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index != -1) // Nhan vao header khong tinh
+            {
+                DataGridViewRow selectedRow = dataGridView2.Rows[index];
+                User_textbox_tab2.Text = selectedRow.Cells[0].Value.ToString();
+
+                //Add_button.Enabled = false;
+                //Update_button.Enabled = true;
+                //Delete_button.Enabled = true;
+            }
         }
     }
 }

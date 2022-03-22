@@ -41,30 +41,32 @@ namespace Oracle_App
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.Password_tab2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.User_tab2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.View_user_button2 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Create_user_button2 = new System.Windows.Forms.Button();
-            this.user_pass_group2 = new System.Windows.Forms.GroupBox();
-            this.Delete_user_button2 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Role_group2 = new System.Windows.Forms.GroupBox();
             this.Drop_role_button2 = new System.Windows.Forms.Button();
             this.Create_role_button2 = new System.Windows.Forms.Button();
             this.View_role_button2 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.Role_textbox_tab2 = new System.Windows.Forms.TextBox();
             this.Role_label2 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.user_pass_group2 = new System.Windows.Forms.GroupBox();
+            this.Delete_user_button2 = new System.Windows.Forms.Button();
+            this.Password_label1_tab2 = new System.Windows.Forms.Label();
+            this.Create_user_button2 = new System.Windows.Forms.Button();
+            this.View_user_button2 = new System.Windows.Forms.Button();
+            this.User_textbox_tab2 = new System.Windows.Forms.TextBox();
+            this.User_tab2 = new System.Windows.Forms.Label();
+            this.Pass_textbox1_tab2 = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Pass_textbox2_tab2 = new System.Windows.Forms.TextBox();
+            this.Password_label2_tab2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.user_pass_group2.SuspendLayout();
-            this.Role_group2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.Role_group2.SuspendLayout();
+            this.user_pass_group2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -204,103 +206,22 @@ namespace Oracle_App
             this.tabPage2.Text = "Create new user";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // Password_tab2
+            // dataGridView3
             // 
-            this.Password_tab2.AutoSize = true;
-            this.Password_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_tab2.Location = new System.Drawing.Point(248, 21);
-            this.Password_tab2.Name = "Password_tab2";
-            this.Password_tab2.Size = new System.Drawing.Size(78, 20);
-            this.Password_tab2.TabIndex = 21;
-            this.Password_tab2.Text = "Password";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(332, 17);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(186, 26);
-            this.textBox2.TabIndex = 20;
-            // 
-            // User_tab2
-            // 
-            this.User_tab2.AutoSize = true;
-            this.User_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_tab2.Location = new System.Drawing.Point(6, 23);
-            this.User_tab2.Name = "User_tab2";
-            this.User_tab2.Size = new System.Drawing.Size(43, 20);
-            this.User_tab2.TabIndex = 18;
-            this.User_tab2.Text = "User";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(55, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 26);
-            this.textBox1.TabIndex = 17;
-            // 
-            // View_user_button2
-            // 
-            this.View_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_user_button2.Location = new System.Drawing.Point(10, 57);
-            this.View_user_button2.Name = "View_user_button2";
-            this.View_user_button2.Size = new System.Drawing.Size(91, 33);
-            this.View_user_button2.TabIndex = 16;
-            this.View_user_button2.Text = "View User";
-            this.View_user_button2.UseVisualStyleBackColor = true;
-            this.View_user_button2.Click += new System.EventHandler(this.View_user_button_Click2);
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 102);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(526, 425);
-            this.dataGridView2.TabIndex = 15;
-            // 
-            // Create_user_button2
-            // 
-            this.Create_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_user_button2.Location = new System.Drawing.Point(203, 57);
-            this.Create_user_button2.Name = "Create_user_button2";
-            this.Create_user_button2.Size = new System.Drawing.Size(105, 33);
-            this.Create_user_button2.TabIndex = 22;
-            this.Create_user_button2.Text = "Create User";
-            this.Create_user_button2.UseVisualStyleBackColor = true;
-            // 
-            // user_pass_group2
-            // 
-            this.user_pass_group2.Controls.Add(this.Delete_user_button2);
-            this.user_pass_group2.Controls.Add(this.Password_tab2);
-            this.user_pass_group2.Controls.Add(this.Create_user_button2);
-            this.user_pass_group2.Controls.Add(this.View_user_button2);
-            this.user_pass_group2.Controls.Add(this.textBox1);
-            this.user_pass_group2.Controls.Add(this.User_tab2);
-            this.user_pass_group2.Controls.Add(this.textBox2);
-            this.user_pass_group2.Location = new System.Drawing.Point(5, 6);
-            this.user_pass_group2.Name = "user_pass_group2";
-            this.user_pass_group2.Size = new System.Drawing.Size(527, 90);
-            this.user_pass_group2.TabIndex = 23;
-            this.user_pass_group2.TabStop = false;
-            this.user_pass_group2.Text = "User/password";
-            // 
-            // Delete_user_button2
-            // 
-            this.Delete_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_user_button2.Location = new System.Drawing.Point(413, 57);
-            this.Delete_user_button2.Name = "Delete_user_button2";
-            this.Delete_user_button2.Size = new System.Drawing.Size(105, 33);
-            this.Delete_user_button2.TabIndex = 23;
-            this.Delete_user_button2.Text = "Delete User";
-            this.Delete_user_button2.UseVisualStyleBackColor = true;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(547, 102);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(527, 425);
+            this.dataGridView3.TabIndex = 25;
             // 
             // Role_group2
             // 
+            this.Role_group2.Controls.Add(this.Pass_textbox2_tab2);
+            this.Role_group2.Controls.Add(this.Password_label2_tab2);
             this.Role_group2.Controls.Add(this.Drop_role_button2);
             this.Role_group2.Controls.Add(this.Create_role_button2);
             this.Role_group2.Controls.Add(this.View_role_button2);
-            this.Role_group2.Controls.Add(this.textBox3);
+            this.Role_group2.Controls.Add(this.Role_textbox_tab2);
             this.Role_group2.Controls.Add(this.Role_label2);
             this.Role_group2.Location = new System.Drawing.Point(547, 6);
             this.Role_group2.Name = "Role_group2";
@@ -328,6 +249,7 @@ namespace Oracle_App
             this.Create_role_button2.TabIndex = 22;
             this.Create_role_button2.Text = "Create Role";
             this.Create_role_button2.UseVisualStyleBackColor = true;
+            this.Create_role_button2.Click += new System.EventHandler(this.Create_role_button2_Click);
             // 
             // View_role_button2
             // 
@@ -338,14 +260,15 @@ namespace Oracle_App
             this.View_role_button2.TabIndex = 16;
             this.View_role_button2.Text = "View Role";
             this.View_role_button2.UseVisualStyleBackColor = true;
+            this.View_role_button2.Click += new System.EventHandler(this.View_role_button2_Click);
             // 
-            // textBox3
+            // Role_textbox_tab2
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(55, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(463, 26);
-            this.textBox3.TabIndex = 17;
+            this.Role_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Role_textbox_tab2.Location = new System.Drawing.Point(55, 19);
+            this.Role_textbox_tab2.Name = "Role_textbox_tab2";
+            this.Role_textbox_tab2.Size = new System.Drawing.Size(174, 26);
+            this.Role_textbox_tab2.TabIndex = 17;
             // 
             // Role_label2
             // 
@@ -357,13 +280,118 @@ namespace Oracle_App
             this.Role_label2.TabIndex = 18;
             this.Role_label2.Text = "Role";
             // 
-            // dataGridView3
+            // user_pass_group2
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(547, 102);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(527, 425);
-            this.dataGridView3.TabIndex = 25;
+            this.user_pass_group2.Controls.Add(this.Delete_user_button2);
+            this.user_pass_group2.Controls.Add(this.Password_label1_tab2);
+            this.user_pass_group2.Controls.Add(this.Create_user_button2);
+            this.user_pass_group2.Controls.Add(this.View_user_button2);
+            this.user_pass_group2.Controls.Add(this.User_textbox_tab2);
+            this.user_pass_group2.Controls.Add(this.User_tab2);
+            this.user_pass_group2.Controls.Add(this.Pass_textbox1_tab2);
+            this.user_pass_group2.Location = new System.Drawing.Point(5, 6);
+            this.user_pass_group2.Name = "user_pass_group2";
+            this.user_pass_group2.Size = new System.Drawing.Size(527, 90);
+            this.user_pass_group2.TabIndex = 23;
+            this.user_pass_group2.TabStop = false;
+            this.user_pass_group2.Text = "User/password";
+            // 
+            // Delete_user_button2
+            // 
+            this.Delete_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_user_button2.Location = new System.Drawing.Point(413, 57);
+            this.Delete_user_button2.Name = "Delete_user_button2";
+            this.Delete_user_button2.Size = new System.Drawing.Size(105, 33);
+            this.Delete_user_button2.TabIndex = 23;
+            this.Delete_user_button2.Text = "Delete User";
+            this.Delete_user_button2.UseVisualStyleBackColor = true;
+            this.Delete_user_button2.Click += new System.EventHandler(this.Delete_user_button2_Click);
+            // 
+            // Password_label1_tab2
+            // 
+            this.Password_label1_tab2.AutoSize = true;
+            this.Password_label1_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_label1_tab2.Location = new System.Drawing.Point(248, 21);
+            this.Password_label1_tab2.Name = "Password_label1_tab2";
+            this.Password_label1_tab2.Size = new System.Drawing.Size(78, 20);
+            this.Password_label1_tab2.TabIndex = 21;
+            this.Password_label1_tab2.Text = "Password";
+            // 
+            // Create_user_button2
+            // 
+            this.Create_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Create_user_button2.Location = new System.Drawing.Point(203, 57);
+            this.Create_user_button2.Name = "Create_user_button2";
+            this.Create_user_button2.Size = new System.Drawing.Size(105, 33);
+            this.Create_user_button2.TabIndex = 22;
+            this.Create_user_button2.Text = "Create User";
+            this.Create_user_button2.UseVisualStyleBackColor = true;
+            this.Create_user_button2.Click += new System.EventHandler(this.Create_user_button2_Click);
+            // 
+            // View_user_button2
+            // 
+            this.View_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.View_user_button2.Location = new System.Drawing.Point(10, 57);
+            this.View_user_button2.Name = "View_user_button2";
+            this.View_user_button2.Size = new System.Drawing.Size(91, 33);
+            this.View_user_button2.TabIndex = 16;
+            this.View_user_button2.Text = "View User";
+            this.View_user_button2.UseVisualStyleBackColor = true;
+            this.View_user_button2.Click += new System.EventHandler(this.View_user_button_Click2);
+            // 
+            // User_textbox_tab2
+            // 
+            this.User_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_textbox_tab2.Location = new System.Drawing.Point(55, 19);
+            this.User_textbox_tab2.Name = "User_textbox_tab2";
+            this.User_textbox_tab2.Size = new System.Drawing.Size(186, 26);
+            this.User_textbox_tab2.TabIndex = 17;
+            // 
+            // User_tab2
+            // 
+            this.User_tab2.AutoSize = true;
+            this.User_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_tab2.Location = new System.Drawing.Point(6, 23);
+            this.User_tab2.Name = "User_tab2";
+            this.User_tab2.Size = new System.Drawing.Size(43, 20);
+            this.User_tab2.TabIndex = 18;
+            this.User_tab2.Text = "User";
+            // 
+            // Pass_textbox1_tab2
+            // 
+            this.Pass_textbox1_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pass_textbox1_tab2.Location = new System.Drawing.Point(332, 17);
+            this.Pass_textbox1_tab2.Name = "Pass_textbox1_tab2";
+            this.Pass_textbox1_tab2.Size = new System.Drawing.Size(186, 26);
+            this.Pass_textbox1_tab2.TabIndex = 20;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(6, 102);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(526, 425);
+            this.dataGridView2.TabIndex = 15;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // Pass_textbox2_tab2
+            // 
+            this.Pass_textbox2_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Pass_textbox2_tab2.Location = new System.Drawing.Point(335, 19);
+            this.Pass_textbox2_tab2.Name = "Pass_textbox2_tab2";
+            this.Pass_textbox2_tab2.Size = new System.Drawing.Size(183, 26);
+            this.Pass_textbox2_tab2.TabIndex = 24;
+            // 
+            // Password_label2_tab2
+            // 
+            this.Password_label2_tab2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
+            this.Password_label2_tab2.AutoSize = true;
+            this.Password_label2_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Password_label2_tab2.Location = new System.Drawing.Point(251, 20);
+            this.Password_label2_tab2.Name = "Password_label2_tab2";
+            this.Password_label2_tab2.Size = new System.Drawing.Size(78, 20);
+            this.Password_label2_tab2.TabIndex = 25;
+            this.Password_label2_tab2.Text = "Password";
             // 
             // Form1
             // 
@@ -380,12 +408,12 @@ namespace Oracle_App
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.user_pass_group2.ResumeLayout(false);
-            this.user_pass_group2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.Role_group2.ResumeLayout(false);
             this.Role_group2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.user_pass_group2.ResumeLayout(false);
+            this.user_pass_group2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -404,10 +432,10 @@ namespace Oracle_App
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label Password_tab2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label Password_label1_tab2;
+        private System.Windows.Forms.TextBox Pass_textbox1_tab2;
         private System.Windows.Forms.Label User_tab2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox User_textbox_tab2;
         private System.Windows.Forms.Button View_user_button2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Button Create_user_button2;
@@ -418,8 +446,10 @@ namespace Oracle_App
         private System.Windows.Forms.Button Drop_role_button2;
         private System.Windows.Forms.Button Create_role_button2;
         private System.Windows.Forms.Button View_role_button2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox Role_textbox_tab2;
         private System.Windows.Forms.Label Role_label2;
+        private System.Windows.Forms.TextBox Pass_textbox2_tab2;
+        private System.Windows.Forms.Label Password_label2_tab2;
     }
 }
 
