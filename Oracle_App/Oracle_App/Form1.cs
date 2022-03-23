@@ -302,10 +302,24 @@ namespace Oracle_App
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Create_Role"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("Role_Name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
-            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+            cmd.Parameters.Add("Role_Name", OracleDbType.Varchar2, 100).Value = Role_textbox_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox2_tab2.Text;
 
-            da.SelectCommand = cmd;
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Role created");
+                    DataTable dt = LoadRole(); // Data table object
+                    dataGridView3.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -319,6 +333,68 @@ namespace Oracle_App
                 //Add_button.Enabled = false;
                 //Update_button.Enabled = true;
                 //Delete_button.Enabled = true;
+            }
+        }
+
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index != -1) // Nhan vao header khong tinh
+            {
+                DataGridViewRow selectedRow = dataGridView3.Rows[index];
+                SelectedRole_textbox2_tab2.Text = selectedRow.Cells[0].Value.ToString();
+            }
+        }
+
+        private void Drop_role_button2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Delete_Role"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("p_role", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox2_tab2.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                //MessageBox.Show(n.ToString());
+                if (n != 0)
+                {
+                    MessageBox.Show("Role dropped");
+                    DataTable dt = LoadRole(); // Data table object
+                    dataGridView3.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
+        }
+
+        private void ChangePass_button_tab2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Alter_Role"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("Role_name", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox2_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = NewPass_textbox_tab2.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Role altered");
+                    DataTable dt = LoadRole(); // Data table object
+                    dataGridView3.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
             }
         }
     }

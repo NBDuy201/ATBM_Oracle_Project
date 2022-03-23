@@ -86,9 +86,9 @@ create or replace procedure Create_Role (Role_Name in varchar2,Pass_Word in varc
 authid current_user is
     Tmp_query varchar(100);
 Begin
-    if(Pass_Word = ' ') 
+    if(Pass_Word is NULL) 
         then Tmp_query:='Create role '|| Role_Name;
-    elsif(pass_word!=' ') then 
+    else 
         Tmp_query:='Create role '|| Role_Name||' identified by '||Pass_Word;
     End if;
     execute IMMEDIATE (Tmp_query);
@@ -97,6 +97,8 @@ Begin
     RAISE_APPLICATION_ERROR(-20000,'Role da ton tai');
 End;
 /
+
+exec Create_Role('test', NULL);
 
 -- Delete role
 CREATE OR REPLACE PROCEDURE Delete_Role (p_role IN VARCHAR2)
@@ -108,7 +110,7 @@ BEGIN
 END ;
 /
 
--Cau 3 Doi password user:
+--Cau 3 Doi password user:
 create or replace procedure Alter_User(User_name in varchar2,Pass_Word in varchar2)
 authid current_user
 is
