@@ -274,3 +274,26 @@ end if;
 END IF;
 End;
 /
+
+-- cau 6
+CREATE OR REPLACE PROCEDURE View_User_SYS
+IS
+    c_ViewUser  SYS_REFCURSOR;
+BEGIN
+    OPEN c_ViewUser FOR
+    SELECT *
+    FROM dba_users
+    ORDER BY created;
+    dbms_sql.return_result(c_ViewUser);
+END;
+/
+
+create or replace procedure View_Object_Privs_Role(a_role in varchar2)
+as
+    p_table  SYS_REFCURSOR;
+Begin
+    OPEN p_table FOR SELECT * FROM ROLE_TAB_PRIVS WHERE ROLE_TAB_PRIVS.role = a_role; 
+    DBMS_SQL.RETURN_RESULT(p_table);
+commit;
+End;
+/
