@@ -244,7 +244,7 @@ namespace Oracle_App
             cmd.CommandText = "Grant_NewUser"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
             cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
-            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox1_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox_tab2.Text;
 
             try
             {
@@ -270,7 +270,7 @@ namespace Oracle_App
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Drop_User"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
+            cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = SelectedUser_textbox_tab2.Text;
 
             try
             {
@@ -290,20 +290,20 @@ namespace Oracle_App
             }
         }
 
-        private void View_role_button2_Click(object sender, EventArgs e)
+        private void View_role_button_Click(object sender, EventArgs e)
         {
             DataTable dt = LoadRole(); // Data table object
             dataGridView3.DataSource = dt.DefaultView;
         }
 
-        private void Create_role_button2_Click(object sender, EventArgs e)
+        private void Create_role_button_Click(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Create_Role"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("Role_Name", OracleDbType.Varchar2, 100).Value = Role_textbox_tab2.Text;
-            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox2_tab2.Text;
+            cmd.Parameters.Add("Role_Name", OracleDbType.Varchar2, 100).Value = Role_textbox_tab3.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox_tab3.Text;
 
             try
             {
@@ -328,7 +328,7 @@ namespace Oracle_App
             if (index != -1) // Nhan vao header khong tinh
             {
                 DataGridViewRow selectedRow = dataGridView2.Rows[index];
-                User_textbox_tab2.Text = selectedRow.Cells[0].Value.ToString();
+                SelectedUser_textbox_tab2.Text = selectedRow.Cells[0].Value.ToString();
 
                 //Add_button.Enabled = false;
                 //Update_button.Enabled = true;
@@ -342,17 +342,17 @@ namespace Oracle_App
             if (index != -1) // Nhan vao header khong tinh
             {
                 DataGridViewRow selectedRow = dataGridView3.Rows[index];
-                SelectedRole_textbox2_tab2.Text = selectedRow.Cells[0].Value.ToString();
+                SelectedRole_textbox_tab3.Text = selectedRow.Cells[0].Value.ToString();
             }
         }
 
-        private void Drop_role_button2_Click(object sender, EventArgs e)
+        private void Drop_role_button_Click(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Delete_Role"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("p_role", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox2_tab2.Text;
+            cmd.Parameters.Add("p_role", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox_tab3.Text;
 
             try
             {
@@ -372,14 +372,14 @@ namespace Oracle_App
             }
         }
 
-        private void ChangePass_button_tab2_Click(object sender, EventArgs e)
+        private void ChangePass_button_tab3_Click(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Alter_Role"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("Role_name", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox2_tab2.Text;
-            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = NewPass_textbox_tab2.Text;
+            cmd.Parameters.Add("Role_name", OracleDbType.Varchar2, 100).Value = SelectedRole_textbox_tab3.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = NewPass_textbox_tab3.Text;
 
             try
             {
@@ -389,6 +389,33 @@ namespace Oracle_App
                     MessageBox.Show("Role altered");
                     DataTable dt = LoadRole(); // Data table object
                     dataGridView3.DataSource = dt.DefaultView;
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
+        }
+
+        private void ChangePass_button_tab2_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Alter_User"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("Role_name", OracleDbType.Varchar2, 100).Value = SelectedUser_textbox_tab2.Text;
+            cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = NewPass_textbox_tab2.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                MessageBox.Show(n.ToString());
+                if (n != 0)
+                {
+                    MessageBox.Show("User altered");
+                    DataTable dt = LoadUser(); // Data table object
+                    dataGridView2.DataSource = dt.DefaultView;
                 }
             }
             catch (Exception exp)
