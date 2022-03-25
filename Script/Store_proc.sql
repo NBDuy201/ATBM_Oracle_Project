@@ -56,17 +56,20 @@ End;
 create or replace procedure Drop_User (User_Name in varchar2)
 authid current_user is
     Tmp_query varchar(100);
-    Tmp_count varchar(100);
+    Tmp_count int;
 Begin
     select count(*) into Tmp_count from all_users where username=User_name;
     if(Tmp_count!=0) then
-    Tmp_query:='Drop user '||User_Name; 
-    execute IMMEDIATE (Tmp_query);
-else 
-    RAISE_APPLICATION_ERROR(-20000,'User chua ton tai');
+        Tmp_query:='Drop user '||User_Name; 
+        execute IMMEDIATE (Tmp_query);
+    else 
+        RAISE_APPLICATION_ERROR(-20000,'User chua ton tai');
     end if;
 End;
 /
+
+--exec Drop_User('TEST');
+--Grant create session to TEST;
 
 CREATE OR REPLACE PROCEDURE view_roles
 (
@@ -86,9 +89,9 @@ create or replace procedure Create_Role (Role_Name in varchar2,Pass_Word in varc
 authid current_user is
     Tmp_query varchar(100);
 Begin
-    if(Pass_Word = ' ') 
+    if(Pass_Word is NULL) 
         then Tmp_query:='Create role '|| Role_Name;
-    elsif(pass_word!=' ') then 
+    else 
         Tmp_query:='Create role '|| Role_Name||' identified by '||Pass_Word;
     End if;
     execute IMMEDIATE (Tmp_query);
@@ -108,7 +111,7 @@ BEGIN
 END ;
 /
 
--Cau 3 Doi password user:
+--Cau 3 Doi password user:
 create or replace procedure Alter_User(User_name in varchar2,Pass_Word in varchar2)
 authid current_user
 is
@@ -117,26 +120,27 @@ is
 begin
     select count(*) into Tmp_count from all_users where username=User_name;
     if(Tmp_count!=0)then
-    Tmp_query :='ALTER USER '|| User_name||' IDENTIFIED BY '||Pass_Word;
-    execute immediate(Tmp_query);
+        Tmp_query :='ALTER USER '|| User_name||' IDENTIFIED BY '||Pass_Word;
+        execute immediate(Tmp_query);
     else
-    RAISE_APPLICATION_ERROR(-20000, 'User da ton tai');
+        RAISE_APPLICATION_ERROR(-20000, 'User khong ton tai');
     end if;
 end;
 /
+
+--exec Alter_User('TEST', 'abc');
 
 -- Cau 3 Hieu chinh role
 create or replace procedure Alter_Role (Role_name in varchar2, Pass_Word in varchar2)
 authid current_user
 is
-    Tmp_count int;
     Tmp_query varchar2(100);
 begin
-    if(Pass_Word=' ') then
-    Tmp_query := 'ALTER ROLE '|| Role_Name|| ' Not IDENTIFIED';
-    execute immediate(Tmp_query);
-    elsif(pass_word!=' ') then
-    Tmp_query := 'ALTER ROLE '|| Role_Name|| ' IDENTIFIED BY'|| Pass_Word;
+    if(Pass_Word is NULL) then
+        Tmp_query := 'ALTER ROLE '|| Role_Name|| ' Not IDENTIFIED';
+        execute immediate(Tmp_query);
+    else
+        Tmp_query := 'ALTER ROLE '|| Role_Name|| ' IDENTIFIED BY'|| Pass_Word;
     end if;
 end;
 /
