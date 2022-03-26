@@ -220,18 +220,20 @@ BEGIN
         EXECUTE IMMEDIATE ('grant ' || role_name || ' to ' || user_name);
     end if;
 END GRANT_ROLE_TO_USER;
+/
 
 -- cau 5 thu hoi quyen
 --Cau5 Thu hoi quyen trên User
-create or replace procedure Revoke_Privs_User(User_Name in varchar2, priv in varchar2)
-authid current_user is
+create or replace procedure Revoke_Privs_User(User_Name in varchar2, priv in varchar2, obj in varchar2)
+is
     Tmp_query varchar(100);
     Tmp_count int;
 exception_username exception;
 Begin
     select count(*) into Tmp_count from all_users where UserName = User_Name;
     if(Tmp_count != 0) then
-        Tmp_query := 'REVOKE '||priv||' FROM ' ||User_name;
+        Tmp_query := 'REVOKE '||priv||' on '||obj||' FROM '||User_name;
+        --DBMS_OUTPUT.put_line(Tmp_query);
         execute IMMEDIATE (Tmp_query);
     elsif(Tmp_count=0) then
         raise exception_username;
@@ -246,38 +248,50 @@ Exception
 END IF;
 End;
 /
+grant select on CSYT TO GIAOVU;
+Exec Revoke_Privs_User('GIAOVU', 'SELECT', 'CSYT');
 
 --Cau5/* Thu hoi quyen he thong cua 1 role*/
-create or replace procedure Revoke_Privs_Role(a_role in varchar2, a_priv in varchar2)
+create or replace procedure Revoke_Privs_Role(a_role in varchar2, a_priv in varchar2, a_obj in varchar2)
 authid current_user is
     Tmp_query varchar(100);
-    Tmp_count int;
-    Tmp_count2 int;
-exception_priv exception;
-exception_role exception;
+--    Tmp_count int;
+--    Tmp_count2 int;
+--    exception_priv exception;
+--    exception_role exception;
 Begin
-    select count(*) into Tmp_count from role_sys_privs where a_priv = role_sys_privs.privilege;
-    select count(*) into Tmp_count2 from role_sys_privs where a_role = role_sys_privs.role;
-    if(Tmp_count != 0 AND Tmp_count2 != 0) then
-    Tmp_query := 'REVOKE '||a_priv||' FROM ' ||a_role;
-    execute IMMEDIATE (Tmp_query);
-    elsif(Tmp_count=0) then
-    raise exception_priv;
-    elsif(Tmp_count2=0) then
-    raise exception_role;
-end if;
+    --select count(*) into Tmp_count from role_sys_privs where a_priv = role_sys_privs.privilege;
+    --select count(*) into Tmp_count2 from role_sys_privs where a_role = role_sys_privs.role;
+--    if(Tmp_count != 0 AND Tmp_count2 != 0) then
+--        Tmp_query := 'REVOKE '||a_priv||'on '||a_obj||' FROM '||a_role;
+--        execute IMMEDIATE (Tmp_query);
+--    elsif(Tmp_count=0) then
+--        raise exception_priv;
+--    elsif(Tmp_count2=0) then
+--        raise exception_role;
+--    end if;
+--    
+--    Tmp_query := 'REVOKE '||a_priv||'on '||a_obj||' FROM '||a_role;
+--    execute IMMEDIATE (Tmp_query);
+--    
+--    Exception 
+--    when exception_priv then 
+--        RAISE_APPLICATION_ERROR(-20000,'Privilege chua ton tai.');
+--    when exception_role then
+--        RAISE_APPLICATION_ERROR(-20000,'Role chua ton tai.');
+--    WHEN OTHERS THEN
+--        IF SQLCODE != -942 THEN
+--            RAISE;
+--        END IF;
+--    End;
 
-    Exception 
-    when exception_priv then 
-    RAISE_APPLICATION_ERROR(-20000,'Privilege chua ton tai.');
-    when exception_role then
-    RAISE_APPLICATION_ERROR(-20000,'Username chua ton tai.');
-    WHEN OTHERS THEN
-        IF SQLCODE != -942 THEN
-        RAISE;
-END IF;
+    Tmp_query := 'REVOKE '||a_priv||' on '||a_obj||' FROM '||a_role;
+    --dbms_output.put_line(Tmp_query);
+    execute IMMEDIATE (Tmp_query);
 End;
 /
+--grant select on CSYT TO GIAOVIEN;
+--Exec Revoke_Privs_Role('GIAOVIEN', 'SELECT', 'CSYT');
 
 -- cau 6
 CREATE OR REPLACE PROCEDURE View_User_SYS
