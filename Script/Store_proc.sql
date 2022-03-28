@@ -314,3 +314,16 @@ Begin
 commit;
 End;
 /
+
+-- cau 7 --
+CREATE OR REPLACE PROCEDURE update_priv (old_priv IN VARCHAR2, tab_name IN VARCHAR2, username IN VARCHAR2, new_priv IN VARCHAR2)
+IS
+    temp VARCHAR2(50);
+    temp2 VARCHAR2(50);
+BEGIN
+    temp:= 'REVOKE ' || old_priv || ' ON ' || tab_name || ' FROM ' || username;
+    EXECUTE IMMEDIATE(temp);
+    temp2:= 'GRANT ' || new_priv || ' ON ' || tab_name || ' TO ' || username;
+    EXECUTE IMMEDIATE(temp2);
+END;
+/
