@@ -156,7 +156,7 @@ BEGIN
         return;
    	end if;
 
-    if  n_pri = 'UPDATE' then
+    if  n_pri = 'UPDATE' and n_pri = 'SELECT' then
         if n_option = 'TRUE' then
             EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name || ' with grant option');
         else
@@ -195,7 +195,7 @@ CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_ROLE(role_name IN NVARCHAR2, n_pri 
 IS
 BEGIN
 
-    if  n_pri = 'UPDATE' then
+    if  n_pri = 'UPDATE' and n_pri = 'SELECT' then
         EXECUTE IMMEDIATE ('grant ' || n_pri || ' (' || n_col || ') ' || ' on ' || n_tab || ' to ' || role_name);
     else
         EXECUTE IMMEDIATE ('grant ' || n_pri || ' on ' || n_tab || ' to ' || role_name);
