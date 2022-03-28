@@ -145,7 +145,6 @@ begin
 end;
 /
 
----- CHUA TEST ------
 -- Cau 4 Cap quyen cho user
 CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_USER(user_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_col IN NVARCHAR2, n_tab IN NVARCHAR2, n_option IN NVARCHAR2)
 IS
@@ -159,15 +158,15 @@ BEGIN
 
     if  n_pri = 'UPDATE' then
         if n_option = 'TRUE' then
-            EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on sys.' || n_tab || ' to ' || user_name || ' with grant option');
+            EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name || ' with grant option');
         else
-            EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on sys.' || n_tab || ' to ' || user_name);
+            EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name);
         end if;
     else
         if n_option = 'TRUE' then
-            EXECUTE IMMEDIATE ('grant ' || n_pri || ' on sys.' || n_tab || ' to ' || user_name || ' with grant option');
+            EXECUTE IMMEDIATE ('grant ' || n_pri || ' on ' || n_tab || ' to ' || user_name || ' with grant option');
         else
-            EXECUTE IMMEDIATE ('grant ' || n_pri || ' on sys.' || n_tab || ' to ' || user_name);
+            EXECUTE IMMEDIATE ('grant ' || n_pri || ' on ' || n_tab || ' to ' || user_name);
         end if; 
     end if;
 END  GRANT_PRIVILEGES_USER;
@@ -197,9 +196,9 @@ IS
 BEGIN
 
     if  n_pri = 'UPDATE' then
-        EXECUTE IMMEDIATE ('grant ' || n_pri || ' (' || n_col || ') ' || ' on sys.' || n_tab || ' to ' || role_name);
+        EXECUTE IMMEDIATE ('grant ' || n_pri || ' (' || n_col || ') ' || ' on ' || n_tab || ' to ' || role_name);
     else
-        EXECUTE IMMEDIATE ('grant ' || n_pri || ' on sys.' || n_tab || ' to ' || role_name);
+        EXECUTE IMMEDIATE ('grant ' || n_pri || ' on ' || n_tab || ' to ' || role_name);
     end if;
 END  GRANT_PRIVILEGES_ROLE;
 /
