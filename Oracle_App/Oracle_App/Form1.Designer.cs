@@ -85,6 +85,44 @@ namespace Oracle_App
             this.RevokeUser_btn_tab4 = new System.Windows.Forms.Button();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.ViewPrivUser_btn_tab4 = new System.Windows.Forms.Button();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.wgo_chckBox3_Obj_tab5 = new System.Windows.Forms.CheckBox();
+            this.User_txtBox3_tab5 = new System.Windows.Forms.TextBox();
+            this.Grant_btn3_tab5 = new System.Windows.Forms.Button();
+            this.Role_txtBox3_tab5 = new System.Windows.Forms.TextBox();
+            this.Role_label3_tab5 = new System.Windows.Forms.Label();
+            this.User_label3_tab5 = new System.Windows.Forms.Label();
+            this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.wgo_chckBox2_Obj_tab5 = new System.Windows.Forms.CheckBox();
+            this.User_Role_txtBox2_tab5 = new System.Windows.Forms.TextBox();
+            this.Grant_btn2_tab5 = new System.Windows.Forms.Button();
+            this.Priv_txtBox2_tab5 = new System.Windows.Forms.TextBox();
+            this.Priv_label2_tab5 = new System.Windows.Forms.Label();
+            this.User_Role_label2_tab5 = new System.Windows.Forms.Label();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.wgo_chckBox1_tab5 = new System.Windows.Forms.CheckBox();
+            this.User_Role_txtBox_tab5 = new System.Windows.Forms.TextBox();
+            this.Grant_btn1_tab5 = new System.Windows.Forms.Button();
+            this.Table_View_SP_txtBoxl_tab5 = new System.Windows.Forms.TextBox();
+            this.Column_txtbox_tab5 = new System.Windows.Forms.TextBox();
+            this.Table_View_SP_label_tab5 = new System.Windows.Forms.Label();
+            this.Column_label_tab5 = new System.Windows.Forms.Label();
+            this.User_Role_label_tab5 = new System.Windows.Forms.Label();
+            this.Priv_label_tab5 = new System.Windows.Forms.Label();
+            this.Priv_comboBox_tab5 = new System.Windows.Forms.ComboBox();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.User_Role_txtBox3_tab5 = new System.Windows.Forms.TextBox();
+            this.User_Role_label3_tab5 = new System.Windows.Forms.Label();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.ViewPrivUser_Role_btn_tab5 = new System.Windows.Forms.Button();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.ShowSP_btn_tab5 = new System.Windows.Forms.Button();
+            this.dataGridView7 = new System.Windows.Forms.DataGridView();
+            this.ShowView_btn_tab5 = new System.Windows.Forms.Button();
+            this.ShowTable_btn_tab5 = new System.Windows.Forms.Button();
+            this.ViewSysPriv_btn_tab5 = new System.Windows.Forms.Button();
+            this.ViewGrantedRole_btn_tab5 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -101,6 +139,14 @@ namespace Oracle_App
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            this.groupBox9.SuspendLayout();
+            this.groupBox8.SuspendLayout();
+            this.groupBox7.SuspendLayout();
+            this.groupBox5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -202,6 +248,7 @@ namespace Oracle_App
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(3, 12);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -704,14 +751,420 @@ namespace Oracle_App
             this.ViewPrivUser_btn_tab4.UseVisualStyleBackColor = true;
             this.ViewPrivUser_btn_tab4.Click += new System.EventHandler(this.ViewPrivUser_btn_tab4_Click);
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.groupBox9);
+            this.tabPage5.Controls.Add(this.groupBox8);
+            this.tabPage5.Controls.Add(this.groupBox7);
+            this.tabPage5.Controls.Add(this.groupBox5);
+            this.tabPage5.Controls.Add(this.groupBox6);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Grant";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // groupBox9
+            // 
+            this.groupBox9.Controls.Add(this.wgo_chckBox3_Obj_tab5);
+            this.groupBox9.Controls.Add(this.User_txtBox3_tab5);
+            this.groupBox9.Controls.Add(this.Grant_btn3_tab5);
+            this.groupBox9.Controls.Add(this.Role_txtBox3_tab5);
+            this.groupBox9.Controls.Add(this.Role_label3_tab5);
+            this.groupBox9.Controls.Add(this.User_label3_tab5);
+            this.groupBox9.Location = new System.Drawing.Point(6, 359);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.Size = new System.Drawing.Size(297, 142);
+            this.groupBox9.TabIndex = 46;
+            this.groupBox9.TabStop = false;
+            this.groupBox9.Text = "Gran Role To User";
+            // 
+            // wgo_chckBox3_Obj_tab5
+            // 
+            this.wgo_chckBox3_Obj_tab5.AutoSize = true;
+            this.wgo_chckBox3_Obj_tab5.Location = new System.Drawing.Point(75, 83);
+            this.wgo_chckBox3_Obj_tab5.Name = "wgo_chckBox3_Obj_tab5";
+            this.wgo_chckBox3_Obj_tab5.Size = new System.Drawing.Size(108, 17);
+            this.wgo_chckBox3_Obj_tab5.TabIndex = 45;
+            this.wgo_chckBox3_Obj_tab5.Text = "with admin option";
+            this.wgo_chckBox3_Obj_tab5.UseVisualStyleBackColor = true;
+            // 
+            // User_txtBox3_tab5
+            // 
+            this.User_txtBox3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_txtBox3_tab5.Location = new System.Drawing.Point(75, 19);
+            this.User_txtBox3_tab5.Name = "User_txtBox3_tab5";
+            this.User_txtBox3_tab5.Size = new System.Drawing.Size(217, 26);
+            this.User_txtBox3_tab5.TabIndex = 23;
+            // 
+            // Grant_btn3_tab5
+            // 
+            this.Grant_btn3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grant_btn3_tab5.Location = new System.Drawing.Point(74, 106);
+            this.Grant_btn3_tab5.Name = "Grant_btn3_tab5";
+            this.Grant_btn3_tab5.Size = new System.Drawing.Size(78, 30);
+            this.Grant_btn3_tab5.TabIndex = 43;
+            this.Grant_btn3_tab5.Text = "Grant";
+            this.Grant_btn3_tab5.UseVisualStyleBackColor = true;
+            this.Grant_btn3_tab5.Click += new System.EventHandler(this.Grant_btn3_tab5_Click);
+            // 
+            // Role_txtBox3_tab5
+            // 
+            this.Role_txtBox3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Role_txtBox3_tab5.Location = new System.Drawing.Point(75, 51);
+            this.Role_txtBox3_tab5.Name = "Role_txtBox3_tab5";
+            this.Role_txtBox3_tab5.Size = new System.Drawing.Size(217, 26);
+            this.Role_txtBox3_tab5.TabIndex = 31;
+            // 
+            // Role_label3_tab5
+            // 
+            this.Role_label3_tab5.AutoSize = true;
+            this.Role_label3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Role_label3_tab5.Location = new System.Drawing.Point(2, 54);
+            this.Role_label3_tab5.Name = "Role_label3_tab5";
+            this.Role_label3_tab5.Size = new System.Drawing.Size(42, 20);
+            this.Role_label3_tab5.TabIndex = 32;
+            this.Role_label3_tab5.Text = "Role";
+            // 
+            // User_label3_tab5
+            // 
+            this.User_label3_tab5.AutoSize = true;
+            this.User_label3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_label3_tab5.Location = new System.Drawing.Point(2, 22);
+            this.User_label3_tab5.Name = "User_label3_tab5";
+            this.User_label3_tab5.Size = new System.Drawing.Size(43, 20);
+            this.User_label3_tab5.TabIndex = 24;
+            this.User_label3_tab5.Text = "User";
+            // 
+            // groupBox8
+            // 
+            this.groupBox8.Controls.Add(this.wgo_chckBox2_Obj_tab5);
+            this.groupBox8.Controls.Add(this.User_Role_txtBox2_tab5);
+            this.groupBox8.Controls.Add(this.Grant_btn2_tab5);
+            this.groupBox8.Controls.Add(this.Priv_txtBox2_tab5);
+            this.groupBox8.Controls.Add(this.Priv_label2_tab5);
+            this.groupBox8.Controls.Add(this.User_Role_label2_tab5);
+            this.groupBox8.Location = new System.Drawing.Point(5, 213);
+            this.groupBox8.Name = "groupBox8";
+            this.groupBox8.Size = new System.Drawing.Size(297, 140);
+            this.groupBox8.TabIndex = 45;
+            this.groupBox8.TabStop = false;
+            this.groupBox8.Text = "Grant System Privilege";
+            // 
+            // wgo_chckBox2_Obj_tab5
+            // 
+            this.wgo_chckBox2_Obj_tab5.AutoSize = true;
+            this.wgo_chckBox2_Obj_tab5.Location = new System.Drawing.Point(92, 83);
+            this.wgo_chckBox2_Obj_tab5.Name = "wgo_chckBox2_Obj_tab5";
+            this.wgo_chckBox2_Obj_tab5.Size = new System.Drawing.Size(104, 17);
+            this.wgo_chckBox2_Obj_tab5.TabIndex = 44;
+            this.wgo_chckBox2_Obj_tab5.Text = "with grant option";
+            this.wgo_chckBox2_Obj_tab5.UseVisualStyleBackColor = true;
+            // 
+            // User_Role_txtBox2_tab5
+            // 
+            this.User_Role_txtBox2_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_txtBox2_tab5.Location = new System.Drawing.Point(92, 19);
+            this.User_Role_txtBox2_tab5.Name = "User_Role_txtBox2_tab5";
+            this.User_Role_txtBox2_tab5.Size = new System.Drawing.Size(200, 26);
+            this.User_Role_txtBox2_tab5.TabIndex = 23;
+            // 
+            // Grant_btn2_tab5
+            // 
+            this.Grant_btn2_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grant_btn2_tab5.Location = new System.Drawing.Point(92, 106);
+            this.Grant_btn2_tab5.Name = "Grant_btn2_tab5";
+            this.Grant_btn2_tab5.Size = new System.Drawing.Size(78, 30);
+            this.Grant_btn2_tab5.TabIndex = 43;
+            this.Grant_btn2_tab5.Text = "Grant";
+            this.Grant_btn2_tab5.UseVisualStyleBackColor = true;
+            this.Grant_btn2_tab5.Click += new System.EventHandler(this.Grant_btn2_tab5_Click);
+            // 
+            // Priv_txtBox2_tab5
+            // 
+            this.Priv_txtBox2_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Priv_txtBox2_tab5.Location = new System.Drawing.Point(92, 51);
+            this.Priv_txtBox2_tab5.Name = "Priv_txtBox2_tab5";
+            this.Priv_txtBox2_tab5.Size = new System.Drawing.Size(200, 26);
+            this.Priv_txtBox2_tab5.TabIndex = 31;
+            // 
+            // Priv_label2_tab5
+            // 
+            this.Priv_label2_tab5.AutoSize = true;
+            this.Priv_label2_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Priv_label2_tab5.Location = new System.Drawing.Point(2, 54);
+            this.Priv_label2_tab5.Name = "Priv_label2_tab5";
+            this.Priv_label2_tab5.Size = new System.Drawing.Size(67, 20);
+            this.Priv_label2_tab5.TabIndex = 32;
+            this.Priv_label2_tab5.Text = "Privilege";
+            // 
+            // User_Role_label2_tab5
+            // 
+            this.User_Role_label2_tab5.AutoSize = true;
+            this.User_Role_label2_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_label2_tab5.Location = new System.Drawing.Point(2, 22);
+            this.User_Role_label2_tab5.Name = "User_Role_label2_tab5";
+            this.User_Role_label2_tab5.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label2_tab5.TabIndex = 24;
+            this.User_Role_label2_tab5.Text = "User/ Role";
+            // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.wgo_chckBox1_tab5);
+            this.groupBox7.Controls.Add(this.User_Role_txtBox_tab5);
+            this.groupBox7.Controls.Add(this.Grant_btn1_tab5);
+            this.groupBox7.Controls.Add(this.Table_View_SP_txtBoxl_tab5);
+            this.groupBox7.Controls.Add(this.Column_txtbox_tab5);
+            this.groupBox7.Controls.Add(this.Table_View_SP_label_tab5);
+            this.groupBox7.Controls.Add(this.Column_label_tab5);
+            this.groupBox7.Controls.Add(this.User_Role_label_tab5);
+            this.groupBox7.Controls.Add(this.Priv_label_tab5);
+            this.groupBox7.Controls.Add(this.Priv_comboBox_tab5);
+            this.groupBox7.Location = new System.Drawing.Point(6, 6);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(297, 201);
+            this.groupBox7.TabIndex = 44;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "Grant Object Privilege";
+            // 
+            // wgo_chckBox1_tab5
+            // 
+            this.wgo_chckBox1_tab5.AutoSize = true;
+            this.wgo_chckBox1_tab5.Location = new System.Drawing.Point(127, 142);
+            this.wgo_chckBox1_tab5.Name = "wgo_chckBox1_tab5";
+            this.wgo_chckBox1_tab5.Size = new System.Drawing.Size(104, 17);
+            this.wgo_chckBox1_tab5.TabIndex = 45;
+            this.wgo_chckBox1_tab5.Text = "with grant option";
+            this.wgo_chckBox1_tab5.UseVisualStyleBackColor = true;
+            // 
+            // User_Role_txtBox_tab5
+            // 
+            this.User_Role_txtBox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_txtBox_tab5.Location = new System.Drawing.Point(127, 19);
+            this.User_Role_txtBox_tab5.Name = "User_Role_txtBox_tab5";
+            this.User_Role_txtBox_tab5.Size = new System.Drawing.Size(165, 26);
+            this.User_Role_txtBox_tab5.TabIndex = 23;
+            // 
+            // Grant_btn1_tab5
+            // 
+            this.Grant_btn1_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Grant_btn1_tab5.Location = new System.Drawing.Point(127, 165);
+            this.Grant_btn1_tab5.Name = "Grant_btn1_tab5";
+            this.Grant_btn1_tab5.Size = new System.Drawing.Size(78, 30);
+            this.Grant_btn1_tab5.TabIndex = 43;
+            this.Grant_btn1_tab5.Text = "Grant";
+            this.Grant_btn1_tab5.UseVisualStyleBackColor = true;
+            this.Grant_btn1_tab5.Click += new System.EventHandler(this.Grant_btn1_tab5_Click);
+            // 
+            // Table_View_SP_txtBoxl_tab5
+            // 
+            this.Table_View_SP_txtBoxl_tab5.Enabled = false;
+            this.Table_View_SP_txtBoxl_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Table_View_SP_txtBoxl_tab5.Location = new System.Drawing.Point(126, 51);
+            this.Table_View_SP_txtBoxl_tab5.Name = "Table_View_SP_txtBoxl_tab5";
+            this.Table_View_SP_txtBoxl_tab5.ReadOnly = true;
+            this.Table_View_SP_txtBoxl_tab5.Size = new System.Drawing.Size(165, 26);
+            this.Table_View_SP_txtBoxl_tab5.TabIndex = 31;
+            // 
+            // Column_txtbox_tab5
+            // 
+            this.Column_txtbox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column_txtbox_tab5.Location = new System.Drawing.Point(127, 110);
+            this.Column_txtbox_tab5.Name = "Column_txtbox_tab5";
+            this.Column_txtbox_tab5.Size = new System.Drawing.Size(165, 26);
+            this.Column_txtbox_tab5.TabIndex = 39;
+            // 
+            // Table_View_SP_label_tab5
+            // 
+            this.Table_View_SP_label_tab5.AutoSize = true;
+            this.Table_View_SP_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Table_View_SP_label_tab5.Location = new System.Drawing.Point(2, 54);
+            this.Table_View_SP_label_tab5.Name = "Table_View_SP_label_tab5";
+            this.Table_View_SP_label_tab5.Size = new System.Drawing.Size(119, 20);
+            this.Table_View_SP_label_tab5.TabIndex = 32;
+            this.Table_View_SP_label_tab5.Text = "Table/ views/ sp";
+            // 
+            // Column_label_tab5
+            // 
+            this.Column_label_tab5.AutoSize = true;
+            this.Column_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column_label_tab5.Location = new System.Drawing.Point(2, 113);
+            this.Column_label_tab5.Name = "Column_label_tab5";
+            this.Column_label_tab5.Size = new System.Drawing.Size(63, 20);
+            this.Column_label_tab5.TabIndex = 38;
+            this.Column_label_tab5.Text = "Column";
+            // 
+            // User_Role_label_tab5
+            // 
+            this.User_Role_label_tab5.AutoSize = true;
+            this.User_Role_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_label_tab5.Location = new System.Drawing.Point(2, 22);
+            this.User_Role_label_tab5.Name = "User_Role_label_tab5";
+            this.User_Role_label_tab5.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label_tab5.TabIndex = 24;
+            this.User_Role_label_tab5.Text = "User/ Role";
+            // 
+            // Priv_label_tab5
+            // 
+            this.Priv_label_tab5.AutoSize = true;
+            this.Priv_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Priv_label_tab5.Location = new System.Drawing.Point(2, 81);
+            this.Priv_label_tab5.Name = "Priv_label_tab5";
+            this.Priv_label_tab5.Size = new System.Drawing.Size(67, 20);
+            this.Priv_label_tab5.TabIndex = 36;
+            this.Priv_label_tab5.Text = "Privilege";
+            // 
+            // Priv_comboBox_tab5
+            // 
+            this.Priv_comboBox_tab5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Priv_comboBox_tab5.FormattingEnabled = true;
+            this.Priv_comboBox_tab5.Location = new System.Drawing.Point(127, 83);
+            this.Priv_comboBox_tab5.Name = "Priv_comboBox_tab5";
+            this.Priv_comboBox_tab5.Size = new System.Drawing.Size(165, 21);
+            this.Priv_comboBox_tab5.TabIndex = 35;
+            this.Priv_comboBox_tab5.SelectedIndexChanged += new System.EventHandler(this.Priv_comboBox_tab5_SelectedIndexChanged);
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Controls.Add(this.ViewGrantedRole_btn_tab5);
+            this.groupBox5.Controls.Add(this.ViewSysPriv_btn_tab5);
+            this.groupBox5.Controls.Add(this.User_Role_txtBox3_tab5);
+            this.groupBox5.Controls.Add(this.User_Role_label3_tab5);
+            this.groupBox5.Controls.Add(this.dataGridView6);
+            this.groupBox5.Controls.Add(this.ViewPrivUser_Role_btn_tab5);
+            this.groupBox5.Location = new System.Drawing.Point(562, 6);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(516, 549);
+            this.groupBox5.TabIndex = 26;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "Privilege of current user";
+            // 
+            // User_Role_txtBox3_tab5
+            // 
+            this.User_Role_txtBox3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_txtBox3_tab5.Location = new System.Drawing.Point(92, 13);
+            this.User_Role_txtBox3_tab5.Name = "User_Role_txtBox3_tab5";
+            this.User_Role_txtBox3_tab5.Size = new System.Drawing.Size(418, 26);
+            this.User_Role_txtBox3_tab5.TabIndex = 46;
+            // 
+            // User_Role_label3_tab5
+            // 
+            this.User_Role_label3_tab5.AutoSize = true;
+            this.User_Role_label3_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_label3_tab5.Location = new System.Drawing.Point(2, 16);
+            this.User_Role_label3_tab5.Name = "User_Role_label3_tab5";
+            this.User_Role_label3_tab5.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label3_tab5.TabIndex = 47;
+            this.User_Role_label3_tab5.Text = "User/ Role";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(6, 80);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(504, 463);
+            this.dataGridView6.TabIndex = 30;
+            // 
+            // ViewPrivUser_Role_btn_tab5
+            // 
+            this.ViewPrivUser_Role_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewPrivUser_Role_btn_tab5.Location = new System.Drawing.Point(6, 45);
+            this.ViewPrivUser_Role_btn_tab5.Name = "ViewPrivUser_Role_btn_tab5";
+            this.ViewPrivUser_Role_btn_tab5.Size = new System.Drawing.Size(170, 29);
+            this.ViewPrivUser_Role_btn_tab5.TabIndex = 22;
+            this.ViewPrivUser_Role_btn_tab5.Text = "View object privileges";
+            this.ViewPrivUser_Role_btn_tab5.UseVisualStyleBackColor = true;
+            this.ViewPrivUser_Role_btn_tab5.Click += new System.EventHandler(this.ViewPrivUser_Role_btn_tab5_Click);
+            // 
+            // groupBox6
+            // 
+            this.groupBox6.Controls.Add(this.ShowSP_btn_tab5);
+            this.groupBox6.Controls.Add(this.dataGridView7);
+            this.groupBox6.Controls.Add(this.ShowView_btn_tab5);
+            this.groupBox6.Controls.Add(this.ShowTable_btn_tab5);
+            this.groupBox6.Location = new System.Drawing.Point(303, 6);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(253, 552);
+            this.groupBox6.TabIndex = 27;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "Tables/ Views/ SP";
+            // 
+            // ShowSP_btn_tab5
+            // 
+            this.ShowSP_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowSP_btn_tab5.Location = new System.Drawing.Point(170, 16);
+            this.ShowSP_btn_tab5.Name = "ShowSP_btn_tab5";
+            this.ShowSP_btn_tab5.Size = new System.Drawing.Size(77, 58);
+            this.ShowSP_btn_tab5.TabIndex = 42;
+            this.ShowSP_btn_tab5.Text = "Show SP";
+            this.ShowSP_btn_tab5.UseVisualStyleBackColor = true;
+            this.ShowSP_btn_tab5.Click += new System.EventHandler(this.ShowSP_btn_tab5_Click);
+            // 
+            // dataGridView7
+            // 
+            this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView7.Location = new System.Drawing.Point(6, 80);
+            this.dataGridView7.Name = "dataGridView7";
+            this.dataGridView7.Size = new System.Drawing.Size(241, 463);
+            this.dataGridView7.TabIndex = 20;
+            this.dataGridView7.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellClick);
+            // 
+            // ShowView_btn_tab5
+            // 
+            this.ShowView_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowView_btn_tab5.Location = new System.Drawing.Point(90, 16);
+            this.ShowView_btn_tab5.Name = "ShowView_btn_tab5";
+            this.ShowView_btn_tab5.Size = new System.Drawing.Size(74, 58);
+            this.ShowView_btn_tab5.TabIndex = 41;
+            this.ShowView_btn_tab5.Text = "Show Views";
+            this.ShowView_btn_tab5.UseVisualStyleBackColor = true;
+            this.ShowView_btn_tab5.Click += new System.EventHandler(this.ShowView_btn_tab5_Click);
+            // 
+            // ShowTable_btn_tab5
+            // 
+            this.ShowTable_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ShowTable_btn_tab5.Location = new System.Drawing.Point(6, 19);
+            this.ShowTable_btn_tab5.Name = "ShowTable_btn_tab5";
+            this.ShowTable_btn_tab5.Size = new System.Drawing.Size(78, 55);
+            this.ShowTable_btn_tab5.TabIndex = 40;
+            this.ShowTable_btn_tab5.Text = "Show Tables";
+            this.ShowTable_btn_tab5.UseVisualStyleBackColor = true;
+            this.ShowTable_btn_tab5.Click += new System.EventHandler(this.ShowTable_btn_tab5_Click);
+            // 
+            // ViewSysPriv_btn_tab5
+            // 
+            this.ViewSysPriv_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewSysPriv_btn_tab5.Location = new System.Drawing.Point(182, 45);
+            this.ViewSysPriv_btn_tab5.Name = "ViewSysPriv_btn_tab5";
+            this.ViewSysPriv_btn_tab5.Size = new System.Drawing.Size(166, 29);
+            this.ViewSysPriv_btn_tab5.TabIndex = 48;
+            this.ViewSysPriv_btn_tab5.Text = "View system privilege";
+            this.ViewSysPriv_btn_tab5.UseVisualStyleBackColor = true;
+            this.ViewSysPriv_btn_tab5.Click += new System.EventHandler(this.ViewSysPriv_btn_tab5_Click);
+            // 
+            // ViewGrantedRole_btn_tab5
+            // 
+            this.ViewGrantedRole_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ViewGrantedRole_btn_tab5.Location = new System.Drawing.Point(354, 45);
+            this.ViewGrantedRole_btn_tab5.Name = "ViewGrantedRole_btn_tab5";
+            this.ViewGrantedRole_btn_tab5.Size = new System.Drawing.Size(156, 29);
+            this.ViewGrantedRole_btn_tab5.TabIndex = 49;
+            this.ViewGrantedRole_btn_tab5.Text = "View granted role";
+            this.ViewGrantedRole_btn_tab5.UseVisualStyleBackColor = true;
+            this.ViewGrantedRole_btn_tab5.Click += new System.EventHandler(this.ViewGrantedRole_btn_tab5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 606);
+            this.ClientSize = new System.Drawing.Size(1095, 601);
             this.Controls.Add(this.tabControl1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -737,6 +1190,18 @@ namespace Oracle_App
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            this.groupBox9.ResumeLayout(false);
+            this.groupBox9.PerformLayout();
+            this.groupBox8.ResumeLayout(false);
+            this.groupBox8.PerformLayout();
+            this.groupBox7.ResumeLayout(false);
+            this.groupBox7.PerformLayout();
+            this.groupBox5.ResumeLayout(false);
+            this.groupBox5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.groupBox6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView7)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -799,6 +1264,44 @@ namespace Oracle_App
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Label SelectedRole_label_tab4;
         private System.Windows.Forms.TextBox SelectedRole_txtbox_tab4;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.GroupBox groupBox5;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.DataGridView dataGridView7;
+        private System.Windows.Forms.Label Table_View_SP_label_tab5;
+        private System.Windows.Forms.TextBox Table_View_SP_txtBoxl_tab5;
+        private System.Windows.Forms.Label User_Role_label_tab5;
+        private System.Windows.Forms.TextBox User_Role_txtBox_tab5;
+        private System.Windows.Forms.Button ViewPrivUser_Role_btn_tab5;
+        private System.Windows.Forms.Label Priv_label_tab5;
+        private System.Windows.Forms.ComboBox Priv_comboBox_tab5;
+        private System.Windows.Forms.TextBox Column_txtbox_tab5;
+        private System.Windows.Forms.Label Column_label_tab5;
+        private System.Windows.Forms.Button ShowSP_btn_tab5;
+        private System.Windows.Forms.Button ShowView_btn_tab5;
+        private System.Windows.Forms.Button ShowTable_btn_tab5;
+        private System.Windows.Forms.Button Grant_btn1_tab5;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.GroupBox groupBox8;
+        private System.Windows.Forms.TextBox User_Role_txtBox2_tab5;
+        private System.Windows.Forms.Button Grant_btn2_tab5;
+        private System.Windows.Forms.TextBox Priv_txtBox2_tab5;
+        private System.Windows.Forms.Label Priv_label2_tab5;
+        private System.Windows.Forms.Label User_Role_label2_tab5;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.TextBox User_txtBox3_tab5;
+        private System.Windows.Forms.Button Grant_btn3_tab5;
+        private System.Windows.Forms.TextBox Role_txtBox3_tab5;
+        private System.Windows.Forms.Label Role_label3_tab5;
+        private System.Windows.Forms.Label User_label3_tab5;
+        private System.Windows.Forms.CheckBox wgo_chckBox2_Obj_tab5;
+        private System.Windows.Forms.CheckBox wgo_chckBox1_tab5;
+        private System.Windows.Forms.CheckBox wgo_chckBox3_Obj_tab5;
+        private System.Windows.Forms.TextBox User_Role_txtBox3_tab5;
+        private System.Windows.Forms.Label User_Role_label3_tab5;
+        private System.Windows.Forms.Button ViewGrantedRole_btn_tab5;
+        private System.Windows.Forms.Button ViewSysPriv_btn_tab5;
     }
 }
 

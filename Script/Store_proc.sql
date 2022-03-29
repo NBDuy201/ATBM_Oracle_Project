@@ -13,9 +13,8 @@ END view_users;
 /
 
 -- Cau 2 --
-CREATE OR REPLACE PROCEDURE view_privi
+CREATE OR REPLACE PROCEDURE view_allPrivi
 (
-	in_user in VARCHAR2,
     out_priviList out SYS_REFCURSOR
 )
 AUTHID CURRENT_USER
@@ -23,14 +22,12 @@ AS
 BEGIN
     declare sql_str varchar(500);
     Begin
-        sql_str := 'select grantee, table_name, privilege, type
-                    from dba_tab_privs
-                    where grantee = '''||in_user||''' 
-                    or grantee in (select granted_role from dba_role_privs connect by prior granted_role = grantee start with grantee = '''||in_user||''')';
+        sql_str := 'select grantee, table_name, privilege, type, grantable
+                    from dba_tab_privs';
         dbms_output.put_line(sql_str);
     Open out_priviList for sql_str;
     End;
-END view_privi;
+END view_allPrivi;
 /
 
 -- Cau 3 --
@@ -172,8 +169,48 @@ BEGIN
 END  GRANT_PRIVILEGES_USER;
 /
 
+CREATE OR REPLACE PROCEDURE view_all_tables
+(
+    out_tableList out SYS_REFCURSOR
+)
+AS
+BEGIN
+    Open out_tableList for
+        select table_name
+        from all_tables
+        WHERE owner = user;
+END view_all_tables;
+/
+
+CREATE OR REPLACE PROCEDURE view_all_views
+(
+    out_viewList out SYS_REFCURSOR
+)
+AS
+BEGIN
+    Open out_viewList for
+        select view_name
+        from all_views
+        WHERE owner = user;
+END view_all_views;
+/
+
+CREATE OR REPLACE PROCEDURE view_all_proc
+(
+    out_procList out SYS_REFCURSOR
+)
+AS
+BEGIN
+    Open out_procList for
+        select object_name
+        from all_procedures
+        WHERE owner = user;
+END view_all_proc;
+/
+
 -- Cap quyen he thong cho user:
 CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_SYS_USER(user_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_option IN NVARCHAR2)
+authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
@@ -191,19 +228,8 @@ BEGIN
 END  GRANT_PRIVILEGES_SYS_USER;
 /
 
-CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_ROLE(role_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_col IN NVARCHAR2, n_tab IN NVARCHAR2)
-IS
-BEGIN
-
-    if  n_pri = 'UPDATE' and n_pri = 'SELECT' then
-        EXECUTE IMMEDIATE ('grant ' || n_pri || ' (' || n_col || ') ' || ' on ' || n_tab || ' to ' || role_name);
-    else
-        EXECUTE IMMEDIATE ('grant ' || n_pri || ' on ' || n_tab || ' to ' || role_name);
-    end if;
-END  GRANT_PRIVILEGES_ROLE;
-/
-
 CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_USER(role_name IN NVARCHAR2, user_name IN NVARCHAR2, n_option IN NVARCHAR2)
+authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
@@ -247,8 +273,8 @@ Exception
 END IF;
 End;
 /
-grant select on CSYT TO GIAOVU;
-Exec Revoke_Privs_User('GIAOVU', 'SELECT', 'CSYT');
+--grant select on CSYT TO GIAOVU;
+--Exec Revoke_Privs_User('GIAOVU', 'SELECT', 'CSYT');
 
 --Cau5/* Thu hoi quyen he thong cua 1 role*/
 create or replace procedure Revoke_Privs_Role(a_role in varchar2, a_priv in varchar2, a_obj in varchar2)
@@ -293,26 +319,65 @@ End;
 --Exec Revoke_Privs_Role('GIAOVIEN', 'SELECT', 'CSYT');
 
 -- cau 6
-CREATE OR REPLACE PROCEDURE View_User_SYS
-IS
-    c_ViewUser  SYS_REFCURSOR;
+-- View user granted roles
+CREATE OR REPLACE PROCEDURE view_grantedRole
+(
+	in_user in VARCHAR2,
+    out_roleList out SYS_REFCURSOR
+)
+AUTHID CURRENT_USER
+AS
 BEGIN
-    OPEN c_ViewUser FOR
-    SELECT *
-    FROM dba_users
-    ORDER BY created;
-    dbms_sql.return_result(c_ViewUser);
-END;
+    declare sql_str varchar(500);
+    Begin
+        sql_str := 'SELECT grantee, granted_role, admin_option 
+                    FROM dba_role_privs 
+                    where grantee = '''||in_user||'''';
+        dbms_output.put_line(sql_str);
+    Open out_roleList for sql_str;
+    End;
+END view_grantedRole;
 /
+-- View User granted sys priv
+CREATE OR REPLACE PROCEDURE view_sysPrivi
+(
+	in_user in VARCHAR2,
+    out_sysPriviList out SYS_REFCURSOR
+)
+AUTHID CURRENT_USER
+AS
+BEGIN
+    declare sql_str varchar(500);
+    Begin
+        sql_str := 'SELECT GRANTEE, PRIVILEGE, ADMIN_OPTION 
+                    FROM dba_sys_privs 
+                    where grantee = '''||in_user||'''
+                    or grantee in (select granted_role from dba_role_privs connect by prior granted_role = grantee start with grantee = '''||in_user||''')';
+        dbms_output.put_line(sql_str);
+    Open out_sysPriviList for sql_str;
+    End;
+END view_sysPrivi;
 
-create or replace procedure View_Object_Privs_Role(a_role in varchar2)
-as
-    p_table  SYS_REFCURSOR;
-Begin
-    OPEN p_table FOR SELECT * FROM ROLE_TAB_PRIVS WHERE ROLE_TAB_PRIVS.role = a_role; 
-    DBMS_SQL.RETURN_RESULT(p_table);
-commit;
-End;
+/
+-- View User granted object priv
+CREATE OR REPLACE PROCEDURE view_privi
+(
+	in_user in VARCHAR2,
+    out_priviList out SYS_REFCURSOR
+)
+AUTHID CURRENT_USER
+AS
+BEGIN
+    declare sql_str varchar(500);
+    Begin
+        sql_str := 'select grantee, table_name, privilege, type, grantable
+                    from dba_tab_privs
+                    where grantee = '''||in_user||'''
+                    or grantee in (select granted_role from dba_role_privs connect by prior granted_role = grantee start with grantee = '''||in_user||''')';
+        dbms_output.put_line(sql_str);
+    Open out_priviList for sql_str;
+    End;
+END view_privi;
 /
 
 -- cau 7 --

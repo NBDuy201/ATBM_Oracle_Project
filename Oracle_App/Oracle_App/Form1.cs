@@ -21,6 +21,17 @@ namespace Oracle_App
         {
             this.setConnection();
             InitializeComponent();
+
+            Priv_comboBox_tab5.Items.Add("SELECT");
+            Priv_comboBox_tab5.Items.Add("UPDATE");
+            Priv_comboBox_tab5.Items.Add("DELETE");
+            Priv_comboBox_tab5.Items.Add("INSERT");
+            Priv_comboBox_tab5.Items.Add("EXEC");
+
+            dataGridView7.EnableHeadersVisualStyles = false;
+            dataGridView7.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView7.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView7.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView7.Font, FontStyle.Bold);
         }
 
         private void setConnection()
@@ -210,6 +221,48 @@ namespace Oracle_App
             return dt;
         }
 
+        private DataTable LoadTable()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_all_tables"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_tableList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
+        private DataTable LoadView()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_all_views"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_viewList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
+        private DataTable LoadProc()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "view_all_proc"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("out_procList", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
         private void View_user_button_Click1(object sender, EventArgs e)
         {
             DataTable dt = LoadUser(); // Data table object
@@ -222,13 +275,34 @@ namespace Oracle_App
             dataGridView2.DataSource = dt.DefaultView;
         }
 
-        private void LoadPriv(TextBox textBox, DataGridView dgv)
+        private void LoadPriv(TextBox textBox, DataGridView dgv, int option)
         {
             OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "view_privi"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("in_user", OracleDbType.Varchar2, 30).Value = textBox.Text;
+
+            if (option == 0)
+            {
+                cmd.CommandText = "view_allPrivi"; // Sql statement
+            }
+            else
+            {
+                switch (option)
+                {
+                    case 1:
+                        cmd.CommandText = "view_privi"; // Sql statement
+                        break;
+                    case 2:
+                        cmd.CommandText = "view_sysPrivi"; // Sql statement
+                        break;
+                    case 3:
+                        cmd.CommandText = "view_grantedRole"; // Sql statement
+                        break;
+                    default:
+                        break;
+                }
+                cmd.Parameters.Add("in_user", OracleDbType.Varchar2, 30).Value = textBox.Text;
+            }
             cmd.Parameters.Add("T_CURSOR", OracleDbType.RefCursor).Direction = ParameterDirection.Output;
 
             da.SelectCommand = cmd;
@@ -239,7 +313,7 @@ namespace Oracle_App
 
         private void View_privilege_button_Click(object sender, EventArgs e)
         {
-            LoadPriv(User_textbox, dataGridView1);
+            LoadPriv(User_textbox, dataGridView1, 0);
         }
 
         private void Create_user_button2_Click(object sender, EventArgs e)
@@ -432,12 +506,12 @@ namespace Oracle_App
 
         private void ViewPrivUser_btn_tab4_Click(object sender, EventArgs e)
         {
-            LoadPriv(SelectedUser_txtbox_tab4, dataGridView4);
+            LoadPriv(SelectedUser_txtbox_tab4, dataGridView4, 1);
         }
 
         private void ViewPrivRole_btn_tab4_Click(object sender, EventArgs e)
         {
-            LoadPriv(SelectedRole_txtbox_tab4, dataGridView5);
+            LoadPriv(SelectedRole_txtbox_tab4, dataGridView5, 1);
         }
 
         private void RevokeUser_btn_tab4_Click(object sender, EventArgs e)
@@ -456,7 +530,7 @@ namespace Oracle_App
                 if (n != 0)
                 {
                     MessageBox.Show("Revoke success");
-                    LoadPriv(SelectedUser_txtbox_tab4, dataGridView4); // Refresh
+                    LoadPriv(SelectedUser_txtbox_tab4, dataGridView4, 1); // Refresh
                 }
             }
             catch (Exception exp)
@@ -498,7 +572,7 @@ namespace Oracle_App
                 if (n != 0)
                 {
                     MessageBox.Show("Revoke success");
-                    LoadPriv(SelectedRole_txtbox_tab4, dataGridView5); // Refresh
+                    LoadPriv(SelectedRole_txtbox_tab4, dataGridView5, 1); // Refresh
                 }
             }
             catch (Exception exp)
@@ -520,8 +594,156 @@ namespace Oracle_App
                 string priv = selectedRow.Cells["PRIVILEGE"].Value.ToString();
 
                 res_CellClick_dtg5 = new string[] { grantee, table, priv }; // Add values to res
-                MessageBox.Show(res_CellClick_dtg5[0] + ' ' + res_CellClick_dtg5[1]);
+                //MessageBox.Show(res_CellClick_dtg5[0] + ' ' + res_CellClick_dtg5[1]);
             }
+        }
+
+        private void Priv_comboBox_tab5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (Priv_comboBox_tab5.SelectedItem.ToString())
+            {
+                case "SELECT":
+                case "UPDATE":
+                    Column_txtbox_tab5.Enabled = true;
+                    break;
+                default:
+                    Column_txtbox_tab5.Enabled = false;
+                    break;
+            }
+        }
+
+        private void ShowTable_btn_tab5_Click(object sender, EventArgs e)
+        {
+            DataTable dt = LoadTable(); // Data table object
+            dataGridView7.DataSource = dt.DefaultView;
+        }
+
+        private void ShowView_btn_tab5_Click(object sender, EventArgs e)
+        {
+            DataTable dt = LoadView(); // Data table object
+            dataGridView7.DataSource = dt.DefaultView;
+        }
+
+        private void ShowSP_btn_tab5_Click(object sender, EventArgs e)
+        {
+            DataTable dt = LoadProc(); // Data table object
+            dataGridView7.DataSource = dt.DefaultView;
+        }
+
+        private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index != -1) // Nhan vao header khong tinh
+            {
+                DataGridViewRow selectedRow = dataGridView7.Rows[index];
+                Table_View_SP_txtBoxl_tab5.Text = selectedRow.Cells[0].Value.ToString();
+            }
+        }
+        private void Grant_btn1_tab5_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "GRANT_PRIVILEGES_USER"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("user_name", OracleDbType.Varchar2, 100).Value = User_Role_txtBox_tab5.Text;
+            cmd.Parameters.Add("n_pri", OracleDbType.Varchar2, 100).Value = Priv_comboBox_tab5.SelectedItem.ToString();
+            cmd.Parameters.Add("n_col", OracleDbType.Varchar2, 10).Value = Column_txtbox_tab5.Text;
+            cmd.Parameters.Add("n_tab", OracleDbType.Varchar2, 100).Value = Table_View_SP_txtBoxl_tab5.Text;
+            if (wgo_chckBox1_tab5.Checked)
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "TRUE";
+            else
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "FALSE";
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Grant success");
+                    User_Role_txtBox3_tab5.Text = User_Role_txtBox_tab5.Text;
+                    LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 1);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Invalid privilege");
+                throw;
+            }
+        }
+       
+        private void Grant_btn2_tab5_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "GRANT_PRIVILEGES_SYS_USER"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("user_name", OracleDbType.Varchar2, 100).Value = User_Role_txtBox2_tab5.Text;
+            cmd.Parameters.Add("n_pri", OracleDbType.Varchar2, 100).Value = Priv_txtBox2_tab5.Text;
+            if (wgo_chckBox2_Obj_tab5.Checked)
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "TRUE";
+            else
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "FALSE";
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Grant success");
+                    User_Role_txtBox3_tab5.Text = User_Role_txtBox2_tab5.Text;
+                    LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 2);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Invalid privilege");
+                throw;
+            }
+        }
+
+        private void Grant_btn3_tab5_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "GRANT_ROLE_TO_USER"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("role_name", OracleDbType.Varchar2, 100).Value = Role_txtBox3_tab5.Text;
+            cmd.Parameters.Add("user_name", OracleDbType.Varchar2, 100).Value = User_txtBox3_tab5.Text;
+            if (wgo_chckBox3_Obj_tab5.Checked)
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "TRUE";
+            else
+                cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 5).Value = "FALSE";
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Grant success");
+                    User_Role_txtBox3_tab5.Text = User_txtBox3_tab5.Text;
+                    LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 3);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Invalid privilege");
+                throw;
+            }
+        }
+
+        private void ViewPrivUser_Role_btn_tab5_Click(object sender, EventArgs e)
+        {
+            LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 1);
+        }
+
+        private void ViewSysPriv_btn_tab5_Click(object sender, EventArgs e)
+        {
+            LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 2);
+        }
+
+        private void ViewGrantedRole_btn_tab5_Click(object sender, EventArgs e)
+        {
+            LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 3);
         }
     }
 }
