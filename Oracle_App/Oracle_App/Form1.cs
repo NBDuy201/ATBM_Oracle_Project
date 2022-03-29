@@ -28,10 +28,43 @@ namespace Oracle_App
             Priv_comboBox_tab5.Items.Add("INSERT");
             Priv_comboBox_tab5.Items.Add("EXEC");
 
+            // Datagridview
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView4.EnableHeadersVisualStyles = false;
+            dataGridView4.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView4.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView5.EnableHeadersVisualStyles = false;
+            dataGridView5.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView5.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView5.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView6.EnableHeadersVisualStyles = false;
+            dataGridView6.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView6.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView6.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
             dataGridView7.EnableHeadersVisualStyles = false;
             dataGridView7.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
             dataGridView7.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView7.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView7.Font, FontStyle.Bold);
+            dataGridView7.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            tabPage4.Enabled = false;
         }
 
         private void setConnection()
@@ -48,110 +81,15 @@ namespace Oracle_App
             }
         }
 
-        private void updateDataGrid()
-        {
-            //OracleCommand cmd = con.CreateCommand();
-            //cmd.CommandText = "Select Employee_ID, Last_Name, Email, Job_ID, Hire_Date from employees"; // Sql statement
-            //cmd.CommandType = CommandType.Text; // Type of Sql statement
-            //OracleDataReader dr = cmd.ExecuteReader(); // Execute sql statement
-            //DataTable dt = new DataTable(); // Data table object
-            //dt.Load(dr); // Save executed sql statement
-            //dataGridView1.DataSource = dt.DefaultView;
-            //dr.Close();
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            //this.updateDataGrid();
+            DataTable dt = LoadUser(); // Data table object
+            dataGridView1.DataSource = dt.DefaultView;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
         {
             con.Close();
-        }
-
-        private void IAD(String sql_stm, int state) // insert + update + delete
-        {
-            //String msg = "";
-            //OracleCommand cmd = con.CreateCommand();
-            //cmd.CommandText = sql_stm;
-            //cmd.CommandType = CommandType.Text;
-
-            //switch (state)
-            //{
-            //    case 0:
-            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-            //        cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
-            //        cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
-            //        cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
-            //        //cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Text;
-            //        cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
-            //        msg = "Inserted Successfully";
-            //        break;
-            //    case 1:
-            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-            //        cmd.Parameters.Add("LAST_NAME", OracleDbType.Varchar2, 25).Value = Last_Name_textbox.Text;
-            //        cmd.Parameters.Add("EMAIL", OracleDbType.Varchar2, 25).Value = Email_textbox.Text;
-            //        cmd.Parameters.Add("JOB_ID", OracleDbType.Varchar2, 10).Value = Job_ID_textbox.Text;
-            //        cmd.Parameters.Add("HIRE_DATE", OracleDbType.Date, 7).Value = Hire_Date_picker.Value.ToShortDateString();
-            //        msg = "Updated Successfully";
-            //        break;
-            //    case 2:
-            //        cmd.Parameters.Add("EMPLOYEE_ID", OracleDbType.Int32, 6).Value = Int32.Parse(Employee_ID_textbox.Text);
-            //        msg = "Deleted Successfully";
-            //        break;
-            //}
-
-            //try
-            //{
-            //    int n = cmd.ExecuteNonQuery();
-            //    if (n > 0)
-            //    {
-            //        MessageBox.Show(msg);
-            //        this.updateDataGrid();
-            //    }
-            //}
-            //catch (Exception exp)
-            //{
-
-            //    throw;
-            //}
-        }
-
-        private void Add_button_Click(object sender, EventArgs e)
-        {
-            String sql = "Insert into EMPLOYEES(EMPLOYEE_ID, LAST_NAME, EMAIL, JOB_ID, HIRE_DATE)" +
-                "Values(:EMPLOYEE_ID, :LAST_NAME, :EMAIL, :JOB_ID, :HIRE_DATE)";
-            //String sql = "Insert into EMPLOYEES(EMPLOYEE_ID, LAST_NAME, EMAIL, JOB_ID)" +
-            //    "Values(:EMPLOYEE_ID, :LAST_NAME, :EMAIL, :JOB_ID)";
-            this.IAD(sql, 0); // insert
-            Add_button.Enabled = false;
-            Update_button.Enabled = true;
-            Delete_button.Enabled = true;
-        }
-
-        private void Update_button_Click(object sender, EventArgs e)
-        {
-            String sql = "Update EMPLOYEES " +
-                "set LAST_NAME = :LAST_NAME," +
-                "JOB_ID = :JOB_ID," +
-                "EMAIL = :EMAIL," +
-                "HIRE_DATE = :HIRE_DATE " +
-                "Where EMPLOYEE_ID = :EMPLOYEE_ID";
-
-            //String sql = "Update EMPLOYEES " +
-            //    "set LAST_NAME = :LAST_NAME," +
-            //    "JOB_ID = :JOB_ID," +
-            //    "EMAIL = :EMAIL " +
-            //    "Where EMPLOYEE_ID = :EMPLOYEE_ID";
-            this.IAD(sql, 1); // update
-        }
-
-        private void Delete_button_Click(object sender, EventArgs e)
-        {
-            String sql = "Delete from EMPLOYEES "+
-                "where EMPLOYEE_ID = :EMPLOYEE_ID";
-            this.IAD(sql, 2); // delete
         }
 
         private void ClearTextBoxes()
@@ -177,20 +115,6 @@ namespace Oracle_App
             //Add_button.Enabled = true;
             //Update_button.Enabled = false;
             //Delete_button.Enabled = false;
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (index != -1) // Nhan vao header khong tinh
-            {
-                DataGridViewRow selectedRow = dataGridView1.Rows[index];
-                User_textbox.Text = selectedRow.Cells[0].Value.ToString();
-
-                //Add_button.Enabled = false;
-                //Update_button.Enabled = true;
-                //Delete_button.Enabled = true;
-            }
         }
 
         private DataTable LoadUser()
@@ -298,6 +222,9 @@ namespace Oracle_App
                     case 3:
                         cmd.CommandText = "view_grantedRole"; // Sql statement
                         break;
+                    case 4:
+                        cmd.CommandText = "view_colPriv"; // Sql statement
+                        break;
                     default:
                         break;
                 }
@@ -311,9 +238,9 @@ namespace Oracle_App
             dgv.DataSource = dt.DefaultView;
         }
 
-        private void View_privilege_button_Click(object sender, EventArgs e)
+        private void View_AllObj_priv_button_Click(object sender, EventArgs e)
         {
-            LoadPriv(User_textbox, dataGridView1, 0);
+            LoadPriv(Table_View_SP_txtBoxl_tab5, dataGridView1, 0); // luoi
         }
 
         private void Create_user_button2_Click(object sender, EventArgs e)
@@ -744,6 +671,63 @@ namespace Oracle_App
         private void ViewGrantedRole_btn_tab5_Click(object sender, EventArgs e)
         {
             LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 3);
+        }
+
+        private void ViewColPriv_btn_tab5_Click(object sender, EventArgs e)
+        {
+            LoadPriv(User_Role_txtBox3_tab5, dataGridView6, 4);
+        }
+
+        public string[] res_CellClick_dtg6;
+        private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = e.RowIndex;
+            if (index != -1) // Nhan vao header khong tinh
+            {
+                DataGridViewRow selectedRow = dataGridView6.Rows[index];
+                string table = null;
+                string priv = null;
+                string g_role = null;
+
+                string grantee = selectedRow.Cells["GRANTEE"].Value.ToString();
+                if (dataGridView6.Columns.Contains("TABLE_NAME"))
+                    table = selectedRow.Cells["TABLE_NAME"].Value.ToString();
+                if (dataGridView6.Columns.Contains("GRANTED_ROLE"))
+                    g_role = selectedRow.Cells["GRANTED_ROLE"].Value.ToString();
+                if (dataGridView6.Columns.Contains("PRIVILEGE"))
+                    priv = selectedRow.Cells["PRIVILEGE"].Value.ToString();
+
+                res_CellClick_dtg6 = new string[] { grantee, table, priv, g_role }; // Add values to res
+                //MessageBox.Show(res_CellClick_dtg6[0] + ' ' + res_CellClick_dtg6[1] + ' ' + res_CellClick_dtg6[2] + ' ' + res_CellClick_dtg6[3]);
+            }
+        }
+
+        private void Revoke_btn_tab5_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Revoke_Privs"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            cmd.Parameters.Add("in_user", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg6[0];
+            if(res_CellClick_dtg6[2] == null) // TH revoke role
+                cmd.Parameters.Add("in_priv", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg6[3];
+            else // Revoke privilege
+                cmd.Parameters.Add("in_priv", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg6[2];
+            cmd.Parameters.Add("in_obj", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg6[1];
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Revoke success");
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Nothing happend!!!");
+                throw;
+            }
         }
     }
 }

@@ -248,75 +248,28 @@ END GRANT_ROLE_TO_USER;
 /
 
 -- cau 5 thu hoi quyen
---Cau5 Thu hoi quyen trên User
-create or replace procedure Revoke_Privs_User(User_Name in varchar2, priv in varchar2, obj in varchar2)
-is
-    Tmp_query varchar(100);
-    Tmp_count int;
-exception_username exception;
-Begin
-    select count(*) into Tmp_count from all_users where UserName = User_Name;
-    if(Tmp_count != 0) then
-        Tmp_query := 'REVOKE '||priv||' on '||obj||' FROM '||User_name;
-        --DBMS_OUTPUT.put_line(Tmp_query);
-        execute IMMEDIATE (Tmp_query);
-    elsif(Tmp_count=0) then
-        raise exception_username;
-end if;
-
-Exception 
-    when exception_username then 
-    RAISE_APPLICATION_ERROR(-20000,'User chua ton tai');
-    WHEN OTHERS THEN
-    IF SQLCODE != -942 THEN
-    RAISE;
-END IF;
-End;
-/
 --grant select on CSYT TO GIAOVU;
 --Exec Revoke_Privs_User('GIAOVU', 'SELECT', 'CSYT');
-
---Cau5/* Thu hoi quyen he thong cua 1 role*/
-create or replace procedure Revoke_Privs_Role(a_role in varchar2, a_priv in varchar2, a_obj in varchar2)
+create or replace procedure Revoke_Privs
+(
+    in_user in varchar2,
+    in_priv in varchar2,
+    in_obj in varchar2
+)
 authid current_user is
     Tmp_query varchar(100);
---    Tmp_count int;
---    Tmp_count2 int;
---    exception_priv exception;
---    exception_role exception;
 Begin
-    --select count(*) into Tmp_count from role_sys_privs where a_priv = role_sys_privs.privilege;
-    --select count(*) into Tmp_count2 from role_sys_privs where a_role = role_sys_privs.role;
---    if(Tmp_count != 0 AND Tmp_count2 != 0) then
---        Tmp_query := 'REVOKE '||a_priv||'on '||a_obj||' FROM '||a_role;
---        execute IMMEDIATE (Tmp_query);
---    elsif(Tmp_count=0) then
---        raise exception_priv;
---    elsif(Tmp_count2=0) then
---        raise exception_role;
---    end if;
---    
---    Tmp_query := 'REVOKE '||a_priv||'on '||a_obj||' FROM '||a_role;
---    execute IMMEDIATE (Tmp_query);
---    
---    Exception 
---    when exception_priv then 
---        RAISE_APPLICATION_ERROR(-20000,'Privilege chua ton tai.');
---    when exception_role then
---        RAISE_APPLICATION_ERROR(-20000,'Role chua ton tai.');
---    WHEN OTHERS THEN
---        IF SQLCODE != -942 THEN
---            RAISE;
---        END IF;
---    End;
-
-    Tmp_query := 'REVOKE '||a_priv||' on '||a_obj||' FROM '||a_role;
+    -- Revoke role/sys priv from user(role)
+    if(in_obj is NULL) then
+        Tmp_query := 'REVOKE '||in_priv||' FROM '||in_user;
+    -- Revoke object priv from user(role)
+    else
+        Tmp_query := 'REVOKE '||in_priv||' on '||in_obj||' FROM '||in_user;
+    end if;
     --dbms_output.put_line(Tmp_query);
     execute IMMEDIATE (Tmp_query);
-End;
+End Revoke_Privs;
 /
---grant select on CSYT TO GIAOVIEN;
---Exec Revoke_Privs_Role('GIAOVIEN', 'SELECT', 'CSYT');
 
 -- cau 6
 -- View user granted roles
@@ -338,6 +291,7 @@ BEGIN
     End;
 END view_grantedRole;
 /
+
 -- View User granted sys priv
 CREATE OR REPLACE PROCEDURE view_sysPrivi
 (
@@ -351,13 +305,11 @@ BEGIN
     Begin
         sql_str := 'SELECT GRANTEE, PRIVILEGE, ADMIN_OPTION 
                     FROM dba_sys_privs 
-                    where grantee = '''||in_user||'''
-                    or grantee in (select granted_role from dba_role_privs connect by prior granted_role = grantee start with grantee = '''||in_user||''')';
+                    where grantee = '''||in_user||'''';
         dbms_output.put_line(sql_str);
     Open out_sysPriviList for sql_str;
     End;
 END view_sysPrivi;
-
 /
 -- View User granted object priv
 CREATE OR REPLACE PROCEDURE view_privi
@@ -372,12 +324,30 @@ BEGIN
     Begin
         sql_str := 'select grantee, table_name, privilege, type, grantable
                     from dba_tab_privs
-                    where grantee = '''||in_user||'''
-                    or grantee in (select granted_role from dba_role_privs connect by prior granted_role = grantee start with grantee = '''||in_user||''')';
+                    where grantee = '''||in_user||'''';
         dbms_output.put_line(sql_str);
     Open out_priviList for sql_str;
     End;
 END view_privi;
+/
+
+CREATE OR REPLACE PROCEDURE view_colPriv
+(
+	in_user in VARCHAR2,
+    out_ColPriviList out SYS_REFCURSOR
+)
+AUTHID CURRENT_USER
+AS
+BEGIN
+    declare sql_str varchar(500);
+    Begin
+        sql_str := 'Select grantee, table_name, column_name, privilege, grantable 
+                    from DBA_COL_PRIVS 
+                    where GRANTEE = '''||in_user||'''';
+        dbms_output.put_line(sql_str);
+    Open out_ColPriviList for sql_str;
+    End;
+END view_colPriv;
 /
 
 -- cau 7 --
