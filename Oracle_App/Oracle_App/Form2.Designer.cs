@@ -1,7 +1,7 @@
 ﻿
 namespace Oracle_App
 {
-    partial class Form1
+    partial class Form2
     {
         /// <summary>
         /// Required designer variable.
@@ -66,19 +66,6 @@ namespace Oracle_App
             this.Role_label2 = new System.Windows.Forms.Label();
             this.CreateRole_button_tab3 = new System.Windows.Forms.Button();
             this.ViewRole_button_tab3 = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.RevokeRole_btn_tab4 = new System.Windows.Forms.Button();
-            this.ViewPrivRole_btn_tab4 = new System.Windows.Forms.Button();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.SelectedRole_label_tab4 = new System.Windows.Forms.Label();
-            this.SelectedRole_txtbox_tab4 = new System.Windows.Forms.TextBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.SelectedUser_label_tab4 = new System.Windows.Forms.Label();
-            this.SelectedUser_txtbox_tab4 = new System.Windows.Forms.TextBox();
-            this.RevokeUser_btn_tab4 = new System.Windows.Forms.Button();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.ViewPrivUser_btn_tab4 = new System.Windows.Forms.Button();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.wgo_chckBox3_Obj_tab5 = new System.Windows.Forms.CheckBox();
@@ -130,11 +117,6 @@ namespace Oracle_App
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.Role_group2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.groupBox9.SuspendLayout();
             this.groupBox8.SuspendLayout();
@@ -189,7 +171,6 @@ namespace Oracle_App
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Location = new System.Drawing.Point(3, 12);
             this.tabControl1.Multiline = true;
@@ -559,145 +540,6 @@ namespace Oracle_App
             this.ViewRole_button_tab3.Text = "View List Of Roles";
             this.ViewRole_button_tab3.UseVisualStyleBackColor = true;
             this.ViewRole_button_tab3.Click += new System.EventHandler(this.View_role_button_Click);
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Controls.Add(this.groupBox3);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(1081, 561);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Revoke";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Controls.Add(this.RevokeRole_btn_tab4);
-            this.groupBox4.Controls.Add(this.ViewPrivRole_btn_tab4);
-            this.groupBox4.Controls.Add(this.dataGridView5);
-            this.groupBox4.Controls.Add(this.SelectedRole_label_tab4);
-            this.groupBox4.Controls.Add(this.SelectedRole_txtbox_tab4);
-            this.groupBox4.Location = new System.Drawing.Point(529, 10);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(537, 542);
-            this.groupBox4.TabIndex = 16;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Revoke Role";
-            // 
-            // RevokeRole_btn_tab4
-            // 
-            this.RevokeRole_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RevokeRole_btn_tab4.Location = new System.Drawing.Point(16, 500);
-            this.RevokeRole_btn_tab4.Name = "RevokeRole_btn_tab4";
-            this.RevokeRole_btn_tab4.Size = new System.Drawing.Size(515, 33);
-            this.RevokeRole_btn_tab4.TabIndex = 33;
-            this.RevokeRole_btn_tab4.Text = "Revoke";
-            this.RevokeRole_btn_tab4.UseVisualStyleBackColor = true;
-            this.RevokeRole_btn_tab4.Click += new System.EventHandler(this.RevokeRole_btn_tab4_Click);
-            // 
-            // ViewPrivRole_btn_tab4
-            // 
-            this.ViewPrivRole_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewPrivRole_btn_tab4.Location = new System.Drawing.Point(322, 13);
-            this.ViewPrivRole_btn_tab4.Name = "ViewPrivRole_btn_tab4";
-            this.ViewPrivRole_btn_tab4.Size = new System.Drawing.Size(209, 32);
-            this.ViewPrivRole_btn_tab4.TabIndex = 34;
-            this.ViewPrivRole_btn_tab4.Text = "View privileges";
-            this.ViewPrivRole_btn_tab4.UseVisualStyleBackColor = true;
-            this.ViewPrivRole_btn_tab4.Click += new System.EventHandler(this.ViewPrivRole_btn_tab4_Click);
-            // 
-            // dataGridView5
-            // 
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(16, 53);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(515, 441);
-            this.dataGridView5.TabIndex = 30;
-            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
-            // 
-            // SelectedRole_label_tab4
-            // 
-            this.SelectedRole_label_tab4.AutoSize = true;
-            this.SelectedRole_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedRole_label_tab4.Location = new System.Drawing.Point(16, 19);
-            this.SelectedRole_label_tab4.Name = "SelectedRole_label_tab4";
-            this.SelectedRole_label_tab4.Size = new System.Drawing.Size(109, 20);
-            this.SelectedRole_label_tab4.TabIndex = 32;
-            this.SelectedRole_label_tab4.Text = "Selected Role";
-            // 
-            // SelectedRole_txtbox_tab4
-            // 
-            this.SelectedRole_txtbox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedRole_txtbox_tab4.Location = new System.Drawing.Point(131, 16);
-            this.SelectedRole_txtbox_tab4.Name = "SelectedRole_txtbox_tab4";
-            this.SelectedRole_txtbox_tab4.Size = new System.Drawing.Size(185, 26);
-            this.SelectedRole_txtbox_tab4.TabIndex = 31;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.SelectedUser_label_tab4);
-            this.groupBox3.Controls.Add(this.SelectedUser_txtbox_tab4);
-            this.groupBox3.Controls.Add(this.RevokeUser_btn_tab4);
-            this.groupBox3.Controls.Add(this.dataGridView4);
-            this.groupBox3.Controls.Add(this.ViewPrivUser_btn_tab4);
-            this.groupBox3.Location = new System.Drawing.Point(5, 10);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(496, 542);
-            this.groupBox3.TabIndex = 25;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Revoke User";
-            // 
-            // SelectedUser_label_tab4
-            // 
-            this.SelectedUser_label_tab4.AutoSize = true;
-            this.SelectedUser_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedUser_label_tab4.Location = new System.Drawing.Point(2, 15);
-            this.SelectedUser_label_tab4.Name = "SelectedUser_label_tab4";
-            this.SelectedUser_label_tab4.Size = new System.Drawing.Size(110, 20);
-            this.SelectedUser_label_tab4.TabIndex = 24;
-            this.SelectedUser_label_tab4.Text = "Selected User";
-            // 
-            // SelectedUser_txtbox_tab4
-            // 
-            this.SelectedUser_txtbox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedUser_txtbox_tab4.Location = new System.Drawing.Point(118, 12);
-            this.SelectedUser_txtbox_tab4.Name = "SelectedUser_txtbox_tab4";
-            this.SelectedUser_txtbox_tab4.Size = new System.Drawing.Size(183, 26);
-            this.SelectedUser_txtbox_tab4.TabIndex = 23;
-            // 
-            // RevokeUser_btn_tab4
-            // 
-            this.RevokeUser_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.RevokeUser_btn_tab4.Location = new System.Drawing.Point(6, 499);
-            this.RevokeUser_btn_tab4.Name = "RevokeUser_btn_tab4";
-            this.RevokeUser_btn_tab4.Size = new System.Drawing.Size(481, 33);
-            this.RevokeUser_btn_tab4.TabIndex = 21;
-            this.RevokeUser_btn_tab4.Text = "Revoke";
-            this.RevokeUser_btn_tab4.UseVisualStyleBackColor = true;
-            this.RevokeUser_btn_tab4.Click += new System.EventHandler(this.RevokeUser_btn_tab4_Click);
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(6, 52);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(481, 441);
-            this.dataGridView4.TabIndex = 20;
-            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
-            // 
-            // ViewPrivUser_btn_tab4
-            // 
-            this.ViewPrivUser_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewPrivUser_btn_tab4.Location = new System.Drawing.Point(307, 8);
-            this.ViewPrivUser_btn_tab4.Name = "ViewPrivUser_btn_tab4";
-            this.ViewPrivUser_btn_tab4.Size = new System.Drawing.Size(180, 34);
-            this.ViewPrivUser_btn_tab4.TabIndex = 22;
-            this.ViewPrivUser_btn_tab4.Text = "View privileges";
-            this.ViewPrivUser_btn_tab4.UseVisualStyleBackColor = true;
-            this.ViewPrivUser_btn_tab4.Click += new System.EventHandler(this.ViewPrivUser_btn_tab4_Click);
             // 
             // tabPage5
             // 
@@ -1135,14 +977,14 @@ namespace Oracle_App
             this.ShowTable_btn_tab5.UseVisualStyleBackColor = true;
             this.ShowTable_btn_tab5.Click += new System.EventHandler(this.ShowTable_btn_tab5_Click);
             // 
-            // Form1
+            // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1095, 601);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
-            this.Name = "Form1";
+            this.Name = "Form2";
             this.Text = "Admin";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1161,13 +1003,6 @@ namespace Oracle_App
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.Role_group2.ResumeLayout(false);
             this.Role_group2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.groupBox9.ResumeLayout(false);
             this.groupBox9.PerformLayout();
@@ -1223,19 +1058,6 @@ namespace Oracle_App
         private System.Windows.Forms.Label NewPass_label_tab2;
         private System.Windows.Forms.TextBox SelectedUser_textbox_tab2;
         private System.Windows.Forms.Label SelectedUser_label_tab2;
-        private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label SelectedUser_label_tab4;
-        private System.Windows.Forms.TextBox SelectedUser_txtbox_tab4;
-        private System.Windows.Forms.Button RevokeUser_btn_tab4;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.Button ViewPrivUser_btn_tab4;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button RevokeRole_btn_tab4;
-        private System.Windows.Forms.Button ViewPrivRole_btn_tab4;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.Label SelectedRole_label_tab4;
-        private System.Windows.Forms.TextBox SelectedRole_txtbox_tab4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.DataGridView dataGridView6;

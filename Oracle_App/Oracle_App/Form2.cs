@@ -13,11 +13,11 @@ using System.Configuration;
 
 namespace Oracle_App
 {
-    public partial class Form1 : Form
+    public partial class Form2 : Form
     {
         // Instance connection object
         OracleConnection con = null;
-        public Form1()
+        public Form2()
         {
             this.setConnection();
             InitializeComponent();
@@ -44,16 +44,6 @@ namespace Oracle_App
             dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
 
-            dataGridView4.EnableHeadersVisualStyles = false;
-            dataGridView4.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
-            dataGridView4.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
-
-            dataGridView5.EnableHeadersVisualStyles = false;
-            dataGridView5.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
-            dataGridView5.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
-            dataGridView5.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
-
             dataGridView6.EnableHeadersVisualStyles = false;
             dataGridView6.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
             dataGridView6.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
@@ -63,8 +53,6 @@ namespace Oracle_App
             dataGridView7.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
             dataGridView7.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView7.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
-
-            tabPage4.Enabled = false;
         }
 
         private void setConnection()
@@ -416,7 +404,6 @@ namespace Oracle_App
             try
             {
                 int n = cmd.ExecuteNonQuery();
-                MessageBox.Show(n.ToString());
                 if (n != 0)
                 {
                     MessageBox.Show("User altered");
@@ -428,100 +415,6 @@ namespace Oracle_App
             {
                 MessageBox.Show("Nothing happend!!!");
                 throw;
-            }
-        }
-
-        private void ViewPrivUser_btn_tab4_Click(object sender, EventArgs e)
-        {
-            LoadPriv(SelectedUser_txtbox_tab4, dataGridView4, 1);
-        }
-
-        private void ViewPrivRole_btn_tab4_Click(object sender, EventArgs e)
-        {
-            LoadPriv(SelectedRole_txtbox_tab4, dataGridView5, 1);
-        }
-
-        private void RevokeUser_btn_tab4_Click(object sender, EventArgs e)
-        {
-            OracleDataAdapter da = new OracleDataAdapter();
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Revoke_Privs_User"; // Sql statement
-            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("User_Name", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg4[0];
-            cmd.Parameters.Add("priv", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg4[2];
-            cmd.Parameters.Add("obj", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg4[1];
-
-            try
-            {
-                int n = cmd.ExecuteNonQuery();
-                if (n != 0)
-                {
-                    MessageBox.Show("Revoke success");
-                    LoadPriv(SelectedUser_txtbox_tab4, dataGridView4, 1); // Refresh
-                }
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
-            }
-        }
-
-        public string[] res_CellClick_dtg4;
-        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (index != -1) // Nhan vao header khong tinh
-            {
-                DataGridViewRow selectedRow = dataGridView4.Rows[index];
-                string grantee = selectedRow.Cells["GRANTEE"].Value.ToString();
-                string table = selectedRow.Cells["TABLE_NAME"].Value.ToString();
-                string priv = selectedRow.Cells["PRIVILEGE"].Value.ToString();
-
-                res_CellClick_dtg4 = new string[] { grantee, table, priv }; // Add values to res
-                //MessageBox.Show(res_CellClick_dtg4[0] + ' ' + res_CellClick_dtg4[1]);
-            }
-        }
-
-        private void RevokeRole_btn_tab4_Click(object sender, EventArgs e)
-        {
-            OracleDataAdapter da = new OracleDataAdapter();
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Revoke_Privs_Role"; // Sql statement
-            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
-            cmd.Parameters.Add("a_role", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg5[0];
-            cmd.Parameters.Add("TABLE_NAME", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg5[2];
-            cmd.Parameters.Add("a_priv", OracleDbType.Varchar2, 100).Value = res_CellClick_dtg5[1];
-
-            try
-            {
-                int n = cmd.ExecuteNonQuery();
-                if (n != 0)
-                {
-                    MessageBox.Show("Revoke success");
-                    LoadPriv(SelectedRole_txtbox_tab4, dataGridView5, 1); // Refresh
-                }
-            }
-            catch (Exception exp)
-            {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
-            }
-        }
-
-        public string[] res_CellClick_dtg5;
-        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (index != -1) // Nhan vao header khong tinh
-            {
-                DataGridViewRow selectedRow = dataGridView5.Rows[index];
-                string grantee = selectedRow.Cells["GRANTEE"].Value.ToString();
-                string table = selectedRow.Cells["TABLE_NAME"].Value.ToString();
-                string priv = selectedRow.Cells["PRIVILEGE"].Value.ToString();
-
-                res_CellClick_dtg5 = new string[] { grantee, table, priv }; // Add values to res
-                //MessageBox.Show(res_CellClick_dtg5[0] + ' ' + res_CellClick_dtg5[1]);
             }
         }
 
