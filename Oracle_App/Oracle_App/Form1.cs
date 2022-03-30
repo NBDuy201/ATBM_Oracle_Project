@@ -529,11 +529,11 @@ namespace Oracle_App
         {
             switch (Priv_comboBox_tab5.SelectedItem.ToString())
             {
-                case "SELECT":
                 case "UPDATE":
                     Column_txtbox_tab5.Enabled = true;
                     break;
                 default:
+                    Column_txtbox_tab5.Clear();
                     Column_txtbox_tab5.Enabled = false;
                     break;
             }

@@ -144,20 +144,22 @@ end;
 
 -- Cau 4 Cap quyen cho user
 CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_USER(user_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_col IN NVARCHAR2, n_tab IN NVARCHAR2, n_option IN NVARCHAR2)
+authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
     select count(*) into n_count from all_users where username = user_name;
    	if n_count = 0 then
-        dbms_output.put_line('User does not exist');
+        RAISE_APPLICATION_ERROR(-20000, 'User doesn''t exists');
         return;
    	end if;
 
-    if  n_pri = 'UPDATE' and n_pri = 'SELECT' then
+    if  n_pri = 'UPDATE' then
         if n_option = 'TRUE' then
             EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name || ' with grant option');
         else
             EXECUTE IMMEDIATE ('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name);
+            DBMS_OUTPUT.PUT_LINE('grant ' || n_pri || '(' || n_col || ') ' || ' on ' || n_tab || ' to ' || user_name);
         end if;
     else
         if n_option = 'TRUE' then
