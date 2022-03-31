@@ -9,53 +9,55 @@ using System.Threading.Tasks;
 using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
 using System.Windows.Forms;
+using Oracle_App;
 
 namespace ATBM
 {
-    
     public partial class Form1 : Form
     {
-        
-
-
+        private OracleConnection con = null;
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Login_btn_Click(object sender, EventArgs e)
         {
-            string user = textBox1.Text;
-            string password = textBox2.Text;
-            OracleConnection con = new OracleConnection("Data Source=(DESCRIPTION=(ADDRESS_LIST=(ADDRESS=(PROTOCOL=TCP)(HOST=DESKTOP-PLHTRMT)(PORT=1521)))(CONNECT_DATA=(SERVER=DEDICATED)(SERVICE_NAME=orcl)));User Id=" + user + ";Password=" + password);
+            string user = user_txtBox_login.Text;
+            string password = pass_txtBox_login.Text;
+            string connectionString = new ConnectionString(user, password).ToString();
+            con = new OracleConnection(connectionString);
             
-            
-            if(con.State == ConnectionState.Closed)
+            // Connect
+            try
             {
-                con.Open();
-                MessageBox.Show("OK");
+                con.Open(); // Connect to database
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("User doesn't exists");
+            }
+
+            // Check
+            if (user == "DBA_BV")
+            {
+                MessageBox.Show("Welcome DBA");
+
+                this.Hide();
+                Form2 form = new Form2(user, password);
+                form.Show();
             }
             else
             {
-                MessageBox.Show("Failed");
-
+                MessageBox.Show("Login denied");
             }
             con.Close();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
+            con.Close();
+            Application.ExitThread();
         }
     }
 }

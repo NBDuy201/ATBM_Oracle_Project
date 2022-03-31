@@ -16,9 +16,16 @@ namespace Oracle_App
     public partial class Form2 : Form
     {
         // Instance connection object
-        OracleConnection con = null;
-        public Form2()
+        private OracleConnection con = null;
+        public string username = null;
+        public string password = null;
+
+        public Form2(string user, string pass)
         {
+            // User + pass from login
+            username = user;
+            password = pass;
+
             this.setConnection();
             InitializeComponent();
 
@@ -57,27 +64,28 @@ namespace Oracle_App
 
         private void setConnection()
         {
-            string connectionString = ConfigurationManager.ConnectionStrings["HrDB"].ConnectionString;
-            con = new OracleConnection(connectionString); // Oracle connection object
+            string connectionString = new ConnectionString(username, password).ToString();
+            con = new OracleConnection(connectionString);
             try
             {
                 con.Open();
             }
             catch(Exception exp)
             {
-
+                con.Close();
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void Form2_Load(object sender, EventArgs e)
         {
             DataTable dt = LoadUser(); // Data table object
             dataGridView1.DataSource = dt.DefaultView;
         }
 
-        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
             con.Close();
+            Application.ExitThread();
         }
 
         private void ClearTextBoxes()
