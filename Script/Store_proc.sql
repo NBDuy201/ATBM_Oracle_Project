@@ -223,7 +223,7 @@ BEGIN
    	end if;
 
      if n_option = 'TRUE' then
-        EXECUTE IMMEDIATE ('grant ' || n_pri || ' to ' || user_name || ' with grant option');
+        EXECUTE IMMEDIATE ('grant ' || n_pri || ' to ' || user_name || ' with admin option');
     else
         EXECUTE IMMEDIATE ('grant ' || n_pri || ' to ' || user_name);
     end if;

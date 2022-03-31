@@ -56,7 +56,8 @@ namespace ATBM
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            con.Close();
+            if(con != null)
+                con.Close();
             Application.ExitThread();
         }
     }

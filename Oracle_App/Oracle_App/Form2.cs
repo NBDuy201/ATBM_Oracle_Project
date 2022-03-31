@@ -84,7 +84,8 @@ namespace Oracle_App
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
         {
-            con.Close();
+            if (con != null)
+                con.Close();
             Application.ExitThread();
         }
 

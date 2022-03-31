@@ -648,9 +648,9 @@ namespace Oracle_App
             this.wgo_chckBox2_Obj_tab5.AutoSize = true;
             this.wgo_chckBox2_Obj_tab5.Location = new System.Drawing.Point(92, 83);
             this.wgo_chckBox2_Obj_tab5.Name = "wgo_chckBox2_Obj_tab5";
-            this.wgo_chckBox2_Obj_tab5.Size = new System.Drawing.Size(104, 17);
+            this.wgo_chckBox2_Obj_tab5.Size = new System.Drawing.Size(108, 17);
             this.wgo_chckBox2_Obj_tab5.TabIndex = 44;
-            this.wgo_chckBox2_Obj_tab5.Text = "with grant option";
+            this.wgo_chckBox2_Obj_tab5.Text = "with admin option";
             this.wgo_chckBox2_Obj_tab5.UseVisualStyleBackColor = true;
             // 
             // User_Role_txtBox2_tab5
