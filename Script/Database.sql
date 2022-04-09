@@ -1,3 +1,10 @@
+--select 'drop table "'||table_name||'" cascade constraints;' from user_tables;
+drop table "CSYT" cascade constraints;
+drop table "BENHNHAN" cascade constraints;
+drop table "NHANVIEN" cascade constraints;
+drop table "HSBA" cascade constraints;
+drop table "HSBA_DV" cascade constraints;
+
 CREATE TABLE "CSYT" (
   "MACSYT" varchar2(30),
   "TENCSYT" NVARCHAR2(50),
@@ -10,7 +17,7 @@ CREATE TABLE "BENHNHAN" (
   "MABN" varchar2(30),
   "MACSYT" varchar2(30),
   "TENBN" NVARCHAR2(50),
-  "CMND" Number(12),
+  "CMND" varchar(12),
   "NGAYSINH" date,
   "SONHA" Number(5),
   "TENĐUONG" nvarchar2(50),
@@ -30,7 +37,7 @@ CREATE TABLE "NHANVIEN" (
   "HOTEN" NVARCHAR2(50),
   "PHAI" nvarchar2(20),
   "NGAYSINH" date,
-  "CMND" Number(12),
+  "CMND" varchar(12),
   "QUEQUAN" Nvarchar2(50),
   "SODT" varchar(12),
   "CSYT" varchar2(30),
@@ -55,6 +62,9 @@ CREATE TABLE "HSBA" (
   CONSTRAINT "FK_HSBA.MABN"
     FOREIGN KEY ("MABN")
       REFERENCES "BENHNHAN"("MABN"),
+  CONSTRAINT "FK_HSBA.MABS"
+    FOREIGN KEY ("MABS")
+      REFERENCES "NHANVIEN"("MANV"),
   CONSTRAINT "FK_HSBA.MACSYT"
     FOREIGN KEY ("MACSYT")
       REFERENCES "CSYT"("MACSYT")
