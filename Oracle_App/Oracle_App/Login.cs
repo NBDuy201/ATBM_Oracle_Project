@@ -13,10 +13,10 @@ using Oracle_App;
 
 namespace ATBM
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private OracleConnection con = null;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -44,7 +44,7 @@ namespace ATBM
                 MessageBox.Show("Welcome DBA");
 
                 this.Hide();
-                Form2 form = new Form2(user, password);
+                Admin form = new Admin(user, password);
                 form.Show();
             }
             else
