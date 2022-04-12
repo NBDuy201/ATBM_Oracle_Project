@@ -110,7 +110,6 @@ namespace Oracle_App
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.Reset_btn_tab5 = new System.Windows.Forms.Button();
             this.Update_btn_tab5 = new System.Windows.Forms.Button();
-            this.Delete_btn_tab5 = new System.Windows.Forms.Button();
             this.SDTCSYT_label_tab5 = new System.Windows.Forms.Label();
             this.DCCSYT_label_tab5 = new System.Windows.Forms.Label();
             this.TENCSYT_label_tab5 = new System.Windows.Forms.Label();
@@ -125,9 +124,31 @@ namespace Oracle_App
             this.CSYT_label_tab5 = new System.Windows.Forms.Label();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.NhanVien_srchBtn_tab5 = new System.Windows.Forms.Button();
-            this.NhanVien_txtBox_tab5 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.NGAYSINH_picker_tab6 = new System.Windows.Forms.DateTimePicker();
+            this.PHAI_cmbBox_tab6 = new System.Windows.Forms.ComboBox();
+            this.VAITRO_cmbBox_tab6 = new System.Windows.Forms.ComboBox();
+            this.Reset_btn_tab6 = new System.Windows.Forms.Button();
+            this.CHUYENKHOA_label_tab6 = new System.Windows.Forms.Label();
+            this.VAITRO_label_tab6 = new System.Windows.Forms.Label();
+            this.CSYT_label_tab6 = new System.Windows.Forms.Label();
+            this.SODT_label_tab6 = new System.Windows.Forms.Label();
+            this.QUEQUAN_label_tab6 = new System.Windows.Forms.Label();
+            this.CMND_label_tab6 = new System.Windows.Forms.Label();
+            this.NGAYSINH_label_tab6 = new System.Windows.Forms.Label();
+            this.PHAI_label_tab6 = new System.Windows.Forms.Label();
+            this.HOTEN_label_tab6 = new System.Windows.Forms.Label();
+            this.MANV_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.MANV_label_tab6 = new System.Windows.Forms.Label();
+            this.CHUYENKHOA_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.SODT_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.QUEQUAN_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.CMND_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.HOTEN_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.Insert_btn_tab6 = new System.Windows.Forms.Button();
+            this.CSYT_cmbBox_tab6 = new System.Windows.Forms.ComboBox();
+            this.NhanVien_srchBtn_tab6 = new System.Windows.Forms.Button();
+            this.NhanVien_txtBox_tab6 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -153,7 +174,7 @@ namespace Oracle_App
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.tabPage6.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.SuspendLayout();
             // 
@@ -1027,7 +1048,6 @@ namespace Oracle_App
             // 
             this.groupBox10.Controls.Add(this.Reset_btn_tab5);
             this.groupBox10.Controls.Add(this.Update_btn_tab5);
-            this.groupBox10.Controls.Add(this.Delete_btn_tab5);
             this.groupBox10.Controls.Add(this.SDTCSYT_label_tab5);
             this.groupBox10.Controls.Add(this.DCCSYT_label_tab5);
             this.groupBox10.Controls.Add(this.TENCSYT_label_tab5);
@@ -1037,17 +1057,17 @@ namespace Oracle_App
             this.groupBox10.Controls.Add(this.DCCSYT_txtBox_tab5);
             this.groupBox10.Controls.Add(this.TENCSYT_txtBox_tab5);
             this.groupBox10.Controls.Add(this.Insert_btn_tab5);
-            this.groupBox10.Location = new System.Drawing.Point(5, 8);
+            this.groupBox10.Location = new System.Drawing.Point(5, 39);
             this.groupBox10.Name = "groupBox10";
-            this.groupBox10.Size = new System.Drawing.Size(287, 225);
+            this.groupBox10.Size = new System.Drawing.Size(287, 323);
             this.groupBox10.TabIndex = 49;
             this.groupBox10.TabStop = false;
-            this.groupBox10.Text = "DML Facilities";
+            this.groupBox10.Text = "DML CSYT";
             // 
             // Reset_btn_tab5
             // 
             this.Reset_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset_btn_tab5.Location = new System.Drawing.Point(145, 186);
+            this.Reset_btn_tab5.Location = new System.Drawing.Point(74, 281);
             this.Reset_btn_tab5.Name = "Reset_btn_tab5";
             this.Reset_btn_tab5.Size = new System.Drawing.Size(131, 33);
             this.Reset_btn_tab5.TabIndex = 29;
@@ -1059,7 +1079,7 @@ namespace Oracle_App
             // 
             this.Update_btn_tab5.Enabled = false;
             this.Update_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_btn_tab5.Location = new System.Drawing.Point(145, 147);
+            this.Update_btn_tab5.Location = new System.Drawing.Point(145, 242);
             this.Update_btn_tab5.Name = "Update_btn_tab5";
             this.Update_btn_tab5.Size = new System.Drawing.Size(131, 33);
             this.Update_btn_tab5.TabIndex = 28;
@@ -1067,23 +1087,11 @@ namespace Oracle_App
             this.Update_btn_tab5.UseVisualStyleBackColor = true;
             this.Update_btn_tab5.Click += new System.EventHandler(this.Update_btn_tab5_Click);
             // 
-            // Delete_btn_tab5
-            // 
-            this.Delete_btn_tab5.Enabled = false;
-            this.Delete_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Delete_btn_tab5.Location = new System.Drawing.Point(10, 186);
-            this.Delete_btn_tab5.Name = "Delete_btn_tab5";
-            this.Delete_btn_tab5.Size = new System.Drawing.Size(129, 33);
-            this.Delete_btn_tab5.TabIndex = 23;
-            this.Delete_btn_tab5.Text = "Delete";
-            this.Delete_btn_tab5.UseVisualStyleBackColor = true;
-            this.Delete_btn_tab5.Click += new System.EventHandler(this.Delete_btn_tab5_Click);
-            // 
             // SDTCSYT_label_tab5
             // 
             this.SDTCSYT_label_tab5.AutoSize = true;
             this.SDTCSYT_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SDTCSYT_label_tab5.Location = new System.Drawing.Point(6, 116);
+            this.SDTCSYT_label_tab5.Location = new System.Drawing.Point(6, 188);
             this.SDTCSYT_label_tab5.Name = "SDTCSYT_label_tab5";
             this.SDTCSYT_label_tab5.Size = new System.Drawing.Size(83, 20);
             this.SDTCSYT_label_tab5.TabIndex = 21;
@@ -1093,7 +1101,7 @@ namespace Oracle_App
             // 
             this.DCCSYT_label_tab5.AutoSize = true;
             this.DCCSYT_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCCSYT_label_tab5.Location = new System.Drawing.Point(6, 84);
+            this.DCCSYT_label_tab5.Location = new System.Drawing.Point(6, 129);
             this.DCCSYT_label_tab5.Name = "DCCSYT_label_tab5";
             this.DCCSYT_label_tab5.Size = new System.Drawing.Size(74, 20);
             this.DCCSYT_label_tab5.TabIndex = 21;
@@ -1103,7 +1111,7 @@ namespace Oracle_App
             // 
             this.TENCSYT_label_tab5.AutoSize = true;
             this.TENCSYT_label_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TENCSYT_label_tab5.Location = new System.Drawing.Point(6, 52);
+            this.TENCSYT_label_tab5.Location = new System.Drawing.Point(6, 75);
             this.TENCSYT_label_tab5.Name = "TENCSYT_label_tab5";
             this.TENCSYT_label_tab5.Size = new System.Drawing.Size(82, 20);
             this.TENCSYT_label_tab5.TabIndex = 21;
@@ -1130,7 +1138,7 @@ namespace Oracle_App
             // SDTCSYT_txtBox_tab5
             // 
             this.SDTCSYT_txtBox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SDTCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 115);
+            this.SDTCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 185);
             this.SDTCSYT_txtBox_tab5.Name = "SDTCSYT_txtBox_tab5";
             this.SDTCSYT_txtBox_tab5.Size = new System.Drawing.Size(186, 26);
             this.SDTCSYT_txtBox_tab5.TabIndex = 20;
@@ -1138,7 +1146,7 @@ namespace Oracle_App
             // DCCSYT_txtBox_tab5
             // 
             this.DCCSYT_txtBox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DCCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 83);
+            this.DCCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 128);
             this.DCCSYT_txtBox_tab5.Name = "DCCSYT_txtBox_tab5";
             this.DCCSYT_txtBox_tab5.Size = new System.Drawing.Size(186, 26);
             this.DCCSYT_txtBox_tab5.TabIndex = 20;
@@ -1146,7 +1154,7 @@ namespace Oracle_App
             // TENCSYT_txtBox_tab5
             // 
             this.TENCSYT_txtBox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TENCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 51);
+            this.TENCSYT_txtBox_tab5.Location = new System.Drawing.Point(90, 74);
             this.TENCSYT_txtBox_tab5.Name = "TENCSYT_txtBox_tab5";
             this.TENCSYT_txtBox_tab5.Size = new System.Drawing.Size(186, 26);
             this.TENCSYT_txtBox_tab5.TabIndex = 20;
@@ -1154,7 +1162,7 @@ namespace Oracle_App
             // Insert_btn_tab5
             // 
             this.Insert_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Insert_btn_tab5.Location = new System.Drawing.Point(10, 147);
+            this.Insert_btn_tab5.Location = new System.Drawing.Point(10, 242);
             this.Insert_btn_tab5.Name = "Insert_btn_tab5";
             this.Insert_btn_tab5.Size = new System.Drawing.Size(129, 33);
             this.Insert_btn_tab5.TabIndex = 22;
@@ -1207,7 +1215,11 @@ namespace Oracle_App
             // 
             // tabPage6
             // 
-            this.tabPage6.Controls.Add(this.groupBox4);
+            this.tabPage6.Controls.Add(this.groupBox3);
+            this.tabPage6.Controls.Add(this.NhanVien_srchBtn_tab6);
+            this.tabPage6.Controls.Add(this.NhanVien_txtBox_tab6);
+            this.tabPage6.Controls.Add(this.label2);
+            this.tabPage6.Controls.Add(this.dataGridView5);
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Size = new System.Drawing.Size(1081, 561);
@@ -1215,60 +1227,286 @@ namespace Oracle_App
             this.tabPage6.Text = "Employee";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
-            // groupBox4
+            // groupBox3
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.NhanVien_srchBtn_tab5);
-            this.groupBox4.Controls.Add(this.NhanVien_txtBox_tab5);
-            this.groupBox4.Controls.Add(this.label2);
-            this.groupBox4.Controls.Add(this.dataGridView5);
-            this.groupBox4.Location = new System.Drawing.Point(245, 6);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(590, 549);
-            this.groupBox4.TabIndex = 29;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "Employee";
+            this.groupBox3.Controls.Add(this.NGAYSINH_picker_tab6);
+            this.groupBox3.Controls.Add(this.CSYT_cmbBox_tab6);
+            this.groupBox3.Controls.Add(this.PHAI_cmbBox_tab6);
+            this.groupBox3.Controls.Add(this.VAITRO_cmbBox_tab6);
+            this.groupBox3.Controls.Add(this.Reset_btn_tab6);
+            this.groupBox3.Controls.Add(this.CHUYENKHOA_label_tab6);
+            this.groupBox3.Controls.Add(this.VAITRO_label_tab6);
+            this.groupBox3.Controls.Add(this.CSYT_label_tab6);
+            this.groupBox3.Controls.Add(this.SODT_label_tab6);
+            this.groupBox3.Controls.Add(this.QUEQUAN_label_tab6);
+            this.groupBox3.Controls.Add(this.CMND_label_tab6);
+            this.groupBox3.Controls.Add(this.NGAYSINH_label_tab6);
+            this.groupBox3.Controls.Add(this.PHAI_label_tab6);
+            this.groupBox3.Controls.Add(this.HOTEN_label_tab6);
+            this.groupBox3.Controls.Add(this.MANV_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.MANV_label_tab6);
+            this.groupBox3.Controls.Add(this.CHUYENKHOA_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.SODT_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.QUEQUAN_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.CMND_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.HOTEN_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.Insert_btn_tab6);
+            this.groupBox3.Location = new System.Drawing.Point(5, 37);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(369, 387);
+            this.groupBox3.TabIndex = 53;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "DML NhanVien";
             // 
-            // NhanVien_srchBtn_tab5
+            // NGAYSINH_picker_tab6
             // 
-            this.NhanVien_srchBtn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NhanVien_srchBtn_tab5.Location = new System.Drawing.Point(508, 12);
-            this.NhanVien_srchBtn_tab5.Name = "NhanVien_srchBtn_tab5";
-            this.NhanVien_srchBtn_tab5.Size = new System.Drawing.Size(76, 30);
-            this.NhanVien_srchBtn_tab5.TabIndex = 48;
-            this.NhanVien_srchBtn_tab5.Text = "Search";
-            this.NhanVien_srchBtn_tab5.UseVisualStyleBackColor = true;
+            this.NGAYSINH_picker_tab6.CustomFormat = "";
+            this.NGAYSINH_picker_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGAYSINH_picker_tab6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.NGAYSINH_picker_tab6.Location = new System.Drawing.Point(134, 116);
+            this.NGAYSINH_picker_tab6.Name = "NGAYSINH_picker_tab6";
+            this.NGAYSINH_picker_tab6.Size = new System.Drawing.Size(117, 26);
+            this.NGAYSINH_picker_tab6.TabIndex = 54;
             // 
-            // NhanVien_txtBox_tab5
+            // PHAI_cmbBox_tab6
             // 
-            this.NhanVien_txtBox_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NhanVien_txtBox_tab5.Location = new System.Drawing.Point(133, 16);
-            this.NhanVien_txtBox_tab5.Name = "NhanVien_txtBox_tab5";
-            this.NhanVien_txtBox_tab5.Size = new System.Drawing.Size(369, 26);
-            this.NhanVien_txtBox_tab5.TabIndex = 46;
+            this.PHAI_cmbBox_tab6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PHAI_cmbBox_tab6.FormattingEnabled = true;
+            this.PHAI_cmbBox_tab6.Location = new System.Drawing.Point(134, 86);
+            this.PHAI_cmbBox_tab6.Name = "PHAI_cmbBox_tab6";
+            this.PHAI_cmbBox_tab6.Size = new System.Drawing.Size(229, 21);
+            this.PHAI_cmbBox_tab6.TabIndex = 36;
+            // 
+            // VAITRO_cmbBox_tab6
+            // 
+            this.VAITRO_cmbBox_tab6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VAITRO_cmbBox_tab6.FormattingEnabled = true;
+            this.VAITRO_cmbBox_tab6.Location = new System.Drawing.Point(134, 278);
+            this.VAITRO_cmbBox_tab6.Name = "VAITRO_cmbBox_tab6";
+            this.VAITRO_cmbBox_tab6.Size = new System.Drawing.Size(229, 21);
+            this.VAITRO_cmbBox_tab6.TabIndex = 36;
+            // 
+            // Reset_btn_tab6
+            // 
+            this.Reset_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 340);
+            this.Reset_btn_tab6.Name = "Reset_btn_tab6";
+            this.Reset_btn_tab6.Size = new System.Drawing.Size(178, 33);
+            this.Reset_btn_tab6.TabIndex = 29;
+            this.Reset_btn_tab6.Text = "Reset";
+            this.Reset_btn_tab6.UseVisualStyleBackColor = true;
+            this.Reset_btn_tab6.Click += new System.EventHandler(this.Reset_btn_tab6_Click);
+            // 
+            // CHUYENKHOA_label_tab6
+            // 
+            this.CHUYENKHOA_label_tab6.AutoSize = true;
+            this.CHUYENKHOA_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 311);
+            this.CHUYENKHOA_label_tab6.Name = "CHUYENKHOA_label_tab6";
+            this.CHUYENKHOA_label_tab6.Size = new System.Drawing.Size(122, 20);
+            this.CHUYENKHOA_label_tab6.TabIndex = 21;
+            this.CHUYENKHOA_label_tab6.Text = "CHUYENKHOA";
+            // 
+            // VAITRO_label_tab6
+            // 
+            this.VAITRO_label_tab6.AutoSize = true;
+            this.VAITRO_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 279);
+            this.VAITRO_label_tab6.Name = "VAITRO_label_tab6";
+            this.VAITRO_label_tab6.Size = new System.Drawing.Size(69, 20);
+            this.VAITRO_label_tab6.TabIndex = 21;
+            this.VAITRO_label_tab6.Text = "VAITRO";
+            // 
+            // CSYT_label_tab6
+            // 
+            this.CSYT_label_tab6.AutoSize = true;
+            this.CSYT_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSYT_label_tab6.Location = new System.Drawing.Point(6, 247);
+            this.CSYT_label_tab6.Name = "CSYT_label_tab6";
+            this.CSYT_label_tab6.Size = new System.Drawing.Size(51, 20);
+            this.CSYT_label_tab6.TabIndex = 21;
+            this.CSYT_label_tab6.Text = "CSYT";
+            // 
+            // SODT_label_tab6
+            // 
+            this.SODT_label_tab6.AutoSize = true;
+            this.SODT_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SODT_label_tab6.Location = new System.Drawing.Point(6, 215);
+            this.SODT_label_tab6.Name = "SODT_label_tab6";
+            this.SODT_label_tab6.Size = new System.Drawing.Size(53, 20);
+            this.SODT_label_tab6.TabIndex = 21;
+            this.SODT_label_tab6.Text = "SODT";
+            // 
+            // QUEQUAN_label_tab6
+            // 
+            this.QUEQUAN_label_tab6.AutoSize = true;
+            this.QUEQUAN_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QUEQUAN_label_tab6.Location = new System.Drawing.Point(6, 183);
+            this.QUEQUAN_label_tab6.Name = "QUEQUAN_label_tab6";
+            this.QUEQUAN_label_tab6.Size = new System.Drawing.Size(90, 20);
+            this.QUEQUAN_label_tab6.TabIndex = 21;
+            this.QUEQUAN_label_tab6.Text = "QUEQUAN";
+            // 
+            // CMND_label_tab6
+            // 
+            this.CMND_label_tab6.AutoSize = true;
+            this.CMND_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMND_label_tab6.Location = new System.Drawing.Point(6, 151);
+            this.CMND_label_tab6.Name = "CMND_label_tab6";
+            this.CMND_label_tab6.Size = new System.Drawing.Size(56, 20);
+            this.CMND_label_tab6.TabIndex = 21;
+            this.CMND_label_tab6.Text = "CMND";
+            // 
+            // NGAYSINH_label_tab6
+            // 
+            this.NGAYSINH_label_tab6.AutoSize = true;
+            this.NGAYSINH_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGAYSINH_label_tab6.Location = new System.Drawing.Point(6, 119);
+            this.NGAYSINH_label_tab6.Name = "NGAYSINH_label_tab6";
+            this.NGAYSINH_label_tab6.Size = new System.Drawing.Size(94, 20);
+            this.NGAYSINH_label_tab6.TabIndex = 21;
+            this.NGAYSINH_label_tab6.Text = "NGAYSINH";
+            // 
+            // PHAI_label_tab6
+            // 
+            this.PHAI_label_tab6.AutoSize = true;
+            this.PHAI_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PHAI_label_tab6.Location = new System.Drawing.Point(6, 87);
+            this.PHAI_label_tab6.Name = "PHAI_label_tab6";
+            this.PHAI_label_tab6.Size = new System.Drawing.Size(47, 20);
+            this.PHAI_label_tab6.TabIndex = 21;
+            this.PHAI_label_tab6.Text = "PHAI";
+            // 
+            // HOTEN_label_tab6
+            // 
+            this.HOTEN_label_tab6.AutoSize = true;
+            this.HOTEN_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HOTEN_label_tab6.Location = new System.Drawing.Point(6, 55);
+            this.HOTEN_label_tab6.Name = "HOTEN_label_tab6";
+            this.HOTEN_label_tab6.Size = new System.Drawing.Size(64, 20);
+            this.HOTEN_label_tab6.TabIndex = 21;
+            this.HOTEN_label_tab6.Text = "HOTEN";
+            // 
+            // MANV_txtBox_tab6
+            // 
+            this.MANV_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MANV_txtBox_tab6.Location = new System.Drawing.Point(134, 19);
+            this.MANV_txtBox_tab6.Name = "MANV_txtBox_tab6";
+            this.MANV_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.MANV_txtBox_tab6.TabIndex = 17;
+            // 
+            // MANV_label_tab6
+            // 
+            this.MANV_label_tab6.AutoSize = true;
+            this.MANV_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MANV_label_tab6.Location = new System.Drawing.Point(6, 23);
+            this.MANV_label_tab6.Name = "MANV_label_tab6";
+            this.MANV_label_tab6.Size = new System.Drawing.Size(55, 20);
+            this.MANV_label_tab6.TabIndex = 18;
+            this.MANV_label_tab6.Text = "MANV";
+            // 
+            // CHUYENKHOA_txtBox_tab6
+            // 
+            this.CHUYENKHOA_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHUYENKHOA_txtBox_tab6.Location = new System.Drawing.Point(134, 308);
+            this.CHUYENKHOA_txtBox_tab6.Name = "CHUYENKHOA_txtBox_tab6";
+            this.CHUYENKHOA_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.CHUYENKHOA_txtBox_tab6.TabIndex = 20;
+            // 
+            // SODT_txtBox_tab6
+            // 
+            this.SODT_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SODT_txtBox_tab6.Location = new System.Drawing.Point(134, 212);
+            this.SODT_txtBox_tab6.Name = "SODT_txtBox_tab6";
+            this.SODT_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.SODT_txtBox_tab6.TabIndex = 20;
+            // 
+            // QUEQUAN_txtBox_tab6
+            // 
+            this.QUEQUAN_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QUEQUAN_txtBox_tab6.Location = new System.Drawing.Point(134, 180);
+            this.QUEQUAN_txtBox_tab6.Name = "QUEQUAN_txtBox_tab6";
+            this.QUEQUAN_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.QUEQUAN_txtBox_tab6.TabIndex = 20;
+            // 
+            // CMND_txtBox_tab6
+            // 
+            this.CMND_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMND_txtBox_tab6.Location = new System.Drawing.Point(134, 148);
+            this.CMND_txtBox_tab6.Name = "CMND_txtBox_tab6";
+            this.CMND_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.CMND_txtBox_tab6.TabIndex = 20;
+            // 
+            // HOTEN_txtBox_tab6
+            // 
+            this.HOTEN_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.HOTEN_txtBox_tab6.Location = new System.Drawing.Point(134, 52);
+            this.HOTEN_txtBox_tab6.Name = "HOTEN_txtBox_tab6";
+            this.HOTEN_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
+            this.HOTEN_txtBox_tab6.TabIndex = 20;
+            // 
+            // Insert_btn_tab6
+            // 
+            this.Insert_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Insert_btn_tab6.Location = new System.Drawing.Point(10, 340);
+            this.Insert_btn_tab6.Name = "Insert_btn_tab6";
+            this.Insert_btn_tab6.Size = new System.Drawing.Size(169, 33);
+            this.Insert_btn_tab6.TabIndex = 22;
+            this.Insert_btn_tab6.Text = "Insert";
+            this.Insert_btn_tab6.UseVisualStyleBackColor = true;
+            this.Insert_btn_tab6.Click += new System.EventHandler(this.Insert_btn_tab6_Click);
+            // 
+            // CSYT_cmbBox_tab6
+            // 
+            this.CSYT_cmbBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSYT_cmbBox_tab6.FormattingEnabled = true;
+            this.CSYT_cmbBox_tab6.Location = new System.Drawing.Point(134, 247);
+            this.CSYT_cmbBox_tab6.Name = "CSYT_cmbBox_tab6";
+            this.CSYT_cmbBox_tab6.Size = new System.Drawing.Size(229, 24);
+            this.CSYT_cmbBox_tab6.TabIndex = 36;
+            // 
+            // NhanVien_srchBtn_tab6
+            // 
+            this.NhanVien_srchBtn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanVien_srchBtn_tab6.Location = new System.Drawing.Point(901, 3);
+            this.NhanVien_srchBtn_tab6.Name = "NhanVien_srchBtn_tab6";
+            this.NhanVien_srchBtn_tab6.Size = new System.Drawing.Size(175, 30);
+            this.NhanVien_srchBtn_tab6.TabIndex = 52;
+            this.NhanVien_srchBtn_tab6.Text = "Search";
+            this.NhanVien_srchBtn_tab6.UseVisualStyleBackColor = true;
+            this.NhanVien_srchBtn_tab6.Click += new System.EventHandler(this.NhanVien_srchBtn_tab6_Click);
+            // 
+            // NhanVien_txtBox_tab6
+            // 
+            this.NhanVien_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NhanVien_txtBox_tab6.Location = new System.Drawing.Point(507, 5);
+            this.NhanVien_txtBox_tab6.Name = "NhanVien_txtBox_tab6";
+            this.NhanVien_txtBox_tab6.Size = new System.Drawing.Size(388, 26);
+            this.NhanVien_txtBox_tab6.TabIndex = 50;
+            this.NhanVien_txtBox_tab6.TextChanged += new System.EventHandler(this.NhanVien_txtBox_tab6_TextChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 19);
+            this.label2.Location = new System.Drawing.Point(376, 8);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(125, 20);
-            this.label2.TabIndex = 47;
+            this.label2.TabIndex = 51;
             this.label2.Text = "Employee Name";
             // 
             // dataGridView5
             // 
             this.dataGridView5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(6, 50);
+            this.dataGridView5.Location = new System.Drawing.Point(380, 37);
             this.dataGridView5.MultiSelect = false;
             this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.Size = new System.Drawing.Size(578, 493);
-            this.dataGridView5.TabIndex = 30;
+            this.dataGridView5.ReadOnly = true;
+            this.dataGridView5.Size = new System.Drawing.Size(696, 518);
+            this.dataGridView5.TabIndex = 49;
             // 
             // Admin
             // 
@@ -1314,8 +1552,9 @@ namespace Oracle_App
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
-            this.groupBox4.PerformLayout();
+            this.tabPage6.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.ResumeLayout(false);
 
@@ -1406,13 +1645,7 @@ namespace Oracle_App
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Button CSYT_srchBtn_tab5;
         private System.Windows.Forms.TabPage tabPage6;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button NhanVien_srchBtn_tab5;
-        private System.Windows.Forms.TextBox NhanVien_txtBox_tab5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.Button Update_btn_tab5;
-        private System.Windows.Forms.Button Delete_btn_tab5;
         private System.Windows.Forms.GroupBox groupBox10;
         private System.Windows.Forms.Label TENCSYT_label_tab5;
         private System.Windows.Forms.TextBox MACSYT_txtBox_tab5;
@@ -1424,6 +1657,33 @@ namespace Oracle_App
         private System.Windows.Forms.TextBox SDTCSYT_txtBox_tab5;
         private System.Windows.Forms.TextBox DCCSYT_txtBox_tab5;
         private System.Windows.Forms.Button Reset_btn_tab5;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button Reset_btn_tab6;
+        private System.Windows.Forms.Label NGAYSINH_label_tab6;
+        private System.Windows.Forms.Label PHAI_label_tab6;
+        private System.Windows.Forms.Label HOTEN_label_tab6;
+        private System.Windows.Forms.TextBox MANV_txtBox_tab6;
+        private System.Windows.Forms.Label MANV_label_tab6;
+        private System.Windows.Forms.TextBox HOTEN_txtBox_tab6;
+        private System.Windows.Forms.Button Insert_btn_tab6;
+        private System.Windows.Forms.Button NhanVien_srchBtn_tab6;
+        private System.Windows.Forms.TextBox NhanVien_txtBox_tab6;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dataGridView5;
+        private System.Windows.Forms.Label SODT_label_tab6;
+        private System.Windows.Forms.Label QUEQUAN_label_tab6;
+        private System.Windows.Forms.Label CMND_label_tab6;
+        private System.Windows.Forms.TextBox SODT_txtBox_tab6;
+        private System.Windows.Forms.TextBox QUEQUAN_txtBox_tab6;
+        private System.Windows.Forms.TextBox CMND_txtBox_tab6;
+        private System.Windows.Forms.Label CHUYENKHOA_label_tab6;
+        private System.Windows.Forms.Label VAITRO_label_tab6;
+        private System.Windows.Forms.Label CSYT_label_tab6;
+        private System.Windows.Forms.TextBox CHUYENKHOA_txtBox_tab6;
+        private System.Windows.Forms.ComboBox VAITRO_cmbBox_tab6;
+        private System.Windows.Forms.DateTimePicker NGAYSINH_picker_tab6;
+        private System.Windows.Forms.ComboBox PHAI_cmbBox_tab6;
+        private System.Windows.Forms.ComboBox CSYT_cmbBox_tab6;
     }
 }
 

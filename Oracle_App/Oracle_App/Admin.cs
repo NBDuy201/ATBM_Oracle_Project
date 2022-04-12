@@ -35,6 +35,15 @@ namespace Oracle_App
             Priv_comboBox_tab4.Items.Add("INSERT");
             Priv_comboBox_tab4.Items.Add("EXEC");
 
+            VAITRO_cmbBox_tab6.Items.Add("Thanh tra");
+            VAITRO_cmbBox_tab6.Items.Add("Cơ sở y tế");
+            VAITRO_cmbBox_tab6.Items.Add("Bác sĩ");
+            VAITRO_cmbBox_tab6.Items.Add("Nghiên cứu");
+
+            PHAI_cmbBox_tab6.Items.Add("Nam");
+            PHAI_cmbBox_tab6.Items.Add("Nữ");
+            PHAI_cmbBox_tab6.Items.Add("Khác");
+
             // Datagridview
             dataGridView1.EnableHeadersVisualStyles = false;
             dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
@@ -98,6 +107,12 @@ namespace Oracle_App
 
             dt =LoadNhanVien();
             dataGridView5.DataSource = dt.DefaultView;
+
+            DataTable dt2 = LoadCSYT();
+            CSYT_cmbBox_tab6.DataSource = dt2;
+            CSYT_cmbBox_tab6.DisplayMember = "MACSYT";
+            CSYT_cmbBox_tab6.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CSYT_cmbBox_tab6.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -130,10 +145,6 @@ namespace Oracle_App
                     cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MACSYT_txtBox_tab5.Text;
                     msg = "Updated Successfully";
                     break;
-                case 2:
-                    cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MACSYT_txtBox_tab5.Text;
-                    msg = "Deleted Successfully";
-                    break;
             }
             try
             {
@@ -160,7 +171,7 @@ namespace Oracle_App
 
         private void Insert_btn_tab5_Click(object sender, EventArgs e)
         {
-            String sql = "Insert into CSYT(MACSYT, TENCSYT, DCCSYT, SDTCSYT)" +
+            String sql = "Insert into CSYT(MACSYT, TENCSYT, DCCSYT, SDTCSYT) " +
                 "Values(:MACSYT, :TENCSYT, :DCCSYT, :SDTCSYT)";
             this.IAD_CSYT(sql, 0); // insert
         }
@@ -173,14 +184,6 @@ namespace Oracle_App
                 "SDTCSYT = :SDTCSYT " +
                 "Where MACSYT = :MACSYT";
             this.IAD_CSYT(sql, 1); // update
-        }
-
-        private void Delete_btn_tab5_Click(object sender, EventArgs e)
-        {
-            String sql = "Delete from CSYT " +
-                "where MACSYT = :MACSYT";
-            this.IAD_CSYT(sql, 2); // delete
-            Reset_btn_tab5.PerformClick();
         }
 
         private void ClearTextBoxes()
@@ -205,18 +208,8 @@ namespace Oracle_App
 
             Insert_btn_tab5.Enabled = true;
             Update_btn_tab5.Enabled = false;
-            Delete_btn_tab5.Enabled = false;
 
             MACSYT_txtBox_tab5.Enabled = true;
-        }
-
-        private void Reset_button_Click(object sender, EventArgs e)
-        {
-            ClearTextBoxes();
-            //Hire_Date_picker.Text = null;
-            //Add_button.Enabled = true;
-            //Update_button.Enabled = false;
-            //Delete_button.Enabled = false;
         }
 
         private DataTable LoadNhanVien()
@@ -776,7 +769,7 @@ namespace Oracle_App
         private void CSYT_srchBtn_tab5_Click(object sender, EventArgs e)
         {
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from CSYT where TENCSYT like '%" + CSYT_txtBox_tab5.Text + "%'"; // Sql statement
+            cmd.CommandText = "Select * from CSYT where lower(TENCSYT) like '%' || lower('" + CSYT_txtBox_tab5.Text + "') || '%'"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
 
             OracleDataAdapter da = new OracleDataAdapter();
@@ -785,29 +778,6 @@ namespace Oracle_App
             da.Fill(dt);
 
             dataGridView4.DataSource = dt.DefaultView;
-        }
-
-        private void NhanVien_txtBox_tab5_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(NhanVien_txtBox_tab5.Text))
-            {
-                DataTable dt = LoadNhanVien();
-                dataGridView5.DataSource = dt.DefaultView;
-            }
-        }
-
-        private void NhanVien_srchBtn_tab5_Click(object sender, EventArgs e)
-        {
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from NhanVien where HOTEN like '%" + NhanVien_txtBox_tab5.Text + "%'"; // Sql statement
-            cmd.CommandType = CommandType.Text; // Type of Sql statement
-
-            OracleDataAdapter da = new OracleDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable(); // Data table object
-            da.Fill(dt);
-
-            dataGridView5.DataSource = dt.DefaultView;
         }
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -824,9 +794,92 @@ namespace Oracle_App
 
             Insert_btn_tab5.Enabled = false;
             Update_btn_tab5.Enabled = true;
-            Delete_btn_tab5.Enabled = true;
 
             MACSYT_txtBox_tab5.Enabled = false;
+        }
+
+        private void NhanVien_srchBtn_tab6_Click(object sender, EventArgs e)
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from NhanVien where lower(HOTEN) like '%' || lower('" + NhanVien_txtBox_tab6.Text + "') || '%'"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+
+            dataGridView5.DataSource = dt.DefaultView;
+        }
+
+        private void NhanVien_txtBox_tab6_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(NhanVien_txtBox_tab6.Text))
+            {
+                DataTable dt = LoadNhanVien();
+                dataGridView5.DataSource = dt.DefaultView;
+            }
+        }
+
+        private void Insert_btn_tab6_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText =
+                "Insert into NHANVIEN(MANV, HOTEN, PHAI, NGAYSINH, CMND, QUEQUAN, SODT, CSYT, VAITRO, CHUYENKHOA) " +
+                "Values(:MANV, :HOTEN, :PHAI, :NGAYSINH, :CMND, :QUEQUAN, :SODT, :CSYT, :VAITRO, :CHUYENKHOA)"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+            cmd.Parameters.Add("MANV", OracleDbType.Varchar2, 30).Value = MANV_txtBox_tab6.Text;
+            cmd.Parameters.Add("HOTEN", OracleDbType.NVarchar2, 50).Value = HOTEN_txtBox_tab6.Text;
+            // Ko chon combobox
+            if (PHAI_cmbBox_tab6.SelectedIndex != -1)
+                cmd.Parameters.Add("PHAI", OracleDbType.NVarchar2, 20).Value = PHAI_cmbBox_tab6.SelectedItem.ToString();
+            else
+                cmd.Parameters.Add("PHAI", OracleDbType.NVarchar2, 20).Value = null;
+            cmd.Parameters.Add("NGAYSINH", OracleDbType.Date).Value = NGAYSINH_picker_tab6.Text;
+            //cmd.Parameters.Add("NGAYSINH", OracleDbType.Date).Value = null;
+            cmd.Parameters.Add("CMND", OracleDbType.Varchar2, 12).Value = CMND_txtBox_tab6.Text;
+            cmd.Parameters.Add("QUEQUAN", OracleDbType.NVarchar2, 50).Value = QUEQUAN_txtBox_tab6.Text;
+            cmd.Parameters.Add("SODT", OracleDbType.Varchar2, 50).Value = SODT_txtBox_tab6.Text;
+            cmd.Parameters.Add("CSYT", OracleDbType.Varchar2, 30).Value = CSYT_cmbBox_tab6.Text;
+            // Ko chon combobox
+            if (VAITRO_cmbBox_tab6.SelectedIndex != -1)
+                cmd.Parameters.Add("VAITRO", OracleDbType.NVarchar2, 50).Value = VAITRO_cmbBox_tab6.SelectedItem.ToString();
+            else
+                cmd.Parameters.Add("VAITRO", OracleDbType.NVarchar2, 50).Value = null;
+            cmd.Parameters.Add("CHUYENKHOA", OracleDbType.NVarchar2, 50).Value = CHUYENKHOA_txtBox_tab6.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Insert Successfull");
+                    DataTable dt = LoadNhanVien(); // Data table object
+                    dataGridView5.DataSource = dt.DefaultView;
+                }
+                else
+                {
+                    string message = "Nothing Happened";
+                    string title = "Warning";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+                //throw;
+            }
+        }
+
+        private void Reset_btn_tab6_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes();
+            PHAI_cmbBox_tab6.SelectedIndex = -1;
+            VAITRO_cmbBox_tab6.SelectedIndex = -1;
+            CSYT_cmbBox_tab6.SelectedIndex = -1;
+            NGAYSINH_picker_tab6.Value = DateTimePicker.MinimumDateTime;
         }
     }
 }
