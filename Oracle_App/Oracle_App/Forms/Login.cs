@@ -10,13 +10,14 @@ using Oracle.ManagedDataAccess.Client;
 using System.Configuration;
 using System.Windows.Forms;
 using Oracle_App;
+using Oracle_App.Forms;
 
 namespace ATBM
 {
-    public partial class Form1 : Form
+    public partial class Login : Form
     {
         private OracleConnection con = null;
-        public Form1()
+        public Login()
         {
             InitializeComponent();
         }
@@ -28,6 +29,8 @@ namespace ATBM
             string connectionString = new ConnectionString(user, password).ToString();
             con = new OracleConnection(connectionString);
             
+            // Ham kiem tra dieu kien login dua tren cac bang + storeproc
+
             // Connect
             try
             {
@@ -39,17 +42,23 @@ namespace ATBM
             }
 
             // Check
-            if (user == "DBA_BV")
+            switch (VaiTro_cm.SelectedItem)
             {
-                MessageBox.Show("Welcome DBA");
+                case "Admin":
+                    MessageBox.Show("Welcome DBA");
 
-                this.Hide();
-                Form2 form = new Form2(user, password);
-                form.Show();
-            }
-            else
-            {
-                MessageBox.Show("Login denied");
+                    this.Hide();
+                    Admin form1 = new Admin(user, password);
+                    form1.Show();
+                    con.Close();
+                    break;
+                case "Nhân Viên":
+                    this.Hide();
+                    NhanVien form2 = new NhanVien();
+                    form2.Show();
+                    con.Close();
+                    break;
+                // Viet tiep o day
             }
             con.Close();
         }
@@ -59,6 +68,11 @@ namespace ATBM
             if(con != null)
                 con.Close();
             Application.ExitThread();
+        }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+            VaiTro_cm.SelectedIndex = 0;
         }
     }
 }
