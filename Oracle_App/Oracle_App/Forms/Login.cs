@@ -52,9 +52,9 @@ namespace ATBM
                     form1.Show();
                     con.Close();
                     break;
-                case "Nhân Viên":
+                case "Thanh Tra":
                     this.Hide();
-                    NhanVien form2 = new NhanVien();
+                    Form_ThanhTra form2 = new Form_ThanhTra(user, password);
                     form2.Show();
                     con.Close();
                     break;
