@@ -58,7 +58,13 @@ namespace ATBM
                     form2.Show();
                     con.Close();
                     break;
-                // Viet tiep o day
+                case "Cơ Sở Y Tế":
+                    this.Hide();
+                    Form_CoSoYTe form3 = new Form_CoSoYTe(user, password);
+                    con.Close();
+                    form3.Show();
+                    break;
+                    // Viet tiep o day
             }
             con.Close();
         }
