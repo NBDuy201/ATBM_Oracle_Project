@@ -29,14 +29,18 @@ namespace Oracle_App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.MAHS_srchBtn_tab1 = new System.Windows.Forms.Button();
+            this.MAHS_srchTxtBox_tab1 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.MABS_cm_tab1 = new System.Windows.Forms.ComboBox();
             this.MABN_cm_tab1 = new System.Windows.Forms.ComboBox();
             this.Ngay_picker_tab1 = new System.Windows.Forms.DateTimePicker();
-            this.Reset_btn_tab5 = new System.Windows.Forms.Button();
+            this.Reset_btn_tab1 = new System.Windows.Forms.Button();
             this.Delete_btn_tab1 = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -54,10 +58,31 @@ namespace Oracle_App.Forms
             this.Insert_btn_tab1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.MAHS_srchBtn_tab2 = new System.Windows.Forms.Button();
+            this.MAHS_srchTxtBox_tab2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Ngay_picker_tab2 = new System.Windows.Forms.DateTimePicker();
+            this.Reset_btn_tab2 = new System.Windows.Forms.Button();
+            this.Delete_btn_tab2 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.MADV_txtBox_tab2 = new System.Windows.Forms.TextBox();
+            this.KETQUA_txtBox_tab2 = new System.Windows.Forms.TextBox();
+            this.Insert_btn_tab2 = new System.Windows.Forms.Button();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.MAHS_cm_tab2 = new System.Windows.Forms.ComboBox();
+            this.MAKTV_cm_tab2 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox10.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -76,6 +101,9 @@ namespace Oracle_App.Forms
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.MAHS_srchBtn_tab1);
+            this.tabPage1.Controls.Add(this.MAHS_srchTxtBox_tab1);
+            this.tabPage1.Controls.Add(this.label17);
             this.tabPage1.Controls.Add(this.groupBox10);
             this.tabPage1.Controls.Add(this.dataGridView1);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
@@ -86,12 +114,42 @@ namespace Oracle_App.Forms
             this.tabPage1.Text = "HỒ SƠ BỆNH ÁN";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // MAHS_srchBtn_tab1
+            // 
+            this.MAHS_srchBtn_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_srchBtn_tab1.Location = new System.Drawing.Point(913, 6);
+            this.MAHS_srchBtn_tab1.Name = "MAHS_srchBtn_tab1";
+            this.MAHS_srchBtn_tab1.Size = new System.Drawing.Size(162, 26);
+            this.MAHS_srchBtn_tab1.TabIndex = 57;
+            this.MAHS_srchBtn_tab1.Text = "Search";
+            this.MAHS_srchBtn_tab1.UseVisualStyleBackColor = true;
+            this.MAHS_srchBtn_tab1.Click += new System.EventHandler(this.MAHS_srchBtn_tab1_Click);
+            // 
+            // MAHS_srchTxtBox_tab1
+            // 
+            this.MAHS_srchTxtBox_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_srchTxtBox_tab1.Location = new System.Drawing.Point(380, 6);
+            this.MAHS_srchTxtBox_tab1.Name = "MAHS_srchTxtBox_tab1";
+            this.MAHS_srchTxtBox_tab1.Size = new System.Drawing.Size(528, 26);
+            this.MAHS_srchTxtBox_tab1.TabIndex = 55;
+            this.MAHS_srchTxtBox_tab1.TextChanged += new System.EventHandler(this.MAHS_srchTxtBox_tab1_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(294, 9);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(80, 20);
+            this.label17.TabIndex = 56;
+            this.label17.Text = "Mã Hồ Sơ";
+            // 
             // groupBox10
             // 
             this.groupBox10.Controls.Add(this.MABS_cm_tab1);
             this.groupBox10.Controls.Add(this.MABN_cm_tab1);
             this.groupBox10.Controls.Add(this.Ngay_picker_tab1);
-            this.groupBox10.Controls.Add(this.Reset_btn_tab5);
+            this.groupBox10.Controls.Add(this.Reset_btn_tab1);
             this.groupBox10.Controls.Add(this.Delete_btn_tab1);
             this.groupBox10.Controls.Add(this.label8);
             this.groupBox10.Controls.Add(this.label7);
@@ -107,7 +165,7 @@ namespace Oracle_App.Forms
             this.groupBox10.Controls.Add(this.MAHSBA_txtBox_tab1);
             this.groupBox10.Controls.Add(this.CD_txtBox_tab1);
             this.groupBox10.Controls.Add(this.Insert_btn_tab1);
-            this.groupBox10.Location = new System.Drawing.Point(3, 6);
+            this.groupBox10.Location = new System.Drawing.Point(5, 38);
             this.groupBox10.Name = "groupBox10";
             this.groupBox10.Size = new System.Drawing.Size(287, 375);
             this.groupBox10.TabIndex = 54;
@@ -146,16 +204,16 @@ namespace Oracle_App.Forms
             this.Ngay_picker_tab1.Size = new System.Drawing.Size(117, 26);
             this.Ngay_picker_tab1.TabIndex = 55;
             // 
-            // Reset_btn_tab5
+            // Reset_btn_tab1
             // 
-            this.Reset_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset_btn_tab5.Location = new System.Drawing.Point(74, 326);
-            this.Reset_btn_tab5.Name = "Reset_btn_tab5";
-            this.Reset_btn_tab5.Size = new System.Drawing.Size(131, 33);
-            this.Reset_btn_tab5.TabIndex = 29;
-            this.Reset_btn_tab5.Text = "Reset";
-            this.Reset_btn_tab5.UseVisualStyleBackColor = true;
-            this.Reset_btn_tab5.Click += new System.EventHandler(this.Reset_btn_tab5_Click);
+            this.Reset_btn_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_btn_tab1.Location = new System.Drawing.Point(74, 326);
+            this.Reset_btn_tab1.Name = "Reset_btn_tab1";
+            this.Reset_btn_tab1.Size = new System.Drawing.Size(131, 33);
+            this.Reset_btn_tab1.TabIndex = 29;
+            this.Reset_btn_tab1.Text = "Reset";
+            this.Reset_btn_tab1.UseVisualStyleBackColor = true;
+            this.Reset_btn_tab1.Click += new System.EventHandler(this.Reset_btn_tab1_Click);
             // 
             // Delete_btn_tab1
             // 
@@ -307,23 +365,29 @@ namespace Oracle_App.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridView1.Location = new System.Drawing.Point(298, 6);
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dataGridView1.Location = new System.Drawing.Point(298, 38);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(778, 549);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(778, 517);
             this.dataGridView1.TabIndex = 50;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.MAHS_srchBtn_tab2);
+            this.tabPage2.Controls.Add(this.MAHS_srchTxtBox_tab2);
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -331,6 +395,211 @@ namespace Oracle_App.Forms
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "HỒ SƠ BỆNH ÁN_DỊCH VỤ";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // MAHS_srchBtn_tab2
+            // 
+            this.MAHS_srchBtn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_srchBtn_tab2.Location = new System.Drawing.Point(913, 6);
+            this.MAHS_srchBtn_tab2.Name = "MAHS_srchBtn_tab2";
+            this.MAHS_srchBtn_tab2.Size = new System.Drawing.Size(162, 26);
+            this.MAHS_srchBtn_tab2.TabIndex = 62;
+            this.MAHS_srchBtn_tab2.Text = "Search";
+            this.MAHS_srchBtn_tab2.UseVisualStyleBackColor = true;
+            this.MAHS_srchBtn_tab2.Click += new System.EventHandler(this.MAHS_srchBtn_tab2_Click);
+            // 
+            // MAHS_srchTxtBox_tab2
+            // 
+            this.MAHS_srchTxtBox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_srchTxtBox_tab2.Location = new System.Drawing.Point(380, 6);
+            this.MAHS_srchTxtBox_tab2.Name = "MAHS_srchTxtBox_tab2";
+            this.MAHS_srchTxtBox_tab2.Size = new System.Drawing.Size(528, 26);
+            this.MAHS_srchTxtBox_tab2.TabIndex = 60;
+            this.MAHS_srchTxtBox_tab2.TextChanged += new System.EventHandler(this.MAHS_srchTxtBox_tab2_TextChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(294, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(80, 20);
+            this.label9.TabIndex = 61;
+            this.label9.Text = "Mã Hồ Sơ";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.MAKTV_cm_tab2);
+            this.groupBox1.Controls.Add(this.MAHS_cm_tab2);
+            this.groupBox1.Controls.Add(this.Ngay_picker_tab2);
+            this.groupBox1.Controls.Add(this.Reset_btn_tab2);
+            this.groupBox1.Controls.Add(this.Delete_btn_tab2);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label16);
+            this.groupBox1.Controls.Add(this.label18);
+            this.groupBox1.Controls.Add(this.MADV_txtBox_tab2);
+            this.groupBox1.Controls.Add(this.KETQUA_txtBox_tab2);
+            this.groupBox1.Controls.Add(this.Insert_btn_tab2);
+            this.groupBox1.Location = new System.Drawing.Point(5, 38);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(287, 272);
+            this.groupBox1.TabIndex = 59;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Điều chỉnh HSBA_DV";
+            // 
+            // Ngay_picker_tab2
+            // 
+            this.Ngay_picker_tab2.CustomFormat = "";
+            this.Ngay_picker_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ngay_picker_tab2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.Ngay_picker_tab2.Location = new System.Drawing.Point(112, 81);
+            this.Ngay_picker_tab2.Name = "Ngay_picker_tab2";
+            this.Ngay_picker_tab2.Size = new System.Drawing.Size(117, 26);
+            this.Ngay_picker_tab2.TabIndex = 55;
+            // 
+            // Reset_btn_tab2
+            // 
+            this.Reset_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Reset_btn_tab2.Location = new System.Drawing.Point(74, 228);
+            this.Reset_btn_tab2.Name = "Reset_btn_tab2";
+            this.Reset_btn_tab2.Size = new System.Drawing.Size(131, 33);
+            this.Reset_btn_tab2.TabIndex = 29;
+            this.Reset_btn_tab2.Text = "Reset";
+            this.Reset_btn_tab2.UseVisualStyleBackColor = true;
+            this.Reset_btn_tab2.Click += new System.EventHandler(this.Reset_btn_tab2_Click);
+            // 
+            // Delete_btn_tab2
+            // 
+            this.Delete_btn_tab2.Enabled = false;
+            this.Delete_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Delete_btn_tab2.Location = new System.Drawing.Point(145, 189);
+            this.Delete_btn_tab2.Name = "Delete_btn_tab2";
+            this.Delete_btn_tab2.Size = new System.Drawing.Size(131, 33);
+            this.Delete_btn_tab2.TabIndex = 28;
+            this.Delete_btn_tab2.Text = "Delete";
+            this.Delete_btn_tab2.UseVisualStyleBackColor = true;
+            this.Delete_btn_tab2.Click += new System.EventHandler(this.Delete_btn_tab2_Click);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(6, 149);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 20);
+            this.label13.TabIndex = 21;
+            this.label13.Text = "KETQUA";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(6, 117);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(63, 20);
+            this.label14.TabIndex = 21;
+            this.label14.Text = "MAKTV";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(6, 87);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(55, 20);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "NGAY";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(6, 55);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(56, 20);
+            this.label16.TabIndex = 21;
+            this.label16.Text = "MADV";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(6, 23);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(78, 20);
+            this.label18.TabIndex = 18;
+            this.label18.Text = "MAHSBA";
+            // 
+            // MADV_txtBox_tab2
+            // 
+            this.MADV_txtBox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MADV_txtBox_tab2.Location = new System.Drawing.Point(112, 49);
+            this.MADV_txtBox_tab2.Name = "MADV_txtBox_tab2";
+            this.MADV_txtBox_tab2.Size = new System.Drawing.Size(164, 26);
+            this.MADV_txtBox_tab2.TabIndex = 20;
+            // 
+            // KETQUA_txtBox_tab2
+            // 
+            this.KETQUA_txtBox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.KETQUA_txtBox_tab2.Location = new System.Drawing.Point(112, 143);
+            this.KETQUA_txtBox_tab2.Name = "KETQUA_txtBox_tab2";
+            this.KETQUA_txtBox_tab2.Size = new System.Drawing.Size(164, 26);
+            this.KETQUA_txtBox_tab2.TabIndex = 20;
+            // 
+            // Insert_btn_tab2
+            // 
+            this.Insert_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Insert_btn_tab2.Location = new System.Drawing.Point(10, 189);
+            this.Insert_btn_tab2.Name = "Insert_btn_tab2";
+            this.Insert_btn_tab2.Size = new System.Drawing.Size(129, 33);
+            this.Insert_btn_tab2.TabIndex = 22;
+            this.Insert_btn_tab2.Text = "Insert";
+            this.Insert_btn_tab2.UseVisualStyleBackColor = true;
+            this.Insert_btn_tab2.Click += new System.EventHandler(this.Insert_btn_tab2_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView2.Location = new System.Drawing.Point(298, 38);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.Size = new System.Drawing.Size(778, 517);
+            this.dataGridView2.TabIndex = 58;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // MAHS_cm_tab2
+            // 
+            this.MAHS_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_cm_tab2.FormattingEnabled = true;
+            this.MAHS_cm_tab2.Items.AddRange(new object[] {
+            "HS84"});
+            this.MAHS_cm_tab2.Location = new System.Drawing.Point(112, 19);
+            this.MAHS_cm_tab2.Name = "MAHS_cm_tab2";
+            this.MAHS_cm_tab2.Size = new System.Drawing.Size(164, 24);
+            this.MAHS_cm_tab2.TabIndex = 58;
+            // 
+            // MAKTV_cm_tab2
+            // 
+            this.MAKTV_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAKTV_cm_tab2.FormattingEnabled = true;
+            this.MAKTV_cm_tab2.Items.AddRange(new object[] {
+            "NV5"});
+            this.MAKTV_cm_tab2.Location = new System.Drawing.Point(112, 113);
+            this.MAKTV_cm_tab2.Name = "MAKTV_cm_tab2";
+            this.MAKTV_cm_tab2.Size = new System.Drawing.Size(164, 24);
+            this.MAKTV_cm_tab2.TabIndex = 58;
             // 
             // Form_CoSoYTe
             // 
@@ -344,9 +613,15 @@ namespace Oracle_App.Forms
             this.Load += new System.EventHandler(this.CoSoYTe_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
             this.groupBox10.ResumeLayout(false);
             this.groupBox10.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,7 +632,7 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox groupBox10;
-        private System.Windows.Forms.Button Reset_btn_tab5;
+        private System.Windows.Forms.Button Reset_btn_tab1;
         private System.Windows.Forms.Button Delete_btn_tab1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -377,5 +652,26 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.ComboBox MABS_cm_tab1;
         private System.Windows.Forms.TextBox MCSYT_txtBox_tab1;
         private System.Windows.Forms.TextBox MAHSBA_txtBox_tab1;
+        private System.Windows.Forms.Button MAHS_srchBtn_tab1;
+        private System.Windows.Forms.TextBox MAHS_srchTxtBox_tab1;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button MAHS_srchBtn_tab2;
+        private System.Windows.Forms.TextBox MAHS_srchTxtBox_tab2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DateTimePicker Ngay_picker_tab2;
+        private System.Windows.Forms.Button Reset_btn_tab2;
+        private System.Windows.Forms.Button Delete_btn_tab2;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Button Insert_btn_tab2;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.TextBox KETQUA_txtBox_tab2;
+        private System.Windows.Forms.TextBox MADV_txtBox_tab2;
+        private System.Windows.Forms.ComboBox MAHS_cm_tab2;
+        private System.Windows.Forms.ComboBox MAKTV_cm_tab2;
     }
 }
