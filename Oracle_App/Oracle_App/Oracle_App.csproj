@@ -140,6 +140,9 @@
     </Compile>
     <Compile Include="Class\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\BacSi.resx">
+      <DependentUpon>BacSi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CoSoYTe.resx">
       <DependentUpon>CoSoYTe.cs</DependentUpon>
     </EmbeddedResource>

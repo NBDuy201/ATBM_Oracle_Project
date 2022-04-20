@@ -64,7 +64,13 @@ namespace ATBM
                     con.Close();
                     form3.Show();
                     break;
-                    // Viet tiep o day
+                // Viet tiep o day
+                case "Bác Sĩ":
+                    this.Hide();
+                    Form_BacSi form4 = new Form_BacSi(user, password);
+                    con.Close();
+                    form4.Show();
+                    break;
             }
             con.Close();
         }
