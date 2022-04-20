@@ -29,8 +29,8 @@ namespace Oracle_App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.MAHS_srchBtn_tab1 = new System.Windows.Forms.Button();
@@ -62,6 +62,8 @@ namespace Oracle_App.Forms
             this.MAHS_srchTxtBox_tab2 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.MAKTV_cm_tab2 = new System.Windows.Forms.ComboBox();
+            this.MAHS_cm_tab2 = new System.Windows.Forms.ComboBox();
             this.Ngay_picker_tab2 = new System.Windows.Forms.DateTimePicker();
             this.Reset_btn_tab2 = new System.Windows.Forms.Button();
             this.Delete_btn_tab2 = new System.Windows.Forms.Button();
@@ -74,8 +76,8 @@ namespace Oracle_App.Forms
             this.KETQUA_txtBox_tab2 = new System.Windows.Forms.TextBox();
             this.Insert_btn_tab2 = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.MAHS_cm_tab2 = new System.Windows.Forms.ComboBox();
-            this.MAKTV_cm_tab2 = new System.Windows.Forms.ComboBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.Edit_btn_tab3 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -83,6 +85,7 @@ namespace Oracle_App.Forms
             this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -92,6 +95,7 @@ namespace Oracle_App.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(3, 7);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -365,14 +369,14 @@ namespace Oracle_App.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView1.Location = new System.Drawing.Point(298, 38);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -447,6 +451,28 @@ namespace Oracle_App.Forms
             this.groupBox1.TabIndex = 59;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều chỉnh HSBA_DV";
+            // 
+            // MAKTV_cm_tab2
+            // 
+            this.MAKTV_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAKTV_cm_tab2.FormattingEnabled = true;
+            this.MAKTV_cm_tab2.Items.AddRange(new object[] {
+            "NV5"});
+            this.MAKTV_cm_tab2.Location = new System.Drawing.Point(112, 113);
+            this.MAKTV_cm_tab2.Name = "MAKTV_cm_tab2";
+            this.MAKTV_cm_tab2.Size = new System.Drawing.Size(164, 24);
+            this.MAKTV_cm_tab2.TabIndex = 58;
+            // 
+            // MAHS_cm_tab2
+            // 
+            this.MAHS_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MAHS_cm_tab2.FormattingEnabled = true;
+            this.MAHS_cm_tab2.Items.AddRange(new object[] {
+            "HS84"});
+            this.MAHS_cm_tab2.Location = new System.Drawing.Point(112, 19);
+            this.MAHS_cm_tab2.Name = "MAHS_cm_tab2";
+            this.MAHS_cm_tab2.Size = new System.Drawing.Size(164, 24);
+            this.MAHS_cm_tab2.TabIndex = 58;
             // 
             // Ngay_picker_tab2
             // 
@@ -564,14 +590,14 @@ namespace Oracle_App.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView2.Location = new System.Drawing.Point(298, 38);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
@@ -579,27 +605,26 @@ namespace Oracle_App.Forms
             this.dataGridView2.TabIndex = 58;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
-            // MAHS_cm_tab2
+            // tabPage3
             // 
-            this.MAHS_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MAHS_cm_tab2.FormattingEnabled = true;
-            this.MAHS_cm_tab2.Items.AddRange(new object[] {
-            "HS84"});
-            this.MAHS_cm_tab2.Location = new System.Drawing.Point(112, 19);
-            this.MAHS_cm_tab2.Name = "MAHS_cm_tab2";
-            this.MAHS_cm_tab2.Size = new System.Drawing.Size(164, 24);
-            this.MAHS_cm_tab2.TabIndex = 58;
+            this.tabPage3.Controls.Add(this.Edit_btn_tab3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "THÔNG TIN CÁ NHÂN";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
-            // MAKTV_cm_tab2
+            // Edit_btn_tab3
             // 
-            this.MAKTV_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MAKTV_cm_tab2.FormattingEnabled = true;
-            this.MAKTV_cm_tab2.Items.AddRange(new object[] {
-            "NV5"});
-            this.MAKTV_cm_tab2.Location = new System.Drawing.Point(112, 113);
-            this.MAKTV_cm_tab2.Name = "MAKTV_cm_tab2";
-            this.MAKTV_cm_tab2.Size = new System.Drawing.Size(164, 24);
-            this.MAKTV_cm_tab2.TabIndex = 58;
+            this.Edit_btn_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit_btn_tab3.Location = new System.Drawing.Point(453, 236);
+            this.Edit_btn_tab3.Name = "Edit_btn_tab3";
+            this.Edit_btn_tab3.Size = new System.Drawing.Size(174, 89);
+            this.Edit_btn_tab3.TabIndex = 64;
+            this.Edit_btn_tab3.Text = "Chỉnh Sửa Thông Tin";
+            this.Edit_btn_tab3.UseVisualStyleBackColor = true;
+            this.Edit_btn_tab3.Click += new System.EventHandler(this.Edit_btn_tab3_Click);
             // 
             // Form_CoSoYTe
             // 
@@ -622,6 +647,7 @@ namespace Oracle_App.Forms
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -673,5 +699,7 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.TextBox MADV_txtBox_tab2;
         private System.Windows.Forms.ComboBox MAHS_cm_tab2;
         private System.Windows.Forms.ComboBox MAKTV_cm_tab2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Button Edit_btn_tab3;
     }
 }

@@ -422,5 +422,17 @@ namespace Oracle_App.Forms
                 throw;
             }
         }
+
+        private void Edit_btn_tab3_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NHAVIEN
+            this.Hide();
+
+            Form_NhanVien form = new Form_NhanVien(username, password);
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
+        }
     }
 }

@@ -180,5 +180,17 @@ namespace Oracle_App.Forms
                 LoadGrid(LoadBN_CSYT_BS(option), dataGridView2);
             }
         }
+
+        private void Edit_btn_tab3_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NV
+            this.Hide();
+            
+            Form_NhanVien form = new Form_NhanVien(username, password);
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
+        }
     }
 }
