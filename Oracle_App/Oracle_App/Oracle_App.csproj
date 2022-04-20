@@ -143,6 +143,9 @@
     <EmbeddedResource Include="Forms\BacSi.resx">
       <DependentUpon>BacSi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BenhNhan.resx">
+      <DependentUpon>BenhNhan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CoSoYTe.resx">
       <DependentUpon>CoSoYTe.cs</DependentUpon>
     </EmbeddedResource>

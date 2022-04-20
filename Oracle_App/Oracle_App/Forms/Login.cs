@@ -71,6 +71,12 @@ namespace ATBM
                     con.Close();
                     form4.Show();
                     break;
+                case "Bệnh Nhân":
+                    this.Hide();
+                    Form_BenhNhan form5 = new Form_BenhNhan(user, password);
+                    con.Close();
+                    form5.Show();
+                    break;
             }
             con.Close();
         }
