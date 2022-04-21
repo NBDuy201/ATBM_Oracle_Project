@@ -22,6 +22,75 @@ namespace ATBM
             InitializeComponent();
         }
 
+        private bool Check_Role(int option)
+        {
+            // option:
+            // 0: DBA
+            // 1: Bác Sĩ
+            // 2: Bệnh Nhân
+            // 3: Thanh Tra
+            // 4: Nghiên Cứu
+            // 5: Cơ Sở Y Tế
+
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            switch (option)
+            {
+                case 0:
+                    cmd.CommandText = 
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'DBA'"; // Sql statement
+                    break;
+                case 1:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'BacSi'"; // Sql statement
+                    break;
+                case 2:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'BenhNhan'"; // Sql statement
+                    break;
+                case 3:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'ThanhTra'"; // Sql statement
+                    break;
+                case 4:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'NghienCuu'"; // Sql statement
+                    break;
+                case 5:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'CoSoYTe'"; // Sql statement
+                    break;
+            }
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+
+            int count = dt.Rows.Count;
+            if (count == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         private void Login_btn_Click(object sender, EventArgs e)
         {
             string user = user_txtBox_login.Text;
@@ -29,8 +98,6 @@ namespace ATBM
             string connectionString = new ConnectionString(user, password).ToString();
             con = new OracleConnection(connectionString);
             
-            // Ham kiem tra dieu kien login dua tren cac bang + storeproc
-
             // Connect
             try
             {
@@ -45,37 +112,92 @@ namespace ATBM
             switch (VaiTro_cm.SelectedItem)
             {
                 case "Admin":
-                    MessageBox.Show("Welcome DBA");
+                    // Check exist
+                    if(Check_Role(0) == true) 
+                    {
+                        MessageBox.Show("Welcome DBA");
 
-                    this.Hide();
-                    Admin form1 = new Admin(user, password);
-                    form1.Show();
-                    con.Close();
+                        this.Hide();
+
+                        Admin form1 = new Admin(user, password);
+                        con.Close();
+                        form1.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
                     break;
                 case "Thanh Tra":
-                    this.Hide();
-                    Form_ThanhTra form2 = new Form_ThanhTra(user, password);
-                    form2.Show();
-                    con.Close();
+                    if (Check_Role(3) == true)
+                    {
+                        this.Hide();
+
+                        Form_ThanhTra form2 = new Form_ThanhTra(user, password);
+                        con.Close();
+                        form2.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
                     break;
                 case "Cơ Sở Y Tế":
-                    this.Hide();
-                    Form_CoSoYTe form3 = new Form_CoSoYTe(user, password);
-                    con.Close();
-                    form3.Show();
+                    if (Check_Role(5) == true)
+                    {
+                        this.Hide();
+
+                        Form_CoSoYTe form3 = new Form_CoSoYTe(user, password);
+                        con.Close();
+                        form3.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
                     break;
                 // Viet tiep o day
                 case "Bác Sĩ":
-                    this.Hide();
-                    Form_BacSi form4 = new Form_BacSi(user, password);
-                    con.Close();
-                    form4.Show();
+                    if (Check_Role(1) == true)
+                    {
+                        this.Hide();
+
+                        Form_BacSi form4 = new Form_BacSi(user, password);
+                        con.Close();
+                        form4.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
                     break;
                 case "Bệnh Nhân":
-                    this.Hide();
-                    Form_BenhNhan form5 = new Form_BenhNhan(user, password);
-                    con.Close();
-                    form5.Show();
+                    if (Check_Role(2) == true)
+                    {
+                        this.Hide();
+
+                        Form_BenhNhan form5 = new Form_BenhNhan(user, password);
+                        con.Close();
+                        form5.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
+                    break;
+                case "Nghiên Cứu":
+                    if (Check_Role(5) == true)
+                    {
+                        this.Hide();
+
+                        Form_NghienCuu form6 = new Form_NghienCuu(user, password);
+                        con.Close();
+                        form6.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
                     break;
             }
             con.Close();

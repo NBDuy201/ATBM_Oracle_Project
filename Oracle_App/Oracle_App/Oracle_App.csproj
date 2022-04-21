@@ -155,6 +155,9 @@
     <EmbeddedResource Include="Forms\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NghienCuu.resx">
+      <DependentUpon>NghienCuu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NhanVien.resx">
       <DependentUpon>NhanVien.cs</DependentUpon>
     </EmbeddedResource>

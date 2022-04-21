@@ -90,7 +90,6 @@
             this.VaiTro_cm.Items.AddRange(new object[] {
             "Admin",
             "Bác Sĩ",
-            "Nhân Viên",
             "Bệnh Nhân",
             "Thanh Tra",
             "Nghiên Cứu",
