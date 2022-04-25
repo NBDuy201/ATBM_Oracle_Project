@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ATBM;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -130,6 +131,60 @@ namespace Oracle_App.Forms
         private void Reset_btn_tab6_Click(object sender, EventArgs e)
         {
             NhanVien_Load(this, EventArgs.Empty);
+        }
+
+        private void SignOut_btn_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NV
+            this.Hide();
+
+            Login form = new Login();
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
+        }
+
+        private void Return_btn_Click(object sender, EventArgs e)
+        {
+            switch (VAITRO_cmbBox.Text)
+            {
+                case "Thanh Tra":
+                    this.Hide();
+                    Form_ThanhTra form1 = new Form_ThanhTra(username, password);
+                    con.Close();
+                    form1.ShowDialog();
+
+                    this.Close();
+                    break;
+                case "Cơ Sở Y Tế":
+                    this.Hide();
+
+                    Form_CoSoYTe form3 = new Form_CoSoYTe(username, password);
+                    con.Close();
+                    form3.ShowDialog();
+
+                    this.Close();
+                    break;
+                case "Bác Sĩ":
+                    this.Hide();
+
+                    Form_BacSi form4 = new Form_BacSi(username, password);
+                    con.Close();
+                    form4.ShowDialog();
+
+                    this.Close();
+                    break;
+                case "Nghiên Cứu":
+                    this.Hide();
+
+                    Form_NghienCuu form6 = new Form_NghienCuu(username, password);
+                    con.Close();
+                    form6.ShowDialog();
+
+                    this.Close();
+                    break;
+            }
         }
     }
 }

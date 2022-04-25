@@ -172,6 +172,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Oracle.DataAccess.Common.Configuration.Section.xsd">
       <SubType>Designer</SubType>
@@ -192,6 +193,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Admin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\Admin_gear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\BacSi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\CSYT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\NghienCuu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Icons\ThanhTra.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets" Condition="Exists('..\packages\System.Text.Json.6.0.3\build\System.Text.Json.targets')" />

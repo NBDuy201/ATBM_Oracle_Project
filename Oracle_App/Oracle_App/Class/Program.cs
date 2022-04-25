@@ -22,6 +22,7 @@ namespace ATBM
             //Application.Run(new Form_CoSoYTe("CS57", "CS57"));
             //Application.Run(new Form_BacSi("NV5", "NV5"));
             //Application.Run(new Form_BenhNhan("BN0", "BN0"));
+            //Application.Run(new Form_ThanhTra("NV32", "NV32"));
             Application.Run(new Login());
         }
     }

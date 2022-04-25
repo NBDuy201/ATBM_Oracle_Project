@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
+using ATBM;
 
 namespace Oracle_App
 {
@@ -113,6 +114,11 @@ namespace Oracle_App
             CSYT_cmbBox_tab6.DisplayMember = "MACSYT";
             CSYT_cmbBox_tab6.AutoCompleteMode = AutoCompleteMode.Suggest;
             CSYT_cmbBox_tab6.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            CSYT_cmbBox_tab2.DataSource = dt2;
+            CSYT_cmbBox_tab2.DisplayMember = "MACSYT";
+            CSYT_cmbBox_tab2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CSYT_cmbBox_tab2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -880,6 +886,18 @@ namespace Oracle_App
             VAITRO_cmbBox_tab6.SelectedIndex = -1;
             CSYT_cmbBox_tab6.SelectedIndex = -1;
             NGAYSINH_picker_tab6.Value = DateTimePicker.MinimumDateTime;
+        }
+
+        private void DangXuat_btn_tab7_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NHAVIEN
+            this.Hide();
+
+            Login form = new Login();
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
         }
     }
 }

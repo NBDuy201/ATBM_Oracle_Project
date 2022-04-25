@@ -30,6 +30,8 @@ namespace Oracle_App.Forms
         private void InitializeComponent()
         {
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.Return_btn = new System.Windows.Forms.Button();
+            this.SignOut_btn = new System.Windows.Forms.Button();
             this.NGAYSINH_picker = new System.Windows.Forms.DateTimePicker();
             this.CSYT_cmbBox = new System.Windows.Forms.ComboBox();
             this.PHAI_cmbBox = new System.Windows.Forms.ComboBox();
@@ -57,6 +59,8 @@ namespace Oracle_App.Forms
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.Return_btn);
+            this.groupBox3.Controls.Add(this.SignOut_btn);
             this.groupBox3.Controls.Add(this.NGAYSINH_picker);
             this.groupBox3.Controls.Add(this.CSYT_cmbBox);
             this.groupBox3.Controls.Add(this.PHAI_cmbBox);
@@ -81,10 +85,36 @@ namespace Oracle_App.Forms
             this.groupBox3.Controls.Add(this.Update_btn_tab6);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(369, 400);
+            this.groupBox3.Size = new System.Drawing.Size(369, 433);
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DML NhanVien";
+            // 
+            // Return_btn
+            // 
+            this.Return_btn.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.Return_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Return_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.Return_btn.Location = new System.Drawing.Point(10, 390);
+            this.Return_btn.Name = "Return_btn";
+            this.Return_btn.Size = new System.Drawing.Size(169, 33);
+            this.Return_btn.TabIndex = 55;
+            this.Return_btn.Text = "Quay Lại";
+            this.Return_btn.UseVisualStyleBackColor = false;
+            this.Return_btn.Click += new System.EventHandler(this.Return_btn_Click);
+            // 
+            // SignOut_btn
+            // 
+            this.SignOut_btn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SignOut_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignOut_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.SignOut_btn.Location = new System.Drawing.Point(185, 390);
+            this.SignOut_btn.Name = "SignOut_btn";
+            this.SignOut_btn.Size = new System.Drawing.Size(178, 33);
+            this.SignOut_btn.TabIndex = 55;
+            this.SignOut_btn.Text = "Đăng Xuất";
+            this.SignOut_btn.UseVisualStyleBackColor = false;
+            this.SignOut_btn.Click += new System.EventHandler(this.SignOut_btn_Click);
             // 
             // NGAYSINH_picker
             // 
@@ -121,9 +151,10 @@ namespace Oracle_App.Forms
             // VAITRO_cmbBox
             // 
             this.VAITRO_cmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VAITRO_cmbBox.Enabled = false;
             this.VAITRO_cmbBox.FormattingEnabled = true;
             this.VAITRO_cmbBox.Items.AddRange(new object[] {
-            "Thanh tra",
+            "Thanh Tra",
             "Cơ Sở Y Tế",
             "Bác Sĩ",
             "Nghiên Cứu"});
@@ -308,7 +339,7 @@ namespace Oracle_App.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 424);
+            this.ClientSize = new System.Drawing.Size(394, 457);
             this.Controls.Add(this.groupBox3);
             this.Name = "Form_NhanVien";
             this.Text = "NhanVien";
@@ -345,5 +376,7 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.TextBox CMND_txtBox;
         private System.Windows.Forms.TextBox HOTEN_txtBox;
         private System.Windows.Forms.Button Update_btn_tab6;
+        private System.Windows.Forms.Button Return_btn;
+        private System.Windows.Forms.Button SignOut_btn;
     }
 }
