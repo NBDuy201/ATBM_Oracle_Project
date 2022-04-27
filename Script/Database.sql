@@ -5,6 +5,13 @@ drop table "NHANVIEN" cascade constraints;
 drop table "HSBA" cascade constraints;
 drop table "HSBA_DV" cascade constraints;
 
+-- Drop synonym
+DROP PUBLIC SYNONYM CSYT FORCE;
+DROP PUBLIC SYNONYM BENHNHAN FORCE;
+DROP PUBLIC SYNONYM NHANVIEN FORCE;
+DROP PUBLIC SYNONYM HSBA FORCE;
+DROP PUBLIC SYNONYM HSBA_DV FORCE;
+
 CREATE TABLE "CSYT" (
   "MACSYT" varchar2(30),
   "TENCSYT" NVARCHAR2(50),
