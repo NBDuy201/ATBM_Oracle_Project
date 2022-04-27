@@ -76,13 +76,13 @@ Begin
     select count(*) into Tmp_count from all_users where username=upper(User_name);
     if(Tmp_count!=0) then        
         -- Check BN or NV
-        select count(*) into Tmp_count from BENHNHAN where MABN = User_name;
-        select count(*) into Tmp_count2 from NHANVIEN where MANV = User_name;
+        select count(*) into Tmp_count from BENHNHAN where upper(MABN) = upper(User_name);
+        select count(*) into Tmp_count2 from NHANVIEN where upper(MANV) = upper(User_name);
         
         if(vaitro = N'Bệnh Nhân' and Tmp_count != 0) then
-            Tmp_query:='Delete From BENHNHAN where MABN = :ma';
+            Tmp_query:='Delete From BENHNHAN where upper(MABN) = upper(:ma)';
         elsif(vaitro != N'Bệnh Nhân' and Tmp_count2 != 0) then
-            Tmp_query:='Delete From NHANVIEN where MANV = :ma';
+            Tmp_query:='Delete From NHANVIEN where upper(MANV) = upper(:ma)';
         else
             RAISE_APPLICATION_ERROR(-20000, N'User không đúng vai trò');
         end if;
