@@ -98,7 +98,7 @@ Begin
     end if;
 End;
 /
---exec Drop_User('Test', N'Bệnh Nhân');
+--exec Drop_User('Test02', N'Bệnh Nhân');
 
 CREATE OR REPLACE PROCEDURE view_roles
 (

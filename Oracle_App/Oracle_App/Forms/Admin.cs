@@ -132,70 +132,6 @@ namespace Oracle_App
             Application.ExitThread();
         }
 
-        private void IAD_CSYT(String sql_stm, int state) // insert + update + delete
-        {
-            String msg = "";
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = sql_stm;
-            cmd.CommandType = CommandType.Text;
-
-            switch (state)
-            {
-                case 0:
-                    cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MACSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("TENCSYT", OracleDbType.Varchar2, 50).Value = TENCSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("DCCSYT", OracleDbType.Varchar2, 250).Value = DCCSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("SDTCSYT", OracleDbType.Varchar2, 12).Value = SDTCSYT_txtBox_tab5.Text;
-                    msg = "Inserted Successfully";
-                    break;
-                case 1:
-                    cmd.Parameters.Add("TENCSYT", OracleDbType.Varchar2, 50).Value = TENCSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("DCCSYT", OracleDbType.Varchar2, 250).Value = DCCSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("SDTCSYT", OracleDbType.Varchar2, 12).Value = SDTCSYT_txtBox_tab5.Text;
-                    cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MACSYT_txtBox_tab5.Text;
-                    msg = "Updated Successfully";
-                    break;
-            }
-            try
-            {
-                int n = cmd.ExecuteNonQuery();
-                if (n > 0)
-                {
-                    MessageBox.Show(msg);
-                    DataTable dt = LoadCSYT();
-                    dataGridView4.DataSource = dt.DefaultView;
-                }
-                else
-                {
-                    string message = "Nothing Happened";
-                    string title = "Warning";
-                    MessageBoxButtons buttons = MessageBoxButtons.OK;
-                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
-                }
-            }
-            catch (Exception exp)
-            {
-                throw;
-            }
-        }
-
-        private void Insert_btn_tab5_Click(object sender, EventArgs e)
-        {
-            String sql = "Insert into CSYT(MACSYT, TENCSYT, DCCSYT, SDTCSYT) " +
-                "Values(:MACSYT, :TENCSYT, :DCCSYT, :SDTCSYT)";
-            this.IAD_CSYT(sql, 0); // insert
-        }
-
-        private void Update_btn_tab5_Click(object sender, EventArgs e)
-        {
-            String sql = "Update CSYT set " +
-                "TENCSYT = :TENCSYT, " +
-                "DCCSYT = :DCCSYT, " +
-                "SDTCSYT = :SDTCSYT " +
-                "Where MACSYT = :MACSYT";
-            this.IAD_CSYT(sql, 1); // update
-        }
-
         private void ClearTextBoxes()
         {
             Action<Control.ControlCollection> func = null;
@@ -210,16 +146,6 @@ namespace Oracle_App
             };
 
             func(Controls);
-        }
-
-        private void Reset_btn_tab5_Click(object sender, EventArgs e)
-        {
-            ClearTextBoxes();
-
-            Insert_btn_tab5.Enabled = true;
-            Update_btn_tab5.Enabled = false;
-
-            MACSYT_txtBox_tab5.Enabled = true;
         }
 
         private DataTable LoadNhanVien()
@@ -770,47 +696,6 @@ namespace Oracle_App
                 MessageBox.Show("Nothing happend!!!");
                 throw;
             }
-        }
-
-        private void CSYT_txtBox_tab5_TextChanged(object sender, EventArgs e)
-        {
-            if (String.IsNullOrEmpty(CSYT_txtBox_tab5.Text))
-            {
-                DataTable dt = LoadCSYT(); // Data table object
-                dataGridView4.DataSource = dt.DefaultView;
-            }
-        }
-
-        private void CSYT_srchBtn_tab5_Click(object sender, EventArgs e)
-        {
-            OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from CSYT where lower(TENCSYT) like '%' || lower('" + CSYT_txtBox_tab5.Text + "') || '%'"; // Sql statement
-            cmd.CommandType = CommandType.Text; // Type of Sql statement
-
-            OracleDataAdapter da = new OracleDataAdapter();
-            da.SelectCommand = cmd;
-            DataTable dt = new DataTable(); // Data table object
-            da.Fill(dt);
-
-            dataGridView4.DataSource = dt.DefaultView;
-        }
-
-        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int index = e.RowIndex;
-            if (index != -1) // Nhan vao header khong tinh
-            {
-                DataGridViewRow selectedRow = dataGridView4.Rows[index];
-                MACSYT_txtBox_tab5.Text = selectedRow.Cells["MACSYT"].Value.ToString();
-                TENCSYT_txtBox_tab5.Text = selectedRow.Cells["TENCSYT"].Value.ToString();
-                DCCSYT_txtBox_tab5.Text = selectedRow.Cells["DCCSYT"].Value.ToString();
-                SDTCSYT_txtBox_tab5.Text = selectedRow.Cells["SDTCSYT"].Value.ToString();
-            }
-
-            Insert_btn_tab5.Enabled = false;
-            Update_btn_tab5.Enabled = true;
-
-            MACSYT_txtBox_tab5.Enabled = false;
         }
 
         private void NhanVien_srchBtn_tab6_Click(object sender, EventArgs e)

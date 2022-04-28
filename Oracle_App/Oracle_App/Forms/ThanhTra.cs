@@ -42,7 +42,10 @@ namespace Oracle_App
 
             this.setConnection();
             InitializeComponent();
+        }
 
+        private void Form_ThanhTra_Load(object sender, EventArgs e)
+        {
             // Load gridview
             DataTable dt = LoadCSYT(); // Data table object
             dataGridView1.DataSource = dt.DefaultView;
