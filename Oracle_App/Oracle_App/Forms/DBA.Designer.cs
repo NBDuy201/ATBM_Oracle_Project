@@ -63,10 +63,10 @@ namespace Oracle_App.Forms
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.NGAYSINH_picker_tab6 = new System.Windows.Forms.DateTimePicker();
-            this.CSYT_cmbBox_tab6 = new System.Windows.Forms.ComboBox();
+            this.NGAYSINH_picker_tab3 = new System.Windows.Forms.DateTimePicker();
+            this.CSYT_cmbBox_tab3 = new System.Windows.Forms.ComboBox();
             this.PHAI_cmbBox_tab3 = new System.Windows.Forms.ComboBox();
-            this.VAITRO_cmbBox_tab6 = new System.Windows.Forms.ComboBox();
+            this.VAITRO_cmbBox_tab3 = new System.Windows.Forms.ComboBox();
             this.Reset_btn_tab6 = new System.Windows.Forms.Button();
             this.CHUYENKHOA_label_tab6 = new System.Windows.Forms.Label();
             this.VAITRO_label_tab6 = new System.Windows.Forms.Label();
@@ -79,10 +79,10 @@ namespace Oracle_App.Forms
             this.HOTEN_label_tab6 = new System.Windows.Forms.Label();
             this.MANV_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.MANV_label_tab6 = new System.Windows.Forms.Label();
-            this.CHUYENKHOA_txtBox_tab6 = new System.Windows.Forms.TextBox();
-            this.SODT_txtBox_tab6 = new System.Windows.Forms.TextBox();
-            this.QUEQUAN_txtBox_tab6 = new System.Windows.Forms.TextBox();
-            this.CMND_txtBox_tab6 = new System.Windows.Forms.TextBox();
+            this.CHUYENKHOA_txtBox_tab3 = new System.Windows.Forms.TextBox();
+            this.SODT_txtBox_tab3 = new System.Windows.Forms.TextBox();
+            this.QUEQUAN_txtBox_tab3 = new System.Windows.Forms.TextBox();
+            this.CMND_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.HOTEN_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.Insert_btn_tab6 = new System.Windows.Forms.Button();
             this.NhanVien_srchBtn_tab3 = new System.Windows.Forms.Button();
@@ -481,12 +481,13 @@ namespace Oracle_App.Forms
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.NGAYSINH_picker_tab6);
-            this.groupBox3.Controls.Add(this.CSYT_cmbBox_tab6);
+            this.groupBox3.Controls.Add(this.NGAYSINH_picker_tab3);
+            this.groupBox3.Controls.Add(this.CSYT_cmbBox_tab3);
             this.groupBox3.Controls.Add(this.PHAI_cmbBox_tab3);
-            this.groupBox3.Controls.Add(this.VAITRO_cmbBox_tab6);
+            this.groupBox3.Controls.Add(this.VAITRO_cmbBox_tab3);
             this.groupBox3.Controls.Add(this.Reset_btn_tab6);
             this.groupBox3.Controls.Add(this.CHUYENKHOA_label_tab6);
+            this.groupBox3.Controls.Add(this.Insert_btn_tab6);
             this.groupBox3.Controls.Add(this.VAITRO_label_tab6);
             this.groupBox3.Controls.Add(this.CSYT_label_tab6);
             this.groupBox3.Controls.Add(this.SODT_label_tab6);
@@ -497,67 +498,76 @@ namespace Oracle_App.Forms
             this.groupBox3.Controls.Add(this.HOTEN_label_tab6);
             this.groupBox3.Controls.Add(this.MANV_txtBox_tab3);
             this.groupBox3.Controls.Add(this.MANV_label_tab6);
-            this.groupBox3.Controls.Add(this.CHUYENKHOA_txtBox_tab6);
-            this.groupBox3.Controls.Add(this.SODT_txtBox_tab6);
-            this.groupBox3.Controls.Add(this.QUEQUAN_txtBox_tab6);
-            this.groupBox3.Controls.Add(this.CMND_txtBox_tab6);
+            this.groupBox3.Controls.Add(this.CHUYENKHOA_txtBox_tab3);
+            this.groupBox3.Controls.Add(this.SODT_txtBox_tab3);
+            this.groupBox3.Controls.Add(this.QUEQUAN_txtBox_tab3);
+            this.groupBox3.Controls.Add(this.CMND_txtBox_tab3);
             this.groupBox3.Controls.Add(this.HOTEN_txtBox_tab3);
-            this.groupBox3.Controls.Add(this.Insert_btn_tab6);
             this.groupBox3.Location = new System.Drawing.Point(5, 37);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(369, 390);
+            this.groupBox3.Size = new System.Drawing.Size(369, 407);
             this.groupBox3.TabIndex = 53;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DML NhanVien";
             // 
-            // NGAYSINH_picker_tab6
+            // NGAYSINH_picker_tab3
             // 
-            this.NGAYSINH_picker_tab6.CustomFormat = "";
-            this.NGAYSINH_picker_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NGAYSINH_picker_tab6.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NGAYSINH_picker_tab6.Location = new System.Drawing.Point(134, 120);
-            this.NGAYSINH_picker_tab6.Name = "NGAYSINH_picker_tab6";
-            this.NGAYSINH_picker_tab6.Size = new System.Drawing.Size(117, 26);
-            this.NGAYSINH_picker_tab6.TabIndex = 54;
+            this.NGAYSINH_picker_tab3.CustomFormat = "";
+            this.NGAYSINH_picker_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NGAYSINH_picker_tab3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.NGAYSINH_picker_tab3.Location = new System.Drawing.Point(134, 120);
+            this.NGAYSINH_picker_tab3.Name = "NGAYSINH_picker_tab3";
+            this.NGAYSINH_picker_tab3.Size = new System.Drawing.Size(117, 26);
+            this.NGAYSINH_picker_tab3.TabIndex = 54;
             // 
-            // CSYT_cmbBox_tab6
+            // CSYT_cmbBox_tab3
             // 
-            this.CSYT_cmbBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CSYT_cmbBox_tab6.FormattingEnabled = true;
-            this.CSYT_cmbBox_tab6.Location = new System.Drawing.Point(134, 251);
-            this.CSYT_cmbBox_tab6.Name = "CSYT_cmbBox_tab6";
-            this.CSYT_cmbBox_tab6.Size = new System.Drawing.Size(229, 24);
-            this.CSYT_cmbBox_tab6.TabIndex = 36;
+            this.CSYT_cmbBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSYT_cmbBox_tab3.FormattingEnabled = true;
+            this.CSYT_cmbBox_tab3.Location = new System.Drawing.Point(134, 251);
+            this.CSYT_cmbBox_tab3.Name = "CSYT_cmbBox_tab3";
+            this.CSYT_cmbBox_tab3.Size = new System.Drawing.Size(229, 24);
+            this.CSYT_cmbBox_tab3.TabIndex = 36;
             // 
             // PHAI_cmbBox_tab3
             // 
             this.PHAI_cmbBox_tab3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.PHAI_cmbBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PHAI_cmbBox_tab3.FormattingEnabled = true;
+            this.PHAI_cmbBox_tab3.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ",
+            "Khác"});
             this.PHAI_cmbBox_tab3.Location = new System.Drawing.Point(134, 86);
             this.PHAI_cmbBox_tab3.Name = "PHAI_cmbBox_tab3";
             this.PHAI_cmbBox_tab3.Size = new System.Drawing.Size(229, 28);
             this.PHAI_cmbBox_tab3.TabIndex = 36;
             // 
-            // VAITRO_cmbBox_tab6
+            // VAITRO_cmbBox_tab3
             // 
-            this.VAITRO_cmbBox_tab6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.VAITRO_cmbBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VAITRO_cmbBox_tab6.FormattingEnabled = true;
-            this.VAITRO_cmbBox_tab6.Location = new System.Drawing.Point(134, 281);
-            this.VAITRO_cmbBox_tab6.Name = "VAITRO_cmbBox_tab6";
-            this.VAITRO_cmbBox_tab6.Size = new System.Drawing.Size(229, 28);
-            this.VAITRO_cmbBox_tab6.TabIndex = 36;
+            this.VAITRO_cmbBox_tab3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VAITRO_cmbBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.VAITRO_cmbBox_tab3.FormattingEnabled = true;
+            this.VAITRO_cmbBox_tab3.Items.AddRange(new object[] {
+            "Thanh Tra",
+            "Cơ Sở Y Tế",
+            "Bác Sĩ",
+            "Nghiên Cứu"});
+            this.VAITRO_cmbBox_tab3.Location = new System.Drawing.Point(134, 281);
+            this.VAITRO_cmbBox_tab3.Name = "VAITRO_cmbBox_tab3";
+            this.VAITRO_cmbBox_tab3.Size = new System.Drawing.Size(229, 28);
+            this.VAITRO_cmbBox_tab3.TabIndex = 36;
             // 
             // Reset_btn_tab6
             // 
             this.Reset_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 347);
+            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 363);
             this.Reset_btn_tab6.Name = "Reset_btn_tab6";
             this.Reset_btn_tab6.Size = new System.Drawing.Size(178, 33);
             this.Reset_btn_tab6.TabIndex = 29;
             this.Reset_btn_tab6.Text = "Reset";
             this.Reset_btn_tab6.UseVisualStyleBackColor = true;
+            this.Reset_btn_tab6.Click += new System.EventHandler(this.Reset_btn_tab6_Click);
             // 
             // CHUYENKHOA_label_tab6
             // 
@@ -667,37 +677,37 @@ namespace Oracle_App.Forms
             this.MANV_label_tab6.TabIndex = 18;
             this.MANV_label_tab6.Text = "MANV";
             // 
-            // CHUYENKHOA_txtBox_tab6
+            // CHUYENKHOA_txtBox_tab3
             // 
-            this.CHUYENKHOA_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_txtBox_tab6.Location = new System.Drawing.Point(134, 315);
-            this.CHUYENKHOA_txtBox_tab6.Name = "CHUYENKHOA_txtBox_tab6";
-            this.CHUYENKHOA_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
-            this.CHUYENKHOA_txtBox_tab6.TabIndex = 20;
+            this.CHUYENKHOA_txtBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CHUYENKHOA_txtBox_tab3.Location = new System.Drawing.Point(134, 315);
+            this.CHUYENKHOA_txtBox_tab3.Name = "CHUYENKHOA_txtBox_tab3";
+            this.CHUYENKHOA_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
+            this.CHUYENKHOA_txtBox_tab3.TabIndex = 20;
             // 
-            // SODT_txtBox_tab6
+            // SODT_txtBox_tab3
             // 
-            this.SODT_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SODT_txtBox_tab6.Location = new System.Drawing.Point(134, 216);
-            this.SODT_txtBox_tab6.Name = "SODT_txtBox_tab6";
-            this.SODT_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
-            this.SODT_txtBox_tab6.TabIndex = 20;
+            this.SODT_txtBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SODT_txtBox_tab3.Location = new System.Drawing.Point(134, 216);
+            this.SODT_txtBox_tab3.Name = "SODT_txtBox_tab3";
+            this.SODT_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
+            this.SODT_txtBox_tab3.TabIndex = 20;
             // 
-            // QUEQUAN_txtBox_tab6
+            // QUEQUAN_txtBox_tab3
             // 
-            this.QUEQUAN_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QUEQUAN_txtBox_tab6.Location = new System.Drawing.Point(134, 184);
-            this.QUEQUAN_txtBox_tab6.Name = "QUEQUAN_txtBox_tab6";
-            this.QUEQUAN_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
-            this.QUEQUAN_txtBox_tab6.TabIndex = 20;
+            this.QUEQUAN_txtBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QUEQUAN_txtBox_tab3.Location = new System.Drawing.Point(134, 184);
+            this.QUEQUAN_txtBox_tab3.Name = "QUEQUAN_txtBox_tab3";
+            this.QUEQUAN_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
+            this.QUEQUAN_txtBox_tab3.TabIndex = 20;
             // 
-            // CMND_txtBox_tab6
+            // CMND_txtBox_tab3
             // 
-            this.CMND_txtBox_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CMND_txtBox_tab6.Location = new System.Drawing.Point(134, 152);
-            this.CMND_txtBox_tab6.Name = "CMND_txtBox_tab6";
-            this.CMND_txtBox_tab6.Size = new System.Drawing.Size(229, 26);
-            this.CMND_txtBox_tab6.TabIndex = 20;
+            this.CMND_txtBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CMND_txtBox_tab3.Location = new System.Drawing.Point(134, 152);
+            this.CMND_txtBox_tab3.Name = "CMND_txtBox_tab3";
+            this.CMND_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
+            this.CMND_txtBox_tab3.TabIndex = 20;
             // 
             // HOTEN_txtBox_tab3
             // 
@@ -710,12 +720,13 @@ namespace Oracle_App.Forms
             // Insert_btn_tab6
             // 
             this.Insert_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Insert_btn_tab6.Location = new System.Drawing.Point(10, 347);
+            this.Insert_btn_tab6.Location = new System.Drawing.Point(10, 363);
             this.Insert_btn_tab6.Name = "Insert_btn_tab6";
             this.Insert_btn_tab6.Size = new System.Drawing.Size(169, 33);
             this.Insert_btn_tab6.TabIndex = 22;
             this.Insert_btn_tab6.Text = "Insert";
             this.Insert_btn_tab6.UseVisualStyleBackColor = true;
+            this.Insert_btn_tab6.Click += new System.EventHandler(this.Insert_btn_tab6_Click);
             // 
             // NhanVien_srchBtn_tab3
             // 
@@ -726,6 +737,7 @@ namespace Oracle_App.Forms
             this.NhanVien_srchBtn_tab3.TabIndex = 52;
             this.NhanVien_srchBtn_tab3.Text = "Search";
             this.NhanVien_srchBtn_tab3.UseVisualStyleBackColor = true;
+            this.NhanVien_srchBtn_tab3.Click += new System.EventHandler(this.NhanVien_srchBtn_tab3_Click);
             // 
             // NhanVien_txtBox_tab3
             // 
@@ -734,6 +746,7 @@ namespace Oracle_App.Forms
             this.NhanVien_txtBox_tab3.Name = "NhanVien_txtBox_tab3";
             this.NhanVien_txtBox_tab3.Size = new System.Drawing.Size(399, 26);
             this.NhanVien_txtBox_tab3.TabIndex = 50;
+            this.NhanVien_txtBox_tab3.TextChanged += new System.EventHandler(this.NhanVien_txtBox_tab3_TextChanged);
             // 
             // label2
             // 
@@ -791,6 +804,7 @@ namespace Oracle_App.Forms
             this.DangXuat_btn_tab4.TabIndex = 0;
             this.DangXuat_btn_tab4.Text = "Đăng Xuất";
             this.DangXuat_btn_tab4.UseVisualStyleBackColor = false;
+            this.DangXuat_btn_tab4.Click += new System.EventHandler(this.DangXuat_btn_tab4_Click);
             // 
             // Form_DBA
             // 
@@ -859,10 +873,10 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker NGAYSINH_picker_tab6;
-        private System.Windows.Forms.ComboBox CSYT_cmbBox_tab6;
+        private System.Windows.Forms.DateTimePicker NGAYSINH_picker_tab3;
+        private System.Windows.Forms.ComboBox CSYT_cmbBox_tab3;
         private System.Windows.Forms.ComboBox PHAI_cmbBox_tab3;
-        private System.Windows.Forms.ComboBox VAITRO_cmbBox_tab6;
+        private System.Windows.Forms.ComboBox VAITRO_cmbBox_tab3;
         private System.Windows.Forms.Button Reset_btn_tab6;
         private System.Windows.Forms.Label CHUYENKHOA_label_tab6;
         private System.Windows.Forms.Label VAITRO_label_tab6;
@@ -875,10 +889,10 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.Label HOTEN_label_tab6;
         private System.Windows.Forms.TextBox MANV_txtBox_tab3;
         private System.Windows.Forms.Label MANV_label_tab6;
-        private System.Windows.Forms.TextBox CHUYENKHOA_txtBox_tab6;
-        private System.Windows.Forms.TextBox SODT_txtBox_tab6;
-        private System.Windows.Forms.TextBox QUEQUAN_txtBox_tab6;
-        private System.Windows.Forms.TextBox CMND_txtBox_tab6;
+        private System.Windows.Forms.TextBox CHUYENKHOA_txtBox_tab3;
+        private System.Windows.Forms.TextBox SODT_txtBox_tab3;
+        private System.Windows.Forms.TextBox QUEQUAN_txtBox_tab3;
+        private System.Windows.Forms.TextBox CMND_txtBox_tab3;
         private System.Windows.Forms.TextBox HOTEN_txtBox_tab3;
         private System.Windows.Forms.Button Insert_btn_tab6;
         private System.Windows.Forms.Button NhanVien_srchBtn_tab3;

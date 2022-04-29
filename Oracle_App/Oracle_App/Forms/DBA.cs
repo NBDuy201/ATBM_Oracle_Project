@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ATBM;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -51,6 +52,9 @@ namespace Oracle_App.Forms
             dt = LoadCSYT(); // Data table object
             dataGridView2.DataSource = dt.DefaultView;
 
+            dt = LoadNhanVien(); // Data table object
+            dataGridView3.DataSource = dt.DefaultView;
+
             // Combobox
             DataTable dt2 = LoadCSYT();
             CSYT_cmbBox_tab1.DataSource = dt2;
@@ -58,7 +62,15 @@ namespace Oracle_App.Forms
             CSYT_cmbBox_tab1.AutoCompleteMode = AutoCompleteMode.Suggest;
             CSYT_cmbBox_tab1.AutoCompleteSource = AutoCompleteSource.ListItems;
 
+            CSYT_cmbBox_tab3.DataSource = dt2;
+            CSYT_cmbBox_tab3.DisplayMember = "MACSYT";
+            CSYT_cmbBox_tab3.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CSYT_cmbBox_tab3.AutoCompleteSource = AutoCompleteSource.ListItems;
+
             VaiTro_cm_tab1.SelectedIndex = 0;
+            PHAI_cmbBox_tab3.SelectedIndex = 0;
+            VAITRO_cmbBox_tab3.SelectedIndex = 0;
+            CSYT_cmbBox_tab3.SelectedIndex = 0;
         }
 
         private void Form_DBA_FormClosed(object sender, FormClosedEventArgs e)
@@ -164,7 +176,7 @@ namespace Oracle_App.Forms
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from CSYT where lower(TENCSYT) like '%' || :tenCS || '%'"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
-            cmd.Parameters.Add("tenCS", OracleDbType.Varchar2, 30).Value = CSYT_txtBox_tab2.Text.ToLower();
+            cmd.Parameters.Add("tenCS", OracleDbType.NVarchar2, 100).Value = CSYT_txtBox_tab2.Text.ToLower();
 
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
@@ -289,6 +301,95 @@ namespace Oracle_App.Forms
             Update_btn_tab2.Enabled = false;
 
             MACSYT_txtBox_tab2.Enabled = true;
+        }
+
+        private void NhanVien_srchBtn_tab3_Click(object sender, EventArgs e)
+        {
+            // Sua khi co view
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from NHANVIEN where lower(HOTEN) like '%' || :tenNV || '%'"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+            cmd.Parameters.Add("tenNV", OracleDbType.NVarchar2, 100).Value = NhanVien_txtBox_tab3.Text.ToLower();
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+
+            dataGridView3.DataSource = dt.DefaultView;
+        }
+
+        private void NhanVien_txtBox_tab3_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(NhanVien_txtBox_tab3.Text))
+            {
+                DataTable dt = LoadNhanVien(); // Data table object
+                dataGridView3.DataSource = dt.DefaultView;
+            }
+        }
+
+        private void Insert_btn_tab6_Click(object sender, EventArgs e)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText =
+                "Insert into NHANVIEN(MANV, HOTEN, PHAI, NGAYSINH, CMND, QUEQUAN, SODT, CSYT, VAITRO, CHUYENKHOA) " +
+                "Values(:MANV, :HOTEN, :PHAI, :NGAYSINH, :CMND, :QUEQUAN, :SODT, :CSYT, :VAITRO, :CHUYENKHOA)"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+            cmd.Parameters.Add("MANV", OracleDbType.Varchar2, 30).Value = MANV_txtBox_tab3.Text;
+            cmd.Parameters.Add("HOTEN", OracleDbType.NVarchar2, 50).Value = HOTEN_txtBox_tab3.Text;
+            cmd.Parameters.Add("PHAI", OracleDbType.NVarchar2, 20).Value = PHAI_cmbBox_tab3.Text;
+            cmd.Parameters.Add("NGAYSINH", OracleDbType.Date).Value = NGAYSINH_picker_tab3.Value.Date;
+            cmd.Parameters.Add("CMND", OracleDbType.Varchar2, 12).Value = CMND_txtBox_tab3.Text;
+            cmd.Parameters.Add("QUEQUAN", OracleDbType.NVarchar2, 50).Value = QUEQUAN_txtBox_tab3.Text;
+            cmd.Parameters.Add("SODT", OracleDbType.Varchar2, 50).Value = SODT_txtBox_tab3.Text;
+            cmd.Parameters.Add("CSYT", OracleDbType.Varchar2, 30).Value = CSYT_cmbBox_tab3.Text;
+            cmd.Parameters.Add("VAITRO", OracleDbType.NVarchar2, 50).Value = VAITRO_cmbBox_tab3.Text;
+            cmd.Parameters.Add("CHUYENKHOA", OracleDbType.NVarchar2, 50).Value = CHUYENKHOA_txtBox_tab3.Text;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Insert Successfull");
+                    DataTable dt = LoadNhanVien(); // Data table object
+                    dataGridView3.DataSource = dt.DefaultView;
+                }
+                else
+                {
+                    string message = "Nothing Happened";
+                    string title = "Warning";
+                    MessageBoxButtons buttons = MessageBoxButtons.OK;
+                    MessageBox.Show(message, title, buttons, MessageBoxIcon.Warning);
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message);
+                //throw;
+            }
+        }
+
+        private void Reset_btn_tab6_Click(object sender, EventArgs e)
+        {
+            ClearTextBoxes();
+
+            PHAI_cmbBox_tab3.SelectedIndex = 0;
+            VAITRO_cmbBox_tab3.SelectedIndex = 0;
+            CSYT_cmbBox_tab3.SelectedIndex = 0;
+            NGAYSINH_picker_tab3.Value = DateTime.Now;
+        }
+
+        private void DangXuat_btn_tab4_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            Login form = new Login();
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
         }
     }
 }

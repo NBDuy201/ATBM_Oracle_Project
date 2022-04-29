@@ -184,7 +184,7 @@ namespace Oracle_App.Forms
             ClearTextBoxes();
             MABN_cm_tab1.SelectedIndex = 0;
             MABS_cm_tab1.SelectedIndex = 0;
-            Ngay_picker_tab1.Value = DateTimePicker.MinimumDateTime;
+            Ngay_picker_tab1.Value = DateTime.Now;
 
             Insert_btn_tab1.Enabled = true;
             Delete_btn_tab1.Enabled = false;
