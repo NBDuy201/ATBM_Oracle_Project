@@ -38,18 +38,12 @@ namespace Oracle_App
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.ChangePass_button_tab2 = new System.Windows.Forms.Button();
             this.DropUser_button_tab2 = new System.Windows.Forms.Button();
-            this.VaiTro_cm2_tab2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.NewPass_textbox_tab2 = new System.Windows.Forms.TextBox();
             this.NewPass_label_tab2 = new System.Windows.Forms.Label();
             this.SelectedUser_textbox_tab2 = new System.Windows.Forms.TextBox();
             this.SelectedUser_label_tab2 = new System.Windows.Forms.Label();
             this.View_user_button2 = new System.Windows.Forms.Button();
             this.user_pass_group2 = new System.Windows.Forms.GroupBox();
-            this.CSYT_cmbBox_tab2 = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.VaiTro_cm_tab2 = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.Password_label_tab2 = new System.Windows.Forms.Label();
             this.User_textbox_tab2 = new System.Windows.Forms.TextBox();
             this.User_label_tab2 = new System.Windows.Forms.Label();
@@ -222,15 +216,13 @@ namespace Oracle_App
             // 
             this.groupBox2.Controls.Add(this.ChangePass_button_tab2);
             this.groupBox2.Controls.Add(this.DropUser_button_tab2);
-            this.groupBox2.Controls.Add(this.VaiTro_cm2_tab2);
-            this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.NewPass_textbox_tab2);
             this.groupBox2.Controls.Add(this.NewPass_label_tab2);
             this.groupBox2.Controls.Add(this.SelectedUser_textbox_tab2);
             this.groupBox2.Controls.Add(this.SelectedUser_label_tab2);
-            this.groupBox2.Location = new System.Drawing.Point(5, 254);
+            this.groupBox2.Location = new System.Drawing.Point(5, 195);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 217);
+            this.groupBox2.Size = new System.Drawing.Size(287, 175);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Điều chỉnh user";
@@ -238,7 +230,7 @@ namespace Oracle_App
             // ChangePass_button_tab2
             // 
             this.ChangePass_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePass_button_tab2.Location = new System.Drawing.Point(10, 139);
+            this.ChangePass_button_tab2.Location = new System.Drawing.Point(10, 94);
             this.ChangePass_button_tab2.Name = "ChangePass_button_tab2";
             this.ChangePass_button_tab2.Size = new System.Drawing.Size(266, 33);
             this.ChangePass_button_tab2.TabIndex = 28;
@@ -249,7 +241,7 @@ namespace Oracle_App
             // DropUser_button_tab2
             // 
             this.DropUser_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropUser_button_tab2.Location = new System.Drawing.Point(10, 178);
+            this.DropUser_button_tab2.Location = new System.Drawing.Point(10, 133);
             this.DropUser_button_tab2.Name = "DropUser_button_tab2";
             this.DropUser_button_tab2.Size = new System.Drawing.Size(266, 33);
             this.DropUser_button_tab2.TabIndex = 23;
@@ -257,34 +249,10 @@ namespace Oracle_App
             this.DropUser_button_tab2.UseVisualStyleBackColor = true;
             this.DropUser_button_tab2.Click += new System.EventHandler(this.Delete_user_button2_Click);
             // 
-            // VaiTro_cm2_tab2
-            // 
-            this.VaiTro_cm2_tab2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.VaiTro_cm2_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VaiTro_cm2_tab2.FormattingEnabled = true;
-            this.VaiTro_cm2_tab2.Items.AddRange(new object[] {
-            "Nhân Viên",
-            "Bệnh Nhân"});
-            this.VaiTro_cm2_tab2.Location = new System.Drawing.Point(121, 53);
-            this.VaiTro_cm2_tab2.Name = "VaiTro_cm2_tab2";
-            this.VaiTro_cm2_tab2.Size = new System.Drawing.Size(155, 28);
-            this.VaiTro_cm2_tab2.TabIndex = 37;
-            // 
-            // label4
-            // 
-            this.label4.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(6, 56);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 20);
-            this.label4.TabIndex = 27;
-            this.label4.Text = "Vai Trò";
-            // 
             // NewPass_textbox_tab2
             // 
             this.NewPass_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_textbox_tab2.Location = new System.Drawing.Point(121, 87);
+            this.NewPass_textbox_tab2.Location = new System.Drawing.Point(121, 53);
             this.NewPass_textbox_tab2.Name = "NewPass_textbox_tab2";
             this.NewPass_textbox_tab2.PasswordChar = '*';
             this.NewPass_textbox_tab2.Size = new System.Drawing.Size(155, 26);
@@ -295,7 +263,7 @@ namespace Oracle_App
             this.NewPass_label_tab2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.NewPass_label_tab2.AutoSize = true;
             this.NewPass_label_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_label_tab2.Location = new System.Drawing.Point(6, 90);
+            this.NewPass_label_tab2.Location = new System.Drawing.Point(6, 56);
             this.NewPass_label_tab2.Name = "NewPass_label_tab2";
             this.NewPass_label_tab2.Size = new System.Drawing.Size(107, 20);
             this.NewPass_label_tab2.TabIndex = 27;
@@ -333,10 +301,6 @@ namespace Oracle_App
             // 
             // user_pass_group2
             // 
-            this.user_pass_group2.Controls.Add(this.CSYT_cmbBox_tab2);
-            this.user_pass_group2.Controls.Add(this.label3);
-            this.user_pass_group2.Controls.Add(this.VaiTro_cm_tab2);
-            this.user_pass_group2.Controls.Add(this.label1);
             this.user_pass_group2.Controls.Add(this.Password_label_tab2);
             this.user_pass_group2.Controls.Add(this.User_textbox_tab2);
             this.user_pass_group2.Controls.Add(this.User_label_tab2);
@@ -344,55 +308,10 @@ namespace Oracle_App
             this.user_pass_group2.Controls.Add(this.Create_user_button_tab2);
             this.user_pass_group2.Location = new System.Drawing.Point(5, 31);
             this.user_pass_group2.Name = "user_pass_group2";
-            this.user_pass_group2.Size = new System.Drawing.Size(287, 205);
+            this.user_pass_group2.Size = new System.Drawing.Size(287, 141);
             this.user_pass_group2.TabIndex = 23;
             this.user_pass_group2.TabStop = false;
             this.user_pass_group2.Text = "Tạo user mới";
-            // 
-            // CSYT_cmbBox_tab2
-            // 
-            this.CSYT_cmbBox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CSYT_cmbBox_tab2.FormattingEnabled = true;
-            this.CSYT_cmbBox_tab2.Location = new System.Drawing.Point(90, 120);
-            this.CSYT_cmbBox_tab2.Name = "CSYT_cmbBox_tab2";
-            this.CSYT_cmbBox_tab2.Size = new System.Drawing.Size(186, 28);
-            this.CSYT_cmbBox_tab2.TabIndex = 37;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(6, 123);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 20);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "CSYT";
-            // 
-            // VaiTro_cm_tab2
-            // 
-            this.VaiTro_cm_tab2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.VaiTro_cm_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VaiTro_cm_tab2.FormattingEnabled = true;
-            this.VaiTro_cm_tab2.Items.AddRange(new object[] {
-            "Bác Sĩ",
-            "Bệnh Nhân",
-            "Thanh Tra",
-            "Nghiên Cứu",
-            "Cơ Sở Y Tế"});
-            this.VaiTro_cm_tab2.Location = new System.Drawing.Point(90, 86);
-            this.VaiTro_cm_tab2.Name = "VaiTro_cm_tab2";
-            this.VaiTro_cm_tab2.Size = new System.Drawing.Size(186, 28);
-            this.VaiTro_cm_tab2.TabIndex = 37;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 20);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Vai Trò";
             // 
             // Password_label_tab2
             // 
@@ -434,7 +353,7 @@ namespace Oracle_App
             // Create_user_button_tab2
             // 
             this.Create_user_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_user_button_tab2.Location = new System.Drawing.Point(10, 163);
+            this.Create_user_button_tab2.Location = new System.Drawing.Point(10, 92);
             this.Create_user_button_tab2.Name = "Create_user_button_tab2";
             this.Create_user_button_tab2.Size = new System.Drawing.Size(266, 33);
             this.Create_user_button_tab2.TabIndex = 22;
@@ -1226,12 +1145,6 @@ namespace Oracle_App
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button DangXuat_btn_tab5;
-        private System.Windows.Forms.ComboBox VaiTro_cm_tab2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CSYT_cmbBox_tab2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox VaiTro_cm2_tab2;
-        private System.Windows.Forms.Label label4;
     }
 }
 
