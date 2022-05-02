@@ -89,6 +89,7 @@
             this.VaiTro_cm.FormattingEnabled = true;
             this.VaiTro_cm.Items.AddRange(new object[] {
             "Admin",
+            "Admin 2",
             "Bác Sĩ",
             "Bệnh Nhân",
             "Thanh Tra",

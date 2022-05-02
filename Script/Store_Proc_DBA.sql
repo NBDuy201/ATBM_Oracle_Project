@@ -32,7 +32,7 @@ END view_allPrivi;
 
 -- Cau 3 --
 -- create User
-create or replace procedure Grant_NewUser(User_name in varchar2, Pass_Word in varchar2, vaitro in NVARCHAR2, CoSoYTe in VARCHAR2)
+create or replace procedure Create_NewUser(User_name in varchar2,Pass_Word in varchar2)
 authid current_user 
 is
     Tmp_count int;
@@ -41,64 +41,32 @@ Begin
     select count(*) into Tmp_count from all_users where username=upper(User_name);
     if(Tmp_count!=0) then 
         RAISE_APPLICATION_ERROR(-20000,'User da ton tai');
+        return;
     end if;
-    
-    -- Create User
     Tmp_query:='Create user '|| User_name||' identified by '||Pass_Word;
-    --DBMS_OUTPUT.PUT_LINE(Tmp_query);
     execute immediate(Tmp_query);
-    
     Tmp_query:='grant create session to '|| User_name;
-    --DBMS_OUTPUT.PUT_LINE(Tmp_query);
     execute immediate(Tmp_query);
-         
-     -- Insert User in table
-    if(vaitro = N'Bệnh Nhân') then
-        Tmp_query:='insert into BENHNHAN(MABN, MACSYT) Values(:ma, :cs)';
-         execute immediate(Tmp_query)
-            using User_name, CoSoYTe;
-     else
-        Tmp_query:='insert into NHANVIEN(MANV, CSYT, VAITRO) Values(:ma, :cs, :vt)';
-        execute immediate(Tmp_query)
-            using User_name, CoSoYTe, vaitro;
-    End if;
 End;
 /
---exec Grant_NewUser('Test', 'Test', N'Bệnh Nhân', 'CS0');
+--exec Create_NewUser('Test', 'Test');
 
 -- Delete User
-create or replace procedure Drop_User (User_Name in varchar2, vaitro in NVARCHAR2)
+create or replace procedure Drop_User (User_Name in varchar2)
 authid current_user is
     Tmp_query varchar(100);
     Tmp_count int;
-    Tmp_count2 int;
 Begin
     select count(*) into Tmp_count from all_users where username=upper(User_name);
-    if(Tmp_count!=0) then        
-        -- Check BN or NV
-        select count(*) into Tmp_count from BENHNHAN where upper(MABN) = upper(User_name);
-        select count(*) into Tmp_count2 from NHANVIEN where upper(MANV) = upper(User_name);
-        
-        if(vaitro = N'Bệnh Nhân' and Tmp_count != 0) then
-            Tmp_query:='Delete From BENHNHAN where upper(MABN) = upper(:ma)';
-        elsif(vaitro != N'Bệnh Nhân' and Tmp_count2 != 0) then
-            Tmp_query:='Delete From NHANVIEN where upper(MANV) = upper(:ma)';
-        else
-            RAISE_APPLICATION_ERROR(-20000, N'User không đúng vai trò');
-        end if;
-        -- Exec
-        -- Delete from table
-        execute immediate(Tmp_query)
-                using User_name;
-        -- Drop user       
+    if(Tmp_count!=0) then
         Tmp_query:='Drop user '||User_Name; 
         execute IMMEDIATE (Tmp_query);
     else 
-        RAISE_APPLICATION_ERROR(-20000, N'User chưa tồn tại');
+        RAISE_APPLICATION_ERROR(-20000,'User chua ton tai');
     end if;
 End;
 /
---exec Drop_User('Test', N'Bệnh Nhân');
+--exec Drop_User('Test02');
 
 CREATE OR REPLACE PROCEDURE view_roles
 (
@@ -156,8 +124,7 @@ begin
     end if;
 end;
 /
-
---exec Alter_User('TEST', 'abc');
+--exec Alter_User('Test02', 'abc');
 
 -- Cau 3 Hieu chinh role
 create or replace procedure Alter_Role (Role_name in varchar2, Pass_Word in varchar2)
@@ -243,14 +210,14 @@ END view_all_proc;
 /
 
 -- Cap quyen he thong cho user:
-CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_SYS_USER(user_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_option IN NVARCHAR2)
+CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_SYS_USER(user_name IN VARCHAR2, n_pri IN VARCHAR2, n_option IN VARCHAR2)
 authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
     select count(*) into n_count from all_users where username = user_name;
    	if n_count = 0 then
-        dbms_output.put_line('User does not exist');
+        RAISE_APPLICATION_ERROR(-20000,'User khong ton tai');
         return;
    	end if;
 
@@ -262,14 +229,14 @@ BEGIN
 END  GRANT_PRIVILEGES_SYS_USER;
 /
 
-CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_USER(role_name IN NVARCHAR2, user_name IN NVARCHAR2, n_option IN NVARCHAR2)
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_USER(role_name IN VARCHAR2, user_name IN VARCHAR2, n_option IN VARCHAR2)
 authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
-    select count(*) into n_count from all_users where username = user_name;
+    select count(*) into n_count from all_users where username = upper(user_name);
    	if n_count = 0 then
-        dbms_output.put_line('User does not exist');
+        RAISE_APPLICATION_ERROR(-20000,'User khong ton tai');
         return;
    	end if; 
 

@@ -41,9 +41,9 @@ namespace Oracle_App
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.SignOut_btn_tab6 = new System.Windows.Forms.Button();
             this.Edit_btn_tab6 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -201,6 +201,15 @@ namespace Oracle_App
             this.tabPage6.Text = "THÔNG TIN CÁ NHÂN";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Oracle_App.Properties.Resources.ThanhTra;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(530, 555);
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
+            // 
             // SignOut_btn_tab6
             // 
             this.SignOut_btn_tab6.BackColor = System.Drawing.Color.Black;
@@ -227,15 +236,6 @@ namespace Oracle_App
             this.Edit_btn_tab6.UseVisualStyleBackColor = false;
             this.Edit_btn_tab6.Click += new System.EventHandler(this.Edit_btn_tab6_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Oracle_App.Properties.Resources.ThanhTra;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(530, 555);
-            this.pictureBox1.TabIndex = 67;
-            this.pictureBox1.TabStop = false;
-            // 
             // Form_ThanhTra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,6 +245,7 @@ namespace Oracle_App
             this.Name = "Form_ThanhTra";
             this.Text = "ThanhTra";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_ThanhTra_FormClosed);
+            this.Load += new System.EventHandler(this.Form_ThanhTra_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

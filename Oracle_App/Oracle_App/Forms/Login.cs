@@ -25,12 +25,13 @@ namespace ATBM
         private bool Check_Role(int option)
         {
             // option:
-            // 0: DBA
+            // 0: DBA (toàn quyền)
             // 1: Bác Sĩ
             // 2: Bệnh Nhân
             // 3: Thanh Tra
             // 4: Nghiên Cứu
             // 5: Cơ Sở Y Tế
+            // 6: DBA (ở Phân hệ 2)
 
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandType = CommandType.Text; // Type of Sql statement
@@ -47,31 +48,37 @@ namespace ATBM
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'BacSi'"; // Sql statement
+                        "Where granted_role = 'BAC_SI'"; // Sql statement
                     break;
                 case 2:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'BenhNhan'"; // Sql statement
+                        "Where granted_role = 'BENH_NHAN'"; // Sql statement
                     break;
                 case 3:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'ThanhTra'"; // Sql statement
+                        "Where granted_role = 'THANH_TRA'"; // Sql statement
                     break;
                 case 4:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'NghienCuu'"; // Sql statement
+                        "Where granted_role = 'NGHIEN_CUU'"; // Sql statement
                     break;
                 case 5:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'CoSoYTe'"; // Sql statement
+                        "Where granted_role = 'CoSo_YTe'"; // Sql statement
+                    break;
+                case 6:
+                    cmd.CommandText =
+                        "SELECT granted_role " +
+                        "FROM USER_ROLE_PRIVS " +
+                        "Where granted_role = 'DBA_2'"; // Sql statement
                     break;
             }
 
@@ -156,7 +163,6 @@ namespace ATBM
                     else
                         MessageBox.Show("User doesn't exists");
                     break;
-                // Viet tiep o day
                 case "Bác Sĩ":
                     if (Check_Role(1) == true)
                     {
@@ -193,6 +199,20 @@ namespace ATBM
                         Form_NghienCuu form6 = new Form_NghienCuu(user, password);
                         con.Close();
                         form6.ShowDialog();
+
+                        this.Close();
+                    }
+                    else
+                        MessageBox.Show("User doesn't exists");
+                    break;
+                case "Admin 2":
+                    if (Check_Role(6) == true)
+                    {
+                        this.Hide();
+
+                        Form_DBA form7 = new Form_DBA(user, password);
+                        con.Close();
+                        form7.ShowDialog();
 
                         this.Close();
                     }
