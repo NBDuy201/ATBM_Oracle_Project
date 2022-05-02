@@ -48,31 +48,31 @@ namespace ATBM
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'BacSi'"; // Sql statement
+                        "Where granted_role = 'BAC_SI'"; // Sql statement
                     break;
                 case 2:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'BenhNhan'"; // Sql statement
+                        "Where granted_role = 'BENH_NHAN'"; // Sql statement
                     break;
                 case 3:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'ThanhTra'"; // Sql statement
+                        "Where granted_role = 'THANH_TRA'"; // Sql statement
                     break;
                 case 4:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'NghienCuu'"; // Sql statement
+                        "Where granted_role = 'NGHIEN_CUU'"; // Sql statement
                     break;
                 case 5:
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'CoSoYTe'"; // Sql statement
+                        "Where granted_role = 'CoSo_YTe'"; // Sql statement
                     break;
                 case 6:
                     cmd.CommandText =

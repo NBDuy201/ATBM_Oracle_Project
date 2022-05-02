@@ -210,14 +210,14 @@ END view_all_proc;
 /
 
 -- Cap quyen he thong cho user:
-CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_SYS_USER(user_name IN NVARCHAR2, n_pri IN NVARCHAR2, n_option IN NVARCHAR2)
+CREATE OR REPLACE PROCEDURE GRANT_PRIVILEGES_SYS_USER(user_name IN VARCHAR2, n_pri IN VARCHAR2, n_option IN VARCHAR2)
 authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
     select count(*) into n_count from all_users where username = user_name;
    	if n_count = 0 then
-        dbms_output.put_line('User does not exist');
+        RAISE_APPLICATION_ERROR(-20000,'User khong ton tai');
         return;
    	end if;
 
@@ -229,14 +229,14 @@ BEGIN
 END  GRANT_PRIVILEGES_SYS_USER;
 /
 
-CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_USER(role_name IN NVARCHAR2, user_name IN NVARCHAR2, n_option IN NVARCHAR2)
+CREATE OR REPLACE PROCEDURE GRANT_ROLE_TO_USER(role_name IN VARCHAR2, user_name IN VARCHAR2, n_option IN VARCHAR2)
 authid current_user
 IS
    	n_count INTEGER := 0;
 BEGIN
-    select count(*) into n_count from all_users where username = user_name;
+    select count(*) into n_count from all_users where username = upper(user_name);
    	if n_count = 0 then
-        dbms_output.put_line('User does not exist');
+        RAISE_APPLICATION_ERROR(-20000,'User khong ton tai');
         return;
    	end if; 
 

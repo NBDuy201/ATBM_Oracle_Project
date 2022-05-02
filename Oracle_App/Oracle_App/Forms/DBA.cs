@@ -131,6 +131,49 @@ namespace Oracle_App.Forms
             return dt;
         }
 
+        private void Grant_Role(string Role, string Username)
+        {
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "GRANT_ROLE_TO_USER"; // Sql statement
+            cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
+            switch (Role)
+            {
+                case "Thanh Tra":
+                    Role = "THANH_TRA";
+                    break;
+                case "Cơ Sở Y Tế":
+                    Role = "CoSo_YTe";
+                    break;
+                case "Bác Sĩ":
+                    Role = "BAC_SI";
+                    break;
+                case "Bệnh Nhân":
+                    Role = "BENH_NHAN";
+                    break;
+                case "Nghiên Cứu":
+                    Role = "NGHIEN_CUU";
+                    break;
+            }
+            cmd.Parameters.Add("role_name", OracleDbType.Varchar2, 50).Value = Role;
+            cmd.Parameters.Add("user_name", OracleDbType.Varchar2, 50).Value = Username;
+            cmd.Parameters.Add("n_option", OracleDbType.Varchar2, 50).Value = null;
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+                if (n != 0)
+                {
+                    MessageBox.Show("Grant success");
+                }
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Grant failed");
+                throw;
+            }
+        }
+
         private void Create_user_button_tab1_Click(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
@@ -151,6 +194,8 @@ namespace Oracle_App.Forms
                 if (n != 0)
                 {
                     MessageBox.Show("User Created");
+                    Grant_Role(VaiTro_cm_tab1.Text, User_textbox_tab1.Text); // Grant role for new user
+                    
                     if (VaiTro_cm_tab1.Text == "Bệnh Nhân")
                     {
                         DataTable dt = LoadBenhNhan(); // Data table object

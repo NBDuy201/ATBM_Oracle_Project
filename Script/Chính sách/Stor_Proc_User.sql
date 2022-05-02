@@ -66,4 +66,4 @@ Begin
     end if;
 End;
 /
---exec Drop_NewUser('Test02', N'Bệnh Nhân');
+--exec Drop_NewUser('Test02', N'Thanh Tra');

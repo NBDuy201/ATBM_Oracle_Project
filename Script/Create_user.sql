@@ -4,8 +4,8 @@ GRANT CREATE SESSION TO DBA_BV;
 Grant DBA to DBA_BV;
 
 -- Thanh Tra --
-CREATE USER NV32 IDENTIFIED BY NV32;
-GRANT CREATE SESSION TO NV32;
+exec Grant_NewUser('Test02', 'Test02', N'Thanh Tra', 'CS6');
+exec GRANT_ROLE_TO_USER('Thanh_Tra', 'Test02', null);
 
 -- Cơ Sở Y Tế --
 CREATE USER CS57 IDENTIFIED BY CS57;
@@ -31,4 +31,6 @@ Grant select, insert on NHANVIEN to DBA2;
 Grant select, insert, update on CSYT to DBA2;
 GRANT EXECUTE on Grant_NewUser to DBA2;
 CREATE OR REPLACE PUBLIC SYNONYM Grant_NewUser FOR DBA_BV.Grant_NewUser;
+GRANT EXECUTE on GRANT_ROLE_TO_USER to DBA2;
+CREATE OR REPLACE PUBLIC SYNONYM GRANT_ROLE_TO_USER FOR DBA_BV.GRANT_ROLE_TO_USER;
 Grant create user to DBA2;
