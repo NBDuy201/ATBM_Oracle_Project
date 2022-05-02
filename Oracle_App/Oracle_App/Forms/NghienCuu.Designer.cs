@@ -29,7 +29,7 @@ namespace Oracle_App.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.MAHS_srchBtn_tab1 = new System.Windows.Forms.Button();
@@ -40,10 +40,13 @@ namespace Oracle_App.Forms
             this.DSHS_btn_tab1 = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.Edit_btn_tab2 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.SignOut_btn_tab2 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -124,14 +127,14 @@ namespace Oracle_App.Forms
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.Location = new System.Drawing.Point(6, 38);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
@@ -153,6 +156,8 @@ namespace Oracle_App.Forms
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.pictureBox1);
+            this.tabPage2.Controls.Add(this.SignOut_btn_tab2);
             this.tabPage2.Controls.Add(this.Edit_btn_tab2);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -163,14 +168,38 @@ namespace Oracle_App.Forms
             // 
             // Edit_btn_tab2
             // 
-            this.Edit_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Edit_btn_tab2.Location = new System.Drawing.Point(451, 197);
+            this.Edit_btn_tab2.BackColor = System.Drawing.Color.Black;
+            this.Edit_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit_btn_tab2.ForeColor = System.Drawing.SystemColors.Control;
+            this.Edit_btn_tab2.Location = new System.Drawing.Point(541, 132);
             this.Edit_btn_tab2.Name = "Edit_btn_tab2";
-            this.Edit_btn_tab2.Size = new System.Drawing.Size(174, 89);
+            this.Edit_btn_tab2.Size = new System.Drawing.Size(535, 61);
             this.Edit_btn_tab2.TabIndex = 63;
             this.Edit_btn_tab2.Text = "Chỉnh Sửa Thông Tin";
-            this.Edit_btn_tab2.UseVisualStyleBackColor = true;
+            this.Edit_btn_tab2.UseVisualStyleBackColor = false;
             this.Edit_btn_tab2.Click += new System.EventHandler(this.Edit_btn_tab2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Oracle_App.Properties.Resources.NghienCuu;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(530, 555);
+            this.pictureBox1.TabIndex = 64;
+            this.pictureBox1.TabStop = false;
+            // 
+            // SignOut_btn_tab2
+            // 
+            this.SignOut_btn_tab2.BackColor = System.Drawing.Color.Black;
+            this.SignOut_btn_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignOut_btn_tab2.ForeColor = System.Drawing.SystemColors.Control;
+            this.SignOut_btn_tab2.Location = new System.Drawing.Point(541, 315);
+            this.SignOut_btn_tab2.Name = "SignOut_btn_tab2";
+            this.SignOut_btn_tab2.Size = new System.Drawing.Size(535, 61);
+            this.SignOut_btn_tab2.TabIndex = 63;
+            this.SignOut_btn_tab2.Text = "Đăng Xuất";
+            this.SignOut_btn_tab2.UseVisualStyleBackColor = false;
+            this.SignOut_btn_tab2.Click += new System.EventHandler(this.SignOut_btn_tab2_Click);
             // 
             // Form_NghienCuu
             // 
@@ -187,6 +216,7 @@ namespace Oracle_App.Forms
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -203,5 +233,7 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.Button DSHS_btn_tab1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button Edit_btn_tab2;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button SignOut_btn_tab2;
     }
 }

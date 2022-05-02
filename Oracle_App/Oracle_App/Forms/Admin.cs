@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Oracle.ManagedDataAccess.Client;
 using Oracle.ManagedDataAccess.Types;
 using System.Configuration;
+using ATBM;
 
 namespace Oracle_App
 {
@@ -113,6 +114,15 @@ namespace Oracle_App
             CSYT_cmbBox_tab6.DisplayMember = "MACSYT";
             CSYT_cmbBox_tab6.AutoCompleteMode = AutoCompleteMode.Suggest;
             CSYT_cmbBox_tab6.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            CSYT_cmbBox_tab2.DataSource = dt2;
+            CSYT_cmbBox_tab2.DisplayMember = "MACSYT";
+            CSYT_cmbBox_tab2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CSYT_cmbBox_tab2.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            VaiTro_cm_tab2.SelectedIndex = 0;
+            CSYT_cmbBox_tab2.SelectedIndex = 0;
+            VaiTro_cm2_tab2.SelectedIndex = 0;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -372,6 +382,10 @@ namespace Oracle_App
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
             cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = User_textbox_tab2.Text;
             cmd.Parameters.Add("Pass_Word", OracleDbType.Varchar2, 100).Value = Pass_textbox_tab2.Text;
+            cmd.Parameters.Add("vaitro", OracleDbType.NVarchar2, 100).Value = VaiTro_cm_tab2.Text;
+            cmd.Parameters.Add("CoSoYTe", OracleDbType.Varchar2, 100).Value = CSYT_cmbBox_tab2.Text;
+
+            //MessageBox.Show(cmd.Parameters["CoSoYTe"].Value.ToString());
 
             try
             {
@@ -398,6 +412,7 @@ namespace Oracle_App
             cmd.CommandText = "Drop_User"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
             cmd.Parameters.Add("User_name", OracleDbType.Varchar2, 100).Value = SelectedUser_textbox_tab2.Text;
+            cmd.Parameters.Add("vaitro", OracleDbType.NVarchar2, 100).Value = VaiTro_cm2_tab2.Text;
 
             try
             {
@@ -880,6 +895,28 @@ namespace Oracle_App
             VAITRO_cmbBox_tab6.SelectedIndex = -1;
             CSYT_cmbBox_tab6.SelectedIndex = -1;
             NGAYSINH_picker_tab6.Value = DateTimePicker.MinimumDateTime;
+        }
+
+        private void DangXuat_btn_tab7_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NHAVIEN
+            this.Hide();
+
+            Login form = new Login();
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
+        }
+
+        private void SelectedUser_textbox_tab2_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(SelectedUser_textbox_tab2.Text))
+            {
+                DropUser_button_tab2.Enabled = false;
+            }
+            else
+                DropUser_button_tab2.Enabled = true;
         }
     }
 }

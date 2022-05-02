@@ -1,4 +1,5 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using ATBM;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -187,6 +188,18 @@ namespace Oracle_App.Forms
             this.Hide();
             
             Form_NhanVien form = new Form_NhanVien(username, password);
+            con.Close();
+            form.ShowDialog();
+
+            this.Close();
+        }
+
+        private void SignOut_btn_tab3_Click(object sender, EventArgs e)
+        {
+            // Can grant select on NV
+            this.Hide();
+
+            Login form = new Login();
             con.Close();
             form.ShowDialog();
 

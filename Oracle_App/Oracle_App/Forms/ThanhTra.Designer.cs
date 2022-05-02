@@ -37,9 +37,13 @@ namespace Oracle_App
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.SignOut_btn_tab6 = new System.Windows.Forms.Button();
+            this.Edit_btn_tab6 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -48,9 +52,11 @@ namespace Oracle_App
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
+            this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -63,6 +69,7 @@ namespace Oracle_App
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Location = new System.Drawing.Point(3, 7);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -150,16 +157,6 @@ namespace Oracle_App
             this.tabPage4.Text = "HỒ SƠ BỆNH ÁN";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.dataGridView4);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(1081, 561);
-            this.tabPage5.TabIndex = 5;
-            this.tabPage5.Text = "HỒ SƠ BỆNH ÁN_DỊCH VỤ";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
             // dataGridView5
             // 
             this.dataGridView5.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -171,6 +168,16 @@ namespace Oracle_App
             this.dataGridView5.Size = new System.Drawing.Size(1068, 549);
             this.dataGridView5.TabIndex = 30;
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.dataGridView4);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage5.TabIndex = 5;
+            this.tabPage5.Text = "HỒ SƠ BỆNH ÁN_DỊCH VỤ";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
             // dataGridView4
             // 
             this.dataGridView4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
@@ -181,6 +188,53 @@ namespace Oracle_App
             this.dataGridView4.ReadOnly = true;
             this.dataGridView4.Size = new System.Drawing.Size(1068, 549);
             this.dataGridView4.TabIndex = 30;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.pictureBox1);
+            this.tabPage6.Controls.Add(this.SignOut_btn_tab6);
+            this.tabPage6.Controls.Add(this.Edit_btn_tab6);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage6.TabIndex = 6;
+            this.tabPage6.Text = "THÔNG TIN CÁ NHÂN";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // SignOut_btn_tab6
+            // 
+            this.SignOut_btn_tab6.BackColor = System.Drawing.Color.Black;
+            this.SignOut_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignOut_btn_tab6.ForeColor = System.Drawing.SystemColors.Control;
+            this.SignOut_btn_tab6.Location = new System.Drawing.Point(541, 315);
+            this.SignOut_btn_tab6.Name = "SignOut_btn_tab6";
+            this.SignOut_btn_tab6.Size = new System.Drawing.Size(535, 61);
+            this.SignOut_btn_tab6.TabIndex = 65;
+            this.SignOut_btn_tab6.Text = "Đăng Xuất";
+            this.SignOut_btn_tab6.UseVisualStyleBackColor = false;
+            this.SignOut_btn_tab6.Click += new System.EventHandler(this.SignOut_btn_tab6_Click);
+            // 
+            // Edit_btn_tab6
+            // 
+            this.Edit_btn_tab6.BackColor = System.Drawing.Color.Black;
+            this.Edit_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Edit_btn_tab6.ForeColor = System.Drawing.SystemColors.Control;
+            this.Edit_btn_tab6.Location = new System.Drawing.Point(541, 132);
+            this.Edit_btn_tab6.Name = "Edit_btn_tab6";
+            this.Edit_btn_tab6.Size = new System.Drawing.Size(535, 61);
+            this.Edit_btn_tab6.TabIndex = 66;
+            this.Edit_btn_tab6.Text = "Chỉnh Sửa Thông Tin";
+            this.Edit_btn_tab6.UseVisualStyleBackColor = false;
+            this.Edit_btn_tab6.Click += new System.EventHandler(this.Edit_btn_tab6_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Oracle_App.Properties.Resources.ThanhTra;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(530, 555);
+            this.pictureBox1.TabIndex = 67;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_ThanhTra
             // 
@@ -199,9 +253,11 @@ namespace Oracle_App
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
+            this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -219,5 +275,9 @@ namespace Oracle_App
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.DataGridView dataGridView5;
         private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.TabPage tabPage6;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button SignOut_btn_tab6;
+        private System.Windows.Forms.Button Edit_btn_tab6;
     }
 }
