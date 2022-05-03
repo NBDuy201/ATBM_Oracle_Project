@@ -1,3 +1,5 @@
+SELECT * FROM DBA_ROLE_PRIVS where granted_role = 'THANH_TRA';
+
 -- TC#2 ---
 EXEC Create_Role ('THANH_TRA', null);
 EXEC Create_Role ('BAC_SI', null);
@@ -11,9 +13,9 @@ GRANT SELECT ON HSBA TO THANH_TRA;
 GRANT SELECT ON HSBA_DV TO THANH_TRA;
 GRANT SELECT ON NHANVIEN TO THANH_TRA;
 
-exec Grant_NewUser('Test02', 'Test02', N'Thanh Tra', 'CS6');
+--exec Grant_NewUser('Test02', 'Test02', N'Thanh Tra', 'CS6');
 
-exec GRANT_ROLE_TO_USER ('THANH_TRA', 'Test02', null);
+--exec GRANT_ROLE_TO_USER ('THANH_TRA', 'Test02', null);
 
 -- TC#3 --
 ---- TC#3

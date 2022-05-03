@@ -26,7 +26,7 @@ Begin
          execute immediate(Tmp_query)
             using User_name, CoSoYTe;
      else
-        Tmp_query:='insert into NHANVIEN(MANV, CSYT, VAITRO) Values(:ma, :cs, :vt)';
+        Tmp_query:='insert into NHANVIEN(MANV, CSYT, VAITRO, NGAYSINH) Values(:ma, :cs, :vt, TO_DATE(SYSDATE))';
         execute immediate(Tmp_query)
             using User_name, CoSoYTe, vaitro;
     End if;

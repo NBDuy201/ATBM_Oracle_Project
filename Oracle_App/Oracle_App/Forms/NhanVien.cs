@@ -59,7 +59,7 @@ namespace Oracle_App.Forms
             MANV_txtBox.Text = dt.Rows[0].Field<string>("MANV");
             HOTEN_txtBox.Text = dt.Rows[0].Field<string>("HOTEN");
             PHAI_cmbBox.Text = dt.Rows[0].Field<string>("PHAI");
-            NGAYSINH_picker.Text = dt.Rows[0].Field<DateTime>("NGAYSINH").ToString();
+            NGAYSINH_picker.Value = dt.Rows[0].Field<DateTime>("NGAYSINH");
             CMND_txtBox.Text = dt.Rows[0].Field<string>("CMND");
             QUEQUAN_txtBox.Text = dt.Rows[0].Field<string>("QUEQUAN");
             SODT_txtBox.Text = dt.Rows[0].Field<string>("SODT");

@@ -46,6 +46,22 @@ namespace Oracle_App
 
         private void Form_ThanhTra_Load(object sender, EventArgs e)
         {
+            // Set Role
+            OracleDataAdapter da = new OracleDataAdapter();
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SET ROLE THANH_TRA"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Set Role Failed");
+                throw;
+            }
+
             // Load gridview
             DataTable dt = LoadCSYT(); // Data table object
             dataGridView1.DataSource = dt.DefaultView;

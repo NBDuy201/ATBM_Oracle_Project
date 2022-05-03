@@ -90,7 +90,12 @@ namespace ATBM
             int count = dt.Rows.Count;
             if (count == 1)
             {
-                return true;
+                // DBA_BV dang nhap vo tai khoan khac
+                if (user_txtBox_login.Text == "DBA_BV" && (VaiTro_cm.Text == "Admin" || VaiTro_cm.Text == "Admin 2"))
+                    return true;
+                else if (user_txtBox_login.Text != "DBA_BV")
+                    return true;
+                return false;
             }
             else
             {
@@ -113,6 +118,7 @@ namespace ATBM
             catch (Exception exp)
             {
                 MessageBox.Show("User doesn't exists");
+                return;
             }
 
             // Check
@@ -206,7 +212,7 @@ namespace ATBM
                         MessageBox.Show("User doesn't exists");
                     break;
                 case "Admin 2":
-                    if (Check_Role(6) == true)
+                    if (Check_Role(0) == true)
                     {
                         this.Hide();
 
