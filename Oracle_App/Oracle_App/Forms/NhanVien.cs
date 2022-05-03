@@ -47,9 +47,8 @@ namespace Oracle_App.Forms
         {
             // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from NHANVIEN where MANV = :MANV"; // Sql statement
+            cmd.CommandText = "Select * from NV_xem_thong_tin"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
-            cmd.Parameters.Add("MANV", OracleDbType.Varchar2, 30).Value = username;
 
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
@@ -81,7 +80,7 @@ namespace Oracle_App.Forms
             OracleCommand cmd = con.CreateCommand();
 
             cmd.CommandText =
-                "Update NHANVIEN set " +
+                "Update NV_xem_thong_tin set " +
                 "HOTEN = :HOTEN, " +
                 "PHAI = :PHAI, " +
                 "NGAYSINH = :NGAYSINH, " +

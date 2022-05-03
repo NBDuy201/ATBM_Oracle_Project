@@ -85,7 +85,7 @@ namespace Oracle_App.Forms
             this.groupBox3.Controls.Add(this.Update_btn_tab6);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(369, 433);
+            this.groupBox3.Size = new System.Drawing.Size(369, 441);
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DML NhanVien";
@@ -95,7 +95,7 @@ namespace Oracle_App.Forms
             this.Return_btn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.Return_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Return_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.Return_btn.Location = new System.Drawing.Point(10, 390);
+            this.Return_btn.Location = new System.Drawing.Point(10, 397);
             this.Return_btn.Name = "Return_btn";
             this.Return_btn.Size = new System.Drawing.Size(169, 33);
             this.Return_btn.TabIndex = 55;
@@ -108,7 +108,7 @@ namespace Oracle_App.Forms
             this.SignOut_btn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SignOut_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.SignOut_btn.Location = new System.Drawing.Point(185, 390);
+            this.SignOut_btn.Location = new System.Drawing.Point(185, 397);
             this.SignOut_btn.Name = "SignOut_btn";
             this.SignOut_btn.Size = new System.Drawing.Size(178, 33);
             this.SignOut_btn.TabIndex = 55;
@@ -121,7 +121,7 @@ namespace Oracle_App.Forms
             this.NGAYSINH_picker.CustomFormat = "";
             this.NGAYSINH_picker.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NGAYSINH_picker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.NGAYSINH_picker.Location = new System.Drawing.Point(134, 116);
+            this.NGAYSINH_picker.Location = new System.Drawing.Point(134, 121);
             this.NGAYSINH_picker.Name = "NGAYSINH_picker";
             this.NGAYSINH_picker.Size = new System.Drawing.Size(117, 26);
             this.NGAYSINH_picker.TabIndex = 54;
@@ -130,7 +130,7 @@ namespace Oracle_App.Forms
             // 
             this.CSYT_cmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CSYT_cmbBox.FormattingEnabled = true;
-            this.CSYT_cmbBox.Location = new System.Drawing.Point(134, 247);
+            this.CSYT_cmbBox.Location = new System.Drawing.Point(134, 252);
             this.CSYT_cmbBox.Name = "CSYT_cmbBox";
             this.CSYT_cmbBox.Size = new System.Drawing.Size(229, 24);
             this.CSYT_cmbBox.TabIndex = 36;
@@ -138,6 +138,7 @@ namespace Oracle_App.Forms
             // PHAI_cmbBox
             // 
             this.PHAI_cmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.PHAI_cmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.PHAI_cmbBox.FormattingEnabled = true;
             this.PHAI_cmbBox.Items.AddRange(new object[] {
             "Nam",
@@ -145,28 +146,29 @@ namespace Oracle_App.Forms
             "Khác"});
             this.PHAI_cmbBox.Location = new System.Drawing.Point(134, 86);
             this.PHAI_cmbBox.Name = "PHAI_cmbBox";
-            this.PHAI_cmbBox.Size = new System.Drawing.Size(229, 21);
+            this.PHAI_cmbBox.Size = new System.Drawing.Size(229, 28);
             this.PHAI_cmbBox.TabIndex = 36;
             // 
             // VAITRO_cmbBox
             // 
             this.VAITRO_cmbBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.VAITRO_cmbBox.Enabled = false;
+            this.VAITRO_cmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VAITRO_cmbBox.FormattingEnabled = true;
             this.VAITRO_cmbBox.Items.AddRange(new object[] {
             "Thanh Tra",
             "Cơ Sở Y Tế",
             "Bác Sĩ",
             "Nghiên Cứu"});
-            this.VAITRO_cmbBox.Location = new System.Drawing.Point(134, 278);
+            this.VAITRO_cmbBox.Location = new System.Drawing.Point(134, 282);
             this.VAITRO_cmbBox.Name = "VAITRO_cmbBox";
-            this.VAITRO_cmbBox.Size = new System.Drawing.Size(229, 21);
+            this.VAITRO_cmbBox.Size = new System.Drawing.Size(229, 28);
             this.VAITRO_cmbBox.TabIndex = 36;
             // 
             // Reset_btn_tab6
             // 
             this.Reset_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 351);
+            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 358);
             this.Reset_btn_tab6.Name = "Reset_btn_tab6";
             this.Reset_btn_tab6.Size = new System.Drawing.Size(178, 33);
             this.Reset_btn_tab6.TabIndex = 29;
@@ -178,7 +180,7 @@ namespace Oracle_App.Forms
             // 
             this.CHUYENKHOA_label_tab6.AutoSize = true;
             this.CHUYENKHOA_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 311);
+            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 319);
             this.CHUYENKHOA_label_tab6.Name = "CHUYENKHOA_label_tab6";
             this.CHUYENKHOA_label_tab6.Size = new System.Drawing.Size(122, 20);
             this.CHUYENKHOA_label_tab6.TabIndex = 21;
@@ -188,7 +190,7 @@ namespace Oracle_App.Forms
             // 
             this.VAITRO_label_tab6.AutoSize = true;
             this.VAITRO_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 279);
+            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 283);
             this.VAITRO_label_tab6.Name = "VAITRO_label_tab6";
             this.VAITRO_label_tab6.Size = new System.Drawing.Size(69, 20);
             this.VAITRO_label_tab6.TabIndex = 21;
@@ -198,7 +200,7 @@ namespace Oracle_App.Forms
             // 
             this.CSYT_label_tab6.AutoSize = true;
             this.CSYT_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CSYT_label_tab6.Location = new System.Drawing.Point(6, 247);
+            this.CSYT_label_tab6.Location = new System.Drawing.Point(6, 252);
             this.CSYT_label_tab6.Name = "CSYT_label_tab6";
             this.CSYT_label_tab6.Size = new System.Drawing.Size(51, 20);
             this.CSYT_label_tab6.TabIndex = 21;
@@ -208,7 +210,7 @@ namespace Oracle_App.Forms
             // 
             this.SODT_label_tab6.AutoSize = true;
             this.SODT_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SODT_label_tab6.Location = new System.Drawing.Point(6, 215);
+            this.SODT_label_tab6.Location = new System.Drawing.Point(6, 220);
             this.SODT_label_tab6.Name = "SODT_label_tab6";
             this.SODT_label_tab6.Size = new System.Drawing.Size(53, 20);
             this.SODT_label_tab6.TabIndex = 21;
@@ -218,7 +220,7 @@ namespace Oracle_App.Forms
             // 
             this.QUEQUAN_label_tab6.AutoSize = true;
             this.QUEQUAN_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QUEQUAN_label_tab6.Location = new System.Drawing.Point(6, 183);
+            this.QUEQUAN_label_tab6.Location = new System.Drawing.Point(6, 188);
             this.QUEQUAN_label_tab6.Name = "QUEQUAN_label_tab6";
             this.QUEQUAN_label_tab6.Size = new System.Drawing.Size(90, 20);
             this.QUEQUAN_label_tab6.TabIndex = 21;
@@ -228,7 +230,7 @@ namespace Oracle_App.Forms
             // 
             this.CMND_label_tab6.AutoSize = true;
             this.CMND_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CMND_label_tab6.Location = new System.Drawing.Point(6, 151);
+            this.CMND_label_tab6.Location = new System.Drawing.Point(6, 156);
             this.CMND_label_tab6.Name = "CMND_label_tab6";
             this.CMND_label_tab6.Size = new System.Drawing.Size(56, 20);
             this.CMND_label_tab6.TabIndex = 21;
@@ -238,7 +240,7 @@ namespace Oracle_App.Forms
             // 
             this.NGAYSINH_label_tab6.AutoSize = true;
             this.NGAYSINH_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NGAYSINH_label_tab6.Location = new System.Drawing.Point(6, 119);
+            this.NGAYSINH_label_tab6.Location = new System.Drawing.Point(6, 124);
             this.NGAYSINH_label_tab6.Name = "NGAYSINH_label_tab6";
             this.NGAYSINH_label_tab6.Size = new System.Drawing.Size(94, 20);
             this.NGAYSINH_label_tab6.TabIndex = 21;
@@ -287,7 +289,7 @@ namespace Oracle_App.Forms
             // CHUYENKHOA_txtBox
             // 
             this.CHUYENKHOA_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_txtBox.Location = new System.Drawing.Point(134, 308);
+            this.CHUYENKHOA_txtBox.Location = new System.Drawing.Point(134, 316);
             this.CHUYENKHOA_txtBox.Name = "CHUYENKHOA_txtBox";
             this.CHUYENKHOA_txtBox.Size = new System.Drawing.Size(229, 26);
             this.CHUYENKHOA_txtBox.TabIndex = 20;
@@ -295,7 +297,7 @@ namespace Oracle_App.Forms
             // SODT_txtBox
             // 
             this.SODT_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SODT_txtBox.Location = new System.Drawing.Point(134, 212);
+            this.SODT_txtBox.Location = new System.Drawing.Point(134, 217);
             this.SODT_txtBox.Name = "SODT_txtBox";
             this.SODT_txtBox.Size = new System.Drawing.Size(229, 26);
             this.SODT_txtBox.TabIndex = 20;
@@ -303,7 +305,7 @@ namespace Oracle_App.Forms
             // QUEQUAN_txtBox
             // 
             this.QUEQUAN_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QUEQUAN_txtBox.Location = new System.Drawing.Point(134, 180);
+            this.QUEQUAN_txtBox.Location = new System.Drawing.Point(134, 185);
             this.QUEQUAN_txtBox.Name = "QUEQUAN_txtBox";
             this.QUEQUAN_txtBox.Size = new System.Drawing.Size(229, 26);
             this.QUEQUAN_txtBox.TabIndex = 20;
@@ -311,7 +313,7 @@ namespace Oracle_App.Forms
             // CMND_txtBox
             // 
             this.CMND_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CMND_txtBox.Location = new System.Drawing.Point(134, 148);
+            this.CMND_txtBox.Location = new System.Drawing.Point(134, 153);
             this.CMND_txtBox.Name = "CMND_txtBox";
             this.CMND_txtBox.Size = new System.Drawing.Size(229, 26);
             this.CMND_txtBox.TabIndex = 20;
@@ -327,7 +329,7 @@ namespace Oracle_App.Forms
             // Update_btn_tab6
             // 
             this.Update_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_btn_tab6.Location = new System.Drawing.Point(10, 351);
+            this.Update_btn_tab6.Location = new System.Drawing.Point(10, 358);
             this.Update_btn_tab6.Name = "Update_btn_tab6";
             this.Update_btn_tab6.Size = new System.Drawing.Size(169, 33);
             this.Update_btn_tab6.TabIndex = 22;
@@ -339,7 +341,7 @@ namespace Oracle_App.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(394, 457);
+            this.ClientSize = new System.Drawing.Size(394, 460);
             this.Controls.Add(this.groupBox3);
             this.Name = "Form_NhanVien";
             this.Text = "NhanVien";

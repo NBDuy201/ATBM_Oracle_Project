@@ -72,7 +72,7 @@ namespace ATBM
                     cmd.CommandText =
                         "SELECT granted_role " +
                         "FROM USER_ROLE_PRIVS " +
-                        "Where granted_role = 'CoSo_YTe'"; // Sql statement
+                        "Where granted_role = upper('CoSo_YTe')"; // Sql statement
                     break;
                 case 6:
                     cmd.CommandText =
