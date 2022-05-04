@@ -55,8 +55,8 @@ namespace Oracle_App.Forms
             this.TenDuong_txtBox = new System.Windows.Forms.TextBox();
             this.SoNha_txtBox = new System.Windows.Forms.TextBox();
             this.CMND_txtBox = new System.Windows.Forms.TextBox();
-            this.Update_btn = new System.Windows.Forms.Button();
             this.SignOut_btn = new System.Windows.Forms.Button();
+            this.Update_btn = new System.Windows.Forms.Button();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -330,6 +330,19 @@ namespace Oracle_App.Forms
             this.CMND_txtBox.Size = new System.Drawing.Size(229, 26);
             this.CMND_txtBox.TabIndex = 20;
             // 
+            // SignOut_btn
+            // 
+            this.SignOut_btn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.SignOut_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SignOut_btn.ForeColor = System.Drawing.Color.Transparent;
+            this.SignOut_btn.Location = new System.Drawing.Point(110, 458);
+            this.SignOut_btn.Name = "SignOut_btn";
+            this.SignOut_btn.Size = new System.Drawing.Size(169, 41);
+            this.SignOut_btn.TabIndex = 22;
+            this.SignOut_btn.Text = "Đăng Xuất";
+            this.SignOut_btn.UseVisualStyleBackColor = false;
+            this.SignOut_btn.Click += new System.EventHandler(this.SignOut_btn_Click);
+            // 
             // Update_btn
             // 
             this.Update_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -340,19 +353,6 @@ namespace Oracle_App.Forms
             this.Update_btn.Text = "Update";
             this.Update_btn.UseVisualStyleBackColor = true;
             this.Update_btn.Click += new System.EventHandler(this.Update_btn_Click);
-            // 
-            // SignOut_btn
-            // 
-            this.SignOut_btn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.SignOut_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SignOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.SignOut_btn.Location = new System.Drawing.Point(110, 458);
-            this.SignOut_btn.Name = "SignOut_btn";
-            this.SignOut_btn.Size = new System.Drawing.Size(169, 33);
-            this.SignOut_btn.TabIndex = 22;
-            this.SignOut_btn.Text = "Đăng Xuất";
-            this.SignOut_btn.UseVisualStyleBackColor = false;
-            this.SignOut_btn.Click += new System.EventHandler(this.SignOut_btn_Click);
             // 
             // Form_BenhNhan
             // 

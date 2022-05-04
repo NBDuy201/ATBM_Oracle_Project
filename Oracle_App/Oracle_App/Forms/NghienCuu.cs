@@ -48,6 +48,10 @@ namespace Oracle_App.Forms
         {
             LoadGrid(LoadHSBA_NC(), dataGridView1);
             DSDV_btn_tab1.Enabled = false;
+
+            // Enable search
+            MAHS_srchTxtBox_tab1.Enabled = true;
+            MAHS_srchBtn_tab1.Enabled = true;
         }
 
         private void Form_NghienCuu_FormClosed(object sender, FormClosedEventArgs e)
@@ -61,7 +65,7 @@ namespace Oracle_App.Forms
         {
             // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from HSBA"; // Sql statement
+            cmd.CommandText = "Select * from NHANVIEN_CSYT_HSBA"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
 
             OracleDataAdapter da = new OracleDataAdapter();
@@ -75,7 +79,7 @@ namespace Oracle_App.Forms
         {
             // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from HSBA_DV where MAHSBA = :MAHSBA"; // Sql statement
+            cmd.CommandText = "Select * from NHANVIEN_CSYT_HSBA_DV where MAHSBA = :MAHSBA"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
 
             cmd.Parameters.Add("MAHSBA", OracleDbType.Varchar2, 30).Value = MaHS;
@@ -98,7 +102,7 @@ namespace Oracle_App.Forms
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText =
                 "Select * " +
-                "from HSBA " +
+                "from NHANVIEN_CSYT_HSBA " +
                 "where lower(MAHSBA) like '%' || :MAHSBA || '%'"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MAHSBA", OracleDbType.Varchar2, 30).Value = MAHS_srchTxtBox_tab1.Text.ToLower();
@@ -114,6 +118,10 @@ namespace Oracle_App.Forms
         private void DSDV_btn_tab1_Click(object sender, EventArgs e)
         {
             LoadGrid(LoadHSBA_DV_NC(), dataGridView1);
+
+            // Disable search
+            MAHS_srchTxtBox_tab1.Enabled = false;
+            MAHS_srchBtn_tab1.Enabled = false;
         }
 
         private void Edit_btn_tab2_Click(object sender, EventArgs e)

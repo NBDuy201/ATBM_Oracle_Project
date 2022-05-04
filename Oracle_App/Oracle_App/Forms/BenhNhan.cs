@@ -45,9 +45,8 @@ namespace Oracle_App.Forms
 
         private void BenhNhan_Load(object sender, EventArgs e)
         {
-            // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from BENHNHAN where MABN = :MABN"; // Sql statement
+            cmd.CommandText = "Select * from BN_xem_thong_tin"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MABN", OracleDbType.Varchar2, 30).Value = username;
 
@@ -60,7 +59,7 @@ namespace Oracle_App.Forms
             MaCSYT_cm.Text = dt.Rows[0].Field<string>("MACSYT");
             TenBN_txtBox.Text = dt.Rows[0].Field<string>("TENBN");
             CMND_txtBox.Text = dt.Rows[0].Field<string>("CMND");
-            NGAYSINH_picker.Text = dt.Rows[0].Field<DateTime>("NGAYSINH").ToString();
+            NGAYSINH_picker.Value = dt.Rows[0].Field<DateTime>("NGAYSINH");
             SoNha_txtBox.Text = dt.Rows[0].Field<int>("SONHA").ToString();
             TenDuong_txtBox.Text = dt.Rows[0].Field<string>("TENĐUONG");
             QuanHuyen_txtBox.Text = dt.Rows[0].Field<string>("QUANHUYEN");
@@ -83,7 +82,7 @@ namespace Oracle_App.Forms
             OracleCommand cmd = con.CreateCommand();
 
             cmd.CommandText =
-                "Update BENHNHAN set " +
+                "Update BN_xem_thong_tin set " +
                 "MACSYT = :MACSYT, " +
                 "TENBN = :TENBN, " +
                 "CMND = :CMND, " +

@@ -10,6 +10,17 @@ Begin
     if(Tmp_count!=0) then 
         RAISE_APPLICATION_ERROR(-20000,'User da ton tai');
     end if;
+         
+     -- Insert User in table
+    if(vaitro = N'Bệnh Nhân') then
+        Tmp_query:='insert into BENHNHAN(MABN, MACSYT, NGAYSINH, SONHA) Values(:ma, :cs, TO_DATE(SYSDATE), 0)';
+         execute immediate(Tmp_query)
+            using User_name, CoSoYTe;
+     else
+        Tmp_query:='insert into NHANVIEN(MANV, CSYT, VAITRO, NGAYSINH) Values(:ma, :cs, :vt, TO_DATE(SYSDATE))';
+        execute immediate(Tmp_query)
+            using User_name, CoSoYTe, vaitro;
+    End if;
     
     -- Create User
     Tmp_query:='Create user '|| User_name||' identified by '||Pass_Word;
@@ -19,17 +30,6 @@ Begin
     Tmp_query:='grant create session to '|| User_name;
     --DBMS_OUTPUT.PUT_LINE(Tmp_query);
     execute immediate(Tmp_query);
-         
-     -- Insert User in table
-    if(vaitro = N'Bệnh Nhân') then
-        Tmp_query:='insert into BENHNHAN(MABN, MACSYT) Values(:ma, :cs)';
-         execute immediate(Tmp_query)
-            using User_name, CoSoYTe;
-     else
-        Tmp_query:='insert into NHANVIEN(MANV, CSYT, VAITRO, NGAYSINH) Values(:ma, :cs, :vt, TO_DATE(SYSDATE))';
-        execute immediate(Tmp_query)
-            using User_name, CoSoYTe, vaitro;
-    End if;
 End;
 /
 --exec Grant_NewUser('Test02', 'Test02', N'Bệnh Nhân', 'CS0');
@@ -66,4 +66,4 @@ Begin
     end if;
 End;
 /
---exec Drop_NewUser('Test02', N'Thanh Tra');
+--exec Drop_NewUser('Test05', N'Bệnh Nhân');

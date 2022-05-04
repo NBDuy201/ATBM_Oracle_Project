@@ -1,7 +1,5 @@
 -- TC#2 ---
 EXEC Create_Role ('THANH_TRA', null);
-EXEC Create_Role ('NGHIEN_CUU', null);
-EXEC Create_Role ('BENH_NHAN', null);
 
 GRANT SELECT ON BENHNHAN TO THANH_TRA;
 GRANT SELECT ON CSYT TO THANH_TRA;
@@ -85,31 +83,13 @@ GRANT SELECT ON xem_HSBA TO BAC_SI;
 --exec GRANT_ROLE_TO_USER ('BAC_SI', 'Test03', null);
 
 --tc 5
+EXEC Create_Role ('NGHIEN_CUU', null);
 
-CREATE OR REPLACE VIEW xem_HSBA_cung_CSYT
-AS 
-(
-  SELECT HS.*
-  FROM HSBA HS , CSYT cs
-  WHERE hs.MACSYT = cs.MACSYT
-  and HS.MABS = USER
-);
+GRANT SELECT ON NHANVIEN_CSYT_HSBA TO NGHIEN_CUU;
+GRANT SELECT ON NHANVIEN_CSYT_HSBA_DV TO NGHIEN_CUU;
 
-
-CREATE ROLE NGHIEN_CUU;
-
-GRANT CREATE SESSION TO NGHIEN_CUU;
-
-GRANT SELECT ON xem_HSBA_cung_CSYT TO NGHIEN_CUU;
-
-
-
-CREATE USER nghiencuutest identified by 123;
-
-GRANT CREATE SESSION TO NGHIEN_CUU;
-GRANT CREATE SESSION TO nghiencuutest;
-GRANT NGHIEN_CUU TO nghiencuutest;
-
+--exec Grant_NewUser('Test04', 'Test04', N'Nghiên Cứu', 'CS6');
+--exec GRANT_ROLE_TO_USER ('NGHIEN_CUU', 'Test04', null);
 
 --tc6
 CREATE OR REPLACE VIEW NV_xem_thong_tin
@@ -119,7 +99,6 @@ AS
   FROM NHANVIEN nv
   WHERE upper(nv.MANV) = USER
 );
-/
 CREATE OR Replace PUBLIC SYNONYM NV_xem_thong_tin FOR DBA_BV.NV_xem_thong_tin;
 
 CREATE OR REPLACE VIEW BN_xem_thong_tin
@@ -129,13 +108,17 @@ AS
   FROM BENHNHAN bn
   WHERE upper(bn.MABN) = USER
 );
-/
 CREATE OR Replace PUBLIC SYNONYM BN_xem_thong_tin FOR DBA_BV.BN_xem_thong_tin;
 
-GRANT SELECT ON BN_xem_thong_tin TO BENHNHAN;
+EXEC Create_Role ('BENH_NHAN', null);
+GRANT SELECT, UPDATE ON BN_xem_thong_tin TO BENH_NHAN;
+
+select * from dba_role_privs where grantee = upper('Test05');
 
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO CoSo_YTe;
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO THANH_TRA;
+GRANT SELECT, UPDATE ON NV_xem_thong_tin TO BAC_SI;
+GRANT SELECT, UPDATE ON NV_xem_thong_tin TO NGHIEN_CUU;
 
 
 

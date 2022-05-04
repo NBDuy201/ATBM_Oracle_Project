@@ -198,7 +198,7 @@ namespace ATBM
                         MessageBox.Show("User doesn't exists");
                     break;
                 case "Nghiên Cứu":
-                    if (Check_Role(5) == true)
+                    if (Check_Role(4) == true)
                     {
                         this.Hide();
 
