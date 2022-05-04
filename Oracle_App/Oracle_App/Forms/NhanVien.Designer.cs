@@ -85,7 +85,7 @@ namespace Oracle_App.Forms
             this.groupBox3.Controls.Add(this.Update_btn_tab6);
             this.groupBox3.Location = new System.Drawing.Point(12, 12);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(369, 441);
+            this.groupBox3.Size = new System.Drawing.Size(369, 443);
             this.groupBox3.TabIndex = 54;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "DML NhanVien";
@@ -95,7 +95,7 @@ namespace Oracle_App.Forms
             this.Return_btn.BackColor = System.Drawing.SystemColors.HotTrack;
             this.Return_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Return_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.Return_btn.Location = new System.Drawing.Point(10, 397);
+            this.Return_btn.Location = new System.Drawing.Point(10, 402);
             this.Return_btn.Name = "Return_btn";
             this.Return_btn.Size = new System.Drawing.Size(169, 33);
             this.Return_btn.TabIndex = 55;
@@ -108,7 +108,7 @@ namespace Oracle_App.Forms
             this.SignOut_btn.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.SignOut_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SignOut_btn.ForeColor = System.Drawing.Color.Transparent;
-            this.SignOut_btn.Location = new System.Drawing.Point(185, 397);
+            this.SignOut_btn.Location = new System.Drawing.Point(185, 402);
             this.SignOut_btn.Name = "SignOut_btn";
             this.SignOut_btn.Size = new System.Drawing.Size(178, 33);
             this.SignOut_btn.TabIndex = 55;
@@ -128,11 +128,11 @@ namespace Oracle_App.Forms
             // 
             // CSYT_cmbBox
             // 
-            this.CSYT_cmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSYT_cmbBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CSYT_cmbBox.FormattingEnabled = true;
             this.CSYT_cmbBox.Location = new System.Drawing.Point(134, 252);
             this.CSYT_cmbBox.Name = "CSYT_cmbBox";
-            this.CSYT_cmbBox.Size = new System.Drawing.Size(229, 24);
+            this.CSYT_cmbBox.Size = new System.Drawing.Size(229, 28);
             this.CSYT_cmbBox.TabIndex = 36;
             // 
             // PHAI_cmbBox
@@ -160,7 +160,7 @@ namespace Oracle_App.Forms
             "Cơ Sở Y Tế",
             "Bác Sĩ",
             "Nghiên Cứu"});
-            this.VAITRO_cmbBox.Location = new System.Drawing.Point(134, 282);
+            this.VAITRO_cmbBox.Location = new System.Drawing.Point(134, 286);
             this.VAITRO_cmbBox.Name = "VAITRO_cmbBox";
             this.VAITRO_cmbBox.Size = new System.Drawing.Size(229, 28);
             this.VAITRO_cmbBox.TabIndex = 36;
@@ -168,7 +168,7 @@ namespace Oracle_App.Forms
             // Reset_btn_tab6
             // 
             this.Reset_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 358);
+            this.Reset_btn_tab6.Location = new System.Drawing.Point(185, 363);
             this.Reset_btn_tab6.Name = "Reset_btn_tab6";
             this.Reset_btn_tab6.Size = new System.Drawing.Size(178, 33);
             this.Reset_btn_tab6.TabIndex = 29;
@@ -180,7 +180,7 @@ namespace Oracle_App.Forms
             // 
             this.CHUYENKHOA_label_tab6.AutoSize = true;
             this.CHUYENKHOA_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 319);
+            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 323);
             this.CHUYENKHOA_label_tab6.Name = "CHUYENKHOA_label_tab6";
             this.CHUYENKHOA_label_tab6.Size = new System.Drawing.Size(122, 20);
             this.CHUYENKHOA_label_tab6.TabIndex = 21;
@@ -190,7 +190,7 @@ namespace Oracle_App.Forms
             // 
             this.VAITRO_label_tab6.AutoSize = true;
             this.VAITRO_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 283);
+            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 287);
             this.VAITRO_label_tab6.Name = "VAITRO_label_tab6";
             this.VAITRO_label_tab6.Size = new System.Drawing.Size(69, 20);
             this.VAITRO_label_tab6.TabIndex = 21;
@@ -289,7 +289,7 @@ namespace Oracle_App.Forms
             // CHUYENKHOA_txtBox
             // 
             this.CHUYENKHOA_txtBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_txtBox.Location = new System.Drawing.Point(134, 316);
+            this.CHUYENKHOA_txtBox.Location = new System.Drawing.Point(134, 320);
             this.CHUYENKHOA_txtBox.Name = "CHUYENKHOA_txtBox";
             this.CHUYENKHOA_txtBox.Size = new System.Drawing.Size(229, 26);
             this.CHUYENKHOA_txtBox.TabIndex = 20;
@@ -329,7 +329,7 @@ namespace Oracle_App.Forms
             // Update_btn_tab6
             // 
             this.Update_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Update_btn_tab6.Location = new System.Drawing.Point(10, 358);
+            this.Update_btn_tab6.Location = new System.Drawing.Point(10, 363);
             this.Update_btn_tab6.Name = "Update_btn_tab6";
             this.Update_btn_tab6.Size = new System.Drawing.Size(169, 33);
             this.Update_btn_tab6.TabIndex = 22;

@@ -117,10 +117,11 @@ namespace ATBM
             }
             catch (Exception exp)
             {
-                MessageBox.Show("User doesn't exists");
+                MessageBox.Show("User không tồn tại", null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
+            string err_msg = "User không đúng vai trò";
             // Check
             switch (VaiTro_cm.SelectedItem)
             {
@@ -139,7 +140,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Thanh Tra":
                     if (Check_Role(3) == true)
@@ -153,7 +154,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Cơ Sở Y Tế":
                     if (Check_Role(5) == true)
@@ -167,7 +168,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Bác Sĩ":
                     if (Check_Role(1) == true)
@@ -181,7 +182,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Bệnh Nhân":
                     if (Check_Role(2) == true)
@@ -195,7 +196,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Nghiên Cứu":
                     if (Check_Role(4) == true)
@@ -209,7 +210,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
                 case "Admin 2":
                     if (Check_Role(0) == true)
@@ -223,7 +224,7 @@ namespace ATBM
                         this.Close();
                     }
                     else
-                        MessageBox.Show("User doesn't exists");
+                        MessageBox.Show(err_msg, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
             }
             con.Close();

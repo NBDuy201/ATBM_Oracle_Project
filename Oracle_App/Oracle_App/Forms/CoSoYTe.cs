@@ -58,7 +58,6 @@ namespace Oracle_App.Forms
             catch (Exception exp)
             {
                 MessageBox.Show("Set Role Failed");
-                throw;
             }
 
             // Lay CSYT
@@ -78,7 +77,6 @@ namespace Oracle_App.Forms
             catch (Exception exp)
             {
                 MessageBox.Show("Find CSYT failed");
-                throw;
             }
 
             // Load gridview
@@ -107,8 +105,8 @@ namespace Oracle_App.Forms
             // ComboBox
             MAHS_cm_tab2.DataSource = dt1;
             MAHS_cm_tab2.DisplayMember = "MAHSBA";
-            //MAHS_cm_tab2.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //MAHS_cm_tab2.AutoCompleteSource = AutoCompleteSource.ListItems;
+            MAHS_cm_tab2.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MAHS_cm_tab2.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void Form_CoSoYTe_FormClosed(object sender, FormClosedEventArgs e)
@@ -198,8 +196,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                //MessageBox.Show(exp.Message);
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -287,8 +284,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                //MessageBox.Show(exp.Message);
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -421,8 +417,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                //MessageBox.Show(exp.Message);
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -462,8 +457,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                //MessageBox.Show(exp.Message);
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

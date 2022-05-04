@@ -113,12 +113,16 @@ CREATE OR Replace PUBLIC SYNONYM BN_xem_thong_tin FOR DBA_BV.BN_xem_thong_tin;
 EXEC Create_Role ('BENH_NHAN', null);
 GRANT SELECT, UPDATE ON BN_xem_thong_tin TO BENH_NHAN;
 
-select * from dba_role_privs where grantee = upper('Test05');
-
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO CoSo_YTe;
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO THANH_TRA;
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO BAC_SI;
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO NGHIEN_CUU;
 
+-- Misc --
+-- Benh nhan thuoc CSYT
 
+-- Bac si thuoc CSYT
 
+-- HSBA thuoc CSYT
+
+-- HSBA thuoc CSYT
