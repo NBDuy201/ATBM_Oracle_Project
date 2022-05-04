@@ -40,11 +40,11 @@
             // Login_btn
             // 
             this.Login_btn.BackColor = System.Drawing.Color.Black;
-            this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Login_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Login_btn.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.Login_btn.Location = new System.Drawing.Point(105, 136);
+            this.Login_btn.Location = new System.Drawing.Point(118, 145);
             this.Login_btn.Name = "Login_btn";
-            this.Login_btn.Size = new System.Drawing.Size(379, 34);
+            this.Login_btn.Size = new System.Drawing.Size(379, 43);
             this.Login_btn.TabIndex = 0;
             this.Login_btn.Text = "Đăng Nhập";
             this.Login_btn.UseVisualStyleBackColor = false;
@@ -52,40 +52,45 @@
             // 
             // user_txtBox_login
             // 
-            this.user_txtBox_login.Location = new System.Drawing.Point(105, 37);
+            this.user_txtBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.user_txtBox_login.Location = new System.Drawing.Point(118, 38);
             this.user_txtBox_login.Name = "user_txtBox_login";
-            this.user_txtBox_login.Size = new System.Drawing.Size(379, 20);
+            this.user_txtBox_login.Size = new System.Drawing.Size(379, 26);
             this.user_txtBox_login.TabIndex = 1;
             // 
             // pass_txtBox_login
             // 
-            this.pass_txtBox_login.Location = new System.Drawing.Point(105, 70);
+            this.pass_txtBox_login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pass_txtBox_login.Location = new System.Drawing.Point(118, 70);
             this.pass_txtBox_login.Name = "pass_txtBox_login";
             this.pass_txtBox_login.PasswordChar = '*';
-            this.pass_txtBox_login.Size = new System.Drawing.Size(379, 20);
+            this.pass_txtBox_login.Size = new System.Drawing.Size(379, 26);
             this.pass_txtBox_login.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(9, 44);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 41);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 3;
             this.label1.Text = "USER";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 77);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 13);
+            this.label2.Size = new System.Drawing.Size(103, 20);
             this.label2.TabIndex = 4;
             this.label2.Text = "PASSWORD";
             // 
             // VaiTro_cm
             // 
             this.VaiTro_cm.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.VaiTro_cm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VaiTro_cm.FormattingEnabled = true;
             this.VaiTro_cm.Items.AddRange(new object[] {
             "Admin",
@@ -95,17 +100,18 @@
             "Thanh Tra",
             "Nghiên Cứu",
             "Cơ Sở Y Tế"});
-            this.VaiTro_cm.Location = new System.Drawing.Point(105, 103);
+            this.VaiTro_cm.Location = new System.Drawing.Point(118, 102);
             this.VaiTro_cm.Name = "VaiTro_cm";
-            this.VaiTro_cm.Size = new System.Drawing.Size(379, 21);
+            this.VaiTro_cm.Size = new System.Drawing.Size(379, 28);
             this.VaiTro_cm.TabIndex = 6;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(9, 111);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 105);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 13);
+            this.label3.Size = new System.Drawing.Size(73, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "VAI TRÒ";
             // 
@@ -113,7 +119,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(504, 182);
+            this.ClientSize = new System.Drawing.Size(504, 195);
             this.Controls.Add(this.VaiTro_cm);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

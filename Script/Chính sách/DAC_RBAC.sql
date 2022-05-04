@@ -1,6 +1,5 @@
 -- TC#2 ---
 EXEC Create_Role ('THANH_TRA', null);
-EXEC Create_Role ('BAC_SI', null);
 EXEC Create_Role ('NGHIEN_CUU', null);
 EXEC Create_Role ('BENH_NHAN', null);
 
@@ -11,7 +10,6 @@ GRANT SELECT ON HSBA_DV TO THANH_TRA;
 GRANT SELECT ON NHANVIEN TO THANH_TRA;
 
 --exec Grant_NewUser('Test02', 'Test02', N'Thanh Tra', 'CS6');
-
 --exec GRANT_ROLE_TO_USER ('THANH_TRA', 'Test02', null);
 
 -- TC#3 --
@@ -43,13 +41,8 @@ EXEC Create_Role ('CoSo_YTe', null);
 GRANT SELECT, INSERT, DELETE ON NHANVIEN_CSYT_HSBA TO CoSo_YTe;
 GRANT SELECT, INSERT, DELETE ON NHANVIEN_CSYT_HSBA_DV TO CoSo_YTe;
 
-CREATE USER NV93 identified by NV93;
-
-GRANT CREATE SESSION TO NV93;
-
-GRANT CoSo_YTe TO NV93;
-
-SELECT * FROM USER_ROLE_PRIVS where role = upper('CoSo_YTe');
+--exec Grant_NewUser('Test02', 'Test02', N'Cơ Sở Y Tế', 'CS6');
+--exec GRANT_ROLE_TO_USER ('CoSo_YTe', 'Test02', null);
 
 --tc4
 CREATE OR REPLACE VIEW xem_HSBA
@@ -57,8 +50,9 @@ AS
 (
   SELECT HS.*
   FROM HSBA HS
-  WHERE HS.MABS = USER
+  WHERE upper(HS.MABS) = USER
 );
+CREATE OR Replace PUBLIC SYNONYM xem_HSBA FOR DBA_BV.xem_HSBA;
 
 CREATE OR REPLACE VIEW xem_ket_qua_HSBA_DV
 AS
@@ -66,39 +60,30 @@ AS
   SELECT dv.*
   FROM HSBA_DV dv, HSBA hs
   WHERE dv.MAHSBA = hs.MAHSBA
-  AND hs.MABS = USER
+  AND upper(hs.MABS) = USER
 );
+CREATE OR Replace PUBLIC SYNONYM xem_ket_qua_HSBA_DV FOR DBA_BV.xem_ket_qua_HSBA_DV;
 
 CREATE OR REPLACE VIEW xem_thong_tin_benh_nhan_cung_CSYT
 AS
 (
   SELECT bn.*
-  FROM NHANVIEN nv, BENHNHAN bn, HSBA hs
-  WHERE hs.MABN = bn.MABN
-  AND hs.MABS = nv.MANV
-  AND nv.CSYT = USER
+  FROM NHANVIEN nv, BENHNHAN bn
+  WHERE 
+    upper(nv.MANV) = USER and
+    upper(nv.CSYT) = bn.MACSYT
 );
+CREATE OR Replace PUBLIC SYNONYM xem_thong_tin_benh_nhan_cung_CSYT FOR DBA_BV.xem_thong_tin_benh_nhan_cung_CSYT;
 
-CREATE ROLE BAC_SI;
-
-GRANT CREATE SESSION TO BAC_SI;
-GRANT SELECT ON BENHNHAN TO BAC_SI;
+EXEC Create_Role ('BAC_SI', null);
 
 GRANT SELECT ON xem_thong_tin_benh_nhan_cung_CSYT TO BAC_SI;
 GRANT SELECT ON xem_ket_qua_HSBA_DV TO BAC_SI;
 GRANT SELECT ON xem_HSBA TO BAC_SI;
 
---CREATE USER bacsitest identified by 123;
+--exec Grant_NewUser('Test03', 'Test03', N'Bác Sĩ', 'CS6');
+--exec GRANT_ROLE_TO_USER ('BAC_SI', 'Test03', null);
 
-GRANT CREATE SESSION TO BAC_SI;
-GRANT CREATE SESSION TO bacsitest;
-GRANT BAC_SI TO bacsitest;
-
-select * from BENHNHAN;
-select * from NHANVIEN;
-select * from HSBA;
-select * from HSBA_DV;
-select * from CSYT;
 --tc 5
 
 CREATE OR REPLACE VIEW xem_HSBA_cung_CSYT

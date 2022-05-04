@@ -46,11 +46,9 @@ namespace Oracle_App.Forms
 
         private DataTable LoadHSBA_BS()
         {
-            // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from HSBA where MABS = :MABS"; // Sql statement
+            cmd.CommandText = "Select * from xem_HSBA"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
-            cmd.Parameters.Add("MABS", OracleDbType.Varchar2, 30).Value = username;
 
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
@@ -63,9 +61,9 @@ namespace Oracle_App.Forms
         {
             // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
-            cmd.CommandText = "Select * from HSBA_DV where MAHSBA = :MAHSBA"; // Sql statement
+            cmd.CommandText = "Select * from xem_ket_qua_HSBA_DV Where MAHSBA = :MAHSBA"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
-            cmd.Parameters.Add("MABS", OracleDbType.Varchar2, 30).Value = MaHS;
+            cmd.Parameters.Add("MAHSBA", OracleDbType.Varchar2, 30).Value = MaHS;
 
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
@@ -74,15 +72,28 @@ namespace Oracle_App.Forms
             return dt;
         }
 
-        private DataTable LoadBN_CSYT_BS(int option)
+        private DataTable LoadBN_CSYT_BS()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from xem_thong_tin_benh_nhan_cung_CSYT"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
+        private DataTable FindBN_CSYT(int option)
         {
             // Sua thanh view khi co
             OracleCommand cmd = con.CreateCommand();
 
             if(option == 1)
-                cmd.CommandText = "Select * from BENHNHAN Where MABN = :item"; // Sql statement
+                cmd.CommandText = "Select * from xem_thong_tin_benh_nhan_cung_CSYT Where MABN = :item"; // Sql statement
             else if(option == 2)
-                cmd.CommandText = "Select * from BENHNHAN Where CMND = :item"; // Sql statement
+                cmd.CommandText = "Select * from xem_thong_tin_benh_nhan_cung_CSYT Where CMND = :item"; // Sql statement
             
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MABN", OracleDbType.Varchar2, 30).Value = srchTxtBox_tab2.Text;
@@ -102,14 +113,36 @@ namespace Oracle_App.Forms
 
         private void Form_BacSi_Load(object sender, EventArgs e)
         {
+            // Set Role
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SET ROLE BAC_SI"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show("Set Role Failed");
+                throw;
+            }
+
+            // Gridview
             // HSBA
             LoadGrid(LoadHSBA_BS(), dataGridView1);
+            // BenhNhan
+            LoadGrid(LoadBN_CSYT_BS(), dataGridView2);
         }
 
         private void DSHS_btn_tab1_Click(object sender, EventArgs e)
         {
             LoadGrid(LoadHSBA_BS(), dataGridView1);
+            
+            // Enable search + disable DV
             DSDV_btn_tab1.Enabled = false;
+            MAHS_srchTxtBox_tab1.Enabled = true;
+            MAHS_srchBtn_tab1.Enabled = true;
         }
 
         private void Form_BacSi_FormClosed(object sender, FormClosedEventArgs e)
@@ -134,6 +167,10 @@ namespace Oracle_App.Forms
         private void DSDV_btn_tab1_Click(object sender, EventArgs e)
         {
             LoadGrid(LoadHSBA_DV_BS(), dataGridView1);
+
+            // Disable search
+            MAHS_srchTxtBox_tab1.Enabled = false;
+            MAHS_srchBtn_tab1.Enabled = false;
         }
 
         private void MAHS_srchBtn_tab1_Click(object sender, EventArgs e)
@@ -142,12 +179,10 @@ namespace Oracle_App.Forms
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText =
                 "Select * " +
-                "from HSBA " +
-                "where lower(MAHSBA) like '%' || :MAHSBA || '%' and " +
-                "MABS = :MABS"; // Sql statement
+                "from xem_HSBA " +
+                "where lower(MAHSBA) like '%' || :MAHSBA || '%'"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MAHSBA", OracleDbType.Varchar2, 30).Value = MAHS_srchTxtBox_tab1.Text.ToLower();
-            cmd.Parameters.Add("MABS", OracleDbType.Varchar2, 30).Value = username;
 
             OracleDataAdapter da = new OracleDataAdapter();
             da.SelectCommand = cmd;
@@ -161,7 +196,7 @@ namespace Oracle_App.Forms
         {
             if (String.IsNullOrEmpty(MAHS_srchTxtBox_tab1.Text))
             {
-                LoadGrid(LoadHSBA_BS(), dataGridView2);
+                LoadGrid(LoadHSBA_BS(), dataGridView1);
             }
         }
 
@@ -178,7 +213,7 @@ namespace Oracle_App.Forms
                 else if (CMND_rb_tab2.Checked == true)
                     option = 2;
 
-                LoadGrid(LoadBN_CSYT_BS(option), dataGridView2);
+                LoadGrid(FindBN_CSYT(option), dataGridView2);
             }
         }
 
@@ -204,6 +239,14 @@ namespace Oracle_App.Forms
             form.ShowDialog();
 
             this.Close();
+        }
+
+        private void srchTxtBox_tab2_TextChanged(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(srchTxtBox_tab2.Text))
+            {
+                LoadGrid(LoadBN_CSYT_BS(), dataGridView2);
+            }
         }
     }
 }
