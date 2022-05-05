@@ -45,7 +45,20 @@ namespace Oracle_App.Forms
 
         private void BenhNhan_Load(object sender, EventArgs e)
         {
+            // Set Role
             OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SET ROLE BENH_NHAN"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
             cmd.CommandText = "Select * from BN_xem_thong_tin"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MABN", OracleDbType.Varchar2, 30).Value = username;

@@ -51,8 +51,6 @@ namespace Oracle_App.Forms
             this.KL_txtBox_tab1 = new System.Windows.Forms.TextBox();
             this.MCSYT_txtBox_tab1 = new System.Windows.Forms.TextBox();
             this.MK_txtBox_tab1 = new System.Windows.Forms.TextBox();
-            this.MaBS_txtBox_tab1 = new System.Windows.Forms.TextBox();
-            this.MaBN_txtBox_tab1 = new System.Windows.Forms.TextBox();
             this.MAHSBA_txtBox_tab1 = new System.Windows.Forms.TextBox();
             this.CD_txtBox_tab1 = new System.Windows.Forms.TextBox();
             this.Insert_btn_tab1 = new System.Windows.Forms.Button();
@@ -80,6 +78,8 @@ namespace Oracle_App.Forms
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Edit_btn_tab3 = new System.Windows.Forms.Button();
+            this.MABN_cm_tab1 = new System.Windows.Forms.ComboBox();
+            this.MABS_cm_tab1 = new System.Windows.Forms.ComboBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox10.SuspendLayout();
@@ -153,6 +153,8 @@ namespace Oracle_App.Forms
             // 
             // groupBox10
             // 
+            this.groupBox10.Controls.Add(this.MABS_cm_tab1);
+            this.groupBox10.Controls.Add(this.MABN_cm_tab1);
             this.groupBox10.Controls.Add(this.Ngay_picker_tab1);
             this.groupBox10.Controls.Add(this.Reset_btn_tab1);
             this.groupBox10.Controls.Add(this.Delete_btn_tab1);
@@ -167,8 +169,6 @@ namespace Oracle_App.Forms
             this.groupBox10.Controls.Add(this.KL_txtBox_tab1);
             this.groupBox10.Controls.Add(this.MCSYT_txtBox_tab1);
             this.groupBox10.Controls.Add(this.MK_txtBox_tab1);
-            this.groupBox10.Controls.Add(this.MaBS_txtBox_tab1);
-            this.groupBox10.Controls.Add(this.MaBN_txtBox_tab1);
             this.groupBox10.Controls.Add(this.MAHSBA_txtBox_tab1);
             this.groupBox10.Controls.Add(this.CD_txtBox_tab1);
             this.groupBox10.Controls.Add(this.Insert_btn_tab1);
@@ -184,7 +184,7 @@ namespace Oracle_App.Forms
             this.Ngay_picker_tab1.CustomFormat = "";
             this.Ngay_picker_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Ngay_picker_tab1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Ngay_picker_tab1.Location = new System.Drawing.Point(112, 81);
+            this.Ngay_picker_tab1.Location = new System.Drawing.Point(112, 85);
             this.Ngay_picker_tab1.Name = "Ngay_picker_tab1";
             this.Ngay_picker_tab1.Size = new System.Drawing.Size(117, 26);
             this.Ngay_picker_tab1.TabIndex = 55;
@@ -276,7 +276,7 @@ namespace Oracle_App.Forms
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 55);
+            this.label2.Location = new System.Drawing.Point(6, 54);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 20);
             this.label2.TabIndex = 21;
@@ -286,7 +286,7 @@ namespace Oracle_App.Forms
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 20);
             this.label1.TabIndex = 18;
@@ -316,22 +316,6 @@ namespace Oracle_App.Forms
             this.MK_txtBox_tab1.Name = "MK_txtBox_tab1";
             this.MK_txtBox_tab1.Size = new System.Drawing.Size(164, 26);
             this.MK_txtBox_tab1.TabIndex = 20;
-            // 
-            // MaBS_txtBox_tab1
-            // 
-            this.MaBS_txtBox_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaBS_txtBox_tab1.Location = new System.Drawing.Point(112, 147);
-            this.MaBS_txtBox_tab1.Name = "MaBS_txtBox_tab1";
-            this.MaBS_txtBox_tab1.Size = new System.Drawing.Size(164, 26);
-            this.MaBS_txtBox_tab1.TabIndex = 20;
-            // 
-            // MaBN_txtBox_tab1
-            // 
-            this.MaBN_txtBox_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MaBN_txtBox_tab1.Location = new System.Drawing.Point(112, 51);
-            this.MaBN_txtBox_tab1.Name = "MaBN_txtBox_tab1";
-            this.MaBN_txtBox_tab1.Size = new System.Drawing.Size(164, 26);
-            this.MaBN_txtBox_tab1.TabIndex = 20;
             // 
             // MAHSBA_txtBox_tab1
             // 
@@ -365,6 +349,7 @@ namespace Oracle_App.Forms
             this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -378,6 +363,7 @@ namespace Oracle_App.Forms
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowTemplate.Height = 40;
             this.dataGridView1.Size = new System.Drawing.Size(778, 517);
             this.dataGridView1.TabIndex = 50;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
@@ -581,6 +567,7 @@ namespace Oracle_App.Forms
             this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
@@ -593,6 +580,7 @@ namespace Oracle_App.Forms
             this.dataGridView2.Location = new System.Drawing.Point(298, 38);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 40;
             this.dataGridView2.Size = new System.Drawing.Size(778, 517);
             this.dataGridView2.TabIndex = 58;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
@@ -644,6 +632,24 @@ namespace Oracle_App.Forms
             this.Edit_btn_tab3.Text = "Chỉnh Sửa Thông Tin";
             this.Edit_btn_tab3.UseVisualStyleBackColor = false;
             this.Edit_btn_tab3.Click += new System.EventHandler(this.Edit_btn_tab3_Click);
+            // 
+            // MABN_cm_tab1
+            // 
+            this.MABN_cm_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MABN_cm_tab1.FormattingEnabled = true;
+            this.MABN_cm_tab1.Location = new System.Drawing.Point(112, 51);
+            this.MABN_cm_tab1.Name = "MABN_cm_tab1";
+            this.MABN_cm_tab1.Size = new System.Drawing.Size(164, 28);
+            this.MABN_cm_tab1.TabIndex = 57;
+            // 
+            // MABS_cm_tab1
+            // 
+            this.MABS_cm_tab1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MABS_cm_tab1.FormattingEnabled = true;
+            this.MABS_cm_tab1.Location = new System.Drawing.Point(112, 147);
+            this.MABS_cm_tab1.Name = "MABS_cm_tab1";
+            this.MABS_cm_tab1.Size = new System.Drawing.Size(164, 28);
+            this.MABS_cm_tab1.TabIndex = 57;
             // 
             // Form_CoSoYTe
             // 
@@ -719,9 +725,9 @@ namespace Oracle_App.Forms
         private System.Windows.Forms.Button Edit_btn_tab3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox MaBS_txtBox_tab1;
-        private System.Windows.Forms.TextBox MaBN_txtBox_tab1;
         private System.Windows.Forms.TextBox MAKTV_txtBox_tab2;
         private System.Windows.Forms.ComboBox MAHS_cm_tab2;
+        private System.Windows.Forms.ComboBox MABS_cm_tab1;
+        private System.Windows.Forms.ComboBox MABN_cm_tab1;
     }
 }

@@ -169,14 +169,12 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Grant failed");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
         private void Create_user_button_tab1_Click(object sender, EventArgs e)
         {
-            OracleDataAdapter da = new OracleDataAdapter();
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Grant_NewUser"; // Sql statement
             cmd.CommandType = CommandType.StoredProcedure; // Type of Sql statement
@@ -190,7 +188,6 @@ namespace Oracle_App.Forms
             try
             {
                 int n = cmd.ExecuteNonQuery();
-                //MessageBox.Show(n.ToString());
                 if (n != 0)
                 {
                     MessageBox.Show("User Created");
@@ -210,8 +207,8 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -254,14 +251,14 @@ namespace Oracle_App.Forms
                     cmd.Parameters.Add("TENCSYT", OracleDbType.Varchar2, 50).Value = TENCSYT_txtBox_tab2.Text;
                     cmd.Parameters.Add("DCCSYT", OracleDbType.Varchar2, 250).Value = DCCSYT_txtBox_tab2.Text;
                     cmd.Parameters.Add("SDTCSYT", OracleDbType.Varchar2, 12).Value = SDTCSYT_txtBox_tab2.Text;
-                    msg = "Inserted Successfully";
+                    msg = "Thêm thành công";
                     break;
                 case 1:
                     cmd.Parameters.Add("TENCSYT", OracleDbType.Varchar2, 50).Value = TENCSYT_txtBox_tab2.Text;
                     cmd.Parameters.Add("DCCSYT", OracleDbType.Varchar2, 250).Value = DCCSYT_txtBox_tab2.Text;
                     cmd.Parameters.Add("SDTCSYT", OracleDbType.Varchar2, 12).Value = SDTCSYT_txtBox_tab2.Text;
                     cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MACSYT_txtBox_tab2.Text;
-                    msg = "Updated Successfully";
+                    msg = "Update thành công";
                     break;
             }
             try
@@ -283,7 +280,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                throw;
+                MessageBox.Show(exp.Message, null, MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -397,7 +394,7 @@ namespace Oracle_App.Forms
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Insert Successfull");
+                    MessageBox.Show("Thêm thành công");
                     DataTable dt = LoadNhanVien(); // Data table object
                     dataGridView3.DataSource = dt.DefaultView;
                 }
@@ -412,7 +409,7 @@ namespace Oracle_App.Forms
             catch (Exception exp)
             {
                 MessageBox.Show(exp.Message);
-                //throw;
+                //
             }
         }
 

@@ -571,7 +571,7 @@ namespace Oracle_App
             this.groupBox9.Controls.Add(this.Role_txtBox3_tab4);
             this.groupBox9.Controls.Add(this.Role_label3_tab4);
             this.groupBox9.Controls.Add(this.User_label3_tab4);
-            this.groupBox9.Location = new System.Drawing.Point(6, 359);
+            this.groupBox9.Location = new System.Drawing.Point(6, 410);
             this.groupBox9.Name = "groupBox9";
             this.groupBox9.Size = new System.Drawing.Size(297, 142);
             this.groupBox9.TabIndex = 46;
@@ -581,7 +581,7 @@ namespace Oracle_App
             // wgo_chckBox3_Obj_tab5
             // 
             this.wgo_chckBox3_Obj_tab5.AutoSize = true;
-            this.wgo_chckBox3_Obj_tab5.Location = new System.Drawing.Point(75, 83);
+            this.wgo_chckBox3_Obj_tab5.Location = new System.Drawing.Point(93, 83);
             this.wgo_chckBox3_Obj_tab5.Name = "wgo_chckBox3_Obj_tab5";
             this.wgo_chckBox3_Obj_tab5.Size = new System.Drawing.Size(108, 17);
             this.wgo_chckBox3_Obj_tab5.TabIndex = 45;
@@ -591,17 +591,17 @@ namespace Oracle_App
             // User_txtBox3_tab4
             // 
             this.User_txtBox3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_txtBox3_tab4.Location = new System.Drawing.Point(75, 19);
+            this.User_txtBox3_tab4.Location = new System.Drawing.Point(92, 19);
             this.User_txtBox3_tab4.Name = "User_txtBox3_tab4";
-            this.User_txtBox3_tab4.Size = new System.Drawing.Size(217, 26);
+            this.User_txtBox3_tab4.Size = new System.Drawing.Size(200, 26);
             this.User_txtBox3_tab4.TabIndex = 23;
             // 
             // Grant_btn3_tab4
             // 
             this.Grant_btn3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grant_btn3_tab4.Location = new System.Drawing.Point(74, 106);
+            this.Grant_btn3_tab4.Location = new System.Drawing.Point(92, 106);
             this.Grant_btn3_tab4.Name = "Grant_btn3_tab4";
-            this.Grant_btn3_tab4.Size = new System.Drawing.Size(109, 30);
+            this.Grant_btn3_tab4.Size = new System.Drawing.Size(108, 30);
             this.Grant_btn3_tab4.TabIndex = 43;
             this.Grant_btn3_tab4.Text = "Cấp Role";
             this.Grant_btn3_tab4.UseVisualStyleBackColor = true;
@@ -610,9 +610,9 @@ namespace Oracle_App
             // Role_txtBox3_tab4
             // 
             this.Role_txtBox3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_txtBox3_tab4.Location = new System.Drawing.Point(75, 51);
+            this.Role_txtBox3_tab4.Location = new System.Drawing.Point(92, 51);
             this.Role_txtBox3_tab4.Name = "Role_txtBox3_tab4";
-            this.Role_txtBox3_tab4.Size = new System.Drawing.Size(217, 26);
+            this.Role_txtBox3_tab4.Size = new System.Drawing.Size(200, 26);
             this.Role_txtBox3_tab4.TabIndex = 31;
             // 
             // Role_label3_tab4
@@ -643,7 +643,7 @@ namespace Oracle_App
             this.groupBox8.Controls.Add(this.Priv_txtBox2_tab4);
             this.groupBox8.Controls.Add(this.Priv_label2_tab4);
             this.groupBox8.Controls.Add(this.User_Role_label2_tab4);
-            this.groupBox8.Location = new System.Drawing.Point(5, 213);
+            this.groupBox8.Location = new System.Drawing.Point(6, 264);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.Size = new System.Drawing.Size(297, 140);
             this.groupBox8.TabIndex = 45;
@@ -721,7 +721,7 @@ namespace Oracle_App
             this.groupBox7.Controls.Add(this.Priv_comboBox_tab4);
             this.groupBox7.Location = new System.Drawing.Point(6, 6);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(297, 201);
+            this.groupBox7.Size = new System.Drawing.Size(297, 230);
             this.groupBox7.TabIndex = 44;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cấp quyền trên object";
@@ -729,7 +729,7 @@ namespace Oracle_App
             // wgo_chckBox1_tab4
             // 
             this.wgo_chckBox1_tab4.AutoSize = true;
-            this.wgo_chckBox1_tab4.Location = new System.Drawing.Point(134, 142);
+            this.wgo_chckBox1_tab4.Location = new System.Drawing.Point(6, 170);
             this.wgo_chckBox1_tab4.Name = "wgo_chckBox1_tab4";
             this.wgo_chckBox1_tab4.Size = new System.Drawing.Size(104, 17);
             this.wgo_chckBox1_tab4.TabIndex = 45;
@@ -739,17 +739,17 @@ namespace Oracle_App
             // User_Role_txtBox_tab4
             // 
             this.User_Role_txtBox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_txtBox_tab4.Location = new System.Drawing.Point(134, 19);
+            this.User_Role_txtBox_tab4.Location = new System.Drawing.Point(6, 35);
             this.User_Role_txtBox_tab4.Name = "User_Role_txtBox_tab4";
-            this.User_Role_txtBox_tab4.Size = new System.Drawing.Size(158, 26);
+            this.User_Role_txtBox_tab4.Size = new System.Drawing.Size(285, 26);
             this.User_Role_txtBox_tab4.TabIndex = 23;
             // 
             // Grant_btn1_tab4
             // 
             this.Grant_btn1_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grant_btn1_tab4.Location = new System.Drawing.Point(134, 165);
+            this.Grant_btn1_tab4.Location = new System.Drawing.Point(93, 194);
             this.Grant_btn1_tab4.Name = "Grant_btn1_tab4";
-            this.Grant_btn1_tab4.Size = new System.Drawing.Size(104, 30);
+            this.Grant_btn1_tab4.Size = new System.Drawing.Size(107, 30);
             this.Grant_btn1_tab4.TabIndex = 43;
             this.Grant_btn1_tab4.Text = "Cấp Quyền";
             this.Grant_btn1_tab4.UseVisualStyleBackColor = true;
@@ -759,68 +759,75 @@ namespace Oracle_App
             // 
             this.Table_View_SP_txtBoxl_tab4.Enabled = false;
             this.Table_View_SP_txtBoxl_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Table_View_SP_txtBoxl_tab4.Location = new System.Drawing.Point(134, 51);
+            this.Table_View_SP_txtBoxl_tab4.Location = new System.Drawing.Point(6, 87);
             this.Table_View_SP_txtBoxl_tab4.Name = "Table_View_SP_txtBoxl_tab4";
             this.Table_View_SP_txtBoxl_tab4.ReadOnly = true;
-            this.Table_View_SP_txtBoxl_tab4.Size = new System.Drawing.Size(157, 26);
+            this.Table_View_SP_txtBoxl_tab4.Size = new System.Drawing.Size(285, 26);
             this.Table_View_SP_txtBoxl_tab4.TabIndex = 31;
             // 
             // Column_txtbox_tab4
             // 
             this.Column_txtbox_tab4.Enabled = false;
             this.Column_txtbox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column_txtbox_tab4.Location = new System.Drawing.Point(134, 110);
+            this.Column_txtbox_tab4.Location = new System.Drawing.Point(135, 138);
             this.Column_txtbox_tab4.Name = "Column_txtbox_tab4";
-            this.Column_txtbox_tab4.Size = new System.Drawing.Size(158, 26);
+            this.Column_txtbox_tab4.Size = new System.Drawing.Size(156, 26);
             this.Column_txtbox_tab4.TabIndex = 39;
             // 
             // Table_View_SP_label_tab4
             // 
             this.Table_View_SP_label_tab4.AutoSize = true;
-            this.Table_View_SP_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Table_View_SP_label_tab4.Location = new System.Drawing.Point(2, 54);
+            this.Table_View_SP_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Table_View_SP_label_tab4.Location = new System.Drawing.Point(3, 67);
             this.Table_View_SP_label_tab4.Name = "Table_View_SP_label_tab4";
-            this.Table_View_SP_label_tab4.Size = new System.Drawing.Size(119, 20);
+            this.Table_View_SP_label_tab4.Size = new System.Drawing.Size(107, 17);
             this.Table_View_SP_label_tab4.TabIndex = 32;
             this.Table_View_SP_label_tab4.Text = "Table/ View/ SP";
             // 
             // Column_label_tab4
             // 
             this.Column_label_tab4.AutoSize = true;
-            this.Column_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column_label_tab4.Location = new System.Drawing.Point(2, 113);
+            this.Column_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column_label_tab4.Location = new System.Drawing.Point(132, 118);
             this.Column_label_tab4.Name = "Column_label_tab4";
-            this.Column_label_tab4.Size = new System.Drawing.Size(34, 20);
+            this.Column_label_tab4.Size = new System.Drawing.Size(29, 17);
             this.Column_label_tab4.TabIndex = 38;
             this.Column_label_tab4.Text = "Cột";
             // 
             // User_Role_label_tab4
             // 
             this.User_Role_label_tab4.AutoSize = true;
-            this.User_Role_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_label_tab4.Location = new System.Drawing.Point(2, 22);
+            this.User_Role_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.User_Role_label_tab4.Location = new System.Drawing.Point(3, 15);
             this.User_Role_label_tab4.Name = "User_Role_label_tab4";
-            this.User_Role_label_tab4.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label_tab4.Size = new System.Drawing.Size(75, 17);
             this.User_Role_label_tab4.TabIndex = 24;
             this.User_Role_label_tab4.Text = "User/ Role";
             // 
             // Priv_label_tab4
             // 
             this.Priv_label_tab4.AutoSize = true;
-            this.Priv_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Priv_label_tab4.Location = new System.Drawing.Point(2, 81);
+            this.Priv_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Priv_label_tab4.Location = new System.Drawing.Point(3, 116);
             this.Priv_label_tab4.Name = "Priv_label_tab4";
-            this.Priv_label_tab4.Size = new System.Drawing.Size(55, 20);
+            this.Priv_label_tab4.Size = new System.Drawing.Size(50, 17);
             this.Priv_label_tab4.TabIndex = 36;
             this.Priv_label_tab4.Text = "Quyền";
             // 
             // Priv_comboBox_tab4
             // 
             this.Priv_comboBox_tab4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.Priv_comboBox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Priv_comboBox_tab4.FormattingEnabled = true;
-            this.Priv_comboBox_tab4.Location = new System.Drawing.Point(134, 83);
+            this.Priv_comboBox_tab4.Items.AddRange(new object[] {
+            "SELECT",
+            "INSERT",
+            "UPDATE",
+            "DELETE",
+            "EXEC"});
+            this.Priv_comboBox_tab4.Location = new System.Drawing.Point(6, 136);
             this.Priv_comboBox_tab4.Name = "Priv_comboBox_tab4";
-            this.Priv_comboBox_tab4.Size = new System.Drawing.Size(158, 21);
+            this.Priv_comboBox_tab4.Size = new System.Drawing.Size(104, 28);
             this.Priv_comboBox_tab4.TabIndex = 35;
             this.Priv_comboBox_tab4.SelectedIndexChanged += new System.EventHandler(this.Priv_comboBox_tab4_SelectedIndexChanged);
             // 

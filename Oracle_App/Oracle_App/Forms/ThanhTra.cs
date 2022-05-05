@@ -57,8 +57,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Set Role Failed");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             // Load gridview

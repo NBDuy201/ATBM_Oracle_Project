@@ -46,6 +46,21 @@ namespace Oracle_App.Forms
 
         private void NghienCuu_Load(object sender, EventArgs e)
         {
+            // Set Role
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "SET ROLE NGHIEN_CUU"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            try
+            {
+                int n = cmd.ExecuteNonQuery();
+            }
+            catch (Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+            // Load Gridview
             LoadGrid(LoadHSBA_NC(), dataGridView1);
             DSDV_btn_tab1.Enabled = false;
 

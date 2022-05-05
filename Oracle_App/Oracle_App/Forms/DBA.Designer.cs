@@ -69,6 +69,7 @@ namespace Oracle_App.Forms
             this.VAITRO_cmbBox_tab3 = new System.Windows.Forms.ComboBox();
             this.Reset_btn_tab6 = new System.Windows.Forms.Button();
             this.CHUYENKHOA_label_tab6 = new System.Windows.Forms.Label();
+            this.Insert_btn_tab6 = new System.Windows.Forms.Button();
             this.VAITRO_label_tab6 = new System.Windows.Forms.Label();
             this.CSYT_label_tab6 = new System.Windows.Forms.Label();
             this.SODT_label_tab6 = new System.Windows.Forms.Label();
@@ -84,7 +85,6 @@ namespace Oracle_App.Forms
             this.QUEQUAN_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.CMND_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.HOTEN_txtBox_tab3 = new System.Windows.Forms.TextBox();
-            this.Insert_btn_tab6 = new System.Windows.Forms.Button();
             this.NhanVien_srchBtn_tab3 = new System.Windows.Forms.Button();
             this.NhanVien_txtBox_tab3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -522,11 +522,11 @@ namespace Oracle_App.Forms
             // 
             // CSYT_cmbBox_tab3
             // 
-            this.CSYT_cmbBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CSYT_cmbBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CSYT_cmbBox_tab3.FormattingEnabled = true;
             this.CSYT_cmbBox_tab3.Location = new System.Drawing.Point(134, 251);
             this.CSYT_cmbBox_tab3.Name = "CSYT_cmbBox_tab3";
-            this.CSYT_cmbBox_tab3.Size = new System.Drawing.Size(229, 24);
+            this.CSYT_cmbBox_tab3.Size = new System.Drawing.Size(229, 28);
             this.CSYT_cmbBox_tab3.TabIndex = 36;
             // 
             // PHAI_cmbBox_tab3
@@ -553,7 +553,7 @@ namespace Oracle_App.Forms
             "Cơ Sở Y Tế",
             "Bác Sĩ",
             "Nghiên Cứu"});
-            this.VAITRO_cmbBox_tab3.Location = new System.Drawing.Point(134, 281);
+            this.VAITRO_cmbBox_tab3.Location = new System.Drawing.Point(134, 285);
             this.VAITRO_cmbBox_tab3.Name = "VAITRO_cmbBox_tab3";
             this.VAITRO_cmbBox_tab3.Size = new System.Drawing.Size(229, 28);
             this.VAITRO_cmbBox_tab3.TabIndex = 36;
@@ -573,17 +573,28 @@ namespace Oracle_App.Forms
             // 
             this.CHUYENKHOA_label_tab6.AutoSize = true;
             this.CHUYENKHOA_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 318);
+            this.CHUYENKHOA_label_tab6.Location = new System.Drawing.Point(6, 322);
             this.CHUYENKHOA_label_tab6.Name = "CHUYENKHOA_label_tab6";
             this.CHUYENKHOA_label_tab6.Size = new System.Drawing.Size(122, 20);
             this.CHUYENKHOA_label_tab6.TabIndex = 21;
             this.CHUYENKHOA_label_tab6.Text = "CHUYENKHOA";
             // 
+            // Insert_btn_tab6
+            // 
+            this.Insert_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Insert_btn_tab6.Location = new System.Drawing.Point(10, 363);
+            this.Insert_btn_tab6.Name = "Insert_btn_tab6";
+            this.Insert_btn_tab6.Size = new System.Drawing.Size(169, 33);
+            this.Insert_btn_tab6.TabIndex = 22;
+            this.Insert_btn_tab6.Text = "Insert";
+            this.Insert_btn_tab6.UseVisualStyleBackColor = true;
+            this.Insert_btn_tab6.Click += new System.EventHandler(this.Insert_btn_tab6_Click);
+            // 
             // VAITRO_label_tab6
             // 
             this.VAITRO_label_tab6.AutoSize = true;
             this.VAITRO_label_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 282);
+            this.VAITRO_label_tab6.Location = new System.Drawing.Point(6, 286);
             this.VAITRO_label_tab6.Name = "VAITRO_label_tab6";
             this.VAITRO_label_tab6.Size = new System.Drawing.Size(69, 20);
             this.VAITRO_label_tab6.TabIndex = 21;
@@ -680,7 +691,7 @@ namespace Oracle_App.Forms
             // CHUYENKHOA_txtBox_tab3
             // 
             this.CHUYENKHOA_txtBox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CHUYENKHOA_txtBox_tab3.Location = new System.Drawing.Point(134, 315);
+            this.CHUYENKHOA_txtBox_tab3.Location = new System.Drawing.Point(134, 319);
             this.CHUYENKHOA_txtBox_tab3.Name = "CHUYENKHOA_txtBox_tab3";
             this.CHUYENKHOA_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
             this.CHUYENKHOA_txtBox_tab3.TabIndex = 20;
@@ -716,17 +727,6 @@ namespace Oracle_App.Forms
             this.HOTEN_txtBox_tab3.Name = "HOTEN_txtBox_tab3";
             this.HOTEN_txtBox_tab3.Size = new System.Drawing.Size(229, 26);
             this.HOTEN_txtBox_tab3.TabIndex = 20;
-            // 
-            // Insert_btn_tab6
-            // 
-            this.Insert_btn_tab6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Insert_btn_tab6.Location = new System.Drawing.Point(10, 363);
-            this.Insert_btn_tab6.Name = "Insert_btn_tab6";
-            this.Insert_btn_tab6.Size = new System.Drawing.Size(169, 33);
-            this.Insert_btn_tab6.TabIndex = 22;
-            this.Insert_btn_tab6.Text = "Insert";
-            this.Insert_btn_tab6.UseVisualStyleBackColor = true;
-            this.Insert_btn_tab6.Click += new System.EventHandler(this.Insert_btn_tab6_Click);
             // 
             // NhanVien_srchBtn_tab3
             // 

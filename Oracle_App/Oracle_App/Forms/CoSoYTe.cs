@@ -86,17 +86,17 @@ namespace Oracle_App.Forms
 
             MCSYT_txtBox_tab1.Text = MaCS;
 
-            //DataTable dt2 = LoadBN_CSYT(); // Benh nhan thuoc CSYT cua user
-            //MABN_cm_tab1.DataSource = dt2;
-            //MABN_cm_tab1.DisplayMember = "MABN";
-            //MABN_cm_tab1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //MABN_cm_tab1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            DataTable dt2 = LoadBN_CSYT(); // Benh nhan thuoc CSYT cua user
+            MABN_cm_tab1.DataSource = dt2;
+            MABN_cm_tab1.DisplayMember = "MABN";
+            MABN_cm_tab1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MABN_cm_tab1.AutoCompleteSource = AutoCompleteSource.ListItems;
 
-            //DataTable dt3 = LoadBS_CSYT(); // Bac si thuoc CSYT cua user
-            //MABS_cm_tab1.DataSource = dt3;
-            //MABS_cm_tab1.DisplayMember = "MABN";
-            //MABS_cm_tab1.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //MABS_cm_tab1.AutoCompleteSource = AutoCompleteSource.ListItems;
+            DataTable dt3 = LoadBS_CSYT(); // Bac si thuoc CSYT cua user
+            MABS_cm_tab1.DataSource = dt3;
+            MABS_cm_tab1.DisplayMember = "MANV";
+            MABS_cm_tab1.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MABS_cm_tab1.AutoCompleteSource = AutoCompleteSource.ListItems;
 
             // HSBA_DV
             DataTable dt4 = LoadHSBA_DV(); // Data table object
@@ -155,6 +155,32 @@ namespace Oracle_App.Forms
             return dt;
         }
 
+        private DataTable LoadBN_CSYT()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from NV_xem_MaBN_cung_CSYT"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
+        private DataTable LoadBS_CSYT()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select * from NV_xem_MaBS_cung_CSYT"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
         private void Insert_btn_tab1_Click(object sender, EventArgs e)
         {
             OracleDataAdapter da = new OracleDataAdapter();
@@ -169,10 +195,10 @@ namespace Oracle_App.Forms
 
             cmd.CommandType = CommandType.Text; // Type of Sql statement
             cmd.Parameters.Add("MAHSBA", OracleDbType.Varchar2, 30).Value = MAHSBA_txtBox_tab1.Text;
-            cmd.Parameters.Add("MABN", OracleDbType.NVarchar2, 30).Value = MaBN_txtBox_tab1.Text;
+            cmd.Parameters.Add("MABN", OracleDbType.NVarchar2, 30).Value = MABN_cm_tab1.Text;
             cmd.Parameters.Add("NGAY", OracleDbType.Date).Value = Ngay_picker_tab1.Value.Date;
             cmd.Parameters.Add("CHANĐOAN", OracleDbType.NVarchar2, 250).Value = CD_txtBox_tab1.Text;
-            cmd.Parameters.Add("MABS", OracleDbType.Varchar2, 30).Value = MaBS_txtBox_tab1.Text;
+            cmd.Parameters.Add("MABS", OracleDbType.Varchar2, 30).Value = MABS_cm_tab1.Text;
             cmd.Parameters.Add("MAKHOA", OracleDbType.Varchar2, 30).Value = MK_txtBox_tab1.Text;
             cmd.Parameters.Add("MACSYT", OracleDbType.Varchar2, 30).Value = MCSYT_txtBox_tab1.Text;
             cmd.Parameters.Add("KETLUAN", OracleDbType.NVarchar2, 250).Value = KL_txtBox_tab1.Text;
@@ -226,6 +252,10 @@ namespace Oracle_App.Forms
             MAHSBA_txtBox_tab1.Enabled = true;
 
             MCSYT_txtBox_tab1.Text = MaCS;
+
+            MABN_cm_tab1.SelectedIndex = 0;
+            MABS_cm_tab1.SelectedIndex = 0;
+            MAHS_cm_tab2.SelectedIndex = 0;
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -235,10 +265,10 @@ namespace Oracle_App.Forms
             {
                 DataGridViewRow selectedRow = dataGridView1.Rows[index];
                 MAHSBA_txtBox_tab1.Text = selectedRow.Cells["MAHSBA"].Value.ToString();
-                MaBN_txtBox_tab1.Text = selectedRow.Cells["MABN"].Value.ToString();
+                MABN_cm_tab1.Text = selectedRow.Cells["MABN"].Value.ToString();
                 Ngay_picker_tab1.Text = selectedRow.Cells["NGAY"].Value.ToString();
                 CD_txtBox_tab1.Text = selectedRow.Cells["CHANĐOAN"].Value.ToString();
-                MaBS_txtBox_tab1.Text = selectedRow.Cells["MABS"].Value.ToString();
+                MABS_cm_tab1.Text = selectedRow.Cells["MABS"].Value.ToString();
                 MK_txtBox_tab1.Text = selectedRow.Cells["MAKHOA"].Value.ToString();
                 MCSYT_txtBox_tab1.Text = selectedRow.Cells["MACSYT"].Value.ToString();
                 KL_txtBox_tab1.Text = selectedRow.Cells["KETLUAN"].Value.ToString();
@@ -363,6 +393,10 @@ namespace Oracle_App.Forms
             Insert_btn_tab2.Enabled = true;
             Delete_btn_tab2.Enabled = false;
             MAHS_cm_tab2.Enabled = true;
+
+            MABN_cm_tab1.SelectedIndex = 0;
+            MABS_cm_tab1.SelectedIndex = 0;
+            MAHS_cm_tab2.SelectedIndex = 0;
         }
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)

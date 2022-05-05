@@ -119,10 +119,32 @@ GRANT SELECT, UPDATE ON NV_xem_thong_tin TO BAC_SI;
 GRANT SELECT, UPDATE ON NV_xem_thong_tin TO NGHIEN_CUU;
 
 -- Misc --
--- Benh nhan thuoc CSYT
+-- Xem MaBN thuoc cung CSYT
+CREATE OR REPLACE VIEW NV_xem_MaBN_cung_CSYT
+AS 
+(
+  SELECT MABN
+  FROM BENHNHAN
+  WHERE MACSYT = (SELECT CSYT
+                  FROM NHANVIEN
+                  WHERE upper(MANV) = USER)
+);
+CREATE OR Replace PUBLIC SYNONYM NV_xem_MaBN_cung_CSYT FOR DBA_BV.NV_xem_MaBN_cung_CSYT;
 
--- Bac si thuoc CSYT
+-- Xem MaBS thuoc cung CSYT
+CREATE OR REPLACE VIEW NV_xem_MaBS_cung_CSYT
+AS 
+(
+  SELECT MANV
+  FROM NHANVIEN
+  WHERE 
+    VAITRO = 'Bác Sĩ' and
+    CSYT = (Select CSYT 
+            from NHANVIEN
+            where upper(MANV) = USER)
+);
+CREATE OR Replace PUBLIC SYNONYM NV_xem_MaBS_cung_CSYT FOR DBA_BV.NV_xem_MaBS_cung_CSYT;
 
--- HSBA thuoc CSYT
-
--- HSBA thuoc CSYT
+-- Grant Misc --
+GRANT SELECT ON NV_xem_MaBN_cung_CSYT TO CoSo_YTe;
+GRANT SELECT ON NV_xem_MaBS_cung_CSYT TO CoSo_YTe;

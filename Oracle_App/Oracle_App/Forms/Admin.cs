@@ -29,12 +29,27 @@ namespace Oracle_App
 
             this.setConnection();
             InitializeComponent();
+        }
 
-            Priv_comboBox_tab4.Items.Add("SELECT");
-            Priv_comboBox_tab4.Items.Add("UPDATE");
-            Priv_comboBox_tab4.Items.Add("DELETE");
-            Priv_comboBox_tab4.Items.Add("INSERT");
-            Priv_comboBox_tab4.Items.Add("EXEC");
+        private void setConnection()
+        {
+            string connectionString = new ConnectionString(username, password).ToString();
+            con = new OracleConnection(connectionString);
+            try
+            {
+                con.Open();
+            }
+            catch(Exception exp)
+            {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                con.Close();
+            }
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            DataTable dt = LoadUser(); // Data table object
+            dataGridView1.DataSource = dt.DefaultView;
 
             // Datagridview
             dataGridView1.EnableHeadersVisualStyles = false;
@@ -61,28 +76,6 @@ namespace Oracle_App
             dataGridView7.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
             dataGridView7.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
             dataGridView7.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
-        }
-
-        private void setConnection()
-        {
-            string connectionString = new ConnectionString(username, password).ToString();
-            con = new OracleConnection(connectionString);
-            try
-            {
-                con.Open();
-            }
-            catch(Exception exp)
-            {
-                con.Close();
-            }
-        }
-
-        private void Form2_Load(object sender, EventArgs e)
-        {
-            //this.WindowState = FormWindowState.Maximized;
-
-            DataTable dt = LoadUser(); // Data table object
-            dataGridView1.DataSource = dt.DefaultView;
         }
 
         private void Form2_FormClosed(object sender, FormClosedEventArgs e)
@@ -242,8 +235,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);                
             }
         }
 
@@ -268,8 +260,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -300,8 +291,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
@@ -350,8 +340,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -376,8 +366,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -402,8 +392,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -476,8 +466,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Invalid privilege");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
        
@@ -506,8 +495,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Invalid privilege");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -536,8 +525,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Invalid privilege");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
@@ -608,8 +597,8 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Nothing happend!!!");
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                
             }
         }
 
