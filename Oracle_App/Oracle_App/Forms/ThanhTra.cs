@@ -46,6 +46,32 @@ namespace Oracle_App
 
         private void Form_ThanhTra_Load(object sender, EventArgs e)
         {
+            // Style
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
+            dataGridView2.EnableHeadersVisualStyles = false;
+            dataGridView2.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView2.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView2.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView2.Font, FontStyle.Bold);
+
+            dataGridView3.EnableHeadersVisualStyles = false;
+            dataGridView3.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView3.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView3.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView3.Font, FontStyle.Bold);
+
+            dataGridView4.EnableHeadersVisualStyles = false;
+            dataGridView4.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView4.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView4.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView4.Font, FontStyle.Bold);
+
+            dataGridView5.EnableHeadersVisualStyles = false;
+            dataGridView5.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView5.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView5.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView5.Font, FontStyle.Bold);
+
             // Set Role
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "SET ROLE THANH_TRA"; // Sql statement

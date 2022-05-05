@@ -80,6 +80,13 @@ namespace Oracle_App.Forms
             TienSu_txtBox.Text = dt.Rows[0].Field<string>("TIENSUBENH");
             TienSuGD_txtBox.Text = dt.Rows[0].Field<string>("TIENSUBENHGD");
             DungThuoc_txtBox.Text = dt.Rows[0].Field<string>("DIUNGTHUOC");
+
+            // Load combobox
+            DataTable dt2 = LoadMaCSYT(); // Danh sach MaCSYT
+            MaCSYT_cm.DataSource = dt2;
+            MaCSYT_cm.DisplayMember = "MACSYT";
+            MaCSYT_cm.AutoCompleteMode = AutoCompleteMode.Suggest;
+            MaCSYT_cm.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void Form_BenhNhan_FormClosed(object sender, FormClosedEventArgs e)
@@ -87,6 +94,19 @@ namespace Oracle_App.Forms
             if (con != null)
                 con.Close();
             Application.ExitThread();
+        }
+
+        private DataTable LoadMaCSYT()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select MACSYT from xem_MaCSYT"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
         }
 
         private void Update_btn_Click(object sender, EventArgs e)

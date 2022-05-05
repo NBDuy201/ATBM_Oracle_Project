@@ -110,8 +110,6 @@ namespace Oracle_App.Forms
             // 
             this.MaCSYT_cm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaCSYT_cm.FormattingEnabled = true;
-            this.MaCSYT_cm.Items.AddRange(new object[] {
-            "CS445"});
             this.MaCSYT_cm.Location = new System.Drawing.Point(150, 51);
             this.MaCSYT_cm.Name = "MaCSYT_cm";
             this.MaCSYT_cm.Size = new System.Drawing.Size(229, 28);

@@ -46,6 +46,12 @@ namespace Oracle_App.Forms
 
         private void NghienCuu_Load(object sender, EventArgs e)
         {
+            // Style
+            dataGridView1.EnableHeadersVisualStyles = false;
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font(dataGridView1.Font, FontStyle.Bold);
+
             // Set Role
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "SET ROLE NGHIEN_CUU"; // Sql statement

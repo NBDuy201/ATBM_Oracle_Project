@@ -43,9 +43,22 @@ namespace Oracle_App.Forms
             InitializeComponent();
         }
 
+        private DataTable LoadMaCSYT()
+        {
+            OracleCommand cmd = con.CreateCommand();
+            cmd.CommandText = "Select MACSYT from xem_MaCSYT"; // Sql statement
+            cmd.CommandType = CommandType.Text; // Type of Sql statement
+
+            OracleDataAdapter da = new OracleDataAdapter();
+            da.SelectCommand = cmd;
+            DataTable dt = new DataTable(); // Data table object
+            da.Fill(dt);
+            return dt;
+        }
+
         private void NhanVien_Load(object sender, EventArgs e)
         {
-            // Sua thanh view khi co
+            // Load thong tin
             OracleCommand cmd = con.CreateCommand();
             cmd.CommandText = "Select * from NV_xem_thong_tin"; // Sql statement
             cmd.CommandType = CommandType.Text; // Type of Sql statement
@@ -65,6 +78,13 @@ namespace Oracle_App.Forms
             CSYT_cmbBox.Text = dt.Rows[0].Field<string>("CSYT");
             VAITRO_cmbBox.Text = dt.Rows[0].Field<string>("VAITRO");
             CHUYENKHOA_txtBox.Text = dt.Rows[0].Field<string>("CHUYENKHOA");
+
+            // Load combobox
+            DataTable dt2 = LoadMaCSYT(); // Bac si thuoc CSYT cua user
+            CSYT_cmbBox.DataSource = dt2;
+            CSYT_cmbBox.DisplayMember = "MACSYT";
+            CSYT_cmbBox.AutoCompleteMode = AutoCompleteMode.Suggest;
+            CSYT_cmbBox.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void Form_NhanVien_FormClosed(object sender, FormClosedEventArgs e)
