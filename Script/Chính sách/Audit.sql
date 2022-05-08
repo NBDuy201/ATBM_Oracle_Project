@@ -13,21 +13,15 @@ startup
 alter system set audit_trail=db,extended scope=spfile; -- disable audit
 
 -- AUDIT BINH THUONG 
-audit insert CSYT by access;
+audit insert on CSYT by access;
 
 --- CAI DAT FGA AUDIT
 BEGIN
   DBMS_FGA.ADD_POLICY(
-   object_schema      => 'TUAN',
+   object_schema      => 'DBA_BV',
    object_name        => 'CSYT',
    policy_name        => 'Track_CSYT',
    statement_types    => 'INSERT, UPDATE'
    );
 END;
 /
-
---- TEST
-SELECT * FROM CSYT;
-Insert into CSYT (MACSYT,TENCSYT,DCCSYT,SDTCSYT) values ('CS22','IOL Group','DeLTA','721-5190');
-
-DELETE FROM CSYT WHERE macsyt = 'CS22';
