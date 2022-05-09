@@ -228,7 +228,7 @@ namespace Oracle_App
                 //MessageBox.Show(n.ToString());
                 if (n != 0)
                 {
-                    MessageBox.Show("User Created");
+                    MessageBox.Show("Tạo user thành công");
                     DataTable dt = LoadUser(); // Data table object
                     dataGridView2.DataSource = dt.DefaultView;
                 }
@@ -253,7 +253,7 @@ namespace Oracle_App
                 //MessageBox.Show(n.ToString());
                 if (n != 0)
                 {
-                    MessageBox.Show("User dropped");
+                    MessageBox.Show("Xóa user thành công");
                     DataTable dt = LoadUser(); // Data table object
                     dataGridView2.DataSource = dt.DefaultView;
                 }
@@ -284,7 +284,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Role created");
+                    MessageBox.Show("Tạo role thành công");
                     DataTable dt = LoadRole(); // Data table object
                     dataGridView3.DataSource = dt.DefaultView;
                 }
@@ -333,7 +333,7 @@ namespace Oracle_App
                 //MessageBox.Show(n.ToString());
                 if (n != 0)
                 {
-                    MessageBox.Show("Role dropped");
+                    MessageBox.Show("Xóa role thành công");
                     DataTable dt = LoadRole(); // Data table object
                     dataGridView3.DataSource = dt.DefaultView;
                 }
@@ -359,7 +359,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Role altered");
+                    MessageBox.Show("Điều chỉnh role thành công");
                     DataTable dt = LoadRole(); // Data table object
                     dataGridView3.DataSource = dt.DefaultView;
                 }
@@ -385,7 +385,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("User altered");
+                    MessageBox.Show("Điều chỉnh user thành công");
                     DataTable dt = LoadUser(); // Data table object
                     dataGridView2.DataSource = dt.DefaultView;
                 }
@@ -459,7 +459,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Grant success");
+                    MessageBox.Show("Grant thành công");
                     User_Role_txtBox3_tab4.Text = User_Role_txtBox_tab4.Text;
                     LoadPriv(User_Role_txtBox3_tab4, dataGridView6, 1);
                 }
@@ -488,7 +488,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Grant success");
+                    MessageBox.Show("Grant thành công");
                     User_Role_txtBox3_tab4.Text = User_Role_txtBox2_tab4.Text;
                     LoadPriv(User_Role_txtBox3_tab4, dataGridView6, 2);
                 }
@@ -518,7 +518,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Grant success");
+                    MessageBox.Show("Grant thành công");
                     User_Role_txtBox3_tab4.Text = User_txtBox3_tab4.Text;
                     LoadPriv(User_Role_txtBox3_tab4, dataGridView6, 3);
                 }
@@ -592,7 +592,7 @@ namespace Oracle_App
                 int n = cmd.ExecuteNonQuery();
                 if (n != 0)
                 {
-                    MessageBox.Show("Revoke success");
+                    MessageBox.Show("Revoke thành công");
                 }
             }
             catch (Exception exp)

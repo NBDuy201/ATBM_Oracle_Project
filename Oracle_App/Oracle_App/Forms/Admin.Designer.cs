@@ -138,19 +138,22 @@ namespace Oracle_App
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 7);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(1071, 505);
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.Size = new System.Drawing.Size(1428, 622);
             this.dataGridView1.TabIndex = 0;
             // 
             // View_user_button
             // 
             this.View_user_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_user_button.Location = new System.Drawing.Point(6, 518);
+            this.View_user_button.Location = new System.Drawing.Point(8, 638);
+            this.View_user_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View_user_button.Name = "View_user_button";
-            this.View_user_button.Size = new System.Drawing.Size(535, 37);
+            this.View_user_button.Size = new System.Drawing.Size(713, 46);
             this.View_user_button.TabIndex = 11;
             this.View_user_button.Text = "Xem Tất Cả Users";
             this.View_user_button.UseVisualStyleBackColor = true;
@@ -160,9 +163,10 @@ namespace Oracle_App
             // 
             this.View_privilege_button.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.View_privilege_button.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_privilege_button.Location = new System.Drawing.Point(547, 517);
+            this.View_privilege_button.Location = new System.Drawing.Point(729, 636);
+            this.View_privilege_button.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View_privilege_button.Name = "View_privilege_button";
-            this.View_privilege_button.Size = new System.Drawing.Size(530, 37);
+            this.View_privilege_button.Size = new System.Drawing.Size(707, 46);
             this.View_privilege_button.TabIndex = 12;
             this.View_privilege_button.Text = "Xem Tất Cả Các Quyền";
             this.View_privilege_button.UseVisualStyleBackColor = true;
@@ -178,11 +182,12 @@ namespace Oracle_App
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Location = new System.Drawing.Point(3, 12);
+            this.tabControl1.Location = new System.Drawing.Point(4, 15);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1089, 587);
+            this.tabControl1.Size = new System.Drawing.Size(1452, 722);
             this.tabControl1.TabIndex = 15;
             // 
             // tabPage1
@@ -190,10 +195,11 @@ namespace Oracle_App
             this.tabPage1.Controls.Add(this.View_privilege_button);
             this.tabPage1.Controls.Add(this.View_user_button);
             this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Location = new System.Drawing.Point(4, 25);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Size = new System.Drawing.Size(1444, 693);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "THÔNG TIN CHUNG";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -204,10 +210,11 @@ namespace Oracle_App
             this.tabPage2.Controls.Add(this.View_user_button2);
             this.tabPage2.Controls.Add(this.user_pass_group2);
             this.tabPage2.Controls.Add(this.dataGridView2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Size = new System.Drawing.Size(1444, 693);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "USER";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -220,9 +227,11 @@ namespace Oracle_App
             this.groupBox2.Controls.Add(this.NewPass_label_tab2);
             this.groupBox2.Controls.Add(this.SelectedUser_textbox_tab2);
             this.groupBox2.Controls.Add(this.SelectedUser_label_tab2);
-            this.groupBox2.Location = new System.Drawing.Point(5, 195);
+            this.groupBox2.Location = new System.Drawing.Point(7, 240);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(287, 175);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(383, 215);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Điều chỉnh user";
@@ -230,9 +239,10 @@ namespace Oracle_App
             // ChangePass_button_tab2
             // 
             this.ChangePass_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePass_button_tab2.Location = new System.Drawing.Point(10, 94);
+            this.ChangePass_button_tab2.Location = new System.Drawing.Point(13, 116);
+            this.ChangePass_button_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChangePass_button_tab2.Name = "ChangePass_button_tab2";
-            this.ChangePass_button_tab2.Size = new System.Drawing.Size(266, 33);
+            this.ChangePass_button_tab2.Size = new System.Drawing.Size(355, 41);
             this.ChangePass_button_tab2.TabIndex = 28;
             this.ChangePass_button_tab2.Text = "Đổi Password";
             this.ChangePass_button_tab2.UseVisualStyleBackColor = true;
@@ -241,9 +251,10 @@ namespace Oracle_App
             // DropUser_button_tab2
             // 
             this.DropUser_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropUser_button_tab2.Location = new System.Drawing.Point(10, 133);
+            this.DropUser_button_tab2.Location = new System.Drawing.Point(13, 164);
+            this.DropUser_button_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DropUser_button_tab2.Name = "DropUser_button_tab2";
-            this.DropUser_button_tab2.Size = new System.Drawing.Size(266, 33);
+            this.DropUser_button_tab2.Size = new System.Drawing.Size(355, 41);
             this.DropUser_button_tab2.TabIndex = 23;
             this.DropUser_button_tab2.Text = "Xóa User";
             this.DropUser_button_tab2.UseVisualStyleBackColor = true;
@@ -252,10 +263,11 @@ namespace Oracle_App
             // NewPass_textbox_tab2
             // 
             this.NewPass_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_textbox_tab2.Location = new System.Drawing.Point(121, 53);
+            this.NewPass_textbox_tab2.Location = new System.Drawing.Point(161, 65);
+            this.NewPass_textbox_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewPass_textbox_tab2.Name = "NewPass_textbox_tab2";
             this.NewPass_textbox_tab2.PasswordChar = '*';
-            this.NewPass_textbox_tab2.Size = new System.Drawing.Size(155, 26);
+            this.NewPass_textbox_tab2.Size = new System.Drawing.Size(205, 30);
             this.NewPass_textbox_tab2.TabIndex = 26;
             // 
             // NewPass_label_tab2
@@ -263,18 +275,20 @@ namespace Oracle_App
             this.NewPass_label_tab2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.NewPass_label_tab2.AutoSize = true;
             this.NewPass_label_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_label_tab2.Location = new System.Drawing.Point(6, 56);
+            this.NewPass_label_tab2.Location = new System.Drawing.Point(8, 69);
+            this.NewPass_label_tab2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NewPass_label_tab2.Name = "NewPass_label_tab2";
-            this.NewPass_label_tab2.Size = new System.Drawing.Size(107, 20);
+            this.NewPass_label_tab2.Size = new System.Drawing.Size(135, 25);
             this.NewPass_label_tab2.TabIndex = 27;
             this.NewPass_label_tab2.Text = "Password Mới";
             // 
             // SelectedUser_textbox_tab2
             // 
             this.SelectedUser_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedUser_textbox_tab2.Location = new System.Drawing.Point(121, 21);
+            this.SelectedUser_textbox_tab2.Location = new System.Drawing.Point(161, 26);
+            this.SelectedUser_textbox_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectedUser_textbox_tab2.Name = "SelectedUser_textbox_tab2";
-            this.SelectedUser_textbox_tab2.Size = new System.Drawing.Size(155, 26);
+            this.SelectedUser_textbox_tab2.Size = new System.Drawing.Size(205, 30);
             this.SelectedUser_textbox_tab2.TabIndex = 17;
             this.SelectedUser_textbox_tab2.TextChanged += new System.EventHandler(this.SelectedUser_textbox_tab2_TextChanged);
             // 
@@ -282,18 +296,20 @@ namespace Oracle_App
             // 
             this.SelectedUser_label_tab2.AutoSize = true;
             this.SelectedUser_label_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedUser_label_tab2.Location = new System.Drawing.Point(6, 24);
+            this.SelectedUser_label_tab2.Location = new System.Drawing.Point(8, 30);
+            this.SelectedUser_label_tab2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectedUser_label_tab2.Name = "SelectedUser_label_tab2";
-            this.SelectedUser_label_tab2.Size = new System.Drawing.Size(43, 20);
+            this.SelectedUser_label_tab2.Size = new System.Drawing.Size(53, 25);
             this.SelectedUser_label_tab2.TabIndex = 18;
             this.SelectedUser_label_tab2.Text = "User";
             // 
             // View_user_button2
             // 
             this.View_user_button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.View_user_button2.Location = new System.Drawing.Point(298, 522);
+            this.View_user_button2.Location = new System.Drawing.Point(397, 642);
+            this.View_user_button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.View_user_button2.Name = "View_user_button2";
-            this.View_user_button2.Size = new System.Drawing.Size(776, 33);
+            this.View_user_button2.Size = new System.Drawing.Size(1035, 41);
             this.View_user_button2.TabIndex = 16;
             this.View_user_button2.Text = "Xem Danh Sách Users";
             this.View_user_button2.UseVisualStyleBackColor = true;
@@ -306,9 +322,11 @@ namespace Oracle_App
             this.user_pass_group2.Controls.Add(this.User_label_tab2);
             this.user_pass_group2.Controls.Add(this.Pass_textbox_tab2);
             this.user_pass_group2.Controls.Add(this.Create_user_button_tab2);
-            this.user_pass_group2.Location = new System.Drawing.Point(5, 31);
+            this.user_pass_group2.Location = new System.Drawing.Point(7, 38);
+            this.user_pass_group2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.user_pass_group2.Name = "user_pass_group2";
-            this.user_pass_group2.Size = new System.Drawing.Size(287, 141);
+            this.user_pass_group2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.user_pass_group2.Size = new System.Drawing.Size(383, 174);
             this.user_pass_group2.TabIndex = 23;
             this.user_pass_group2.TabStop = false;
             this.user_pass_group2.Text = "Tạo user mới";
@@ -317,45 +335,50 @@ namespace Oracle_App
             // 
             this.Password_label_tab2.AutoSize = true;
             this.Password_label_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_label_tab2.Location = new System.Drawing.Point(6, 52);
+            this.Password_label_tab2.Location = new System.Drawing.Point(8, 64);
+            this.Password_label_tab2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Password_label_tab2.Name = "Password_label_tab2";
-            this.Password_label_tab2.Size = new System.Drawing.Size(78, 20);
+            this.Password_label_tab2.Size = new System.Drawing.Size(98, 25);
             this.Password_label_tab2.TabIndex = 21;
             this.Password_label_tab2.Text = "Password";
             // 
             // User_textbox_tab2
             // 
             this.User_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_textbox_tab2.Location = new System.Drawing.Point(90, 19);
+            this.User_textbox_tab2.Location = new System.Drawing.Point(120, 23);
+            this.User_textbox_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.User_textbox_tab2.Name = "User_textbox_tab2";
-            this.User_textbox_tab2.Size = new System.Drawing.Size(186, 26);
+            this.User_textbox_tab2.Size = new System.Drawing.Size(247, 30);
             this.User_textbox_tab2.TabIndex = 17;
             // 
             // User_label_tab2
             // 
             this.User_label_tab2.AutoSize = true;
             this.User_label_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_label_tab2.Location = new System.Drawing.Point(6, 23);
+            this.User_label_tab2.Location = new System.Drawing.Point(8, 28);
+            this.User_label_tab2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User_label_tab2.Name = "User_label_tab2";
-            this.User_label_tab2.Size = new System.Drawing.Size(43, 20);
+            this.User_label_tab2.Size = new System.Drawing.Size(53, 25);
             this.User_label_tab2.TabIndex = 18;
             this.User_label_tab2.Text = "User";
             // 
             // Pass_textbox_tab2
             // 
             this.Pass_textbox_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass_textbox_tab2.Location = new System.Drawing.Point(90, 51);
+            this.Pass_textbox_tab2.Location = new System.Drawing.Point(120, 63);
+            this.Pass_textbox_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Pass_textbox_tab2.Name = "Pass_textbox_tab2";
             this.Pass_textbox_tab2.PasswordChar = '*';
-            this.Pass_textbox_tab2.Size = new System.Drawing.Size(186, 26);
+            this.Pass_textbox_tab2.Size = new System.Drawing.Size(247, 30);
             this.Pass_textbox_tab2.TabIndex = 20;
             // 
             // Create_user_button_tab2
             // 
             this.Create_user_button_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Create_user_button_tab2.Location = new System.Drawing.Point(10, 92);
+            this.Create_user_button_tab2.Location = new System.Drawing.Point(13, 113);
+            this.Create_user_button_tab2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Create_user_button_tab2.Name = "Create_user_button_tab2";
-            this.Create_user_button_tab2.Size = new System.Drawing.Size(266, 33);
+            this.Create_user_button_tab2.Size = new System.Drawing.Size(355, 41);
             this.Create_user_button_tab2.TabIndex = 22;
             this.Create_user_button_tab2.Text = "Tạo User";
             this.Create_user_button_tab2.UseVisualStyleBackColor = true;
@@ -365,11 +388,13 @@ namespace Oracle_App
             // 
             this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(298, 6);
+            this.dataGridView2.Location = new System.Drawing.Point(397, 7);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.Size = new System.Drawing.Size(776, 510);
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.Size = new System.Drawing.Size(1035, 628);
             this.dataGridView2.TabIndex = 15;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
@@ -379,10 +404,11 @@ namespace Oracle_App
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Controls.Add(this.Role_group2);
             this.tabPage3.Controls.Add(this.ViewRole_button_tab3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Size = new System.Drawing.Size(1444, 693);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "ROLE";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -395,9 +421,11 @@ namespace Oracle_App
             this.groupBox1.Controls.Add(this.DropRole_button3);
             this.groupBox1.Controls.Add(this.SelectedRole_textbox_tab3);
             this.groupBox1.Controls.Add(this.SelectedRole_label2_tab3);
-            this.groupBox1.Location = new System.Drawing.Point(6, 206);
+            this.groupBox1.Location = new System.Drawing.Point(8, 254);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(271, 179);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(361, 220);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Điều chỉnh role";
@@ -405,9 +433,10 @@ namespace Oracle_App
             // ChangePass_button_tab3
             // 
             this.ChangePass_button_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePass_button_tab3.Location = new System.Drawing.Point(10, 96);
+            this.ChangePass_button_tab3.Location = new System.Drawing.Point(13, 118);
+            this.ChangePass_button_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ChangePass_button_tab3.Name = "ChangePass_button_tab3";
-            this.ChangePass_button_tab3.Size = new System.Drawing.Size(254, 33);
+            this.ChangePass_button_tab3.Size = new System.Drawing.Size(339, 41);
             this.ChangePass_button_tab3.TabIndex = 28;
             this.ChangePass_button_tab3.Text = "Đổi Password";
             this.ChangePass_button_tab3.UseVisualStyleBackColor = true;
@@ -416,10 +445,11 @@ namespace Oracle_App
             // NewPass_textbox_tab3
             // 
             this.NewPass_textbox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_textbox_tab3.Location = new System.Drawing.Point(121, 57);
+            this.NewPass_textbox_tab3.Location = new System.Drawing.Point(161, 70);
+            this.NewPass_textbox_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.NewPass_textbox_tab3.Name = "NewPass_textbox_tab3";
             this.NewPass_textbox_tab3.PasswordChar = '*';
-            this.NewPass_textbox_tab3.Size = new System.Drawing.Size(143, 26);
+            this.NewPass_textbox_tab3.Size = new System.Drawing.Size(189, 30);
             this.NewPass_textbox_tab3.TabIndex = 26;
             // 
             // NewPass_label_tab3
@@ -427,18 +457,20 @@ namespace Oracle_App
             this.NewPass_label_tab3.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.NewPass_label_tab3.AutoSize = true;
             this.NewPass_label_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NewPass_label_tab3.Location = new System.Drawing.Point(6, 60);
+            this.NewPass_label_tab3.Location = new System.Drawing.Point(8, 74);
+            this.NewPass_label_tab3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NewPass_label_tab3.Name = "NewPass_label_tab3";
-            this.NewPass_label_tab3.Size = new System.Drawing.Size(107, 20);
+            this.NewPass_label_tab3.Size = new System.Drawing.Size(135, 25);
             this.NewPass_label_tab3.TabIndex = 27;
             this.NewPass_label_tab3.Text = "Password Mới";
             // 
             // DropRole_button3
             // 
             this.DropRole_button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DropRole_button3.Location = new System.Drawing.Point(10, 135);
+            this.DropRole_button3.Location = new System.Drawing.Point(13, 166);
+            this.DropRole_button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DropRole_button3.Name = "DropRole_button3";
-            this.DropRole_button3.Size = new System.Drawing.Size(254, 33);
+            this.DropRole_button3.Size = new System.Drawing.Size(339, 41);
             this.DropRole_button3.TabIndex = 23;
             this.DropRole_button3.Text = "Xóa Role";
             this.DropRole_button3.UseVisualStyleBackColor = true;
@@ -447,18 +479,20 @@ namespace Oracle_App
             // SelectedRole_textbox_tab3
             // 
             this.SelectedRole_textbox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedRole_textbox_tab3.Location = new System.Drawing.Point(121, 21);
+            this.SelectedRole_textbox_tab3.Location = new System.Drawing.Point(161, 26);
+            this.SelectedRole_textbox_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.SelectedRole_textbox_tab3.Name = "SelectedRole_textbox_tab3";
-            this.SelectedRole_textbox_tab3.Size = new System.Drawing.Size(143, 26);
+            this.SelectedRole_textbox_tab3.Size = new System.Drawing.Size(189, 30);
             this.SelectedRole_textbox_tab3.TabIndex = 17;
             // 
             // SelectedRole_label2_tab3
             // 
             this.SelectedRole_label2_tab3.AutoSize = true;
             this.SelectedRole_label2_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SelectedRole_label2_tab3.Location = new System.Drawing.Point(6, 24);
+            this.SelectedRole_label2_tab3.Location = new System.Drawing.Point(8, 30);
+            this.SelectedRole_label2_tab3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.SelectedRole_label2_tab3.Name = "SelectedRole_label2_tab3";
-            this.SelectedRole_label2_tab3.Size = new System.Drawing.Size(42, 20);
+            this.SelectedRole_label2_tab3.Size = new System.Drawing.Size(51, 25);
             this.SelectedRole_label2_tab3.TabIndex = 18;
             this.SelectedRole_label2_tab3.Text = "Role";
             // 
@@ -466,11 +500,13 @@ namespace Oracle_App
             // 
             this.dataGridView3.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(283, 6);
+            this.dataGridView3.Location = new System.Drawing.Point(377, 7);
+            this.dataGridView3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView3.MultiSelect = false;
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(791, 510);
+            this.dataGridView3.RowHeadersWidth = 51;
+            this.dataGridView3.Size = new System.Drawing.Size(1055, 628);
             this.dataGridView3.TabIndex = 29;
             this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
@@ -481,9 +517,11 @@ namespace Oracle_App
             this.Role_group2.Controls.Add(this.Role_textbox_tab3);
             this.Role_group2.Controls.Add(this.Role_label2);
             this.Role_group2.Controls.Add(this.CreateRole_button_tab3);
-            this.Role_group2.Location = new System.Drawing.Point(6, 37);
+            this.Role_group2.Location = new System.Drawing.Point(8, 46);
+            this.Role_group2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Role_group2.Name = "Role_group2";
-            this.Role_group2.Size = new System.Drawing.Size(271, 140);
+            this.Role_group2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Role_group2.Size = new System.Drawing.Size(361, 172);
             this.Role_group2.TabIndex = 28;
             this.Role_group2.TabStop = false;
             this.Role_group2.Text = "Tạo role mới";
@@ -491,10 +529,11 @@ namespace Oracle_App
             // Pass_textbox_tab3
             // 
             this.Pass_textbox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Pass_textbox_tab3.Location = new System.Drawing.Point(90, 56);
+            this.Pass_textbox_tab3.Location = new System.Drawing.Point(120, 69);
+            this.Pass_textbox_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Pass_textbox_tab3.Name = "Pass_textbox_tab3";
             this.Pass_textbox_tab3.PasswordChar = '*';
-            this.Pass_textbox_tab3.Size = new System.Drawing.Size(174, 26);
+            this.Pass_textbox_tab3.Size = new System.Drawing.Size(231, 30);
             this.Pass_textbox_tab3.TabIndex = 24;
             // 
             // Password_label2_tab2
@@ -502,36 +541,40 @@ namespace Oracle_App
             this.Password_label2_tab2.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar;
             this.Password_label2_tab2.AutoSize = true;
             this.Password_label2_tab2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Password_label2_tab2.Location = new System.Drawing.Point(6, 57);
+            this.Password_label2_tab2.Location = new System.Drawing.Point(8, 70);
+            this.Password_label2_tab2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Password_label2_tab2.Name = "Password_label2_tab2";
-            this.Password_label2_tab2.Size = new System.Drawing.Size(78, 20);
+            this.Password_label2_tab2.Size = new System.Drawing.Size(98, 25);
             this.Password_label2_tab2.TabIndex = 25;
             this.Password_label2_tab2.Text = "Password";
             // 
             // Role_textbox_tab3
             // 
             this.Role_textbox_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_textbox_tab3.Location = new System.Drawing.Point(90, 18);
+            this.Role_textbox_tab3.Location = new System.Drawing.Point(120, 22);
+            this.Role_textbox_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Role_textbox_tab3.Name = "Role_textbox_tab3";
-            this.Role_textbox_tab3.Size = new System.Drawing.Size(174, 26);
+            this.Role_textbox_tab3.Size = new System.Drawing.Size(231, 30);
             this.Role_textbox_tab3.TabIndex = 17;
             // 
             // Role_label2
             // 
             this.Role_label2.AutoSize = true;
             this.Role_label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_label2.Location = new System.Drawing.Point(6, 23);
+            this.Role_label2.Location = new System.Drawing.Point(8, 28);
+            this.Role_label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Role_label2.Name = "Role_label2";
-            this.Role_label2.Size = new System.Drawing.Size(42, 20);
+            this.Role_label2.Size = new System.Drawing.Size(51, 25);
             this.Role_label2.TabIndex = 18;
             this.Role_label2.Text = "Role";
             // 
             // CreateRole_button_tab3
             // 
             this.CreateRole_button_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CreateRole_button_tab3.Location = new System.Drawing.Point(10, 96);
+            this.CreateRole_button_tab3.Location = new System.Drawing.Point(13, 118);
+            this.CreateRole_button_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CreateRole_button_tab3.Name = "CreateRole_button_tab3";
-            this.CreateRole_button_tab3.Size = new System.Drawing.Size(254, 33);
+            this.CreateRole_button_tab3.Size = new System.Drawing.Size(339, 41);
             this.CreateRole_button_tab3.TabIndex = 22;
             this.CreateRole_button_tab3.Text = "Tạo Role";
             this.CreateRole_button_tab3.UseVisualStyleBackColor = true;
@@ -540,9 +583,10 @@ namespace Oracle_App
             // ViewRole_button_tab3
             // 
             this.ViewRole_button_tab3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewRole_button_tab3.Location = new System.Drawing.Point(283, 522);
+            this.ViewRole_button_tab3.Location = new System.Drawing.Point(377, 642);
+            this.ViewRole_button_tab3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewRole_button_tab3.Name = "ViewRole_button_tab3";
-            this.ViewRole_button_tab3.Size = new System.Drawing.Size(791, 33);
+            this.ViewRole_button_tab3.Size = new System.Drawing.Size(1055, 41);
             this.ViewRole_button_tab3.TabIndex = 27;
             this.ViewRole_button_tab3.Text = "Xem Danh Sách Roles";
             this.ViewRole_button_tab3.UseVisualStyleBackColor = true;
@@ -555,10 +599,11 @@ namespace Oracle_App
             this.tabPage4.Controls.Add(this.groupBox7);
             this.tabPage4.Controls.Add(this.groupBox5);
             this.tabPage4.Controls.Add(this.groupBox6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Location = new System.Drawing.Point(4, 25);
+            this.tabPage4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage4.Size = new System.Drawing.Size(1444, 693);
             this.tabPage4.TabIndex = 4;
             this.tabPage4.Text = "GRANT / REVOKE";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -571,9 +616,11 @@ namespace Oracle_App
             this.groupBox9.Controls.Add(this.Role_txtBox3_tab4);
             this.groupBox9.Controls.Add(this.Role_label3_tab4);
             this.groupBox9.Controls.Add(this.User_label3_tab4);
-            this.groupBox9.Location = new System.Drawing.Point(6, 410);
+            this.groupBox9.Location = new System.Drawing.Point(8, 505);
+            this.groupBox9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox9.Name = "groupBox9";
-            this.groupBox9.Size = new System.Drawing.Size(297, 142);
+            this.groupBox9.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox9.Size = new System.Drawing.Size(396, 175);
             this.groupBox9.TabIndex = 46;
             this.groupBox9.TabStop = false;
             this.groupBox9.Text = "Cấp role cho user";
@@ -581,9 +628,10 @@ namespace Oracle_App
             // wgo_chckBox3_Obj_tab5
             // 
             this.wgo_chckBox3_Obj_tab5.AutoSize = true;
-            this.wgo_chckBox3_Obj_tab5.Location = new System.Drawing.Point(93, 83);
+            this.wgo_chckBox3_Obj_tab5.Location = new System.Drawing.Point(124, 102);
+            this.wgo_chckBox3_Obj_tab5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wgo_chckBox3_Obj_tab5.Name = "wgo_chckBox3_Obj_tab5";
-            this.wgo_chckBox3_Obj_tab5.Size = new System.Drawing.Size(108, 17);
+            this.wgo_chckBox3_Obj_tab5.Size = new System.Drawing.Size(139, 21);
             this.wgo_chckBox3_Obj_tab5.TabIndex = 45;
             this.wgo_chckBox3_Obj_tab5.Text = "with admin option";
             this.wgo_chckBox3_Obj_tab5.UseVisualStyleBackColor = true;
@@ -591,17 +639,19 @@ namespace Oracle_App
             // User_txtBox3_tab4
             // 
             this.User_txtBox3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_txtBox3_tab4.Location = new System.Drawing.Point(92, 19);
+            this.User_txtBox3_tab4.Location = new System.Drawing.Point(123, 23);
+            this.User_txtBox3_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.User_txtBox3_tab4.Name = "User_txtBox3_tab4";
-            this.User_txtBox3_tab4.Size = new System.Drawing.Size(200, 26);
+            this.User_txtBox3_tab4.Size = new System.Drawing.Size(265, 30);
             this.User_txtBox3_tab4.TabIndex = 23;
             // 
             // Grant_btn3_tab4
             // 
             this.Grant_btn3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grant_btn3_tab4.Location = new System.Drawing.Point(92, 106);
+            this.Grant_btn3_tab4.Location = new System.Drawing.Point(123, 130);
+            this.Grant_btn3_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Grant_btn3_tab4.Name = "Grant_btn3_tab4";
-            this.Grant_btn3_tab4.Size = new System.Drawing.Size(108, 30);
+            this.Grant_btn3_tab4.Size = new System.Drawing.Size(144, 37);
             this.Grant_btn3_tab4.TabIndex = 43;
             this.Grant_btn3_tab4.Text = "Cấp Role";
             this.Grant_btn3_tab4.UseVisualStyleBackColor = true;
@@ -610,18 +660,20 @@ namespace Oracle_App
             // Role_txtBox3_tab4
             // 
             this.Role_txtBox3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_txtBox3_tab4.Location = new System.Drawing.Point(92, 51);
+            this.Role_txtBox3_tab4.Location = new System.Drawing.Point(123, 63);
+            this.Role_txtBox3_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Role_txtBox3_tab4.Name = "Role_txtBox3_tab4";
-            this.Role_txtBox3_tab4.Size = new System.Drawing.Size(200, 26);
+            this.Role_txtBox3_tab4.Size = new System.Drawing.Size(265, 30);
             this.Role_txtBox3_tab4.TabIndex = 31;
             // 
             // Role_label3_tab4
             // 
             this.Role_label3_tab4.AutoSize = true;
             this.Role_label3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Role_label3_tab4.Location = new System.Drawing.Point(2, 54);
+            this.Role_label3_tab4.Location = new System.Drawing.Point(3, 66);
+            this.Role_label3_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Role_label3_tab4.Name = "Role_label3_tab4";
-            this.Role_label3_tab4.Size = new System.Drawing.Size(42, 20);
+            this.Role_label3_tab4.Size = new System.Drawing.Size(51, 25);
             this.Role_label3_tab4.TabIndex = 32;
             this.Role_label3_tab4.Text = "Role";
             // 
@@ -629,9 +681,10 @@ namespace Oracle_App
             // 
             this.User_label3_tab4.AutoSize = true;
             this.User_label3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_label3_tab4.Location = new System.Drawing.Point(2, 22);
+            this.User_label3_tab4.Location = new System.Drawing.Point(3, 27);
+            this.User_label3_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User_label3_tab4.Name = "User_label3_tab4";
-            this.User_label3_tab4.Size = new System.Drawing.Size(43, 20);
+            this.User_label3_tab4.Size = new System.Drawing.Size(53, 25);
             this.User_label3_tab4.TabIndex = 24;
             this.User_label3_tab4.Text = "User";
             // 
@@ -643,9 +696,11 @@ namespace Oracle_App
             this.groupBox8.Controls.Add(this.Priv_txtBox2_tab4);
             this.groupBox8.Controls.Add(this.Priv_label2_tab4);
             this.groupBox8.Controls.Add(this.User_Role_label2_tab4);
-            this.groupBox8.Location = new System.Drawing.Point(6, 264);
+            this.groupBox8.Location = new System.Drawing.Point(8, 308);
+            this.groupBox8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(297, 140);
+            this.groupBox8.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox8.Size = new System.Drawing.Size(396, 172);
             this.groupBox8.TabIndex = 45;
             this.groupBox8.TabStop = false;
             this.groupBox8.Text = "Cấp quyền trên hệ thống";
@@ -653,9 +708,10 @@ namespace Oracle_App
             // wgo_chckBox2_Obj_tab4
             // 
             this.wgo_chckBox2_Obj_tab4.AutoSize = true;
-            this.wgo_chckBox2_Obj_tab4.Location = new System.Drawing.Point(92, 83);
+            this.wgo_chckBox2_Obj_tab4.Location = new System.Drawing.Point(123, 102);
+            this.wgo_chckBox2_Obj_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wgo_chckBox2_Obj_tab4.Name = "wgo_chckBox2_Obj_tab4";
-            this.wgo_chckBox2_Obj_tab4.Size = new System.Drawing.Size(108, 17);
+            this.wgo_chckBox2_Obj_tab4.Size = new System.Drawing.Size(139, 21);
             this.wgo_chckBox2_Obj_tab4.TabIndex = 44;
             this.wgo_chckBox2_Obj_tab4.Text = "with admin option";
             this.wgo_chckBox2_Obj_tab4.UseVisualStyleBackColor = true;
@@ -663,17 +719,19 @@ namespace Oracle_App
             // User_Role_txtBox2_tab4
             // 
             this.User_Role_txtBox2_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_txtBox2_tab4.Location = new System.Drawing.Point(92, 19);
+            this.User_Role_txtBox2_tab4.Location = new System.Drawing.Point(123, 23);
+            this.User_Role_txtBox2_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.User_Role_txtBox2_tab4.Name = "User_Role_txtBox2_tab4";
-            this.User_Role_txtBox2_tab4.Size = new System.Drawing.Size(200, 26);
+            this.User_Role_txtBox2_tab4.Size = new System.Drawing.Size(265, 30);
             this.User_Role_txtBox2_tab4.TabIndex = 23;
             // 
             // Grant_btn2_tab4
             // 
             this.Grant_btn2_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grant_btn2_tab4.Location = new System.Drawing.Point(92, 106);
+            this.Grant_btn2_tab4.Location = new System.Drawing.Point(123, 130);
+            this.Grant_btn2_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Grant_btn2_tab4.Name = "Grant_btn2_tab4";
-            this.Grant_btn2_tab4.Size = new System.Drawing.Size(108, 30);
+            this.Grant_btn2_tab4.Size = new System.Drawing.Size(144, 37);
             this.Grant_btn2_tab4.TabIndex = 43;
             this.Grant_btn2_tab4.Text = "Cấp Quyền";
             this.Grant_btn2_tab4.UseVisualStyleBackColor = true;
@@ -682,18 +740,20 @@ namespace Oracle_App
             // Priv_txtBox2_tab4
             // 
             this.Priv_txtBox2_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Priv_txtBox2_tab4.Location = new System.Drawing.Point(92, 51);
+            this.Priv_txtBox2_tab4.Location = new System.Drawing.Point(123, 63);
+            this.Priv_txtBox2_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Priv_txtBox2_tab4.Name = "Priv_txtBox2_tab4";
-            this.Priv_txtBox2_tab4.Size = new System.Drawing.Size(200, 26);
+            this.Priv_txtBox2_tab4.Size = new System.Drawing.Size(265, 30);
             this.Priv_txtBox2_tab4.TabIndex = 31;
             // 
             // Priv_label2_tab4
             // 
             this.Priv_label2_tab4.AutoSize = true;
             this.Priv_label2_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Priv_label2_tab4.Location = new System.Drawing.Point(2, 54);
+            this.Priv_label2_tab4.Location = new System.Drawing.Point(3, 66);
+            this.Priv_label2_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Priv_label2_tab4.Name = "Priv_label2_tab4";
-            this.Priv_label2_tab4.Size = new System.Drawing.Size(67, 20);
+            this.Priv_label2_tab4.Size = new System.Drawing.Size(86, 25);
             this.Priv_label2_tab4.TabIndex = 32;
             this.Priv_label2_tab4.Text = "Privilege";
             // 
@@ -701,9 +761,10 @@ namespace Oracle_App
             // 
             this.User_Role_label2_tab4.AutoSize = true;
             this.User_Role_label2_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_label2_tab4.Location = new System.Drawing.Point(2, 22);
+            this.User_Role_label2_tab4.Location = new System.Drawing.Point(3, 27);
+            this.User_Role_label2_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User_Role_label2_tab4.Name = "User_Role_label2_tab4";
-            this.User_Role_label2_tab4.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label2_tab4.Size = new System.Drawing.Size(103, 25);
             this.User_Role_label2_tab4.TabIndex = 24;
             this.User_Role_label2_tab4.Text = "User/ Role";
             // 
@@ -719,9 +780,11 @@ namespace Oracle_App
             this.groupBox7.Controls.Add(this.User_Role_label_tab4);
             this.groupBox7.Controls.Add(this.Priv_label_tab4);
             this.groupBox7.Controls.Add(this.Priv_comboBox_tab4);
-            this.groupBox7.Location = new System.Drawing.Point(6, 6);
+            this.groupBox7.Location = new System.Drawing.Point(8, 7);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(297, 230);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox7.Size = new System.Drawing.Size(396, 283);
             this.groupBox7.TabIndex = 44;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Cấp quyền trên object";
@@ -729,9 +792,10 @@ namespace Oracle_App
             // wgo_chckBox1_tab4
             // 
             this.wgo_chckBox1_tab4.AutoSize = true;
-            this.wgo_chckBox1_tab4.Location = new System.Drawing.Point(6, 170);
+            this.wgo_chckBox1_tab4.Location = new System.Drawing.Point(8, 209);
+            this.wgo_chckBox1_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.wgo_chckBox1_tab4.Name = "wgo_chckBox1_tab4";
-            this.wgo_chckBox1_tab4.Size = new System.Drawing.Size(104, 17);
+            this.wgo_chckBox1_tab4.Size = new System.Drawing.Size(134, 21);
             this.wgo_chckBox1_tab4.TabIndex = 45;
             this.wgo_chckBox1_tab4.Text = "with grant option";
             this.wgo_chckBox1_tab4.UseVisualStyleBackColor = true;
@@ -739,17 +803,19 @@ namespace Oracle_App
             // User_Role_txtBox_tab4
             // 
             this.User_Role_txtBox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_txtBox_tab4.Location = new System.Drawing.Point(6, 35);
+            this.User_Role_txtBox_tab4.Location = new System.Drawing.Point(8, 43);
+            this.User_Role_txtBox_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.User_Role_txtBox_tab4.Name = "User_Role_txtBox_tab4";
-            this.User_Role_txtBox_tab4.Size = new System.Drawing.Size(285, 26);
+            this.User_Role_txtBox_tab4.Size = new System.Drawing.Size(379, 30);
             this.User_Role_txtBox_tab4.TabIndex = 23;
             // 
             // Grant_btn1_tab4
             // 
             this.Grant_btn1_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Grant_btn1_tab4.Location = new System.Drawing.Point(93, 194);
+            this.Grant_btn1_tab4.Location = new System.Drawing.Point(124, 239);
+            this.Grant_btn1_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Grant_btn1_tab4.Name = "Grant_btn1_tab4";
-            this.Grant_btn1_tab4.Size = new System.Drawing.Size(107, 30);
+            this.Grant_btn1_tab4.Size = new System.Drawing.Size(143, 37);
             this.Grant_btn1_tab4.TabIndex = 43;
             this.Grant_btn1_tab4.Text = "Cấp Quyền";
             this.Grant_btn1_tab4.UseVisualStyleBackColor = true;
@@ -759,28 +825,31 @@ namespace Oracle_App
             // 
             this.Table_View_SP_txtBoxl_tab4.Enabled = false;
             this.Table_View_SP_txtBoxl_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Table_View_SP_txtBoxl_tab4.Location = new System.Drawing.Point(6, 87);
+            this.Table_View_SP_txtBoxl_tab4.Location = new System.Drawing.Point(8, 107);
+            this.Table_View_SP_txtBoxl_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Table_View_SP_txtBoxl_tab4.Name = "Table_View_SP_txtBoxl_tab4";
             this.Table_View_SP_txtBoxl_tab4.ReadOnly = true;
-            this.Table_View_SP_txtBoxl_tab4.Size = new System.Drawing.Size(285, 26);
+            this.Table_View_SP_txtBoxl_tab4.Size = new System.Drawing.Size(379, 30);
             this.Table_View_SP_txtBoxl_tab4.TabIndex = 31;
             // 
             // Column_txtbox_tab4
             // 
             this.Column_txtbox_tab4.Enabled = false;
             this.Column_txtbox_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column_txtbox_tab4.Location = new System.Drawing.Point(135, 138);
+            this.Column_txtbox_tab4.Location = new System.Drawing.Point(180, 170);
+            this.Column_txtbox_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Column_txtbox_tab4.Name = "Column_txtbox_tab4";
-            this.Column_txtbox_tab4.Size = new System.Drawing.Size(156, 26);
+            this.Column_txtbox_tab4.Size = new System.Drawing.Size(207, 30);
             this.Column_txtbox_tab4.TabIndex = 39;
             // 
             // Table_View_SP_label_tab4
             // 
             this.Table_View_SP_label_tab4.AutoSize = true;
             this.Table_View_SP_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Table_View_SP_label_tab4.Location = new System.Drawing.Point(3, 67);
+            this.Table_View_SP_label_tab4.Location = new System.Drawing.Point(4, 82);
+            this.Table_View_SP_label_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Table_View_SP_label_tab4.Name = "Table_View_SP_label_tab4";
-            this.Table_View_SP_label_tab4.Size = new System.Drawing.Size(107, 17);
+            this.Table_View_SP_label_tab4.Size = new System.Drawing.Size(128, 20);
             this.Table_View_SP_label_tab4.TabIndex = 32;
             this.Table_View_SP_label_tab4.Text = "Table/ View/ SP";
             // 
@@ -788,9 +857,10 @@ namespace Oracle_App
             // 
             this.Column_label_tab4.AutoSize = true;
             this.Column_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column_label_tab4.Location = new System.Drawing.Point(132, 118);
+            this.Column_label_tab4.Location = new System.Drawing.Point(176, 145);
+            this.Column_label_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Column_label_tab4.Name = "Column_label_tab4";
-            this.Column_label_tab4.Size = new System.Drawing.Size(29, 17);
+            this.Column_label_tab4.Size = new System.Drawing.Size(35, 20);
             this.Column_label_tab4.TabIndex = 38;
             this.Column_label_tab4.Text = "Cột";
             // 
@@ -798,9 +868,10 @@ namespace Oracle_App
             // 
             this.User_Role_label_tab4.AutoSize = true;
             this.User_Role_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_label_tab4.Location = new System.Drawing.Point(3, 15);
+            this.User_Role_label_tab4.Location = new System.Drawing.Point(4, 18);
+            this.User_Role_label_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User_Role_label_tab4.Name = "User_Role_label_tab4";
-            this.User_Role_label_tab4.Size = new System.Drawing.Size(75, 17);
+            this.User_Role_label_tab4.Size = new System.Drawing.Size(89, 20);
             this.User_Role_label_tab4.TabIndex = 24;
             this.User_Role_label_tab4.Text = "User/ Role";
             // 
@@ -808,9 +879,10 @@ namespace Oracle_App
             // 
             this.Priv_label_tab4.AutoSize = true;
             this.Priv_label_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Priv_label_tab4.Location = new System.Drawing.Point(3, 116);
+            this.Priv_label_tab4.Location = new System.Drawing.Point(4, 143);
+            this.Priv_label_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Priv_label_tab4.Name = "Priv_label_tab4";
-            this.Priv_label_tab4.Size = new System.Drawing.Size(50, 17);
+            this.Priv_label_tab4.Size = new System.Drawing.Size(57, 20);
             this.Priv_label_tab4.TabIndex = 36;
             this.Priv_label_tab4.Text = "Quyền";
             // 
@@ -825,9 +897,10 @@ namespace Oracle_App
             "UPDATE",
             "DELETE",
             "EXEC"});
-            this.Priv_comboBox_tab4.Location = new System.Drawing.Point(6, 136);
+            this.Priv_comboBox_tab4.Location = new System.Drawing.Point(8, 167);
+            this.Priv_comboBox_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Priv_comboBox_tab4.Name = "Priv_comboBox_tab4";
-            this.Priv_comboBox_tab4.Size = new System.Drawing.Size(104, 28);
+            this.Priv_comboBox_tab4.Size = new System.Drawing.Size(137, 33);
             this.Priv_comboBox_tab4.TabIndex = 35;
             this.Priv_comboBox_tab4.SelectedIndexChanged += new System.EventHandler(this.Priv_comboBox_tab4_SelectedIndexChanged);
             // 
@@ -841,9 +914,11 @@ namespace Oracle_App
             this.groupBox5.Controls.Add(this.User_Role_txtBox3_tab4);
             this.groupBox5.Controls.Add(this.User_Role_label3_tab4);
             this.groupBox5.Controls.Add(this.dataGridView6);
-            this.groupBox5.Location = new System.Drawing.Point(562, 6);
+            this.groupBox5.Location = new System.Drawing.Point(749, 7);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(516, 549);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(688, 676);
             this.groupBox5.TabIndex = 26;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Danh sách quyền";
@@ -851,9 +926,10 @@ namespace Oracle_App
             // Revoke_btn_tab4
             // 
             this.Revoke_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Revoke_btn_tab4.Location = new System.Drawing.Point(6, 514);
+            this.Revoke_btn_tab4.Location = new System.Drawing.Point(8, 633);
+            this.Revoke_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Revoke_btn_tab4.Name = "Revoke_btn_tab4";
-            this.Revoke_btn_tab4.Size = new System.Drawing.Size(504, 29);
+            this.Revoke_btn_tab4.Size = new System.Drawing.Size(672, 36);
             this.Revoke_btn_tab4.TabIndex = 51;
             this.Revoke_btn_tab4.Text = "Thu Hồi Quyền";
             this.Revoke_btn_tab4.UseVisualStyleBackColor = true;
@@ -862,9 +938,10 @@ namespace Oracle_App
             // ViewColPriv_btn_tab4
             // 
             this.ViewColPriv_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewColPriv_btn_tab4.Location = new System.Drawing.Point(277, 80);
+            this.ViewColPriv_btn_tab4.Location = new System.Drawing.Point(369, 98);
+            this.ViewColPriv_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewColPriv_btn_tab4.Name = "ViewColPriv_btn_tab4";
-            this.ViewColPriv_btn_tab4.Size = new System.Drawing.Size(233, 29);
+            this.ViewColPriv_btn_tab4.Size = new System.Drawing.Size(311, 36);
             this.ViewColPriv_btn_tab4.TabIndex = 50;
             this.ViewColPriv_btn_tab4.Text = "Quyền Trên Cột";
             this.ViewColPriv_btn_tab4.UseVisualStyleBackColor = true;
@@ -873,9 +950,10 @@ namespace Oracle_App
             // ViewGrantedRole_btn_tab4
             // 
             this.ViewGrantedRole_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewGrantedRole_btn_tab4.Location = new System.Drawing.Point(6, 80);
+            this.ViewGrantedRole_btn_tab4.Location = new System.Drawing.Point(8, 98);
+            this.ViewGrantedRole_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewGrantedRole_btn_tab4.Name = "ViewGrantedRole_btn_tab4";
-            this.ViewGrantedRole_btn_tab4.Size = new System.Drawing.Size(230, 29);
+            this.ViewGrantedRole_btn_tab4.Size = new System.Drawing.Size(307, 36);
             this.ViewGrantedRole_btn_tab4.TabIndex = 49;
             this.ViewGrantedRole_btn_tab4.Text = "Các Role Được Cấp";
             this.ViewGrantedRole_btn_tab4.UseVisualStyleBackColor = true;
@@ -884,9 +962,10 @@ namespace Oracle_App
             // ViewSysPriv_btn_tab4
             // 
             this.ViewSysPriv_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewSysPriv_btn_tab4.Location = new System.Drawing.Point(277, 45);
+            this.ViewSysPriv_btn_tab4.Location = new System.Drawing.Point(369, 55);
+            this.ViewSysPriv_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewSysPriv_btn_tab4.Name = "ViewSysPriv_btn_tab4";
-            this.ViewSysPriv_btn_tab4.Size = new System.Drawing.Size(233, 29);
+            this.ViewSysPriv_btn_tab4.Size = new System.Drawing.Size(311, 36);
             this.ViewSysPriv_btn_tab4.TabIndex = 48;
             this.ViewSysPriv_btn_tab4.Text = "Quyền Trên Hệ Thống";
             this.ViewSysPriv_btn_tab4.UseVisualStyleBackColor = true;
@@ -895,9 +974,10 @@ namespace Oracle_App
             // ViewPrivUser_Role_btn_tab4
             // 
             this.ViewPrivUser_Role_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ViewPrivUser_Role_btn_tab4.Location = new System.Drawing.Point(6, 45);
+            this.ViewPrivUser_Role_btn_tab4.Location = new System.Drawing.Point(8, 55);
+            this.ViewPrivUser_Role_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ViewPrivUser_Role_btn_tab4.Name = "ViewPrivUser_Role_btn_tab4";
-            this.ViewPrivUser_Role_btn_tab4.Size = new System.Drawing.Size(230, 29);
+            this.ViewPrivUser_Role_btn_tab4.Size = new System.Drawing.Size(307, 36);
             this.ViewPrivUser_Role_btn_tab4.TabIndex = 22;
             this.ViewPrivUser_Role_btn_tab4.Text = "Quyền Trên Object";
             this.ViewPrivUser_Role_btn_tab4.UseVisualStyleBackColor = true;
@@ -906,18 +986,20 @@ namespace Oracle_App
             // User_Role_txtBox3_tab4
             // 
             this.User_Role_txtBox3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_txtBox3_tab4.Location = new System.Drawing.Point(92, 16);
+            this.User_Role_txtBox3_tab4.Location = new System.Drawing.Point(123, 20);
+            this.User_Role_txtBox3_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.User_Role_txtBox3_tab4.Name = "User_Role_txtBox3_tab4";
-            this.User_Role_txtBox3_tab4.Size = new System.Drawing.Size(418, 26);
+            this.User_Role_txtBox3_tab4.Size = new System.Drawing.Size(556, 30);
             this.User_Role_txtBox3_tab4.TabIndex = 46;
             // 
             // User_Role_label3_tab4
             // 
             this.User_Role_label3_tab4.AutoSize = true;
             this.User_Role_label3_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.User_Role_label3_tab4.Location = new System.Drawing.Point(2, 19);
+            this.User_Role_label3_tab4.Location = new System.Drawing.Point(3, 23);
+            this.User_Role_label3_tab4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.User_Role_label3_tab4.Name = "User_Role_label3_tab4";
-            this.User_Role_label3_tab4.Size = new System.Drawing.Size(84, 20);
+            this.User_Role_label3_tab4.Size = new System.Drawing.Size(103, 25);
             this.User_Role_label3_tab4.TabIndex = 47;
             this.User_Role_label3_tab4.Text = "User/ Role";
             // 
@@ -925,11 +1007,13 @@ namespace Oracle_App
             // 
             this.dataGridView6.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(6, 115);
+            this.dataGridView6.Location = new System.Drawing.Point(8, 142);
+            this.dataGridView6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView6.MultiSelect = false;
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.Size = new System.Drawing.Size(504, 393);
+            this.dataGridView6.RowHeadersWidth = 51;
+            this.dataGridView6.Size = new System.Drawing.Size(672, 484);
             this.dataGridView6.TabIndex = 30;
             this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             // 
@@ -939,9 +1023,11 @@ namespace Oracle_App
             this.groupBox6.Controls.Add(this.dataGridView7);
             this.groupBox6.Controls.Add(this.ShowView_btn_tab4);
             this.groupBox6.Controls.Add(this.ShowTable_btn_tab4);
-            this.groupBox6.Location = new System.Drawing.Point(303, 6);
+            this.groupBox6.Location = new System.Drawing.Point(404, 7);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(253, 552);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox6.Size = new System.Drawing.Size(337, 679);
             this.groupBox6.TabIndex = 27;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Hiển thị";
@@ -949,9 +1035,10 @@ namespace Oracle_App
             // ShowSP_btn_tab4
             // 
             this.ShowSP_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowSP_btn_tab4.Location = new System.Drawing.Point(170, 16);
+            this.ShowSP_btn_tab4.Location = new System.Drawing.Point(227, 20);
+            this.ShowSP_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowSP_btn_tab4.Name = "ShowSP_btn_tab4";
-            this.ShowSP_btn_tab4.Size = new System.Drawing.Size(77, 64);
+            this.ShowSP_btn_tab4.Size = new System.Drawing.Size(103, 79);
             this.ShowSP_btn_tab4.TabIndex = 42;
             this.ShowSP_btn_tab4.Text = "SP";
             this.ShowSP_btn_tab4.UseVisualStyleBackColor = true;
@@ -961,20 +1048,23 @@ namespace Oracle_App
             // 
             this.dataGridView7.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView7.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView7.Location = new System.Drawing.Point(6, 86);
+            this.dataGridView7.Location = new System.Drawing.Point(8, 106);
+            this.dataGridView7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView7.MultiSelect = false;
             this.dataGridView7.Name = "dataGridView7";
             this.dataGridView7.ReadOnly = true;
-            this.dataGridView7.Size = new System.Drawing.Size(241, 463);
+            this.dataGridView7.RowHeadersWidth = 51;
+            this.dataGridView7.Size = new System.Drawing.Size(321, 570);
             this.dataGridView7.TabIndex = 20;
             this.dataGridView7.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView7_CellClick);
             // 
             // ShowView_btn_tab4
             // 
             this.ShowView_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowView_btn_tab4.Location = new System.Drawing.Point(90, 16);
+            this.ShowView_btn_tab4.Location = new System.Drawing.Point(120, 20);
+            this.ShowView_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowView_btn_tab4.Name = "ShowView_btn_tab4";
-            this.ShowView_btn_tab4.Size = new System.Drawing.Size(74, 64);
+            this.ShowView_btn_tab4.Size = new System.Drawing.Size(99, 79);
             this.ShowView_btn_tab4.TabIndex = 41;
             this.ShowView_btn_tab4.Text = "Views";
             this.ShowView_btn_tab4.UseVisualStyleBackColor = true;
@@ -983,9 +1073,10 @@ namespace Oracle_App
             // ShowTable_btn_tab4
             // 
             this.ShowTable_btn_tab4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ShowTable_btn_tab4.Location = new System.Drawing.Point(6, 16);
+            this.ShowTable_btn_tab4.Location = new System.Drawing.Point(8, 20);
+            this.ShowTable_btn_tab4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ShowTable_btn_tab4.Name = "ShowTable_btn_tab4";
-            this.ShowTable_btn_tab4.Size = new System.Drawing.Size(78, 64);
+            this.ShowTable_btn_tab4.Size = new System.Drawing.Size(104, 79);
             this.ShowTable_btn_tab4.TabIndex = 40;
             this.ShowTable_btn_tab4.Text = "Tables";
             this.ShowTable_btn_tab4.UseVisualStyleBackColor = true;
@@ -995,10 +1086,11 @@ namespace Oracle_App
             // 
             this.tabPage5.Controls.Add(this.pictureBox1);
             this.tabPage5.Controls.Add(this.DangXuat_btn_tab5);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 25);
+            this.tabPage5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1081, 561);
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage5.Size = new System.Drawing.Size(1444, 693);
             this.tabPage5.TabIndex = 7;
             this.tabPage5.Text = "QUẢN LÝ TÀI KHOẢN";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1006,9 +1098,10 @@ namespace Oracle_App
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Oracle_App.Properties.Resources.Admin;
-            this.pictureBox1.Location = new System.Drawing.Point(296, 3);
+            this.pictureBox1.Location = new System.Drawing.Point(395, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(527, 481);
+            this.pictureBox1.Size = new System.Drawing.Size(703, 592);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -1018,9 +1111,10 @@ namespace Oracle_App
             this.DangXuat_btn_tab5.BackColor = System.Drawing.Color.Black;
             this.DangXuat_btn_tab5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DangXuat_btn_tab5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.DangXuat_btn_tab5.Location = new System.Drawing.Point(296, 490);
+            this.DangXuat_btn_tab5.Location = new System.Drawing.Point(395, 603);
+            this.DangXuat_btn_tab5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DangXuat_btn_tab5.Name = "DangXuat_btn_tab5";
-            this.DangXuat_btn_tab5.Size = new System.Drawing.Size(527, 65);
+            this.DangXuat_btn_tab5.Size = new System.Drawing.Size(703, 80);
             this.DangXuat_btn_tab5.TabIndex = 0;
             this.DangXuat_btn_tab5.Text = "Đăng xuất";
             this.DangXuat_btn_tab5.UseVisualStyleBackColor = false;
@@ -1028,10 +1122,11 @@ namespace Oracle_App
             // 
             // Admin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1095, 601);
+            this.ClientSize = new System.Drawing.Size(1460, 740);
             this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MaximizeBox = false;
             this.Name = "Admin";
             this.Text = "Admin";
