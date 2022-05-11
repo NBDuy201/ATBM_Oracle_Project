@@ -30,6 +30,7 @@ namespace Oracle_App
             }
             catch (Exception exp)
             {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 con.Close();
             }
         }

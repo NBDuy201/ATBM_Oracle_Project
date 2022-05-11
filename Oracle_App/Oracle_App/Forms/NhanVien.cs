@@ -29,6 +29,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 con.Close();
             }
         }
@@ -142,8 +143,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                //MessageBox.Show(exp.Message);
-                throw;
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 

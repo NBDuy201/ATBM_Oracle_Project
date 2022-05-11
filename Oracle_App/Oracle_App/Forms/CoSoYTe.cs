@@ -30,6 +30,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 con.Close();
             }
         }
@@ -68,7 +69,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Set Role Failed");
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             // Lay CSYT
@@ -87,7 +88,7 @@ namespace Oracle_App.Forms
             }
             catch (Exception exp)
             {
-                MessageBox.Show("Find CSYT failed");
+                MessageBox.Show(exp.Message, "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
             // Load gridview
